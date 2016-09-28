@@ -28,6 +28,10 @@
         rel="stylesheet"
         type="text/css"
         href="<?php echo $this->config->item('base_url'); ?>/assets/css/general.css">
+	<link
+        rel="stylesheet"
+        type="text/css"
+        href="<?php echo $this->config->item('base_url'); ?>/../css/style.css">
 
     <?php // SET FAVICON FOR PAGE ?>
     <link

@@ -14,6 +14,10 @@
     <script
         type="text/javascript"
         src="<?php echo $this->config->item('base_url'); ?>/assets/ext/bootstrap/js/bootstrap.min.js"></script>
+	<link
+        rel="stylesheet"
+        type="text/css"
+        href="<?php echo $this->config->item('base_url'); ?>/../css/style.css">
 
     <?php // INCLUDE CSS FILES ?>
     <link
