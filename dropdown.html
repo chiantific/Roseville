@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roseville escape</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<link href="img/favicon.ico" rel="icon" type="image/x-icon" />
+
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+
+<!-- Stylesheet
+    ================================================== -->
+<link rel="stylesheet" type="text/css"  href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/prettyPhoto.css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+<!--<script type="text/javascript" src="js/modernize.custom.js"></script>-->
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<div id="preloader">
+  <div id="status"> <img src="img/preloader.gif" height="64" width="64" alt=""> </div>
+</div>
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span><i class="fa fa-bars"></i></span>
+			</button>
+			<a class="navbar-brand page-scroll" href="#page-top"><img src="img/logo_R.png" alt="roseville escape logo" id="logo">
+				<span>Roseville Escape</span>
+			</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="hidden"> <a href="#page-top"></a> </li>
+				<li><a class="page-scroll" href="#section1">concept</a></li>
+				<li><a class="page-scroll" href="#section2">quel public</a></li>
+				<li><a class="page-scroll" href="#section3">notre lieu</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">réservation<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a class="page-scroll" href="#">réservation</a></li>
+						<li><a class="page-scroll" href="#gcard">bon cadeau</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">à propos<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a class="page-scroll" href="#">liens</a></li>
+						<li><a class="page-scroll" href="#section5">faq</a></li>
+						<li><a class="page-scroll" href="#where">directions</a></li>
+						<li><a class="page-scroll" href="#contact">contact</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+</nav>
+
+
+<!-- old navigation 
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i> </button>
+      <a class="navbar-brand page-scroll" href="#page-top"> <img src="img/logo_R.png" class="img-responsive offset-left" id="logo"/>Roseville escape</a> </div>
+    
+    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+      <ul class="nav navbar-nav">
+        <li class="hidden"> <a href="#page-top"></a> </li>
+        <li> <a class="page-scroll" href="#section1">concept</a> </li>
+        <li> <a class="page-scroll" href="#section2">quel public</a> </li>
+        <li> <a class="page-scroll" href="#section3">notre lieu</a> </li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">réservation<b class="caret"></b></a>
+			<ul class="dropdown-menu">
+				<li><a class="page-scroll" href="#">réservation</a></li>
+				<li><a class="page-scroll" href="#gcard">bon cadeau</a></li>
+			</ul>
+		</li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">à propos<b class="caret"></b></a>
+			<ul class="dropdown-menu">
+				<li><a class="page-scroll" href="#">liens</a></li>
+				<li><a class="page-scroll" href="#section5">faq</a></li>
+				<li><a class="page-scroll" href="#contact">contact</a></li>
+			</ul>
+		</li>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+
+<!-- Intro -->
+<div id="intro">
+  <div class="intro-body">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3">
+          <img alt="Logo" class="img-responsive" src="img/logo_R.png"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <h1>Bienvenue à <span class="brand-heading">Roseville</span></h1>
+          <p class="intro-text">Trouverez-vous la sortie ?</p>
+            <a href="#section1" class="btn btn-default page-scroll">Entrée</a>
+            <a href="#" class="btn btn-default page-scroll">Réservations</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Section 1 -->
+<div id="section1">
+	<div class="container">
+		<div class="col-xs-10 col-xs-offset-1">
+			<div class="jumbotron">
+				<h3>L'aventure dont vous êtes les héros</h3>
+				<p>Une aventure inoubliable grandeur nature dans des décors insolites. Le jeu d'évasion consiste à s’échapper d’une pièce en moins de 60 minutes.
+				   Enfermés dans un environnement immersif, les joueurs, par groupes de 2 à 5 participants,
+				   cherchent des indices disséminés dans la pièce. Ils les combinent afin de résoudre les casse-tête qui
+				   permettent d'avancer dans l'énigme et sortir de la salle
+				</p>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col-md-3 col-sm-6 sub-section">
+				<img src="img/ancientdoorlock.jpg" alt="cadenas pour illustrer le jeu" class="img-rounded" class="img-responsive">
+			</div>
+			<div class="col-md-3 col-sm-6 sub-section">
+				<i class="fa fa-lock"></i>
+				<h4>L'univers du jeu</h4>
+				<p>Plongez dans une aventure exhaltante. Laissez vous enfermer dans un univers fantastique avec des décors saisissants</p>
+			</div>
+			<div class="clearfix visible-sm"></div>
+			<div class="col-md-3 col-sm-6 sub-section">
+				<i class="fa fa-cogs"></i>	
+				<h4>Trouvez la solution</h4>
+				<p>En faisant preuve de curiosité, d'un peu de logique et d'ingéniosité, récoltez les indices, déjouez les pièges et résolvez les énigmes</p>
+			</div>
+			
+			<div class="col-md-3 col-sm-6 sub-section">
+				<i class="fa fa-trophy"></i>
+				<h4>Le temps est compté</h4>
+				<p>Travaillez en équipe pour menez à bien votre mission. Si vous y arrivez en moins de 60 minutes vous serez récompensés</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Section 2 -->
+<div id="section2" class="text-center">
+	<div class="container">
+		<div class="jumbotron">
+			<h3>Quel public</h3>
+			<p>Le jeu d'évasion à Roseville s'adresse à un public de plus de 16 ans. 
+			   Nos énigmes ne comportent aucun élément physique ou effrayant.
+			   Le scénario a été conçu pour satisfaire l'intérêt des novices comme celui des initiés de jeu d'évasion
+			</p>
+		</div>
+    <div class="space"></div>
+	
+	<div class="row">
+    
+		<div class="col-md-3 col-sm-6 sub-section">
+			<i class="fa fa-users"></i>
+			<h4>Groupe d'amis et famille</h4>
+			<p>Une activité qui sort de l’ordinaire à faire en famille ou entre amis</p>
+		</div>
+		<div class="col-md-3 col-sm-6 sub-section">
+			<i class="fa fa-black-tie"></i>
+			<h4>Entre collègues</h4>
+			<p>Pour renforcer l'esprit d'équipe ou tout simplement passer un bon moment avec le gang du boulot</p>
+		</div>
+		<div class="clearfix visible-sm"></div>
+		<div class="col-md-3 col-sm-6 sub-section">
+			<i class="fa fa-camera"></i>
+			<h4>Touristes</h4>
+			<p>De passage dans la région avec une envie de vivre une expérience exhaltante conçu sur des thèmes régionaux ?</p>
+        </div>
+		<div class="col-md-3 col-sm-6 sub-section">
+			<i class="fa fa-briefcase"></i>
+			<h4>Entreprises</h4>
+			<p>Une occasion nouvelle pour favoriser la cohésion de groupe ou organiser des entretiens d'embauche</p>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- Section 3 -->
+<div id="section3">
+	<div class="container">
+		<div class="jumbotron text-center">
+			<h2>Nos salles</h2>
+			<p>Venez découvrir notre jeu d'évasion "chocolat" et notre aire de fête "R"</p>
+			<a href="#section3" class="btn btn-primary">Réservations</a>
+			<a href="#contact" class="btn btn-success">contactez-nous</a>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+                <img src="img/chocolat.jpg" class="img-thumbnail" width="100%"/>
+<!--				<a href="#" class="thumbnail">
+					<img class="img-responsive" src="img/chocolat.jpg" alt="salle chocolat">
+</a>-->
+				<h3>Chocolat</h3>
+				<p>Un bug informatique a détruit tout le savoir qui se trouvait sur internet, dont une fameuse recette de chocolat. 
+				   Vous êtes engagé pour retourner dans le passé pour la retrouver. Mais attention rester trop longtemps dans l'espace temps peut s'avèrer dangereux</p>
+                <div class="grouped-buttons">
+				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">plus d'info</button>
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" role="dialog">
+					<div class="modal-dialog">
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+							  <button type="button" class="close" data-dismiss="modal">&times;</button>
+							  <h4 class="modal-title">Introduction pour la salle "chocolat"</h4>
+							</div>
+							<div class="modal-body">
+							  <p>Dans un monde alternatif, en 2016, un bug a échelle planétaire a détruit toutes les information contenues sur le net.
+								 Or, la plupart du savoir de l’humanité s’y trouvait. Une association d’aventuriers appelée Roseville, qui possède le pouvoir de voyager dans le temps,
+								 se propose de retrouver ces secrets en retournant dans le passé contre rémunération, bien entendu.
+								 Le Capitaine, l'aventurier le plus expérimenté de Roseville, est choisi pour aider la jeune héritière de la plus fameuse chocolaterie du monde
+								 qui s'est présentée pour retrouver la recette du chocolat qui a fait la fortune de sa famille depuis des générations
+								 Hors, ce dernier est introuvable. Il appartient donc à vous de partir à la recherche de la recette et d’essayer de découvrir 
+								 ce qui est arrivé au Capitaine. Mais attention! Les voyages dans le temps sont instables et rester trop longtemps dans le passé pourrait être fatal!</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">fermer</button>
+							</div>
+						</div>
+					</div>
+				</div> <!-- End modal -->
+				<a href="https://www.youtube.com/watch?v=GyssJMtZRaM&feature=youtu.be" rel="prettyPhoto"> <button type="button" class="btn btn-danger">teaser</button></a>
+                </div>
+			</div>
+			<div class="col-sm-4">
+                <img class="img-thumbnail" src="img/invinoveritas.jpg" alt="in vino veritas" width="100%"/>
+<!--				<a href="#" class="thumbnail">
+					<img class="img-responsive" src="img/invinoveritas.jpg" alt="in vino veritas">
+</a>-->
+				<h3>Prochainement ...</h3>
+				<p>Nous créons une nouvelle salle de jeu pour vous sur un thème local typiquement approprié pour le lavaux.
+				   In vinos veritas ... Ouverture début 2017</p>
+				   <button type="button" href="#" class="btn btn-danger bottom">view</button>
+				
+			</div>
+			<div class="col-sm-4">
+                <img class="img-thumbnail" src="img/arbre.jpg" alt="espace aire de fête" width="100%"/>
+<!--				<a href="#" class="thumbnail">
+					<img class="img-responsive" src="img/arbre.jpg" alt="espace aire de fête">
+</a>-->
+				<h3>espace de fête "R"</h3>
+					<p>Nous vous accueillons dans un espace insolite où le contexte du jeu vous
+					   sera expliqué par le maitre du jeu. A la fin du jeu, partager votre expérience en buvant un verre dans l'ambiance magique de notre espace "R".</p>
+					<button type="button" href="#" class="btn btn-danger bottom">plus d'info</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Section bon cadeau -->
+<div id="gcard">
+  <div class="container">
+    <div class="section-title text-center center">
+      <h2>Bon cadeau</h2>
+    </div>
+    <div id="row">
+		<div class="col-sm-6 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-1 sub-section">
+			<i class="fa fa-gift"></i>
+			<h4>Bon cadeau pour un jeu d’évasion à Roseville Escape de 2 à 5 personnes d’une valeur de CHF 140.- </h4>
+			<p>Pour commander un bon cadeau veuillez nous contacter via le <a class="page-scroll" href="#contact">formulaire</a></p>
+			<p>Nous vous enverrons un message avec les informations pour le payement puis, dans un deuxième temps, le bon cadeau vous 
+			   sera envoyé par la poste après confirmation du paiement.</p>
+			<p>Pour utiliser le bon, veuillez nous <a class="page-scroll" href="#contact">contacter</a> pour nous communiquer votre choix de date et heure.</p>
+			<p>Le bon cadeau est valable 1 an à compter de la date d'achat. </p>
+		</div>
+		
+		<div class="col-sm-6 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2 carton">
+			<img src="img/bon_cadeau.jpg" alt="bon cadeau" class="img-responsive" height="450px" width="300px">
+		</div>
+			
+	
+	</div>
+    </div>
+  </div>
+</div>
+<!-- Section 5 -->
+<div id="section5">
+	<div class="container">
+		<div class="section-title text-center center">
+			<h2>Questions</h2>
+			<h5>La foire aux questions. N'hésitez pas à nous <a class="page-scroll" href="#contact">contacter</a> si vous ne trouvez pas de réponse à vos questions</h5>
+		</div>
+		<div id="section-question" class="text-left">
+			<div class="panel-group" id="accordion">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+						  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1">Quel est le niveau de difficulté du jeu ?</a>
+						</h4>
+					</div>
+					<div id="collapse1" class="panel-collapse collapse">
+						<div class="panel-body">Notre salle comporte un niveau de difficulté considéré de moyen à dur, avec un taux de réusssite situé autour de 40%.
+							 Afin de maintenir un intérêt optimal tout au long du jeu, notre maître de jeu peut envoyer des indices sur un écran de contrôle
+							 lorsque vous bloquez trop longtemps sur une énigme. Pour les équipes expérimentées et compétitives cette option peut être supprimée.
+							 Nous nous adaptons à tous les niveaux pour que chacun s'amuse
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+						  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2">Type de paiement</a>
+						</h4>
+					</div>
+					<div id="collapse2" class="panel-collapse collapse">
+						<div class="panel-body">Le paiement se fait au moment de la réservation sur internet, par carte bancaire: Visa, Mastercard et American Express. 
+												Vous pouvez aussi passer nous voir à Roseville pour une réservation en personne et un paiement en espèce. Prière de nous
+												contacter pour s'assurer de notre présence sur place
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+						  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3">Où nous trouver ?</a>
+						</h4>
+					</div>
+					<div id="collapse3" class="panel-collapse collapse">
+						<div class="panel-body">Nous sommes situés à la route du Lavaux 44, 1802 Corseaux
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+						  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4">Ca coûte combien ?</a>
+						</h4>
+					</div>
+					<div id="collapse4" class="panel-collapse collapse">
+						<div class="panel-body">Vous pouvez vous renseigner sur les tarifs en consultant notre page de réservation
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+						  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse5">Nous avons réservé et payé pour X personnes mais un nombre différent de personnes se présente, que ce passe-t-il ?</a>
+						</h4>
+					</div>
+					<div id="collapse5" class="panel-collapse collapse">
+						<div class="panel-body">Pour une expérience optimale nous limitons le nombre de personnes à 5 participants par groupe
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+						  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse6">Compétences et connaissances nécessaires ?</a>
+						</h4>
+					</div>
+					<div id="collapse6" class="panel-collapse collapse">
+						<div class="panel-body">A part une envie de passer un bon moment, aucune compétence particulière n'est nécessaire. 
+						                        Toutes les informations dont vous aurez besoin seront fournies ... ou cachées ... à vous de les découvrir
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+						  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse7">Est-ce que je peux annuler une réservation ?</a>
+						</h4>
+					</div>
+					<div id="collapse7" class="panel-collapse collapse">
+						<div class="panel-body">Non
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+						  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse8">Combien de temps est-ce que ça dure ?</a>
+						</h4>
+					</div>
+					<div id="collapse8" class="panel-collapse collapse">
+						<div class="panel-body">Le jeu dure un maximum de 60 minutes. Il vous faudra prévoir de venir un dizaine de minutes en avance
+                        						pour vous mettre à l'aise et recevoir les consignes du jeu. Vous pourrez également vous relaxer et vous désalter
+												avant ou après le jeu dans notre salle d'accueil au décor insolite
+						</div>
+					</div>
+				</div>	
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+						  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse9">Age minimum</a>
+						</h4>
+					</div>
+					<div id="collapse9" class="panel-collapse collapse">
+						<div class="panel-body">L'âge minimum pour participer à notre jeu est de 14 ans. Nous acceptons cependant les enfants plus jeunes
+						                        si ils sont accompagnés par deux adultes. Toutefois, nous déconseillons le jeu avec des jeunes en dessous de 9 ans.
+												Les enfants ne s’amuseraient pas, et les parents non plus ... 
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+						  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse10">Accessibilité</a>
+						</h4>
+					</div>
+					<div id="collapse10" class="panel-collapse collapse">
+						<div class="panel-body">Malheureusement, pour l'instant nous ne pouvons pas assurer l'accès aux personnes en fauteuil roulant.
+						                        Nous cherchons une solution 
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+						  <a class="collapsed"data-toggle="collapse" data-parent="#accordion" href="#collapse11">Sécurité et santé</a>
+						</h4>
+					</div>
+					<div id="collapse11" class="panel-collapse collapse">
+						<div class="panel-body">Un système de vidéo surveillance nous permet de veiller à votre sécurité pendant toute la durée du jeu. Vous pouvez 
+						                        sortir du jeu à tout moment en quelques secondes. Les personnes claustrophobes n'ont jamais eu aucun problème dans nos salles, les salles sont assez grandes pour ne pas se sentir mal, vous pouvez donc venir jouer. 
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>    
+	</div>
+</div>
+<!-- où nous trouver -->
+<div id="where">
+	<div class="container">
+		<div class="jumbotron">
+			<h2>où nous trouver</h2>
+		</div>	
+		<div class="row">
+			<div class="col-md-6">
+				<div id="map" style="width:100%;height:500px"></div>
+			</div>
+		</div>		
+	</div>
+</div>
+	
+
+</div>
+<!-- Contact Section -->
+<div id="contact" class="text-center">
+  <div class="container">
+    <div class="section-title center">
+      <h2>Contact us</h2>
+      <hr>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diamcommodo nibh ante facilisis.</p>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-4">
+        <div class="contact-item"> <i class="fa fa-map-marker fa-2x"></i>
+            <!-- OpenStreetmap 
+            <div id="map"></div>
+          <p>Ici,<br>
+            29500 THUWAL</p> -->
+			
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="contact-item"> <i class="fa fa-envelope-o fa-2x"></i>
+          <p>contact@roseville.com</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="contact-item"> <i class="fa fa-phone fa-2x"></i>
+          <p> +123 456 789<br>
+            +12 34 56 789</p>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+      <h3>Leave us a message</h3>
+      <form name="sentMessage" id="contactForm" novalidate>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" id="name" class="form-control" placeholder="Name" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="email" id="email" class="form-control" placeholder="Email" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea name="message" id="message" class="form-control" rows="4" placeholder="Message" required></textarea>
+          <p class="help-block text-danger"></p>
+        </div>
+        <div id="success"></div>
+        <button type="submit" class="btn btn-default">Send Message</button>
+      </form>
+      <div class="social">
+        <h3>Follow us</h3>
+        <ul>
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+          <li><a href="#"><i class="fa fa-github"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container">
+    <p>Copyright &copy; Roseville.</p>
+  </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script type="text/javascript" src="js/jquery.1.11.1.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script type="text/javascript" src="js/bootstrap.js"></script> 
+<script type="text/javascript" src="js/SmoothScroll.js"></script> 
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script> 
+<script type="text/javascript" src="js/jquery.isotope.js"></script> 
+<script type="text/javascript" src="js/jquery.parallax.js"></script> 
+<script type="text/javascript" src="js/jqBootstrapValidation.js"></script> 
+<script type="text/javascript" src="js/contact_me.js"></script> 
+<!-- OpenStreetMap 
+<script type="text/javascript" src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+<script type="text/javascript" src="js/openstreetmap.js"></script> -->
+<!-- Javascripts -->
+    ==================================================  
+<script type="text/javascript" src="js/main.js"></script> 
+<!-- Accodion  -->
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+  }
+}
+</script>
+
+
+<script>
+function myMap() {
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {
+    center: new google.maps.LatLng(51.508742,-0.120850),
+    zoom: 5
+  };
+var map = new google.maps.Map(mapCanvas, mapOptions);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+
+</body>
+</html>

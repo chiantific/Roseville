@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Bootstrap Example</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
+		<script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+		#simple_toggle, #switch_toggle, #combinaison {
+			margin-top: 100px;
+		}
+		</style>
+  
+  
+</head>
+<body>
+
+<div class="container">
+	<div id="pp">
+		<h1>Test pour Prettyphoto</h1>
+		<p>photos</p>
+		<a href="#" class="btn btn-danger">plus d'info</a>
+		<a href="https://www.youtube.com/watch?v=GyssJMtZRaM&feature=youtu.be" rel="prettyPhoto"> <button type="button" class="btn btn-danger">teaser</button></a>
+	</div>
+	<div id="simple_toggle">
+		<a href="#" id="toggle1">Simple Div Toggle</a><br /><br />
+		<div class="toggle1" style="display:none; background-color:#4CF;width:100px;height:100px;"></div>
+	</div>
+	<div id="switch_toggle">
+		<a href="#" id="toggle2">Switch Text Toggle</a><br />
+		<p class="toggle2">I'm visible on load!</p>
+		<p class="toggle2" style="display:none;">I'm hidden on load!</p>
+	</div>
+	<div id="switch_toggle">
+	
+	
+	
+	</div>
+	<div id="switch_toggle">
+
+	
+	
+	</div>
+	
+	
+	
+	
+	
+	<div id="combinaison">
+	<a href="#" id="toggle1 toggle2"><p><span class="toogle2">+</span><span class="toogle2" style="display:none;">-</span> Comment annuler une réservation</p></a>
+	</div>
+	
+  
+  
+  
+  
+  
+</div>
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+$("a[rel^='prettyPhoto']").prettyPhoto();
+  });
+</script>
+<!-- div simple_toogle -->
+<script type="text/javascript" charset="utf-8">
+	$('#toggle1').click(function() {
+		$('.toggle1').toggle();
+		return false;
+});
+</script>
+<!-- toogle switch -->
+<script type="text/javascript" charset="utf-8">
+	$('#toggle2').click(function() {
+		$('.toggle2').toggle();
+		return false;
+});
+</script>
+
+
+
+
+</body>
+</html>
