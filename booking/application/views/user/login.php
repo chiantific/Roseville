@@ -31,7 +31,7 @@
 	<link
         rel="stylesheet"
         type="text/css"
-        href="<?php echo $this->config->item('base_url'); ?>/../css/style.css">
+        href="/css/style.css">
 
     <?php // SET FAVICON FOR PAGE ?>
     <link

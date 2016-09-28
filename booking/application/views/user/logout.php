@@ -20,7 +20,7 @@
 	<link
         rel="stylesheet"
         type="text/css"
-        href="<?php echo $this->config->item('base_url'); ?>/../css/style.css">
+        href="/css/style.css">
 
     <script type="text/javascript">
         var EALang = <?php echo json_encode($this->lang->language); ?>;
