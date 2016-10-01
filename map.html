@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map in Roseville</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css"  href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/map-icons.min.css">
+	<script type="text/javascript" src="js/map-icons.min.js"></script>
+
+  
+  </head>
+  <body>
+	  <div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div id="map" style="width:100%;height:500px"></div>
+				</div>
+				<div class="col-md-6">
+					<h4>Adresse</h4>
+					<p>Roseville Escape est situé au 44 route du lavaux à Corseaux, à deux pas de Vevey. Le batiment se trouve proche 
+					   du bord du lac et à l'orée des vignes dans le paysage du Lavaux, patrimoine mondial du l'UNESCO.</p>
+					<div class="atelier_view">
+						<img src="img/atelier.jpg" class="img-thumbnail " style="width:70%"/>
+					</div>
+					<h4>Transport public</h4>
+					<p>Roseville Escape est desservi par les bus VMCV de la ligne 211 à partir de la gare de Vevey. L'arrêt le plus proche
+					   "Gonelles" est situé à environ 100 m. Vous pouvez consulter les horaires <a class="page-scroll"  href="http://www.vmcv.ch/ligne211?d=A&a=COXGONEA"
+						target="_blank">ici</a>.
+					</p>
+					<h4>Parking</h4>
+					<p>Il y a quelques places devant la porte d'entrée. Sinon, si vous arrivez de Vevey, merci de vous garer sur l'herbe
+					   le long du trottoir en arrivant au n°44. En provenance de Lausanne, le plus simple est de vous garer
+					   aux abords du camping de la Pichette.
+					</p>   
+				</div>
+			</div>		
+		</div>
+    <script>
+      function initMap() {
+		var myLatLng = {lat: 46.470892, lng: 6.813895};
+		var map = new google.maps.Map(document.getElementById('map'), {
+			center: myLatLng,
+			zoom: 16,
+			mapTypeId: google.maps.MapTypeId.HYBRID
+        });
+		var contentString = '<div id="content">'+
+				'<h4 id="firstHeading" class="firstHeading">Roseville Escape</h4>'+
+				'<div id="bodyContent">'+
+					'<p>Route du Lavaux 44'+'<br />'+
+					   'CH-1802 Corseaux</p>'+
+				'</div>'+
+			'</div>';
+		var infowindow = new google.maps.InfoWindow({
+			content: contentString
+		});
+		
+		var iconMarker = new google.maps.Marker({
+			position: {lat: 46.470733, lng: 6.814474},
+			map: map,
+			icon: {
+				path: SQUARE_PIN,
+				fillColor: 'blue',
+				fillOpacity: 1,
+				strokeColor: '',
+				strokeWeight: 0
+			},
+			map_icon_label: '<span class="map-icon map-icon-parking"></span>'
+		});
+		
+		var marker = new google.maps.Marker({
+			position: myLatLng,
+			map: map,
+			title: 'Roseville Escape'
+		});
+		marker.addListener('click', function() {
+			infowindow.open(map, marker);
+		});	
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOgXOBkD944XhomrMeeNRhD8pBbxroVeM&callback=initMap"
+    async defer></script>
+	
+	
+	
+  </body>
+</html>

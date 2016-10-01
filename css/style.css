@@ -90,6 +90,9 @@ hr {
 	margin-bottom: 30px;
 	border: 0;
 }
+.jumbotron{
+	text-align: center;
+}
 /* Navigation */
 .navbar-inverse {
 	text-transform: uppercase;
@@ -127,6 +130,9 @@ hr {
   border: none;
   box-shadow: none;
   background-color: #363636;
+}
+.navbar-brand {
+	padding-left: 0;
 }
 }
 .navbar-inverse .nav li a:hover, .navbar-inverse .nav li a:focus {
@@ -202,7 +208,7 @@ hr {
 
 .btn-default {
 	color: #f6f6f6;
-	background: #cf5022;
+	background: #C74D00;
 	border: 0;
 	padding: 12px 24px;
 	margin: 0 1.5em;
@@ -316,9 +322,11 @@ hr {
 #section2 .jumbotron p {
     margin-top: 30px;
 }
+
 /* Section 3 */
 #section3 {
     min-height: 100%;
+	background-color: #78C9BC;
 }
 
 #section3 h2 {
@@ -354,6 +362,13 @@ hr {
         bottom: 0;
     }
 }
+#section3 .btn-default {
+	padding: 6px 12px;
+	font-size: 14px;
+	margin-left: 0;
+	margin-right: 15px;
+}
+
 /* Section gcard */
 #gcard {
 	background: #;
@@ -363,7 +378,7 @@ hr {
     min-height: 100%;
 }
 #gcard i.fa {
-	font-size: 5em;
+	font-size: 80px;
 	color: #5d2a65;
 }
 #gcard .sub-section {
@@ -380,6 +395,7 @@ hr {
 	color: #4e4e4e;
 	font-size: 1.2em;
 	margin-bottom: 20px;
+	margin-top: 20px;
 }
 #gcard .sub-section p {
 	color:;
@@ -468,6 +484,12 @@ hr {
 }
 #section5 .panel-default>.panel-heading+.panel-collapse>.panel-body  {
 	border-top-color: #62a398;
+}
+#section5 .panel-collapse a {
+	color: #d3d3d3;
+}
+#section5 .panel-collapse a:hover, #section5 .panel-collapse a:focus  {
+	color: #5C998F;
 }
 
 
@@ -799,6 +821,20 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 #section5 .clearfix {
 	overflow:	auto;
 } */
+
+/* directions */
+.markerWindow h4 {
+	color: #a6a6a6;
+}
+.atelier_view {
+	text-align:center;
+}
+#where  p a {
+	color: #C8C8C8;
+}
+#where  p a:hover, #where  p a:focus {
+	color: #15595F;
+}
 
 /* Reservation */
 #sectionR {
