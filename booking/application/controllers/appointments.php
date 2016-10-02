@@ -730,6 +730,7 @@ class Appointments extends CI_Controller {
 			$start_hour = new DateTime($selected_date . ' ' . $period['start']);
 			$end_hour = new DateTime($selected_date . ' ' . $period['end']);
 
+            /*
 			$minutes = $start_hour->format('i');
 
 			if ($minutes % 15 != 0) {
@@ -745,13 +746,15 @@ class Appointments extends CI_Controller {
 					$start_hour->setTime($start_hour->format('H') + 1, 00);
 				}
 			}
+             */
 
 			$current_hour = $start_hour;
 			$diff = $current_hour->diff($end_hour);
 
 			while (($diff->h * 60 + $diff->i) >= intval($service_duration)) {
 				$available_hours[] = $current_hour->format('H:i');
-				$current_hour->add(new DateInterval("PT15M"));
+                $service_duration_str = "PT" . strval($service_duration) . "M";
+				$current_hour->add(new DateInterval($service_duration_str));
 				$diff = $current_hour->diff($end_hour);
 			}
 		}

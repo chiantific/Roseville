@@ -128,7 +128,7 @@ if (isset($exceptions)) {
 
 <?php
 // ------------------------------------------------------
-// SELECT SERVICE AND PROVIDER
+// SELECT ROOM AND DATE
 // ------------------------------------------------------ ?>
 
                 <div id="wizard-frame-1" class="wizard-frame">
