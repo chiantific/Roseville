@@ -384,6 +384,13 @@ hr {
 	margin-left: 0;
 	margin-right: 15px;
 }
+#section3 .popover {
+	background-color: #5B998F;
+}
+#section3 .popover .arrow:after {
+	border-right-color: #5B998F;
+}
+
 
 /* Section gcard */
 #gcard {
