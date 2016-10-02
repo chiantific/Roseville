@@ -45,10 +45,10 @@
         src="/js/jquery.min.js"></script>
     <script
         type="text/javascript"
-        src="<?php echo $base_url; ?>/jquery-ui/jquery-ui.min.js"></script>
+        src="/jquery-ui/jquery-ui.min.js"></script>
     <script
         type="text/javascript"
-        src="<?php echo $base_url; ?>/jquery-qtip/jquery.qtip.min.js"></script>
+        src="/jquery-qtip/jquery.qtip.min.js"></script>
     <script
         type="text/javascript"
         src="/js/bootstrap.min.js"></script>
