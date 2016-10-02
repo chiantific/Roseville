@@ -341,6 +341,13 @@ hr {
 #section3 .sub-section {
 	color: #f6f6f6;
 }
+#section3 .modal-content {
+	background-color: #6ab0a4;
+}
+#section3 .modal-title {
+	color: #f6f6f6;
+}
+
 #section3 .jumbotron p {
         text-align: center;
 		margin-bottom: 30px;
