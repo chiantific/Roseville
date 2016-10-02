@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
     <link rel="icon" type="image/x-icon"
-          href="<?php echo $base_url; ?>/img/favicon.ico">
+          href="/img/favicon.ico">
 
     <?php
         // ------------------------------------------------------------
@@ -14,15 +14,15 @@
     <link
         rel="stylesheet"
         type="text/css"
-        href="<?php echo $base_url; ?>/css/bootstrap.min.css">
+        href="/css/bootstrap.min.css">
     <link
         rel="stylesheet"
         type="text/css"
-        href="<?php echo $base_url; ?>/jquery-ui/jquery-ui.min.css">
+        href="/jquery-ui/jquery-ui.min.css">
     <link
         rel="stylesheet"
         type="text/css"
-        href="<?php echo $base_url; ?>/jquery-qtip/jquery.qtip.min.css">
+        href="/jquery-qtip/jquery.qtip.min.css">
     <link
         rel="stylesheet"
         type="text/css"
@@ -42,7 +42,7 @@
         // ------------------------------------------------------------ ?>
     <script
         type="text/javascript"
-        src="<?php echo $base_url; ?>/js/jquery.min.js"></script>
+        src="/js/jquery.min.js"></script>
     <script
         type="text/javascript"
         src="<?php echo $base_url; ?>/jquery-ui/jquery-ui.min.js"></script>
@@ -51,7 +51,7 @@
         src="<?php echo $base_url; ?>/jquery-qtip/jquery.qtip.min.js"></script>
     <script
         type="text/javascript"
-        src="<?php echo $base_url; ?>/js/bootstrap.min.js"></script>
+        src="/js/bootstrap.min.js"></script>
     <script
         type="text/javascript"
         src="<?php echo $base_url; ?>/assets/ext/datejs/date.js"></script>
@@ -72,7 +72,7 @@
 <body>
 <div id="header">
     <div id="header-logo">
-        <img src="<?php echo $base_url; ?>/assets/img/logo.png">
+        <img src="/img/logo_R.png">
         <span><?php echo $company_name; ?></span>
     </div>
 
