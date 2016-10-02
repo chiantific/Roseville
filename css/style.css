@@ -693,6 +693,13 @@ img.img-thumbnail.section4-img {
 #contact .atelier_view p {	
 	font-size: 1.2em;
 }
+#contact .atelier_view .fa {
+    display: block;
+}
+#contact .schedule {
+    text-align: left;
+    display: inline-block;
+}
 #contact h3 {
 	margin-top: 40px;
 	color: #f6f6f6;
@@ -712,13 +719,6 @@ img.img-thumbnail.section4-img {
 	background: #a13e1a;
 }	
 
-	
-	
-	
-	
-	
-	
-
 #contact .contact-item {
 	padding: 10px;
 	margin: 10px;
@@ -731,7 +731,6 @@ img.img-thumbnail.section4-img {
 	padding: 30px 0;
 }
 
-}
 #contact .text-danger {
 	color: #ff3333;
 	text-align: left;
