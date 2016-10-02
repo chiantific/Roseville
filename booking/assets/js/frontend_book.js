@@ -165,7 +165,7 @@ var FrontendBook = {
 
             // If we are on the 2nd tab then the user should have an appointment hour
             // selected.
-            if ($(this).attr('data-step_index') === '2') {
+            if ($(this).attr('data-step_index') === '1') {
                 if ($('.selected-hour').length == 0) {
                     if ($('#select-hour-prompt').length == 0) {
                         $('#available-hours').append('<br><br>'
@@ -177,9 +177,9 @@ var FrontendBook = {
                 }
             }
 
-            // If we are on the 3rd tab then we will need to validate the user's
+            // If we are on the 2nd tab then we will need to validate the user's
             // input before proceeding to the next step.
-            if ($(this).attr('data-step_index') === '3') {
+            if ($(this).attr('data-step_index') === '2') {
                 if (!FrontendBook.validateCustomerForm()) {
                     return; // Validation failed, do not continue.
                 } else {
