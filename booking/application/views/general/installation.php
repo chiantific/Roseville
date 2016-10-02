@@ -5,13 +5,13 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
     <link rel="stylesheet" type="text/css"
-        href="<?php echo $base_url; ?>/assets/ext/bootstrap/css/bootstrap.min.css">
+        href="/css/bootstrap.min.css">
 
     <link rel="icon" type="image/x-icon"
-        href="<?php echo $base_url; ?>/assets/img/favicon.ico">
+        href="/img/favicon.ico">
 
     <link rel="stylesheet" type="text/css"
-        href="<?php echo $this->config->item('base_url'); ?>/assets/ext/jquery-ui/jquery-ui.min.css">
+        href="/jquery-ui/jquery-ui.min.css">
 
     <link rel="stylesheet" type="text/css"
         href="<?php echo $base_url; ?>/assets/css/general.css">
