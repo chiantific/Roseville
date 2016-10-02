@@ -12,7 +12,7 @@
         src="<?php echo $base_url; ?>/assets/js/working_plan.js"></script>
 
 <script type="text/javascript"
-        src="<?php echo $base_url; ?>/assets/ext/jquery-ui/jquery-ui-timepicker-addon.js"></script>
+        src="<?php echo $base_url; ?>/jquery-ui/jquery-ui-timepicker-addon.js"></script>
 <script type="text/javascript"
         src="<?php echo $base_url; ?>/assets/ext/jquery-jeditable/jquery.jeditable.min.js"></script>
 
