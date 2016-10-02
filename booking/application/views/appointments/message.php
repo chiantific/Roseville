@@ -27,10 +27,10 @@
         // ------------------------------------------------------------ ?>
 
     <link rel="icon" type="image/x-icon"
-        href="<?php echo $this->config->item('base_url'); ?>/assets/img/favicon.ico">
+        href="/img/favicon.ico">
 
     <link rel="icon" sizes="192x192"
-        href="<?php echo $this->config->item('base_url'); ?>/assets/img/logo.png">
+        href="/img/logo_R.png">
 
     <?php
         // ------------------------------------------------------------
@@ -48,10 +48,10 @@
 
     <script
         type="text/javascript"
-        src="<?php echo $this->config->item('base_url'); ?>/assets/ext/jquery/jquery.min.js"></script>
+        src="/js/jquery.min.js"></script>
     <script
         type="text/javascript"
-        src="<?php echo $this->config->item('base_url'); ?>/assets/ext/bootstrap/js/bootstrap.min.js"></script>
+        src="/js/bootstrap.min.js"></script>
     <script
         type="text/javascript"
         src="<?php echo $this->config->item('base_url'); ?>/assets/ext/datejs/date.js"></script>
