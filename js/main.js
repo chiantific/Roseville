@@ -122,6 +122,14 @@ function main() {
           $(".navbar-collapse.in").collapse('hide');
     });
 
+    // Popover
+    $('[data-toggle="popover"]').popover({
+        placement: 'right'
+    });
+    $('[data-toggle="popover"]').click(function(e){
+        e.preventDefault();
+    })
+
 }());
 
 
