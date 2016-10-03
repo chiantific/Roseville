@@ -404,14 +404,19 @@ var FrontendBook = {
         // Appointment Details
         var selectedDate = $('#select-date').datepicker('getDate');
         if (selectedDate !== null) {
+            var selectedDate_js = new Date(selectedDate);
             selectedDate = GeneralFunctions.formatDate(selectedDate, GlobalVariables.dateFormat);
         }
 
         var selServiceId = $('#select-service').val();
-        var servicePriceWeek, servicePriceWeekEnd, serviceCurrency;
+        var servicePrice, serviceCurrency;
         $.each(GlobalVariables.availableServices, function(index, service) {
             if (service.id == selServiceId) {
-                servicePrice = '<br>' + service.price_week;
+                if (selectedDate_js.getDay() == 6 || selectedDate_js.getDay() == 0) {
+                    servicePrice = '<br>' + service.price_week_end;
+                } else {
+                    servicePrice = '<br>' + service.price_week;
+                }
                 serviceCurrency = service.currency;
                 return false; // break loop
             }
