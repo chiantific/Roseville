@@ -408,10 +408,10 @@ var FrontendBook = {
         }
 
         var selServiceId = $('#select-service').val();
-        var servicePrice, serviceCurrency;
+        var servicePriceWeek, servicePriceWeekEnd, serviceCurrency;
         $.each(GlobalVariables.availableServices, function(index, service) {
             if (service.id == selServiceId) {
-                servicePrice = '<br>' + service.price;
+                servicePrice = '<br>' + service.price_week;
                 serviceCurrency = service.currency;
                 return false; // break loop
             }
@@ -588,8 +588,12 @@ var FrontendBook = {
                             + ' ' + EALang['minutes'] + '] ';
                 }
 
-                if (service.price != '' && service.price != null) {
-                    html += '[' + EALang['price'] + ' ' + service.price + ' ' + service.currency  + ']';
+                if (service.price_week != '' && service.price_week != null) {
+                    html += '[' + EALang['price_week'] + ' ' + service.price_week + ' ' + service.currency  + ']';
+                }
+
+                if (service.price_weeki_end != '' && service.price_week_end != null) {
+                    html += '[' + EALang['price_week_end'] + ' ' + service.price_week_end + ' ' + service.currency  + ']';
                 }
 
                 html += '<br>';

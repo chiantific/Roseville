@@ -676,8 +676,9 @@ class Backend_api extends CI_Controller {
             $key = $this->db->escape_str($_POST['key']);
             $where =
                     '(name LIKE "%' . $key . '%" OR duration LIKE "%' . $key . '%" OR ' .
-                    'price LIKE "%' . $key . '%" OR currency LIKE "%' . $key . '%" OR ' .
-                    'description LIKE "%' . $key . '%")';
+                    'price_week LIKE "%' . $key . '%" OR price_week_end LIKE "%' . $key .
+                    '%" OR currency LIKE "%' . $key . '%" OR ' . 'description LIKE "%' .
+                    $key . '%")';
             $services = $this->services_model->get_batch($where);
             echo json_encode($services);
         } catch(Exception $exc) {

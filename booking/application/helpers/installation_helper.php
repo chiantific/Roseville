@@ -37,7 +37,8 @@ function get_sample_service() {
     return array(
         'name' => 'Test Service',
         'duration' => 30,
-        'price' => 50.0,
+        'price_week' => 50.0,
+        'price_week_end' => 150.0,
         'currency' => 'Euro',
         'description' => 'This is a test service automatically inserted by the installer.',
         'id_service_categories' => NULL
