@@ -208,7 +208,8 @@ ServicesHelper.prototype.bindEventHandlers = function() {
         var service = {
             'name': $('#service-name').val(),
             'duration': $('#service-duration').val(),
-            'price': $('#service-price').val(),
+            'price_week': $('#service-price-week').val(),
+            'price_week_end': $('#service-price-week-end').val(),
             'currency': $('#service-currency').val(),
             'description': $('#service-description').val()
         };
@@ -375,7 +376,8 @@ ServicesHelper.prototype.display = function(service) {
     $('#service-id').val(service.id);
     $('#service-name').val(service.name);
     $('#service-duration').val(service.duration);
-    $('#service-price').val(service.price);
+    $('#service-price-week').val(service.price_week);
+    $('#service-price-week-end').val(service.price_week_end);
     $('#service-currency').val(service.currency);
     $('#service-description').val(service.description);
 
@@ -439,7 +441,8 @@ ServicesHelper.prototype.getFilterHtml = function(service) {
             '<div class="service-row" data-id="' + service.id + '">' +
                 '<strong>' + service.name + '</strong><br>' +
                 service.duration + ' min - ' +
-                service.price + ' ' + service.currency + '<br>' +
+                service.price_week + ' ' + service.currency + '<br>' +
+                service.price_week_end + ' ' + service.currency + '<br>' +
             '</div><hr>';
 
     return html;

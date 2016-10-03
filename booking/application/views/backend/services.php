@@ -99,8 +99,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="service-price"><?php echo $this->lang->line('price'); ?> *</label>
-                    <input type="text" id="service-price" class="form-control required" />
+                    <label for="service-price-week"><?php echo $this->lang->line('price_week'); ?> *</label>
+                    <input type="text" id="service-price-week" class="form-control required" />
+                </div>
+
+                <div class="form-group">
+                    <label for="service-price-week-end"><?php echo $this->lang->line('price_week_end'); ?> *</label>
+                    <input type="text" id="service-price-week-end" class="form-control required" />
                 </div>
 
                 <div class="form-group">

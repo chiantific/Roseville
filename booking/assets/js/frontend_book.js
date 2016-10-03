@@ -404,6 +404,7 @@ var FrontendBook = {
         // Appointment Details
         var selectedDate = $('#select-date').datepicker('getDate');
         if (selectedDate !== null) {
+            var selectedDate_js = new Date(selectedDate);
             selectedDate = GeneralFunctions.formatDate(selectedDate, GlobalVariables.dateFormat);
         }
 
@@ -411,7 +412,11 @@ var FrontendBook = {
         var servicePrice, serviceCurrency;
         $.each(GlobalVariables.availableServices, function(index, service) {
             if (service.id == selServiceId) {
-                servicePrice = '<br>' + service.price;
+                if (selectedDate_js.getDay() == 6 || selectedDate_js.getDay() == 0) {
+                    servicePrice = '<br>' + service.price_week_end;
+                } else {
+                    servicePrice = '<br>' + service.price_week;
+                }
                 serviceCurrency = service.currency;
                 return false; // break loop
             }
@@ -588,8 +593,12 @@ var FrontendBook = {
                             + ' ' + EALang['minutes'] + '] ';
                 }
 
-                if (service.price != '' && service.price != null) {
-                    html += '[' + EALang['price'] + ' ' + service.price + ' ' + service.currency  + ']';
+                if (service.price_week != '' && service.price_week != null) {
+                    html += '[' + EALang['price_week'] + ' ' + service.price_week + ' ' + service.currency  + ']';
+                }
+
+                if (service.price_weeki_end != '' && service.price_week_end != null) {
+                    html += '[' + EALang['price_week_end'] + ' ' + service.price_week_end + ' ' + service.currency  + ']';
                 }
 
                 html += '<br>';

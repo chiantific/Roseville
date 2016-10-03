@@ -55,7 +55,8 @@ class Unit_tests_appointments_model extends CI_Driver {
         $service = array(
             'name' => 'Test Service',
             'duration' => 30,
-            'price' => '20.00',
+            'price_week' => '20.00',
+            'price_week_end' => '30.00',
             'currency' => 'Euro',
             'description' => 'Some description here ...',
             'id_service_categories' => NULL

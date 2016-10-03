@@ -53,7 +53,8 @@ class Unit_tests_services_model extends CI_Driver {
         $service = array(
             'name' => 'Test Service',
             'duration' => 30,
-            'price' => '20.00',
+            'price_week' => '20.00',
+            'price_week_end' => '30.00',
             'currency' => 'Euro',
             'description' => 'Some description here ...',
             'id_service_categories' => NULL
@@ -74,7 +75,8 @@ class Unit_tests_services_model extends CI_Driver {
         $service = array(
             'name' => 'Test Service',
             'duration' => 30,
-            'price' => '20.00',
+            'price_week' => '20.00',
+            'price_week_end' => '30.00',
             'currency' => 'Euro',
             'description' => 'Some description here ...',
             'id_service_categories' => NULL
@@ -86,7 +88,8 @@ class Unit_tests_services_model extends CI_Driver {
         // Update record data
         $service['name'] = 'Updated Name';
         $service['duration'] = 60;
-        $service['price'] = '60.45';
+        $service['price_week'] = '60.45';
+        $service['price_week_end'] = '80.45';
         $service['description'] = 'Updated description ...';
         
         $update_result = $this->ci->services_model->add($service);
@@ -104,7 +107,8 @@ class Unit_tests_services_model extends CI_Driver {
         $service = array(
             'name' => '', // invalid
             'duration' => 'invalid',
-            'price' => 'invalid',
+            'price_week' => 'invalid',
+            'price_week_end' => 'invalid',
             'currency' => 'Euro',
             'description' => 'Some description here ...',
             'id_service_categories' => NULL
@@ -127,7 +131,8 @@ class Unit_tests_services_model extends CI_Driver {
         $service = array(
             'name' => 'Test Service',
             'duration' => 30,
-            'price' => '20.00',
+            'price_week' => '20.00',
+            'price_week_end' => '30.00',
             'currency' => 'Euro',
             'description' => 'Some description here ...',
             'id_service_categories' => NULL
@@ -148,7 +153,8 @@ class Unit_tests_services_model extends CI_Driver {
         $service = array(
             'name' => 'Random Name',
             'duration' => 'Random Duration',
-            'price' => 'Random Price'
+            'price_week' => 'Random Price'
+            'price_week_end' => 'Random Price'
         );
         
         $exists = $this->ci->services_model->exists($service);
@@ -173,7 +179,8 @@ class Unit_tests_services_model extends CI_Driver {
         $service = array(
             'name' => 'Test Service',
             'duration' => 30,
-            'price' => '20.00',
+            'price_week' => '20.00',
+            'price_week_end' => '30.00',
             'currency' => 'Euro',
             'description' => 'Some description here ...',
             'id_service_categories' => NULL
@@ -188,7 +195,8 @@ class Unit_tests_services_model extends CI_Driver {
             'id' => 'THIS IS INVALID',
             'name' => 'Test Service',
             'duration' => 30,
-            'price' => '20.00',
+            'price_week' => '20.00',
+            'price_week_end' => '30.00',
             'currency' => 'Euro',
             'description' => 'Some description here ...',
             'id_service_categories' => NULL
@@ -208,7 +216,8 @@ class Unit_tests_services_model extends CI_Driver {
         $service = array(
             'name' => 'Test Service',
             'duration' => 30,
-            'price' => '20.00',
+            'price_week' => '20.00',
+            'price_week_end' => '30.00',
             'currency' => 'Euro',
             'description' => 'Some description here ...',
             'id_service_categories' => 'THIS IS INVALID'
@@ -228,7 +237,8 @@ class Unit_tests_services_model extends CI_Driver {
         $service = array(
             'name' => '', // invalid
             'duration' => 30,
-            'price' => '20.00',
+            'price_week' => '20.00',
+            'price_week_end' => '30.00',
             'currency' => 'Euro',
             'description' => 'Some description here ...',
             'id_service_categories' => 'THIS IS INVALID'
@@ -250,7 +260,8 @@ class Unit_tests_services_model extends CI_Driver {
         $service = array(
             'name' => 'Test Service',
             'duration' => 30,
-            'price' => '20.00',
+            'price_week' => '20.00',
+            'price_week_end' => '30.00',
             'currency' => 'Euro',
             'description' => 'Some description here ...',
             'id_service_categories' => NULL
@@ -270,7 +281,7 @@ class Unit_tests_services_model extends CI_Driver {
     
     private function test_find_record_id_invalid_service_data() {
         $service = array(
-            // name, duration and price are not provided
+            // name, duration, price_week and price_week_end are not provided
             'currency' => 'Euro',
             'description' => 'Some description here ...',
             'id_service_categories' => NULL
@@ -289,7 +300,8 @@ class Unit_tests_services_model extends CI_Driver {
         $service = array(
             'name' => 'Does not exist',
             'duration' => 'Does not exist',
-            'price' => 'Does not exist'
+            'price_week' => 'Does not exist'
+            'price_week_end' => 'Does not exist'
         );
         
         $has_thrown_exc = FALSE;
@@ -308,7 +320,8 @@ class Unit_tests_services_model extends CI_Driver {
         $service = array(
             'name' => 'Test Service',
             'duration' => 30,
-            'price' => '20.00',
+            'price_week' => '20.00',
+            'price_week_end' => '30.00',
             'currency' => 'Euro',
             'description' => 'Some description here ...',
             'id_service_categories' => NULL
@@ -363,7 +376,8 @@ class Unit_tests_services_model extends CI_Driver {
         $service = array(
             'name' => 'General Examination',
             'duration' => 30,
-            'price' => 50.00,
+            'price_week' => 50.00,
+            'price_week_end' => 60.00,
             'currency' => 'euro',
             'description' => 'This is some service description.'
         );
@@ -395,7 +409,8 @@ class Unit_tests_services_model extends CI_Driver {
         $service = array(
             'name' => 'General Examination',
             'duration' => 30,
-            'price' => 50.00,
+            'price_week' => 50.00,
+            'price_week_end' => 60.00,
             'currency' => 'euro',
             'description' => 'This is some service description.'
         );
@@ -441,7 +456,8 @@ class Unit_tests_services_model extends CI_Driver {
         $service = array(
             'name' => 'General Examination',
             'duration' => 30,
-            'price' => 50.00,
+            'price_week' => 50.00,
+            'price_week_end' => 60.00,
             'currency' => 'euro',
             'description' => 'This is some service description.'
         );
@@ -478,7 +494,8 @@ class Unit_tests_services_model extends CI_Driver {
         $service = array(
             'name' => 'General Examination',
             'duration' => 30,
-            'price' => 50.00,
+            'price_week' => 50.00,
+            'price_week_end' => 60.00,
             'currency' => 'euro',
             'description' => 'This is some service description.'
         );
