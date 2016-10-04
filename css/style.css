@@ -479,6 +479,11 @@ box-shadow: 6px 5px 10px -1px rgba(69,68,69,1);
 	margin-right: 20px;
 	background-color: #5D264F;
 }
+#price .btn-default:hover, #contact .btn-default:focus {
+	color: #CCCCCC;
+	background: #753064;
+}	
+
 #price p{
 	text-align: left;
 }#price ul{
