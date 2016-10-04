@@ -454,12 +454,7 @@ box-shadow: 6px 5px 10px -1px rgba(69,68,69,1);
 	background-color: rgba(178,209,203,0.5)
 	margin-bottom: 50px;
 }
-#price i.fa {
-	font-size: 6em;
-	color: #15595F;
-	margin: 20px 0;
-}
-#price i.fa {
+#price i.fa_big {
 	font-size: 6em;
 	color: #15595F;
 	margin: 20px 0;
@@ -468,6 +463,16 @@ box-shadow: 6px 5px 10px -1px rgba(69,68,69,1);
 	height: 6em;
 	margin: 20px 0;
 }
+#price img.ic {
+	height: 2em;
+	margin-right: 20px;
+}
+
+
+#price li {
+	display: inline-block;
+	text-align: left;
+}
 #price .btn-default {
 	display: inline-block;
 	margin: 30px 0;
@@ -475,6 +480,8 @@ box-shadow: 6px 5px 10px -1px rgba(69,68,69,1);
 	background-color: #5D264F;
 }
 #price p{
+	text-align: left;
+}#price ul{
 	text-align: left;
 }
 #price h3 {
