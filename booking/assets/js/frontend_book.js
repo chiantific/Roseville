@@ -69,6 +69,11 @@ var FrontendBook = {
             dateFormat: 'dd-mm-yy',
             firstDay: 1, // Monday
             minDate: 0,
+            onChangeMonthYear: FrontendBook.getAvailableDates,
+            beforeShowDay: function(date) {
+                return [(!(FrontendBook.freeDates.indexOf(date.getDate()) == -1))];
+            },
+
             defaultDate: Date.today(),
 
             dayNames: [EALang['sunday'], EALang['monday'], EALang['tuesday'], EALang['wednesday'], EALang['thursday'], EALang['friday'], EALang['saturday']],
