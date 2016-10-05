@@ -180,7 +180,7 @@ var FrontendBook = {
                 return;
             }
 
-            // If we are on the 2nd tab then the user should have an appointment hour
+            // If we are on the first tab then the user should have an appointment hour
             // selected.
             if ($(this).attr('data-step_index') === '1') {
                 if ($('.selected-hour').length == 0) {
@@ -192,6 +192,13 @@ var FrontendBook = {
                     }
                     return;
                 }
+            }
+
+            // If we are on the first tab then the user should have a number of participants
+            if ($(this).attr('data-step_index') === '1') {
+               if ($('#nb_persons').val() == null || $('#nb_persons').val() == "") {
+                return;
+               }
             }
 
             // If we are on the 2nd tab then we will need to validate the user's
