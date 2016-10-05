@@ -25,6 +25,13 @@ var FrontendBook = {
     manageMode: false,
 
     /**
+     * Contains the free dates of the displayed month
+     *
+     * @type {string[]}
+     */
+    freeDates: [],
+
+    /**
      * This method initializes the book appointment page.
      *
      * @param {bool} bindEventHandlers (OPTIONAL) Determines whether the default
@@ -275,6 +282,58 @@ var FrontendBook = {
         $('.captcha-title small').click(function(event) {
             $('.captcha-image').attr('src', GlobalVariables.baseUrl + '/index.php/captcha?' + Date.now());
         });
+    },
+
+    /**
+     * This function makes an ajax call and returns the available
+     * dates for the selected service, provider and month.
+     * The result is pushed in FrontendBook.freeDates
+     *
+     * @param {int} year
+     * @param {int} month
+     */
+    getAvailableDates: function(year, month) {
+        // Find the selected service duration (it is going to
+        // be send within the "postData" object).
+        var selServiceDuration = 15; // Default value of duration (in minutes).
+        $.each(GlobalVariables.availableServices, function(index, service) {
+            if (service['id'] == $('#select-service').val()) {
+                selServiceDuration = service['duration'];
+            }
+        });
+
+        // If the manage mode is true then the appointment's start
+        // date should return as available too.
+        var appointmentId = (FrontendBook.manageMode)
+                ? GlobalVariables.appointmentData['id'] : undefined;
+
+        // Make ajax post request and get the available hours.
+        var postUrl = GlobalVariables.baseUrl + '/index.php/appointments/ajax_get_available_dates';
+
+        var date="01-" + month + "-" + year;
+        var postData = {
+            'csrfToken': GlobalVariables.csrfToken,
+            'service_id': $('#select-service').val(),
+            'provider_id': $('#select-provider').val(),
+            'date': date,
+            'service_duration': selServiceDuration,
+            'manage_mode': FrontendBook.manageMode,
+            'appointment_id': 1
+        };
+
+        $.post(postUrl, postData, function(response) {
+            ///////////////////////////////////////////////////////////////
+            console.log('Get Available Dates JSON Response:', response);
+            ///////////////////////////////////////////////////////////////
+
+            if (!GeneralFunctions.handleAjaxExceptions(response)) return;
+
+            // The response contains the available dates for the selected provider and
+            // service.
+            FrontendBook.freeDates = response;
+            $("#select-date").datepicker("refresh");
+
+        }, 'json').fail(GeneralFunctions.ajaxFailureHandler);
     },
 
     /**
