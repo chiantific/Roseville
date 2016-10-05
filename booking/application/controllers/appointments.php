@@ -267,6 +267,38 @@ class Appointments extends CI_Controller {
     }
 
     /**
+     * [AJAX] Get the available dates for the given month.
+     *
+     * This method answers to an AJAX request. It calculates the available dates
+     * for thegiven service, provider and month.
+     *
+     * @param numeric $_POST['service_id'] The selected service's record id.
+     * @param numeric|string $_POST['provider_id'] The selected provider's record id, can also be 'any-provider'.
+     * @param string $_POST['date'] A date of the month of which the available dates we want to see.
+     * @param numeric $_POST['service_duration'] The selected service duration in minutes.
+     * @param string $_POST['manage_mode'] Contains either 'true' or 'false' and determines the if current user
+     * is managing an already booked appointment or not.
+     * @return Returns a json object with the available dates.
+     */
+    public function ajax_get_available_dates() {
+        $date = strtotime($_POST['date']);
+        $available_dates = [];
+
+        for($i = 1; $i <= date('t', $date); $i++)
+        {
+            $_POST['selected_date'] = date($i . '-' . date('m-Y', $date));
+            ob_start();
+            $this->ajax_get_available_hours();
+            $available_hours = ob_get_clean();
+            if (strlen($available_hours) >= 3)
+            {
+                $available_dates[] = $i;
+            }
+        }
+        echo (json_encode($available_dates));
+    }
+
+    /**
      * [AJAX] Get the available appointment hours for the given date.
      *
      * This method answers to an AJAX request. It calculates the available hours
