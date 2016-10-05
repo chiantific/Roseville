@@ -673,7 +673,7 @@ var FrontendBook = {
                     html += '[' + EALang['price_week'] + ' ' + service.price_week + ' ' + service.currency  + ']';
                 }
 
-                if (service.price_weeki_end != '' && service.price_week_end != null) {
+                if (service.price_week_end != '' && service.price_week_end != null) {
                     html += '[' + EALang['price_week_end'] + ' ' + service.price_week_end + ' ' + service.currency  + ']';
                 }
 
