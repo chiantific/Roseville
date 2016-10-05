@@ -210,7 +210,7 @@ foreach($available_services as $service) {
                                 </div>
                                 <div class="form-group">
                                     <label for="phone-number" class="control-label">Numéro de téléphone *</label>
-                                    <input type="text" id="phone-number" class="required form-control" maxlength="60" />
+                                    <input type="tel" id="phone-number" class="required form-control" maxlength="60" />
                                 </div>
                             </div>
 
