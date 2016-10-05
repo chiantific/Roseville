@@ -65,6 +65,11 @@ var FrontendBook = {
             }
         });
 
+        var today = new Date();
+        $('#select-provider').ready( function() {
+            FrontendBook.getAvailableDates(today.getFullYear(), today.getMonth()+1);
+        });
+
         $('#select-date').datepicker({
             dateFormat: 'dd-mm-yy',
             firstDay: 1, // Monday
