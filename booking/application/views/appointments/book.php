@@ -31,6 +31,10 @@
     <link
         rel="stylesheet"
         type="text/css"
+        href="/css/jquery.bootstrap-touchspin.css">
+    <link
+        rel="stylesheet"
+        type="text/css"
         href="/css/style.css">
 
 
@@ -52,6 +56,9 @@
     <script
         type="text/javascript"
         src="<?php echo $this->config->item('base_url'); ?>/assets/js/frontend_book.js"></script>
+    <script
+        type="text/javascript"
+        src="/js/jquery.bootstrap-touchspin.js"></script>
 
 
 <script type="text/javascript">
@@ -142,13 +149,18 @@ foreach($available_services as $service) {
 }
 ?>
                             </select>
-
                             <div class="form-group">
-                                <h3 class="frame-title">Choisissez une salle</h3>
-                                <select id="select-provider" class="col-md-4 form-control"></select>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h3 class="frame-title">Choisissez une salle</h3>
+                                        <select id="select-provider" class="form-control"></select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h3>Nombre de personnes</h3>
+                                        <input id="nb_persons" type="text" value="1"  name="nb_persons"/>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="frame-content">
                             <div class="form-group row">
                                 <h3 class="frame-title">Choissez la date & l'heure</h3>
                                 <div class="col-md-6">
@@ -194,7 +206,7 @@ foreach($available_services as $service) {
                                 </div>
                                 <div class="form-group">
                                     <label for="email" class="control-label">Email *</label>
-                                    <input type="text" id="email" class="required form-control" maxlength="250" />
+                                    <input type="email" id="email" class="required form-control" maxlength="250" />
                                 </div>
                                 <div class="form-group">
                                     <label for="phone-number" class="control-label">Numéro de téléphone *</label>
@@ -300,5 +312,11 @@ Confirmation
     <script
         type="text/javascript"
         src="<?php echo $this->config->item('base_url'); ?>/assets/js/general_functions.js"></script>
+    <script>
+        $("input[name='nb_persons']").TouchSpin({
+            min: 1,
+            max: 5,
+        });
+    </script>
 </body>
 </html>
