@@ -498,6 +498,12 @@ var FrontendBook = {
             }
         });
 
+        var nb_persons = $('#nb_persons').val();
+        var pluriel_indicative = '';
+        if (nb_persons > 1) {
+            pluriel_indicative = 's';
+        }
+
 
         var html =
             '<h4>' + $('#select-service option:selected').text() + '</h4>' +
@@ -505,7 +511,8 @@ var FrontendBook = {
                 + '<strong class="text-primary">'
                     + $('#select-provider option:selected').text() + '<br>'
                     + selectedDate + ' ' +  $('.selected-hour').text()
-                    + servicePrice + ' ' + serviceCurrency
+                    + servicePrice + ' ' + serviceCurrency + '<br>'
+                    + nb_persons + ' participant' + pluriel_indicative
                 + '</strong>' +
             '</p>';
 
