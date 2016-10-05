@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS `ea_appointments` (
   `book_datetime` datetime DEFAULT NULL,
   `start_datetime` datetime DEFAULT NULL,
   `end_datetime` datetime DEFAULT NULL,
+  `nb_persons` tinyint DEFAULT '0',
   `notes` text,
   `hash` text,
   `is_unavailable` tinyint(4) DEFAULT '0',
