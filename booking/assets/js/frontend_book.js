@@ -180,7 +180,7 @@ var FrontendBook = {
                 return;
             }
 
-            // If we are on the 2nd tab then the user should have an appointment hour
+            // If we are on the first tab then the user should have an appointment hour
             // selected.
             if ($(this).attr('data-step_index') === '1') {
                 if ($('.selected-hour').length == 0) {
@@ -192,6 +192,13 @@ var FrontendBook = {
                     }
                     return;
                 }
+            }
+
+            // If we are on the first tab then the user should have a number of participants
+            if ($(this).attr('data-step_index') === '1') {
+               if ($('#nb_persons').val() == null || $('#nb_persons').val() == "") {
+                return;
+               }
             }
 
             // If we are on the 2nd tab then we will need to validate the user's
@@ -491,6 +498,12 @@ var FrontendBook = {
             }
         });
 
+        var nb_persons = $('#nb_persons').val();
+        var pluriel_indicative = '';
+        if (nb_persons > 1) {
+            pluriel_indicative = 's';
+        }
+
 
         var html =
             '<h4>' + $('#select-service option:selected').text() + '</h4>' +
@@ -498,7 +511,8 @@ var FrontendBook = {
                 + '<strong class="text-primary">'
                     + $('#select-provider option:selected').text() + '<br>'
                     + selectedDate + ' ' +  $('.selected-hour').text()
-                    + servicePrice + ' ' + serviceCurrency
+                    + servicePrice + ' ' + serviceCurrency + '<br>'
+                    + nb_persons + ' participant' + pluriel_indicative
                 + '</strong>' +
             '</p>';
 
@@ -551,7 +565,8 @@ var FrontendBook = {
             'notes': $('#notes').val(),
             'is_unavailable': false,
             'id_users_provider': $('#select-provider').val(),
-            'id_services': $('#select-service').val()
+            'id_services': $('#select-service').val(),
+            'nb_persons': $('#nb_persons').val()
         };
 
         postData['manage_mode'] = FrontendBook.manageMode;
@@ -666,7 +681,7 @@ var FrontendBook = {
                     html += '[' + EALang['price_week'] + ' ' + service.price_week + ' ' + service.currency  + ']';
                 }
 
-                if (service.price_weeki_end != '' && service.price_week_end != null) {
+                if (service.price_week_end != '' && service.price_week_end != null) {
                     html += '[' + EALang['price_week_end'] + ' ' + service.price_week_end + ' ' + service.currency  + ']';
                 }
 
