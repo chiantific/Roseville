@@ -1540,6 +1540,7 @@ var BackendCalendar = {
      * a data preview popover is display above the calendar item.
      */
     calendarEventClick: function(event, jsEvent, view) {
+        console.log(event);
         $('.popover').remove(); // Close all open popovers.
 
         var html, displayEdit, displayDelete;
@@ -1607,6 +1608,9 @@ var BackendCalendar = {
                     '<strong>' + EALang['customer'] + '</strong> '
                         + event.data['customer']['first_name'] + ' '
                         + event.data['customer']['last_name']
+                        + '<br>' +
+                    '<strong>' + EALang['nb_participants'] + '</strong> '
+                        + event.data['nb_persons']
                         + '<hr>' +
                     '<center>' +
                         '<button class="edit-popover btn btn-primary ' + displayEdit + '">' + EALang['edit'] + '</button>' +
