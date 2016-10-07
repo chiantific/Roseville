@@ -201,6 +201,13 @@ var FrontendBook = {
                }
             }
 
+            // If we are on the first tab, then the user should have a selected difficulty
+            if ($(this).attr('data-step_index') === '1') {
+                if ($('#difficulty').val() == null || $('#difficulty').val() == "") {
+                    return;
+                }
+            }
+
             // If we are on the 2nd tab then we will need to validate the user's
             // input before proceeding to the next step.
             if ($(this).attr('data-step_index') === '2') {
