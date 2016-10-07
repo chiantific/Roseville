@@ -110,6 +110,7 @@ $lang['edit_unavailable_title'] = 'Editer période d\'indisponibilité';
 $lang['unavailable_saved'] = 'Période d\'indisponibilité sauvegardée avec succès !';
 $lang['start_date_before_end_error'] = 'La date de départ est ultérieure à la date de fin!';
 $lang['invalid_email'] = 'Adresse email invalide !';
+$lang['invalid_nb_persons'] = 'Nombre de participants invalide';
 $lang['customers'] = 'Clients';
 $lang['details'] = 'Détails';
 $lang['no_records_found'] = 'Pas d\'enregistrement trouvé...';

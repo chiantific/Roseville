@@ -199,6 +199,13 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="nb_persons" class="control-label col-sm-3" ><?php echo $this->lang->line('nb_persons'); ?> *</label>
+                                <div class="col-sm-7">
+                                    <input type="number" id="nb_persons" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <label for="appointment-notes" class="control-label col-sm-3" ><?php echo $this->lang->line('notes'); ?></label>
                                 <div class="col-sm-7">
                                     <textarea id="appointment-notes" class="form-control" rows="3"></textarea>

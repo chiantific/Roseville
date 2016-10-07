@@ -200,6 +200,7 @@ var BackendCalendar = {
             $dialog.find('#appointment-id').val(appointment['id']);
             $dialog.find('#select-service').val(appointment['id_services']).change();
             $dialog.find('#select-provider').val(appointment['id_users_provider']);
+            $dialog.find('#nb_persons').val(appointment['nb_persons']);
 
             // Set the start and end datetime of the appointment.
             var startDatetime = Date.parseExact(appointment['start_datetime'],
@@ -378,6 +379,7 @@ var BackendCalendar = {
                 $dialog.find('#appointment-id').val(appointment['id']);
                 $dialog.find('#select-service').val(appointment['id_services']).trigger('change');
                 $dialog.find('#select-provider').val(appointment['id_users_provider']);
+                $dialog.find('#nb_persons').val(appointment['nb_persons']);
 
                 // Set the start and end datetime of the appointment.
                 var startDatetime = Date.parseExact(appointment['start_datetime'],
@@ -547,6 +549,7 @@ var BackendCalendar = {
             var appointment = {
                 'id_services': $dialog.find('#select-service').val(),
                 'id_users_provider': $dialog.find('#select-provider').val(),
+                'nb_persons': $dialog.find('#nb_persons').val(),
                 'start_datetime': startDatetime,
                 'end_datetime': endDatetime,
                 'notes': $dialog.find('#appointment-notes').val(),
@@ -2013,6 +2016,13 @@ var BackendCalendar = {
             });
             if (missingRequiredField) {
                 throw EALang['fields_are_required'];
+            }
+
+            // :: CHECK NUMBER OF PARTICIPANTS
+            var nb_persons = $('#nb_persons').val();
+            if (nb_persons < 1 || nb_persons > 5) {
+                $dialog.find('#nb_persons').parents('.form-group').addClass('has-error');
+                throw EALang['invalid_nb_persons'];
             }
 
             // :: CHECK EMAIL ADDRESS
