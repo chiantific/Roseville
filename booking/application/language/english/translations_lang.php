@@ -43,6 +43,7 @@ $lang['service'] = 'Service';
 $lang['provider'] = 'Provider';
 $lang['customer'] = 'Customer';
 $lang['nb_persons'] = 'Participants';
+$lang['difficulty'] = 'Difficulty';
 $lang['start'] = 'Start';
 $lang['end'] = 'End';
 $lang['name'] = 'Name';

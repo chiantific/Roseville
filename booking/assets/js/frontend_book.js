@@ -201,6 +201,13 @@ var FrontendBook = {
                }
             }
 
+            // If we are on the first tab, then the user should have a selected difficulty
+            if ($(this).attr('data-step_index') === '1') {
+                if ($('#difficulty').val() == null || $('#difficulty').val() == "") {
+                    return;
+                }
+            }
+
             // If we are on the 2nd tab then we will need to validate the user's
             // input before proceeding to the next step.
             if ($(this).attr('data-step_index') === '2') {
@@ -504,6 +511,8 @@ var FrontendBook = {
             pluriel_indicative = 's';
         }
 
+        var difficulty = $('#difficulty').val();
+
 
         var html =
             '<h4>' + $('#select-service option:selected').text() + '</h4>' +
@@ -512,7 +521,8 @@ var FrontendBook = {
                     + $('#select-provider option:selected').text() + '<br>'
                     + selectedDate + ' ' +  $('.selected-hour').text()
                     + servicePrice + ' ' + serviceCurrency + '<br>'
-                    + nb_persons + ' participant' + pluriel_indicative
+                    + nb_persons + ' participant' + pluriel_indicative + '<br>'
+                    + 'Difficulté ' + difficulty
                 + '</strong>' +
             '</p>';
 
@@ -566,7 +576,8 @@ var FrontendBook = {
             'is_unavailable': false,
             'id_users_provider': $('#select-provider').val(),
             'id_services': $('#select-service').val(),
-            'nb_persons': $('#nb_persons').val()
+            'nb_persons': $('#nb_persons').val(),
+            'difficulty': $('#difficulty').val()
         };
 
         postData['manage_mode'] = FrontendBook.manageMode;
