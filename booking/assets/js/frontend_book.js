@@ -511,6 +511,8 @@ var FrontendBook = {
             pluriel_indicative = 's';
         }
 
+        var difficulty = $('#difficulty').val();
+
 
         var html =
             '<h4>' + $('#select-service option:selected').text() + '</h4>' +
@@ -519,7 +521,8 @@ var FrontendBook = {
                     + $('#select-provider option:selected').text() + '<br>'
                     + selectedDate + ' ' +  $('.selected-hour').text()
                     + servicePrice + ' ' + serviceCurrency + '<br>'
-                    + nb_persons + ' participant' + pluriel_indicative
+                    + nb_persons + ' participant' + pluriel_indicative + '<br>'
+                    + 'Difficulté ' + difficulty
                 + '</strong>' +
             '</p>';
 
