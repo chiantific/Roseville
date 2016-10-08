@@ -1613,6 +1613,9 @@ var BackendCalendar = {
                         + '<br>' +
                     '<strong>' + EALang['nb_persons'] + '</strong> '
                         + event.data['nb_persons']
+                        + '<br>' +
+                    '<string>' + EALang['difficulty'] + '</strong> '
+                        + event.data['difficulty']
                         + '<hr>' +
                     '<center>' +
                         '<button class="edit-popover btn btn-primary ' + displayEdit + '">' + EALang['edit'] + '</button>' +
