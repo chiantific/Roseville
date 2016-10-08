@@ -201,7 +201,18 @@
                             <div class="form-group">
                                 <label for="nb_persons" class="control-label col-sm-3" ><?php echo $this->lang->line('nb_persons'); ?> *</label>
                                 <div class="col-sm-7">
-                                    <input type="number" id="nb_persons" />
+                                    <input type="number" id="nb_persons" class="required" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="difficulty" class="control-label col-sm-3" ><?php echo $this->lang->line('difficulty'); ?> *</label>
+                                <div class="col-sm-7">
+                                    <select id="difficulty" class="required form-control">
+                                        <option value="1">Facile</option>
+                                        <option value="2">Moyen</option>
+                                        <option value="3">Difficile</option>
+                                    </select>
                                 </div>
                             </div>
 
