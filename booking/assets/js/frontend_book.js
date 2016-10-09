@@ -520,6 +520,7 @@ var FrontendBook = {
 
         var difficulty = $('#difficulty').val();
 
+        var language = $('#language').val();
 
         var html =
             '<h4>' + $('#select-service option:selected').text() + '</h4>' +
@@ -529,7 +530,8 @@ var FrontendBook = {
                     + selectedDate + ' ' +  $('.selected-hour').text()
                     + servicePrice + ' ' + serviceCurrency + '<br>'
                     + nb_persons + ' participant' + pluriel_indicative + '<br>'
-                    + 'Difficulté ' + difficulty
+                    + 'Difficulté ' + difficulty + '<br>'
+                    + 'Langue : ' + $('#language option:selected').text()
                 + '</strong>' +
             '</p>';
 
