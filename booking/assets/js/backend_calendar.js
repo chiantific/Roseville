@@ -1619,6 +1619,9 @@ var BackendCalendar = {
                         + '<br>' +
                     '<string>' + EALang['difficulty'] + '</strong> '
                         + event.data['difficulty']
+                        + '<br>' +
+                    '<string>' + EALang['language'] + '</strong> '
+                        + event.data['language']
                         + '<hr>' +
                     '<center>' +
                         '<button class="edit-popover btn btn-primary ' + displayEdit + '">' + EALang['edit'] + '</button>' +
