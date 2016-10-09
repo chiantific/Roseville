@@ -207,6 +207,13 @@ var FrontendBook = {
                     return;
                 }
             }
+            
+            // If we are on the first tab, then the user should have a selected language
+            if ($(this).attr('data-step_index') === '1') {
+                if ($('#language').val() == null || $('#language').val() == "") {
+                    return;
+                }
+            }
 
             // If we are on the 2nd tab then we will need to validate the user's
             // input before proceeding to the next step.
