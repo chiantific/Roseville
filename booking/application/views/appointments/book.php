@@ -167,6 +167,13 @@ foreach($available_services as $service) {
                                             <option value="3">Difficile</option>
                                         </select>
                                     </div>
+                                    <div class="col-md-4">
+                                        <h3>Langue préférée</h3>
+                                        <select id="language" class="form-control">
+                                            <option value="1">Français</option>
+                                            <option value="2">Anglais</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group row">
