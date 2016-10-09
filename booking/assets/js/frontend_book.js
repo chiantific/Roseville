@@ -584,7 +584,8 @@ var FrontendBook = {
             'id_users_provider': $('#select-provider').val(),
             'id_services': $('#select-service').val(),
             'nb_persons': $('#nb_persons').val(),
-            'difficulty': $('#difficulty').val()
+            'difficulty': $('#difficulty').val(),
+            'language': $('#language').val()
         };
 
         postData['manage_mode'] = FrontendBook.manageMode;
