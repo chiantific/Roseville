@@ -520,8 +520,6 @@ var FrontendBook = {
 
         var difficulty = $('#difficulty').val();
 
-        var language = $('#language').val();
-
         var html =
             '<h4>' + $('#select-service option:selected').text() + '</h4>' +
             '<p>'
