@@ -207,6 +207,13 @@ var FrontendBook = {
                     return;
                 }
             }
+            
+            // If we are on the first tab, then the user should have a selected language
+            if ($(this).attr('data-step_index') === '1') {
+                if ($('#language').val() == null || $('#language').val() == "") {
+                    return;
+                }
+            }
 
             // If we are on the 2nd tab then we will need to validate the user's
             // input before proceeding to the next step.
@@ -520,6 +527,7 @@ var FrontendBook = {
                     + servicePrice + ' ' + serviceCurrency + '<br>'
                     + nb_persons + ' participant' + pluriel_indicative + '<br>'
                     + 'Difficulté ' + $('#difficulty option:selected').text()
+                    + 'Langue : ' + $('#language option:selected').text()
                 + '</strong>' +
             '</p>';
 
@@ -574,7 +582,8 @@ var FrontendBook = {
             'id_users_provider': $('#select-provider').val(),
             'id_services': $('#select-service').val(),
             'nb_persons': $('#nb_persons').val(),
-            'difficulty': $('#difficulty').val()
+            'difficulty': $('#difficulty').val(),
+            'language': $('#language').val()
         };
 
         postData['manage_mode'] = FrontendBook.manageMode;

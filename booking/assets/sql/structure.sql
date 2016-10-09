@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS `ea_appointments` (
   `end_datetime` datetime DEFAULT NULL,
   `nb_persons` tinyint DEFAULT '1',
   `difficulty` tinyint DEFAULT '0',
+  `language` tinyint DEFAULT '0',
   `notes` text,
   `hash` text,
   `is_unavailable` tinyint(4) DEFAULT '0',

@@ -44,6 +44,7 @@ $lang['provider'] = 'Provider';
 $lang['customer'] = 'Customer';
 $lang['nb_persons'] = 'Participants';
 $lang['difficulty'] = 'Difficulty';
+$lang['language'] = 'Favorite language';
 $lang['start'] = 'Start';
 $lang['end'] = 'End';
 $lang['name'] = 'Name';
