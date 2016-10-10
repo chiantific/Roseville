@@ -107,7 +107,7 @@ function main() {
 	});	
 
     // Close menu on mobile when a link is clicked
-    $(".navbar-nav li a .page-scroll").click(function(e) {
+    $(".navbar-nav li a.page-scroll").click(function(e) {
       if ( $(e.target).is('a'))
           $(".navbar-collapse.in").collapse('hide');
     });
