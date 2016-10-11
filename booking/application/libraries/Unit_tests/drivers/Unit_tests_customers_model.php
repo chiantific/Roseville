@@ -62,9 +62,6 @@ class Unit_tests_customers_model extends CI_Driver {
             'first_name' => 'John',
             'email' => 'test@test.com',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->customer_role_id
         );
         $customer['id'] = $this->CI->customers_model->add($customer);
@@ -78,9 +75,6 @@ class Unit_tests_customers_model extends CI_Driver {
                 || $customer['first_name'] != $db_data['first_name'] 
                 || $customer['email'] != $db_data['email'] 
                 || $customer['phone_number'] != $db_data['phone_number'] 
-                || $customer['address'] != $db_data['address'] 
-                || $customer['city'] != $db_data['city'] 
-                || $customer['zip_code'] != $db_data['zip_code'] 
                 || $customer['id_roles'] != $db_data['id_roles']) {
             $are_the_same = FALSE;
         }
@@ -98,9 +92,6 @@ class Unit_tests_customers_model extends CI_Driver {
             'first_name' => 'John',
             'email' => 'john@doe.com',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->customer_role_id
         );
         $this->CI->db->insert('ea_users', $customer);
@@ -130,9 +121,6 @@ class Unit_tests_customers_model extends CI_Driver {
             'first_name' => 'John',
             'email' => 'THIS IS INVALID',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->customer_role_id
         );
         
@@ -153,9 +141,6 @@ class Unit_tests_customers_model extends CI_Driver {
             'first_name' => 'John',
             'email' => 'john@doe.com',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->customer_role_id
         );
         
@@ -178,9 +163,6 @@ class Unit_tests_customers_model extends CI_Driver {
             'first_name' => 'John',
             'email' => 'john@doe.com',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->customer_role_id
         );
         $this->CI->db->insert('ea_users', $customer);
@@ -201,9 +183,6 @@ class Unit_tests_customers_model extends CI_Driver {
             'first_name' => 'John',
             'email' => 'THIS DOES NOT EXIST',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->customer_role_id
         );
         
@@ -219,9 +198,6 @@ class Unit_tests_customers_model extends CI_Driver {
             'last_name' => 'Doe',
             'first_name' => 'John',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->customer_role_id
         );
         
@@ -245,9 +221,6 @@ class Unit_tests_customers_model extends CI_Driver {
             'first_name' => 'John',
             'email' => 'john@doe.com',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->customer_role_id
         );
         $this->CI->db->insert('ea_users', $customer);
@@ -295,9 +268,6 @@ class Unit_tests_customers_model extends CI_Driver {
             'first_name' => 'John',
             'email' => 'john@doe.com',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->customer_role_id
         );
         
@@ -312,9 +282,6 @@ class Unit_tests_customers_model extends CI_Driver {
             'first_name' => 'John',
             'email' => 'john@doe.com',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->customer_role_id
         );
         
@@ -337,9 +304,6 @@ class Unit_tests_customers_model extends CI_Driver {
             'first_name' => 'John',
             'email' => 'THIS IS INVALID',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->customer_role_id
         );
         
@@ -363,9 +327,6 @@ class Unit_tests_customers_model extends CI_Driver {
             'first_name' => 'John',
             'email' => 'john@doe.com',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->customer_role_id
         );
         $this->CI->db->insert('ea_users', $customer);
@@ -385,9 +346,6 @@ class Unit_tests_customers_model extends CI_Driver {
             'last_name' => 'Doe',
             'first_name' => 'John',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->customer_role_id
         );
         $has_thrown_exception = FALSE;
@@ -407,9 +365,6 @@ class Unit_tests_customers_model extends CI_Driver {
             'first_name' => 'John',
             'email' => 'THIS EMAIL DOES NOT EXIST IN DB',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->customer_role_id
         );
         $has_thrown_exception = FALSE;
@@ -441,9 +396,6 @@ class Unit_tests_customers_model extends CI_Driver {
             'first_name' => 'John',
             'email' => 'john@doe.com',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->customer_role_id
         );
         $this->CI->db->insert('ea_users', $customer);
@@ -475,9 +427,6 @@ class Unit_tests_customers_model extends CI_Driver {
             'first_name' => 'John',
             'email' => 'john@doe.com',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->customer_role_id
         );
         $this->CI->db->insert('ea_users', $customer);
@@ -522,9 +471,6 @@ class Unit_tests_customers_model extends CI_Driver {
             'first_name' => 'John',
             'email' => 'john@doe.com',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->customer_role_id
         );
         $this->CI->db->insert('ea_users', $customer);
@@ -562,9 +508,6 @@ class Unit_tests_customers_model extends CI_Driver {
             'first_name' => 'John',
             'email' => 'john@doe.com',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->customer_role_id
         );
         $this->CI->db->insert('ea_users', $customer);
