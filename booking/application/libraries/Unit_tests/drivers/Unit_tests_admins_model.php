@@ -40,10 +40,6 @@ class Unit_tests_admins_model extends CI_Driver {
             'email' => 'john@doe.com',
             'mobile_number' => '2340982039',
             'phone_number' => '9098091234',
-            'address' => 'Some Street 80',
-            'city' => 'Some City',
-            'state' => 'Some State',
-            'zip_code' => '12345',
             'notes' => 'This is a test admin user.',
             'id_roles' => $this->admin_role_id
         );
@@ -114,9 +110,6 @@ class Unit_tests_admins_model extends CI_Driver {
         $admin['email'] = 'email@changed.com';
         $admin['mobile_number'] = 'Mobile Number Changed';
         $admin['phone_number'] = 'Phone Number Changed';
-        $admin['address'] = 'Address Changed';
-        $admin['city'] = 'City Changed';
-        $admin['zip_code'] = 'Zip Code Changed';
         $admin['notes'] = 'Notes Changed';
         
         $update_result = $this->ci->admins_model->add($admin); // updates record

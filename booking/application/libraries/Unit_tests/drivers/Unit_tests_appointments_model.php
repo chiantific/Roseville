@@ -41,10 +41,6 @@ class Unit_tests_appointments_model extends CI_Driver {
             'email' => 'test@test.com',
             'mobile_number' => '000000',
             'phone_number' => '111111',
-            'address' => 'Some Str',
-            'city' => 'Some City',
-            'state' => 'Some State',
-            'zip_code' => '12345',
             'notes' => 'This is a test provider',
             'id_roles' => $this->ci->db->get_where('ea_roles', 
                                 array('slug' => DB_SLUG_PROVIDER))->row()->id
@@ -69,9 +65,6 @@ class Unit_tests_appointments_model extends CI_Driver {
             'first_name' => 'John',
             'email' => 'john@doe.com',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->ci->db->get_where('ea_roles', 
                                  array('slug' => DB_SLUG_CUSTOMER))->row()->id
         );
