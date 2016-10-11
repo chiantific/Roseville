@@ -231,18 +231,6 @@ foreach($available_services as $service) {
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="address" class="control-label">Adresse</label>
-                                    <input type="text" id="address" class="form-control" maxlength="250" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="city" class="control-label">Ville</label>
-                                    <input type="text" id="city" class="form-control" maxlength="120" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="zip-code" class="control-label">Code postal</label>
-                                    <input type="text" id="zip-code" class="form-control" maxlength="120" />
-                                </div>
-                                <div class="form-group">
                                     <label for="notes" class="control-label">Informations</label>
                                     <textarea id="notes" maxlength="500" class="form-control" rows="3"></textarea>
                                 </div>
