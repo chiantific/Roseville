@@ -539,9 +539,6 @@ var FrontendBook = {
             lastname = GeneralFunctions.escapeHtml($('#last-name').val()),
             phoneNumber = GeneralFunctions.escapeHtml($('#phone-number').val()),
             email = GeneralFunctions.escapeHtml($('#email').val()),
-            address = GeneralFunctions.escapeHtml($('#address').val()),
-            city = GeneralFunctions.escapeHtml($('#city').val()),
-            zipCode = GeneralFunctions.escapeHtml($('#zip-code').val()),
 
         html =
             '<h4>' + firstname + ' ' + lastname + '</h4>' +
@@ -549,12 +546,6 @@ var FrontendBook = {
                 EALang['phone'] + ': ' + phoneNumber +
                 '<br/>' +
                 EALang['email'] + ': ' + email +
-                '<br/>' +
-                EALang['address'] + ': ' + address +
-                '<br/>' +
-                EALang['city'] + ': ' + city +
-                '<br/>' +
-                EALang['zip_code'] + ': ' + zipCode +
             '</p>';
 
         $('#customer-details').html(html);
