@@ -132,10 +132,6 @@ SecretariesHelper.prototype.bindEventHandlers = function() {
             'email': $('#secretary-email').val(),
             'mobile_number': $('#secretary-mobile-number').val(),
             'phone_number': $('#secretary-phone-number').val(),
-            'address': $('#secretary-address').val(),
-            'city': $('#secretary-city').val(),
-            'state': $('#secretary-state').val(),
-            'zip_code': $('#secretary-zip-code').val(),
             'notes': $('#secretary-notes').val(),
             'settings': {
                 'username': $('#secretary-username').val(),
@@ -322,10 +318,6 @@ SecretariesHelper.prototype.display = function(secretary) {
     $('#secretary-email').val(secretary.email);
     $('#secretary-mobile-number').val(secretary.mobile_number);
     $('#secretary-phone-number').val(secretary.phone_number);
-    $('#secretary-address').val(secretary.address);
-    $('#secretary-city').val(secretary.city);
-    $('#secretary-state').val(secretary.state);
-    $('#secretary-zip-code').val(secretary.zip_code);
     $('#secretary-notes').val(secretary.notes);
 
     $('#secretary-username').val(secretary.settings.username);
