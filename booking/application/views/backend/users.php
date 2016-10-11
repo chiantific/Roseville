@@ -143,26 +143,6 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="admin-address"><?php echo $this->lang->line('address'); ?></label>
-                            <input type="text" id="admin-address" class="form-control" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="admin-city"><?php echo $this->lang->line('city'); ?></label>
-                            <input type="text" id="admin-city" class="form-control" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="admin-state"><?php echo $this->lang->line('state'); ?></label>
-                            <input type="text" id="admin-state" class="form-control" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="admin-zip-code"><?php echo $this->lang->line('zip_code'); ?></label>
-                            <input type="text" id="admin-zip-code" class="form-control" />
-                        </div>
-
-                        <div class="form-group">
                             <label for="admin-notes"><?php echo $this->lang->line('notes'); ?></label>
                             <textarea id="admin-notes" class="form-control" rows="3"></textarea>
                         </div>
@@ -290,26 +270,6 @@
                             <div class="form-group">
                                 <label for="provider-mobile-number"><?php echo $this->lang->line('mobile_number'); ?></label>
                                 <input type="text" id="provider-mobile-number" class="form-control" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="provider-address"><?php echo $this->lang->line('address'); ?></label>
-                                <input type="text" id="provider-address" class="form-control" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="provider-city"><?php echo $this->lang->line('city'); ?></label>
-                                <input type="text" id="provider-city" class="form-control" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="provider-state"><?php echo $this->lang->line('state'); ?></label>
-                                <input type="text" id="provider-state" class="form-control" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="provider-zip-code"><?php echo $this->lang->line('zip_code'); ?></label>
-                                <input type="text" id="provider-zip-code" class="form-control" />
                             </div>
 
                             <div class="form-group">
@@ -555,26 +515,6 @@
                         <div class="form-group">
                             <label for="secretary-mobile-number"><?php echo $this->lang->line('mobile_number');?></label>
                             <input type="text" id="secretary-mobile-number" class="form-control" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="secretary-address"><?php echo $this->lang->line('address');?></label>
-                            <input type="text" id="secretary-address" class="form-control" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="secretary-city"><?php echo $this->lang->line('city');?></label>
-                            <input type="text" id="secretary-city" class="form-control" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="secretary-state"><?php echo $this->lang->line('state');?></label>
-                            <input type="text" id="secretary-state" class="form-control" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="secretary-zip-code"><?php echo $this->lang->line('zip_code');?></label>
-                            <input type="text" id="secretary-zip-code" class="form-control" />
                         </div>
 
                         <div class="form-group">
