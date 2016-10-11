@@ -23,10 +23,6 @@
  *      'email' (required)
  *      'mobile_number'
  *      'phone_number' (required)
- *      'address'
- *      'city'
- *      'state'
- *      'zip_code'
  *      'notes'
  *      'id_roles'
  *      'services' >> array that contains the ids that the provider can provide

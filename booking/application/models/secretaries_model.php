@@ -22,10 +22,6 @@
  *      'email'
  *      'mobile_number'
  *      'phone_number'
- *      'address'
- *      'city'
- *      'state'
- *      'zip_code'
  *      'notes'
  *      'id_roles'
  *      'providers' >> array with provider ids that the secretary handles
