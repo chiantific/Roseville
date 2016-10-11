@@ -22,10 +22,6 @@
  *      'email' (required)
  *      'mobile_number'
  *      'phone_number' (required)
- *      'address'
- *      'city'
- *      'state'
- *      'zip_code'
  *      'notes'
  *      'id_roles'
  *      'settings' >>> array that contains user settings (username, password etc)

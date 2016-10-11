@@ -539,9 +539,6 @@ var FrontendBook = {
             lastname = GeneralFunctions.escapeHtml($('#last-name').val()),
             phoneNumber = GeneralFunctions.escapeHtml($('#phone-number').val()),
             email = GeneralFunctions.escapeHtml($('#email').val()),
-            address = GeneralFunctions.escapeHtml($('#address').val()),
-            city = GeneralFunctions.escapeHtml($('#city').val()),
-            zipCode = GeneralFunctions.escapeHtml($('#zip-code').val()),
 
         html =
             '<h4>' + firstname + ' ' + lastname + '</h4>' +
@@ -549,12 +546,6 @@ var FrontendBook = {
                 EALang['phone'] + ': ' + phoneNumber +
                 '<br/>' +
                 EALang['email'] + ': ' + email +
-                '<br/>' +
-                EALang['address'] + ': ' + address +
-                '<br/>' +
-                EALang['city'] + ': ' + city +
-                '<br/>' +
-                EALang['zip_code'] + ': ' + zipCode +
             '</p>';
 
         $('#customer-details').html(html);
@@ -568,9 +559,6 @@ var FrontendBook = {
             'first_name': $('#first-name').val(),
             'email': $('#email').val(),
             'phone_number': $('#phone-number').val(),
-            'address': $('#address').val(),
-            'city': $('#city').val(),
-            'zip_code': $('#zip-code').val()
         };
 
         postData['appointment'] = {
@@ -653,9 +641,6 @@ var FrontendBook = {
             $('#first-name').val(customer['first_name']);
             $('#email').val(customer['email']);
             $('#phone-number').val(customer['phone_number']);
-            $('#address').val(customer['address']);
-            $('#city').val(customer['city']);
-            $('#zip-code').val(customer['zip_code']);
             var appointmentNotes = (appointment['notes'] !== null)
                     ? appointment['notes'] : '';
             $('#notes').val(appointmentNotes);

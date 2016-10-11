@@ -80,10 +80,6 @@ var BackendSettings = {
         $('#email').val(GlobalVariables.settings.user.email);
         $('#mobile-number').val(GlobalVariables.settings.user.mobile_number);
         $('#phone-number').val(GlobalVariables.settings.user.phone_number);
-        $('#address').val(GlobalVariables.settings.user.address);
-        $('#city').val(GlobalVariables.settings.user.city);
-        $('#state').val(GlobalVariables.settings.user.state);
-        $('#zip-code').val(GlobalVariables.settings.user.zip_code);
         $('#notes').val(GlobalVariables.settings.user.notes);
 
         $('#username').val(GlobalVariables.settings.user.settings.username);
@@ -349,10 +345,6 @@ UserSettings.prototype.get = function() {
         'email': $('#email').val(),
         'mobile_number': $('#mobile-number').val(),
         'phone_number': $('#phone-number').val(),
-        'address': $('#address').val(),
-        'city': $('#city').val(),
-        'state': $('#state').val(),
-        'zip_code': $('#zip-code').val(),
         'notes': $('#notes').val(),
         'settings': {
             'username': $('#username').val(),

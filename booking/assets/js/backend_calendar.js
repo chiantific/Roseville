@@ -219,9 +219,6 @@ var BackendCalendar = {
             $dialog.find('#last-name').val(customer['last_name']);
             $dialog.find('#email').val(customer['email']);
             $dialog.find('#phone-number').val(customer['phone_number']);
-            $dialog.find('#address').val(customer['address']);
-            $dialog.find('#city').val(customer['city']);
-            $dialog.find('#zip-code').val(customer['zip_code']);
             $dialog.find('#appointment-notes').val(appointment['notes']);
             $dialog.find('#customer-notes').val(customer['notes']);
 
@@ -402,9 +399,6 @@ var BackendCalendar = {
                 $dialog.find('#last-name').val(customer['last_name']);
                 $dialog.find('#email').val(customer['email']);
                 $dialog.find('#phone-number').val(customer['phone_number']);
-                $dialog.find('#address').val(customer['address']);
-                $dialog.find('#city').val(customer['city']);
-                $dialog.find('#zip-code').val(customer['zip_code']);
                 $dialog.find('#appointment-notes').val(appointment['notes']);
                 $dialog.find('#customer-notes').val(customer['notes']);
             } else {
@@ -572,9 +566,6 @@ var BackendCalendar = {
                 'last_name': $dialog.find('#last-name').val(),
                 'email': $dialog.find('#email').val(),
                 'phone_number': $dialog.find('#phone-number').val(),
-                'address': $dialog.find('#address').val(),
-                'city': $dialog.find('#city').val(),
-                'zip_code': $dialog.find('#zip-code').val(),
                 'notes': $dialog.find('#customer-notes').val()
             };
 
@@ -918,9 +909,6 @@ var BackendCalendar = {
                     $('#last-name').val(c.last_name);
                     $('#email').val(c.email);
                     $('#phone-number').val(c.phone_number);
-                    $('#address').val(c.address);
-                    $('#city').val(c.city);
-                    $('#zip-code').val(c.zip_code);
                     $('#customer-notes').val(c.notes);
                     return false;
                 }
@@ -940,10 +928,7 @@ var BackendCalendar = {
                 if (c.first_name.toLowerCase().indexOf(key) != -1
                         || c.last_name.toLowerCase().indexOf(key) != -1
                         || c.email.toLowerCase().indexOf(key) != -1
-                        || c.phone_number.toLowerCase().indexOf(key) != -1
-                        || c.address.toLowerCase().indexOf(key) != -1
-                        || c.city.toLowerCase().indexOf(key) != -1
-                        || c.zip_code.toLowerCase().indexOf(key) != -1) {
+                        || c.phone_number.toLowerCase().indexOf(key) != -1) {
                     $list.append('<div data-id="' + c.id + '">'
                             + c.first_name + ' ' + c.last_name + '</div>');
                 }
@@ -990,7 +975,7 @@ var BackendCalendar = {
          */
         $('#new-customer').click(function() {
             $('#manage-appointment').find('#customer-id, #first-name, #last-name, #email, '
-                    + '#phone-number, #address, #city, #zip-code, #customer-notes').val('');
+                    + '#phone-number, #customer-notes').val('');
         });
 
         /**

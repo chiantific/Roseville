@@ -129,10 +129,6 @@ AdminsHelper.prototype.bindEventHandlers = function() {
             'email': $('#admin-email').val(),
             'mobile_number': $('#admin-mobile-number').val(),
             'phone_number': $('#admin-phone-number').val(),
-            'address': $('#admin-address').val(),
-            'city': $('#admin-city').val(),
-            'state': $('#admin-state').val(),
-            'zip_code': $('#admin-zip-code').val(),
             'notes': $('#admin-notes').val(),
             'settings': {
                 'username': $('#admin-username').val(),
@@ -309,10 +305,6 @@ AdminsHelper.prototype.display = function(admin) {
     $('#admin-email').val(admin.email);
     $('#admin-mobile-number').val(admin.mobile_number);
     $('#admin-phone-number').val(admin.phone_number);
-    $('#admin-address').val(admin.address);
-    $('#admin-city').val(admin.city);
-    $('#admin-state').val(admin.state);
-    $('#admin-zip-code').val(admin.zip_code);
     $('#admin-notes').val(admin.notes);
 
     $('#admin-username').val(admin.settings.username);

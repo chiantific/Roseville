@@ -63,10 +63,6 @@ class Unit_tests_providers_model extends CI_Driver {
             'email' => 'test@test.com',
             'mobile_number' => '000000',
             'phone_number' => '111111',
-            'address' => 'Some Str',
-            'city' => 'Some City',
-            'state' => 'Some State',
-            'zip_code' => '12345',
             'notes' => 'This is a test provider',
             'id_roles' => $this->provider_role_id,
             'services' => array(),
@@ -116,10 +112,6 @@ class Unit_tests_providers_model extends CI_Driver {
             'email' => 'test@test.com',
             'mobile_number' => '000000',
             'phone_number' => '111111',
-            'address' => 'Some Str',
-            'city' => 'Some City',
-            'state' => 'Some State',
-            'zip_code' => '12345',
             'notes' => 'This is a test provider',
             'id_roles' => $this->provider_role_id
         );
@@ -149,10 +141,6 @@ class Unit_tests_providers_model extends CI_Driver {
             'email' => 'changed@changed.com',
             'mobile_number' => 'CHANGED',
             'phone_number' => 'CHANGED',
-            'address' => 'CHANGED',
-            'city' => 'CHANGED',
-            'state' => 'CHANGED',
-            'zip_code' => 'CHANGED',
             'notes' => 'CHANGED',
             'id_roles' => $this->provider_role_id,
             'services' => array(),
@@ -220,10 +208,6 @@ class Unit_tests_providers_model extends CI_Driver {
             'email' => 'test@test.com',
             'mobile_number' => '000000',
             'phone_number' => '111111',
-            'address' => 'Some Str',
-            'city' => 'Some City',
-            'state' => 'Some State',
-            'zip_code' => '12345',
             'notes' => 'This is a test provider',
             'id_roles' => $this->provider_role_id
         );
@@ -248,10 +232,6 @@ class Unit_tests_providers_model extends CI_Driver {
             'email' => 'test@test.com', 
             'mobile_number' => '000000',
             'phone_number' => '111111',
-            'address' => 'Some Str',
-            'city' => 'Some City',
-            'state' => 'Some State',
-            'zip_code' => '12345',
             'notes' => 'This is a test provider',
             'id_roles' => $this->provider_role_id
         );
@@ -281,10 +261,6 @@ class Unit_tests_providers_model extends CI_Driver {
             'email' => 'test@test.com', 
             'mobile_number' => '000000',
             'phone_number' => '111111',
-            'address' => 'Some Str',
-            'city' => 'Some City',
-            'state' => 'Some State',
-            'zip_code' => '12345',
             'notes' => 'This is a test provider',
             'id_roles' => $this->provider_role_id
         );
@@ -302,10 +278,6 @@ class Unit_tests_providers_model extends CI_Driver {
             'email' => 'test@test.com', 
             'mobile_number' => '000000',
             'phone_number' => '111111',
-            'address' => 'Some Str',
-            'city' => 'Some City',
-            'state' => 'Some State',
-            'zip_code' => '12345',
             'notes' => 'This is a test provider',
             'id_roles' => $this->provider_role_id
         );
@@ -330,10 +302,6 @@ class Unit_tests_providers_model extends CI_Driver {
             //'email' => 'test@test.com',  // Email is not provided
             'mobile_number' => '000000',
             'phone_number' => '111111',
-            'address' => 'Some Str',
-            'city' => 'Some City',
-            'state' => 'Some State',
-            'zip_code' => '12345',
             'notes' => 'This is a test provider',
             'id_roles' => $this->provider_role_id
         );
@@ -359,10 +327,6 @@ class Unit_tests_providers_model extends CI_Driver {
             'email' => 'test@test.com',  
             'mobile_number' => '000000',
             'phone_number' => '111111',
-            'address' => 'Some Str',
-            'city' => 'Some City',
-            'state' => 'Some State',
-            'zip_code' => '12345',
             'notes' => 'This is a test provider',
             'id_roles' => $this->provider_role_id
         );
@@ -386,10 +350,6 @@ class Unit_tests_providers_model extends CI_Driver {
             'email' => 'test@test.com',
             'mobile_number' => '000000',
             'phone_number' => '111111',
-            'address' => 'Some Str',
-            'city' => 'Some City',
-            'state' => 'Some State',
-            'zip_code' => '12345',
             'notes' => 'This is a test provider',
             'id_roles' => $this->provider_role_id,
             'services' => array(),
@@ -418,10 +378,6 @@ class Unit_tests_providers_model extends CI_Driver {
             'email' => 'test@test.com',
             'mobile_number' => '000000',
             'phone_number' => '111111',
-            'address' => 'Some Str',
-            'city' => 'Some City',
-            'state' => 'Some State',
-            'zip_code' => '12345',
             'notes' => 'This is a test provider',
             'id_roles' => $this->provider_role_id,
             'services' => array(),
@@ -454,10 +410,6 @@ class Unit_tests_providers_model extends CI_Driver {
             //'email' => 'test@test.com',
             'mobile_number' => '000000',
             //'phone_number' => '111111',
-            'address' => 'Some Str',
-            'city' => 'Some City',
-            'state' => 'Some State',
-            'zip_code' => '12345',
             'notes' => 'This is a test provider',
             'id_roles' => $this->provider_role_id,
             'services' => array(),
@@ -490,10 +442,6 @@ class Unit_tests_providers_model extends CI_Driver {
             'email' => 'THIS IS INVALID',
             'mobile_number' => '000000',
             'phone_number' => '111111',
-            'address' => 'Some Str',
-            'city' => 'Some City',
-            'state' => 'Some State',
-            'zip_code' => '12345',
             'notes' => 'This is a test provider',
             'id_roles' => $this->provider_role_id,
             'services' => array(),
@@ -526,10 +474,6 @@ class Unit_tests_providers_model extends CI_Driver {
             'email' => 'THIS IS INVALID',
             'mobile_number' => '000000',
             'phone_number' => '111111',
-            'address' => 'Some Str',
-            'city' => 'Some City',
-            'state' => 'Some State',
-            'zip_code' => '12345',
             'notes' => 'This is a test provider',
             'id_roles' => $this->provider_role_id
         );
@@ -553,10 +497,6 @@ class Unit_tests_providers_model extends CI_Driver {
             'email' => 'THIS IS INVALID',
             'mobile_number' => '000000',
             'phone_number' => '111111',
-            'address' => 'Some Str',
-            'city' => 'Some City',
-            'state' => 'Some State',
-            'zip_code' => '12345',
             'notes' => 'This is a test provider',
             'id_roles' => $this->provider_role_id
         );
@@ -631,9 +571,6 @@ class Unit_tests_providers_model extends CI_Driver {
             'first_name' => 'John',
             'email' => 'john@doe.com',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->provider_role_id
         );
         $this->ci->db->insert('ea_users', $provider);
@@ -708,9 +645,6 @@ class Unit_tests_providers_model extends CI_Driver {
             'first_name' => 'John',
             'email' => 'john@doe.com',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->provider_role_id
         );
         $this->ci->db->insert('ea_users', $provider);
@@ -748,9 +682,6 @@ class Unit_tests_providers_model extends CI_Driver {
             'first_name' => 'John',
             'email' => 'john@doe.com',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->provider_role_id
         );
         $this->ci->db->insert('ea_users', $provider);
@@ -810,9 +741,6 @@ class Unit_tests_providers_model extends CI_Driver {
             'first_name' => 'John',
             'email' => 'john@doe.com',
             'phone_number' => '0123456789',
-            'address' => 'Abbey Road 18',
-            'city' => 'London',
-            'zip_code' => '12345',
             'id_roles' => $this->provider_role_id
         );
         $this->ci->db->insert('ea_users', $provider);

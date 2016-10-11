@@ -139,10 +139,6 @@ ProvidersHelper.prototype.bindEventHandlers = function() {
             'email': $('#provider-email').val(),
             'mobile_number': $('#provider-mobile-number').val(),
             'phone_number': $('#provider-phone-number').val(),
-            'address': $('#provider-address').val(),
-            'city': $('#provider-city').val(),
-            'state': $('#provider-state').val(),
-            'zip_code': $('#provider-zip-code').val(),
             'notes': $('#provider-notes').val(),
             'settings': {
                 'username': $('#provider-username').val(),
@@ -370,10 +366,6 @@ ProvidersHelper.prototype.display = function(provider) {
     $('#provider-email').val(provider.email);
     $('#provider-mobile-number').val(provider.mobile_number);
     $('#provider-phone-number').val(provider.phone_number);
-    $('#provider-address').val(provider.address);
-    $('#provider-city').val(provider.city);
-    $('#provider-state').val(provider.state);
-    $('#provider-zip-code').val(provider.zip_code);
     $('#provider-notes').val(provider.notes);
 
     $('#provider-username').val(provider.settings.username);
