@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS `ea_appointments` (
   `difficulty` tinyint DEFAULT '0',
   `language` tinyint DEFAULT '0',
   `notes` text,
+  `is_paid` tinyint(4) DEFAULT NULL,
   `hash` text,
   `is_unavailable` tinyint(4) DEFAULT '0',
   `id_users_provider` bigint(20) unsigned DEFAULT NULL,
