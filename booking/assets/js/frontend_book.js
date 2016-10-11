@@ -559,9 +559,6 @@ var FrontendBook = {
             'first_name': $('#first-name').val(),
             'email': $('#email').val(),
             'phone_number': $('#phone-number').val(),
-            'address': $('#address').val(),
-            'city': $('#city').val(),
-            'zip_code': $('#zip-code').val()
         };
 
         postData['appointment'] = {
@@ -644,9 +641,6 @@ var FrontendBook = {
             $('#first-name').val(customer['first_name']);
             $('#email').val(customer['email']);
             $('#phone-number').val(customer['phone_number']);
-            $('#address').val(customer['address']);
-            $('#city').val(customer['city']);
-            $('#zip-code').val(customer['zip_code']);
             var appointmentNotes = (appointment['notes'] !== null)
                     ? appointment['notes'] : '';
             $('#notes').val(appointmentNotes);
