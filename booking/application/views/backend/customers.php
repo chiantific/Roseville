@@ -108,21 +108,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="address"><?php echo $this->lang->line('address'); ?></label>
-                    <input type="text" id="address" class="form-control" />
-                </div>
-
-                <div class="form-group">
-                    <label for="city"><?php echo $this->lang->line('city'); ?></label>
-                    <input type="text" id="city" class="form-control" />
-                </div>
-
-                <div class="form-group">
-                    <label for="zip-code"><?php echo $this->lang->line('zip_code'); ?></label>
-                    <input type="text" id="zip-code" class="form-control" />
-                </div>
-
-                <div class="form-group">
                     <label for="notes"><?php echo $this->lang->line('notes'); ?></label>
                     <textarea id="notes" rows="4" class="form-control"></textarea>
                 </div>
