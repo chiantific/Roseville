@@ -40,10 +40,6 @@ class Unit_tests_secretaries_model extends CI_Driver {
             'email' => 'john@doe.com',
             'mobile_number' => '2340982039',
             'phone_number' => '9098091234',
-            'address' => 'Some Street 80',
-            'city' => 'Some City',
-            'state' => 'Some State',
-            'zip_code' => '12345',
             'notes' => 'This is a test secretary user.',
             'id_roles' => $this->secretary_role_id
         );
@@ -117,10 +113,6 @@ class Unit_tests_secretaries_model extends CI_Driver {
         $secretary['email'] = 'value@changed.com';
         $secretary['mobile_number'] = 'value changed';
         $secretary['phone_number'] = 'value changed';
-        $secretary['address'] = 'value changed';
-        $secretary['city'] = 'value changed';
-        $secretary['state'] = 'value changed';
-        $secretary['zip_code'] = 'value changed';
         $secretary['notes'] = 'value changed';
         
         $secretary['providers'] = array();
