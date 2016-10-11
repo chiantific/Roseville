@@ -387,6 +387,8 @@ class Appointments extends CI_Controller {
             }
 
             $appointment = $_POST['post_data']['appointment'];
+            // Initially, is_paid must be 0.
+            $appointment['is_paid'] = 0;
             $customer = $_POST['post_data']['customer'];
 
             if ($this->customers_model->exists($customer)) {
