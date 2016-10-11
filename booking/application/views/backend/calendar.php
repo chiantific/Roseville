@@ -288,30 +288,6 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="address" class="control-label col-sm-3">
-                                        <?php echo $this->lang->line('address'); ?></label>
-                                    <div class="col-md-8">
-                                        <input type="text" id="address" class="form-control" />
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="city" class="control-label col-sm-3">
-                                        <?php echo $this->lang->line('city'); ?></label>
-                                    <div class="col-md-8">
-                                        <input type="text" id="city" class="form-control" />
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="zip-code" class="control-label col-sm-3">
-                                        <?php echo $this->lang->line('zip_code'); ?></label>
-                                    <div class="col-md-8">
-                                        <input type="text" id="zip-code" class="form-control" />
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
                                     <label for="customer-notes" class="control-label col-sm-3">
                                         <?php echo $this->lang->line('notes'); ?></label>
                                     <div class="col-md-8">
