@@ -135,7 +135,7 @@ if (isset($exceptions)) {
 
 <?php
 // ------------------------------------------------------
-// SELECT ROOM AND DATE
+// SELECT ROOM
 // ------------------------------------------------------ ?>
 
                 <div id="wizard-frame-1" class="wizard-frame">
@@ -176,6 +176,25 @@ foreach($available_services as $service) {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="command-buttons">
+                        <button type="button" id="button-next-1" class="btn button-next btn-primary"
+                                data-step_index="1">
+                            Suivant
+                            <span class="glyphicon glyphicon-forward"></span>
+                        </button>
+                    </div>
+                </div>
+<?php
+// ------------------------------------------------------
+// SELECT DATE
+// ------------------------------------------------------ ?>
+
+                <div id="wizard-frame-2" class="wizard-frame" style="display:none;">
+                    <div class="frame-container">
+                        <div class="frame-content">
                             <div class="form-group row">
                                 <h3 class="frame-title">Choissez la date & l'heure</h3>
                                 <div class="col-md-6">
@@ -191,20 +210,19 @@ foreach($available_services as $service) {
                     </div>
 
                     <div class="command-buttons">
-                        <button type="button" id="button-next-1" class="btn button-next btn-primary"
-                                data-step_index="1">
+                        <button type="button" id="button-next-2" class="btn button-next btn-primary"
+                                data-step_index="2">
                             Suivant
                             <span class="glyphicon glyphicon-forward"></span>
                         </button>
                     </div>
                 </div>
-
 <?php
     // ------------------------------------------------------
     // ENTER CUSTOMER DATA
     // ------------------------------------------------------ ?>
 
-                <div id="wizard-frame-2" class="wizard-frame" style="display:none;">
+                <div id="wizard-frame-3" class="wizard-frame" style="display:none;">
                     <div class="frame-container">
 
                         <h3 class="frame-title">Remplissez vos informations</h3>
@@ -242,11 +260,11 @@ foreach($available_services as $service) {
 
                     <div class="command-buttons">
                         <button type="button" id="button-back-2" class="btn button-back btn-default"
-                                data-step_index="2"><span class="glyphicon glyphicon-backward"></span>
+                                data-step_index="3"><span class="glyphicon glyphicon-backward"></span>
                             Retour
                         </button>
                         <button type="button" id="button-next-2" class="btn button-next btn-primary"
-                                data-step_index="2">
+                                data-step_index="3">
                             Suivant
                             <span class="glyphicon glyphicon-forward"></span>
                         </button>
@@ -258,7 +276,7 @@ foreach($available_services as $service) {
     // APPOINTMENT DATA CONFIRMATION
     // ------------------------------------------------------ ?>
 
-                <div id="wizard-frame-3" class="wizard-frame" style="display:none;">
+                <div id="wizard-frame-4" class="wizard-frame" style="display:none;">
                     <div class="frame-container">
                         <h3 class="frame-title">Confirmation</h3>
                         <div class="frame-content row">
@@ -281,8 +299,8 @@ foreach($available_services as $service) {
                     </div>
 
                     <div class="command-buttons">
-                        <button type="button" id="button-back-3" class="btn button-back btn-default"
-                                data-step_index="3">
+                        <button type="button" id="button-back-4" class="btn button-back btn-default"
+                                data-step_index="4">
                             <span class="glyphicon glyphicon-backward"></span>
                             Retour
                         </button>
