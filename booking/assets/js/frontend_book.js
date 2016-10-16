@@ -526,7 +526,7 @@ var FrontendBook = {
                     + selectedDate + ' ' +  $('.selected-hour').text()
                     + servicePrice + ' ' + serviceCurrency + '<br>'
                     + nb_persons + ' participant' + pluriel_indicative + '<br>'
-                    + 'Difficulté ' + $('#difficulty option:selected').text()
+                    + 'Difficulté : ' + $('#difficulty option:selected').text() + '<br>'
                     + 'Langue : ' + $('#language option:selected').text()
                 + '</strong>' +
             '</p>';
