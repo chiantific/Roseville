@@ -227,6 +227,13 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="language" class="control-label col-sm-3" ><?php echo $this->lang->line('is_paid'); ?></label>
+                                <div class="col-sm-7">
+                                    <input type="checkbox" id="is_paid" class="form-control"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <label for="appointment-notes" class="control-label col-sm-3" ><?php echo $this->lang->line('notes'); ?></label>
                                 <div class="col-sm-7">
                                     <textarea id="appointment-notes" class="form-control" rows="3"></textarea>
