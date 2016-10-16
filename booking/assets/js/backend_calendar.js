@@ -546,13 +546,15 @@ var BackendCalendar = {
             var endDatetime = $dialog.find('#end-datetime')
                     .datepicker('getDate').toString('yyyy-MM-dd HH:mm:ss');
 
+            var is_paid =  $dialog.find('#is_paid').prop("checked") ? 1 : 0;
+
             var appointment = {
                 'id_services': $dialog.find('#select-service').val(),
                 'id_users_provider': $dialog.find('#select-provider').val(),
                 'nb_persons': $dialog.find('#nb_persons').val(),
                 'difficulty': $dialog.find('#difficulty').val(),
                 'language' : $dialog.find('#language').val(),
-                'is_paid' : $dialog.find('#is_paid').prop("checked") ? 1 : 0,
+                'is_paid' : is_paid,
                 'start_datetime': startDatetime,
                 'end_datetime': endDatetime,
                 'notes': $dialog.find('#appointment-notes').val(),
