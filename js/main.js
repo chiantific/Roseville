@@ -103,7 +103,8 @@ function main() {
 
   	// Pretty Photo
 	$("a[rel^='prettyPhoto']").prettyPhoto({
-		social_tools: false
+		social_tools: false,
+        iframe_markup: "<iframe src='{path}' width='{width}' height='{height}' frameborder='no' allowfullscreen='true'></iframe>"
 	});	
 
     // Close menu on mobile when a link is clicked
