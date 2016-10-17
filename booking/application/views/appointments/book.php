@@ -152,7 +152,7 @@ foreach($available_services as $service) {
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <h3 class="frame-title">Choisissez une salle</h3>
+                                        <h3>Choisissez une salle</h3>
                                         <select id="select-provider" class="form-control"></select>
                                     </div>
                                     <div class="col-md-4">
@@ -183,7 +183,6 @@ foreach($available_services as $service) {
                         <button type="button" id="button-next-1" class="btn button-next btn-primary"
                                 data-step_index="1">
                             Suivant
-                            <span class="glyphicon glyphicon-forward"></span>
                         </button>
                     </div>
                 </div>
@@ -202,8 +201,13 @@ foreach($available_services as $service) {
                                 </div>
 
                                 <div class="col-md-6">
-                                    <?php // Available hours are going to be fetched via ajax call. ?>
-                                    <div id="available-hours"></div>
+                                    <div class="hours">
+                                        <div class="header">
+                                            Tranche horaire
+                                        </div>
+                                        <?php // Available hours are going to be fetched via ajax call. ?>
+                                        <div id="available-hours"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -213,7 +217,6 @@ foreach($available_services as $service) {
                         <button type="button" id="button-next-2" class="btn button-next btn-primary"
                                 data-step_index="2">
                             Suivant
-                            <span class="glyphicon glyphicon-forward"></span>
                         </button>
                     </div>
                 </div>
@@ -225,7 +228,7 @@ foreach($available_services as $service) {
                 <div id="wizard-frame-3" class="wizard-frame" style="display:none;">
                     <div class="frame-container">
 
-                        <h3 class="frame-title">Remplissez vos informations</h3>
+                    <h3 class="frame-title"><?php echo $this->lang->line('step_three_title')?></h3>
 
                         <div class="frame-content row">
                             <div class="col-md-6">
@@ -252,21 +255,20 @@ foreach($available_services as $service) {
                                     <label for="notes" class="control-label">Informations</label>
                                     <textarea id="notes" maxlength="500" class="form-control" rows="3"></textarea>
                                 </div>
+                                <em id="form-message" class="text-danger">Les champs avec un * sont obligatoires</em>
                             </div>
 
-                            <em id="form-message" class="text-danger">Les champs avec un * sont obligatoires</em>
                         </div>
                     </div>
 
                     <div class="command-buttons">
                         <button type="button" id="button-back-2" class="btn button-back btn-default"
-                                data-step_index="3"><span class="glyphicon glyphicon-backward"></span>
+                                data-step_index="3">
                             Retour
                         </button>
                         <button type="button" id="button-next-2" class="btn button-next btn-primary"
                                 data-step_index="3">
                             Suivant
-                            <span class="glyphicon glyphicon-forward"></span>
                         </button>
                     </div>
                 </div>
@@ -317,14 +319,14 @@ Confirmation
 
                 <div id="frame-footer">
                     <div class="container">
-                        <p>Copyright &copy; Roseville.</p>
-                    </div>
+                        <p>Copyright &copy; Roseville</p>
                     <?php if ($this->session->userdata('user_id')): ?>
                         |
                         <a href="<?php echo $this->config->item('base_url'); ?>/index.php/backend">
                             <?php echo $this->lang->line('backend_section'); ?>
                         </a>
                     <?php endif; ?>
+                    </div>
                 </div>
             </div>
         </div>

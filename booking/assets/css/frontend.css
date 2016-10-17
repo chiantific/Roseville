@@ -9,17 +9,13 @@
  * @since       v1.0.0
  * ---------------------------------------------------------------------------- */
 
-root {
-    display: block;
-}
-
 html,
 body {
     height: 100%;
 }
 
 body {
-    background-color: #CAEDF3;
+    background-color: #78C9BC;
 }
 
 #main {
@@ -28,7 +24,7 @@ body {
 }
 
 #main .wrapper {
-    height: 100vh;
+    min-height: 100%;
     display: table-cell;
     vertical-align: middle;
 }
@@ -37,27 +33,25 @@ body {
 /* BOOK APPOINTMENT WIZARD
  ------------------------------------------------------------------------------ */
 #book-appointment-wizard {
-    background: #FFF;
+    background: rgba(0,0,0,0);
     box-shadow: 0px 1px 1px #B6B6B6;
-    min-height: 480px;
     padding: 0;
 }
 
 #book-appointment-wizard #header {
     padding: 5px;
     height: 90px;
-    background: #3DD481;
-    border-bottom: 4px solid #1A865F;
+    background: rgba(0,0,0,0);;
 }
 
 #book-appointment-wizard #company-name {
-    font-weight: bold;
-    color: #FFF;
-    font-size: 22px;
+    font-weight: 700;
+    color: #B0985C;
+    font-size: 50px;
     margin: 20px 10px 0 15px;
     display: inline-block;
-    text-shadow: 0px 1px 1px #8F8888;
     float: left;
+    text-transform: uppercase;
 }
 
 #book-appointment-wizard #steps {
@@ -69,7 +63,6 @@ body {
 
 #book-appointment-wizard .wizard-frame {
     padding: 10px 20px;
-    height: 530px;
 }
 
 #book-appointment-wizard .wizard-frame .frame-container {
@@ -82,6 +75,10 @@ body {
     margin-bottom: 28px;
 }
 
+#book-appointment-wizard .frame-container h3 {
+    color: #F2F2F2;
+}
+
 #book-appointment-wizard .frame-container .frame-content {
     margin: auto;
     float: none;
@@ -92,7 +89,12 @@ body {
 }
 
 #book-appointment-wizard .wizard-frame .command-buttons .btn {
-    min-width: 80px;
+    color: #F2F2F2;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    transition: all 0.5s;
+    background-color: #C74D00;
     margin-right: 10px;
 }
 
@@ -133,14 +135,22 @@ body {
 }
 
 #book-appointment-wizard #frame-footer {
-    padding: 10px;
+    padding: 20px 0;
     text-align: center;
-    border-top: 1px solid #EEE;
-    background: #FAFAFA;
+    background: #333;
+    color: #777;
+}
+
+#book-appointment-wizard #frame-footer p {
+    display: inline-block;
 }
 
 #book-appointment-wizard #steps .custom-qtip {
     border-width: 2px;
+}
+
+#book-appointment-wizard #available-hours {
+    color: #548C83;
 }
 
 #book-appointment-wizard #available-hours .available-hour {
@@ -151,14 +161,15 @@ body {
 
 #book-appointment-wizard #available-hours .available-hour:hover {
     font-weight: bold;
-    background-color: #CAEDF3;
+    color: #F2F2F2;
     cursor: pointer;
 }
 
 #book-appointment-wizard #available-hours .selected-hour {
-    color: #0088cc;
     font-weight: bold;
-    text-decoration: underline;
+    color: #F2F2F2;
+    background-color: #C74D00;
+    border-radius: 8px;
 }
 
 #book-appointment-wizard .span3 {
@@ -176,8 +187,97 @@ body {
     margin-bottom: 12px;
 }
 
-#book-appointment-wizard #wizard-frame-1 select {
+#book-appointment-wizard #wizard-frame-1 select,
+#book-appointment-wizard #wizard-frame-1 input {
     margin-bottom: 25px;
+    background-color: #6AB0A4;
+    border: #62A398;
+    color: #F2F2F2;
+}
+
+#book-appointment-wizard #wizard-frame-1 .bootstrap-touchspin-up,
+#book-appointment-wizard #wizard-frame-1 .bootstrap-touchspin-down {
+    background-color: #A3D1C8;
+}
+
+#book-appointment-wizard #wizard-frame-2 .ui-datepicker-header {
+    border-radius: 3px 3px 0 0;
+}
+
+#book-appointment-wizard #wizard-frame-2 .ui-datepicker-header,
+#book-appointment-wizard #wizard-frame-2 .ui-datepicker-calendar th {
+    background-color: #15595F;
+}
+
+#book-appointment-wizard #wizard-frame-2 .ui-datepicker,
+#book-appointment-wizard #wizard-frame-2 .ui-datepicker-content {
+    border: none;
+}
+
+#book-appointment-wizard #wizard-frame-2 .ui-datepicker-calendar tbody {
+    background-color: #A3D1C8;
+}
+
+#book-appointment-wizard #wizard-frame-2 .ui-datepicker table {
+    margin: 0;
+}
+
+#book-appointment-wizard #wizard-frame-2 .ui-datepicker-calendar .ui-state-active {
+    background-color: #C74D00 !important;
+    border-radius: 8px;
+}
+
+#book-appointment-wizard #wizard-frame-2 .ui-datepicker-calendar a:hover {
+    color: #F2F2F2 !important;
+    font-weight: bold;
+}
+
+#book-appointment-wizard #wizard-frame-2 .hours {
+    background-color: #A3D1C8;
+    border-radius: 3px;
+}
+
+#book-appointment-wizard #wizard-frame-2 .hours .header {
+    background-color: #15595F;
+    border-radius: 3px 3px 0 0;
+    padding: 1em;
+    color: #F2F2F2;
+    font-weight: bold;
+}
+
+#book-appointment-wizard #wizard-frame-2 .hours #available-hours {
+    padding: 1em;
+}
+
+#book-appointment-wizard #wizard-frame-3 textarea,
+#book-appointment-wizard #wizard-frame-3 input {
+    background-color: #6AB0A4;
+    border: #62A398;
+    color: #F2F2F2;
+}
+
+#book-appointment-wizard #wizard-frame-3 #form-message {
+    color: #F2F2F2;
+}
+
+#book-appointment-wizard #wizard-frame-3 label {
+    color: #F2F2F2;
+    font-size: 1.2em;
+}
+
+#book-appointment-wizard #wizard-frame-4 .frame-content {
+    background-color: #A3D1C8;
+    border-radius: 3px;
+}
+
+#book-appointment-wizard #wizard-frame-4 .frame-content p,
+#book-appointment-wizard #wizard-frame-4 .frame-content strong {
+    color: #F2F2F2;
+    font-weight: bold;
+}
+
+#book-appointment-wizard #wizard-frame-4 .frame-content h4 {
+    color: #15595F;
 }
 
 #book-appointment-wizard .captcha-title {

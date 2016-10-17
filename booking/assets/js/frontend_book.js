@@ -415,14 +415,9 @@ var FrontendBook = {
             // service. Fill the available hours div with response data.
             if (response.length > 0) {
                 var currColumn = 1;
-                $('#available-hours').html('<div style="width:50px; float:left;"></div>');
+                $('#available-hours').html('<div style="width:50px;"></div>');
 
                 $.each(response, function(index, availableHour) {
-                    if ((currColumn * 10) < (index + 1)) {
-                        currColumn++;
-                        $('#available-hours').append('<div style="width:50px; float:left;"></div>');
-                    }
-
                     $('#available-hours div:eq(' + (currColumn - 1) + ')').append(
                             '<span class="available-hour">' + availableHour + '</span><br/>');
                 });
