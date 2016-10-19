@@ -337,6 +337,7 @@ Confirmation
         $("input[name='nb_persons']").TouchSpin({
             min: 1,
             max: 5,
+            verticalbuttons: true,
         });
     </script>
 </body>

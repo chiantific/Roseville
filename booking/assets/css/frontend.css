@@ -189,7 +189,6 @@ body {
 
 #book-appointment-wizard #wizard-frame-1 select,
 #book-appointment-wizard #wizard-frame-1 input {
-    margin-bottom: 25px;
     background-color: #6AB0A4;
     border: #62A398;
     color: #F2F2F2;
