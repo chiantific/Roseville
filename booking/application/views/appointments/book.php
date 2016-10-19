@@ -32,11 +32,6 @@
         rel="stylesheet"
         type="text/css"
         href="/css/jquery.bootstrap-touchspin.css">
-    <link
-        rel="stylesheet"
-        type="text/css"
-        href="/css/style.css">
-
 
     <script
         type="text/javascript"
