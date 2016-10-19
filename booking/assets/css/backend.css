@@ -168,7 +168,7 @@ body .modal.full-screen .modal-content {
 
 body .modal.full-screen .wrapper {
     min-height: 100%;
-    margin-bottom: -67px; /* modal-footer height */
+    margin-bottom: 67px; /* modal-footer height */
 }
 
 body .modal.full-screen .modal-footer {
