@@ -44,6 +44,14 @@ body {
     background: rgba(0,0,0,0);;
 }
 
+#book-appointment-wizard #logo {
+    height: 100px;
+    max-height: 100%;
+    display: inline-block;
+    float: left;
+    margin-top: 0.7em;
+}
+
 #book-appointment-wizard #company-name {
     font-weight: 700;
     color: #B0985C;

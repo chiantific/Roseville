@@ -85,6 +85,7 @@ $(document).ready(function() {
             <div id="book-appointment-wizard" class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 
                 <div id="header">
+                    <img id="logo" alt="Roseville logo" src="/img/logo_R.png" class="img-responsive"/>
                     <span id="company-name">Réservation</span>
                 </div>
 
