@@ -263,7 +263,7 @@ class Appointments extends CI_Controller {
         if($exceptions){
             $view['exceptions'] = $exceptions;
         }
-        $this->load->view('appointments/book_success', $view);
+        $this->load->view('appointments/payement', $view);
     }
 
     /**
