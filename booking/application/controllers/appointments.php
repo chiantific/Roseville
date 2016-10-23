@@ -255,6 +255,7 @@ class Appointments extends CI_Controller {
         $exceptions = $this->session->flashdata('book_success');
          // :: LOAD THE BOOK SUCCESS VIEW
         $view = array(
+            'appointment_id'    => $appointment_id,
             'appointment_data'  => $appointment,
             'provider_data'     => $provider,
             'service_data'      => $service,

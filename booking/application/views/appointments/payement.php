@@ -42,8 +42,28 @@
                     col-lg-offset-2 col-lg-8">
 
                 <div class="col-xs-12 col-sm-10">
-                    <iframe frameborder=0 width=300px height=340px src="https://postfinance.test.v-psp.com/Tokenization/HostedPage?ACCOUNT.PSPID=rosevilleTEST&CARD.BRAND=VISA&PARAMETERS.ACCEPTURL=https%3A%2F%2Fescape.roseville.ch%2Fbook_success&PARAMETERS.EXCEPTIONURL=http%3A%2F%2Fstartpage.com&SHASIGNATURE.SHASIGN=64D32690641AD22661A6509D1F536373E3A2D834">
-                    </iframe>
+                    <?php
+        $password = "cKC8QtsN6v*cKC8QtsN6v*";
+        $account_pspid = "ACCOUNT.PSPID=rosevilleTEST";
+        $card_brand = "CARD.BRAND=VISA";
+        $accept_url = "PARAMETERS.ACCEPTURL=https://escape.roseville.ch/book_success/" . $appointment_id;
+        $exception_url = "PARAMETERS.EXCEPTIONURL=http://startpage.com";
+
+        $sha_chain = $account_pspid . $password;
+        $sha_chain .= $card_brand . $password;
+        $sha_chain .= $accept_url . $password;
+        $sha_chain .= $exception_url . $password;
+        $shasign = sha1($sha_chain);
+
+        $iframe_src = "https://postfinance.test.v-psp.com/Tokenization/HostedPage?";
+        $iframe_src .= $account_pspid;
+        $iframe_src .= '&'.$card_brand;
+        $iframe_src .= '&'.$accept_url;
+        $iframe_src .= '&'.$exception_url;
+        $iframe_src .= "&SHASIGNATURE.SHASIGN=" . $shasign;
+
+        echo "<iframe frameborder=0 width=300px height=340px src=$iframe_src>";
+        echo "<iframe>"; ?>
                     <?php
                         // Display exceptions (if any).
                         if (isset($exceptions)) {
