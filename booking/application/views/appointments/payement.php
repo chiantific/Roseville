@@ -42,7 +42,7 @@
                     col-lg-offset-2 col-lg-8">
 
                 <div class="col-xs-12 col-sm-10">
-                    <iframe frameborder=0 width=300px height=340px src="https://postfinance.test.v-psp.com/Tokenization/HostedPage?ACCOUNT.PSPID=rosevilleTEST&CARD.BRAND=VISA&PARAMETERS.ACCEPTURL=http%3A%2F%2Fgoogle.fr&PARAMETERS.EXCEPTIONURL=http%3A%2F%2Fstartpage.com&SHASIGNATURE.SHASIGN=747BEDE9F1E942BCDB78E1A1B727BE29CB8D976A">
+                    <iframe frameborder=0 width=300px height=340px src="https://postfinance.test.v-psp.com/Tokenization/HostedPage?ACCOUNT.PSPID=rosevilleTEST&CARD.BRAND=VISA&PARAMETERS.ACCEPTURL=https%3A%2F%2Fescape.roseville.ch%2Fbook_success&PARAMETERS.EXCEPTIONURL=http%3A%2F%2Fstartpage.com&SHASIGNATURE.SHASIGN=64D32690641AD22661A6509D1F536373E3A2D834">
                     </iframe>
                     <?php
                         // Display exceptions (if any).
