@@ -46,7 +46,7 @@
         $password = "cKC8QtsN6v*cKC8QtsN6v*";
         $account_pspid = "ACCOUNT.PSPID=rosevilleTEST";
         $card_brand = "CARD.BRAND=VISA";
-        $accept_url = "PARAMETERS.ACCEPTURL=https://escape.roseville.ch/book_success/" . $appointment_id;
+        $accept_url = "PARAMETERS.ACCEPTURL=".$this->config->item('base_url')."/index.php/appointments/book_success/" . $appointment_id;
         $exception_url = "PARAMETERS.EXCEPTIONURL=http://startpage.com";
 
         $sha_chain = $account_pspid . $password;

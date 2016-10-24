@@ -252,7 +252,7 @@ class Appointments extends CI_Controller {
         $service = $this->services_model->get_row($appointment['id_services']);
         $company_name = $this->settings_model->get_setting('company_name');
         //get the exceptions
-        $exceptions = $this->session->flashdata('book_success');
+        $exceptions = $this->session->flashdata('payement');
          // :: LOAD THE BOOK SUCCESS VIEW
         $view = array(
             'appointment_id'    => $appointment_id,
