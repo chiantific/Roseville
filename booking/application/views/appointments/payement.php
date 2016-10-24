@@ -45,11 +45,13 @@
                     <?php
         $password = "cKC8QtsN6v*cKC8QtsN6v*";
         $account_pspid = "ACCOUNT.PSPID=rosevilleTEST";
+        $alias_orderid = "ALIAS.ORDERID=".$appointment_id;
         $card_brand = "CARD.BRAND=VISA";
         $accept_url = "PARAMETERS.ACCEPTURL=".$this->config->item('base_url')."/index.php/appointments/book_success/" . $appointment_id;
         $exception_url = "PARAMETERS.EXCEPTIONURL=http://startpage.com";
 
         $sha_chain = $account_pspid . $password;
+        $sha_chain .= $alias_orderid . $password;
         $sha_chain .= $card_brand . $password;
         $sha_chain .= $accept_url . $password;
         $sha_chain .= $exception_url . $password;
@@ -57,6 +59,7 @@
 
         $iframe_src = "https://postfinance.test.v-psp.com/Tokenization/HostedPage?";
         $iframe_src .= $account_pspid;
+        $iframe_src .= '&'.$alias_orderid;
         $iframe_src .= '&'.$card_brand;
         $iframe_src .= '&'.$accept_url;
         $iframe_src .= '&'.$exception_url;
