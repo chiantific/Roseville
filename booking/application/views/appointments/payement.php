@@ -15,6 +15,8 @@
     <link rel="stylesheet" type="text/css"
         href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"
         href="<?php echo $this->config->item('base_url'); ?>/assets/css/frontend.css">
     <link
         rel="stylesheet"
@@ -42,42 +44,73 @@
                     col-lg-offset-2 col-lg-8">
 
                 <div class="col-xs-12 col-sm-10">
-                    <?php
-        $password = "cKC8QtsN6v*cKC8QtsN6v*";
-        $account_pspid = "ACCOUNT.PSPID=rosevilleTEST";
-        $alias_orderid = "ALIAS.ORDERID=".$appointment_id;
-        $card_brand = "CARD.BRAND=VISA";
-        $accept_url = "PARAMETERS.ACCEPTURL=".$this->config->item('base_url')."/index.php/appointments/book_success/" . $appointment_id;
-        $exception_url = "PARAMETERS.EXCEPTIONURL=http://startpage.com";
-
-        $sha_chain = $account_pspid . $password;
-        $sha_chain .= $alias_orderid . $password;
-        $sha_chain .= $card_brand . $password;
-        $sha_chain .= $accept_url . $password;
-        $sha_chain .= $exception_url . $password;
-        $shasign = sha1($sha_chain);
-
-        $iframe_src = "https://postfinance.test.v-psp.com/Tokenization/HostedPage?";
-        $iframe_src .= $account_pspid;
-        $iframe_src .= '&'.$alias_orderid;
-        $iframe_src .= '&'.$card_brand;
-        $iframe_src .= '&'.$accept_url;
-        $iframe_src .= '&'.$exception_url;
-        $iframe_src .= "&SHASIGNATURE.SHASIGN=" . $shasign;
-
-        echo "<iframe frameborder=0 width=300px height=340px src=$iframe_src>";
-        echo "<iframe>"; ?>
-                    <?php
-                        // Display exceptions (if any).
-                        if (isset($exceptions)) {
-                            echo '<div class="col-xs-12" style="margin:10px">';
-                            echo '<h4>Unexpected Errors</h4>';
-                            foreach($exceptions as $exc) {
-                                echo exceptionToHtml($exc);
-                            }
-                            echo '</div>';
-                        }
-                    ?>
+                    <div class="panel panel-default credit-card-box">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <h3 class="panel-title">Détails du paiement</h3>
+                                <img class="img-responsive pull-right"
+                                        src="http://i76.imgup.net/accepted_c22e0.png">
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <label for="cardNumber">Numéro de carte</label>
+                                        <div class="form-group">
+                                            <input
+                                                type="tel"
+                                                class="form-control input-group"
+                                                name="cardNumber"
+                                                placeholder="Valid Card Number"
+                                                autocomplete="cc-number"
+                                                required autofocus
+                                            />
+                                            <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-7 col-md-7">
+                                        <div class="form-group">
+                                            <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                                            <input
+                                                    type="tel"
+                                                    class="form-control"
+                                                    name="cardExpiry"
+                                                    placeholder="MM / YY"
+                                                    autocomplete="cc-exp"
+                                                    required
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-5 col-md-5 pull-right">
+                                        <div class="form-group">
+                                            <label for=cardCVC">CVC</label>
+                                            <input
+                                                    type="tel"
+                                                    class="form-control"
+                                                    name="cardCVC"
+                                                    placeholder="CVC"
+                                                    autocomplete="cc-csc"
+                                                    required
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <button class="subscribe btn btn-success btn-lg btn-block" type="button">Soumettre</button>
+                                    </div>
+                                </div>
+                                <div class="row" style="display:none;">
+                                    <div class="col-xs-12">
+                                        <p class="payment-errors"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -123,12 +156,28 @@
 
     <script
         type="text/javascript"
-        src="<?php echo $this->config->item('base_url'); ?>/assets/js/frontend_book_success.js"></script>
+        src="<?php echo $this->config->item('base_url'); ?>/assets/js/frontend_book_success.js">
+    </script>
 
     <script
         type="text/javascript"
-        src="<?php echo $this->config->item('base_url'); ?>/assets/js/general_functions.js"></script>
+        src="<?php echo $this->config->item('base_url'); ?>/assets/js/general_functions.js">
+    </script>
 
-    <?php google_analytics_script(); ?>
+    <script
+        type="text/javascript"
+         src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js">
+    </script>
+
+    <script
+        type="text/javascript"
+         src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.2.3/jquery.payment.min.js">
+    </script>
+
+    <script
+        type="text/javascript"
+        src="<?php echo $this->config->item('base_url'); ?>/assets/js/payment.js">
+    </script>
+
 </body>
 </html>
