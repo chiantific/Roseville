@@ -36,6 +36,10 @@
 </head>
 <body>
     <div id="main" class="container">
+<?php if(isset($error) && $error) {
+    echo '<h1>error</h1>';
+}
+?>
         <div class="wrapper row">
             <div id="success-frame" class="frame-container
                     col-xs-12

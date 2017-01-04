@@ -10,7 +10,34 @@ function pay(e) {
 
     $form.find('.subscribe').html('Validating <i class="fa fa-spinner fa-pulse"></i>').prop('disabled', 'true');
 
-    alert("Yo");
+    var expiry = $form.find('[name=cardExpiry]').payment('cardExpiryVal');
+    var ccData = {
+        csrfToken: GlobalVariables.csrfToken,
+        number: $form.find('[name=cardNumber]').val().replace(/\ø=s/g,''),
+        cvc: $form.find('[name=cardCVC]').val(),
+        exp_month: expiry.month,
+        exp_year: expiry.year
+    };
+
+    // Post data
+    var form = document.createElement("form");
+    form.setAttribute("method", "POST");
+    var appointmentId = GlobalVariables.appointmentData['id'];
+    form.setAttribute("action", "/booking/index.php/appointments/payment_process/"+appointmentId);
+
+    for(var key in ccData) {
+        if(ccData.hasOwnProperty(key)) {
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", ccData[key]);
+
+            form.appendChild(hiddenField);
+        }
+    }
+
+    document.body.appendChild(form);
+    form.submit();
 }
 
 $('input[name=cardNumber]').payment('formatCardNumber');

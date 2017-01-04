@@ -44,6 +44,68 @@
                 <div class="col-xs-12 col-sm-2">
                     <img id="success-icon" class="pull-right" src="<?php echo $this->config->item('base_url'); ?>/assets/img/success.png" />
                 </div>
+                <div>
+                    <p><?php
+                        echo $_GET['SHASign'];
+                        $password = "cKC8QtsN6v*cKC8QtsN6v*";
+                        $ncerror = "ALIAS.NCERROR=".$_GET['Alias_NCError'];
+                        $aliasid = "ALIAS.ALIASID=".$_GET['Alias_AliasId'];
+
+
+                        $sha_chain = $aliasid . $password . $ncerror . $password;
+                        $shasign = sha1($sha_chain);
+                        echo "<br/>" . $shasign;
+                        echo "<br/>";
+                        var_dump($_GET);
+                        ?>
+                        <?php
+                        echo "<h1>".$_GET['Card_Cvc']."</h1>";
+                        $submit_url = "https://e-payment.postfinance.ch/Ncol/Test/orderdirect.asp";
+                        $data = array(
+                            "PSPID" => "rosevilleTEST",
+//                            "ORDERID" => $_GET['Alias_OrderId'],
+                            "ORDERID" => "89",
+                            "USERID" => "rosevilleTESTAPI",
+                            "PSWD" => "Password123?!",
+                            "AMOUNT" => "8000",
+                            "CURRENCY" => "CHF",
+                            "CARDNO" => "4111111111111111",
+                            "BRAND" => "VISA",
+                            "ED" => "0117",
+                            "CVC" => "222",
+/*                            "CARDNO" => $_GET['Card_CardNumber'],
+                            "BRAND" => $_GET['Card_Brand'],
+                            "ED" => $_GET['Card_ExpiryDate'],
+                            "CVC" => $_GET['Card_Cvc'],*/
+                            "OPERATION" => "SAL"
+                        );
+                        $options = array(
+                            'http' => array(
+                                'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+                                'method' => "POST",
+                                'content' => http_build_query($data)
+                            )
+                        );
+
+                        $context = stream_context_create($options);
+                        $result = file_get_contents($submit_url, false, $context);
+                        if ($result == FALSE) {
+                            echo '<h4>Unexpected Error</h4>';
+                        }
+                        echo "<h4>START1</h4>";
+                        echo "<pre>";
+                        $result = str_replace('&', '&amp;', $result);
+                        $result = str_replace('<', '&lt;', $result);
+                        htmlspecialchars($result);
+                        echo "</pre>";
+                        echo "<h4>START2</h4>";
+                        echo "<pre>";
+                        var_dump($result);
+                        echo "</pre>";
+                        echo "<h4>END</h4>";
+                        ?>
+                    </p>
+                </div>
                 <div class="col-xs-12 col-sm-10">
                     <?php
                         echo '

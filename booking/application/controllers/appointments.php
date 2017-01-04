@@ -237,7 +237,7 @@ class Appointments extends CI_Controller {
      *
      * @param int $appointment_id Contains the id of the appointment to retrieve.
      */
-    public function payement($appointment_id) {
+    public function payement($appointment_id, $error = false) {
         //if the appointment id doesn't exist or zero redirect to index
         if(!$appointment_id){
             redirect('appointments');
@@ -260,11 +260,61 @@ class Appointments extends CI_Controller {
             'provider_data'     => $provider,
             'service_data'      => $service,
             'company_name'      => $company_name,
+            'error'             => $error,
         );
         if($exceptions){
             $view['exceptions'] = $exceptions;
         }
         $this->load->view('appointments/payement', $view);
+    }
+
+    /**
+     * Payment process
+     */
+    public function payment_process($appointment_id) {
+        //if the appointment id doesn't exist or zero redirect to index
+        if(!$appointment_id){
+            redirect('appointments');
+        }
+        $this->load->model('appointments_model');
+        $submit_url = "https://e-payment.postfinance.ch/Ncol/Test/orderdirect.asp";
+        $exp_date = mktime(0,0,0,$_POST['exp_month'],1,$_POST['exp_year']);
+        $data = array(
+            "PSPID" => "rosevilleTEST",
+            "ORDERID" => $appointment_id,
+            "USERID" => "rosevilleTESTAPI",
+            "PSWD" => "Password123?!",
+            "AMOUNT" => "8000",
+            "CURRENCY" => "CHF",
+            "CARDNO" => $_POST['number'],
+            "BRAND" => "VISA",
+            "ED" => date("mY", $exp_date),
+            "CVC" => $_POST['cvc'],
+            "OPERATION" => "SAL"
+        );
+
+        $options = array(
+            'http' => array(
+                'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method' => "POST",
+                'content' => http_build_query($data)
+            )
+        );
+
+        $context = stream_context_create($options);
+        $result = file_get_contents($submit_url, false, $context);
+
+        if($result == false){
+            $this->payement($appointment_id, true);
+        } else {
+            $appointment =  $this->appointments_model->get_row($appointment_id);
+            $appointment['is_paid'] = true;
+            $this->appointments_model->add($appointment);
+            $view = array(
+                "result" => $result,
+            );
+            $this->load->view('appointments/payment_success', $view);
+        }
     }
 
 	/**
