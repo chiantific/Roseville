@@ -277,6 +277,9 @@ class Appointments extends CI_Controller {
             redirect('appointments');
         }
         $this->load->model('appointments_model');
+        $this->load->model('providers_model');
+        $this->load->model('services_model');
+        $this->load->model('settings_model');
         $submit_url = "https://e-payment.postfinance.ch/Ncol/Test/orderdirect.asp";
         $exp_date = mktime(0,0,0,$_POST['exp_month'],1,$_POST['exp_year']);
         $data = array(
@@ -310,9 +313,22 @@ class Appointments extends CI_Controller {
             $appointment =  $this->appointments_model->get_row($appointment_id);
             $appointment['is_paid'] = true;
             $this->appointments_model->add($appointment);
+            $provider = $this->providers_model->get_row($appointment['id_users_provider']);
+            $service = $this->services_model->get_row($appointment['id_services']);
+            $company_name = $this->settings_model->get_setting('company_name');
+            //get the exceptions
+            $exceptions = $this->session->flashdata('payement');
+            // :: LOAD THE BOOK SUCCESS VIEW
             $view = array(
-                "result" => $result,
+                'appointment_id'    => $appointment_id,
+                'appointment_data'  => $appointment,
+                'provider_data'     => $provider,
+                'service_data'      => $service,
+                'company_name'      => $company_name,
             );
+            if($exceptions){
+                $view['exceptions'] = $exceptions;
+            }
             $this->load->view('appointments/payment_success', $view);
         }
     }
