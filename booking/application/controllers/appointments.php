@@ -280,6 +280,16 @@ class Appointments extends CI_Controller {
         $this->load->model('providers_model');
         $this->load->model('services_model');
         $this->load->model('settings_model');
+        $appointment =  $this->appointments_model->get_row($appointment_id);
+        $provider = $this->providers_model->get_row($appointment['id_users_provider']);
+        $service = $this->services_model->get_row($appointment['id_services']);
+        $date = $appointment['start_datetime'];
+        if(date('N', strtotime($date)) >= 6){
+            $price = $service['price_week_end'];
+        } else {
+            $price = $service['price_week'];
+        }
+        $price = str_replace('.', '', $price);
         $submit_url = "https://e-payment.postfinance.ch/Ncol/Test/orderdirect.asp";
         $exp_date = mktime(0,0,0,$_POST['exp_month'],1,$_POST['exp_year']);
         $data = array(
@@ -287,7 +297,7 @@ class Appointments extends CI_Controller {
             "ORDERID" => $appointment_id,
             "USERID" => "rosevilleTESTAPI",
             "PSWD" => "Password123?!",
-            "AMOUNT" => "8000",
+            "AMOUNT" => $price,
             "CURRENCY" => "CHF",
             "CARDNO" => $_POST['number'],
             "BRAND" => "VISA",
@@ -306,30 +316,32 @@ class Appointments extends CI_Controller {
 
         $context = stream_context_create($options);
         $result = file_get_contents($submit_url, false, $context);
-
-        if($result == false){
+        if($result == false ){
             $this->payement($appointment_id, true);
         } else {
-            $appointment =  $this->appointments_model->get_row($appointment_id);
-            $appointment['is_paid'] = true;
-            $this->appointments_model->add($appointment);
-            $provider = $this->providers_model->get_row($appointment['id_users_provider']);
-            $service = $this->services_model->get_row($appointment['id_services']);
-            $company_name = $this->settings_model->get_setting('company_name');
-            //get the exceptions
-            $exceptions = $this->session->flashdata('payement');
-            // :: LOAD THE BOOK SUCCESS VIEW
-            $view = array(
-                'appointment_id'    => $appointment_id,
-                'appointment_data'  => $appointment,
-                'provider_data'     => $provider,
-                'service_data'      => $service,
-                'company_name'      => $company_name,
-            );
-            if($exceptions){
-                $view['exceptions'] = $exceptions;
+            $result = simplexml_load_string($result) or die("Fail to read XML file");
+            if($result['STATUS'] != 9){
+                $this->payement($appointment_id, true);
+            } else {
+                $appointment['is_paid'] = true;
+                $this->appointments_model->add($appointment);
+                $company_name = $this->settings_model->get_setting('company_name');
+                //get the exceptions
+                $exceptions = $this->session->flashdata('payement');
+                // :: LOAD THE BOOK SUCCESS VIEW
+                $view = array(
+                    'appointment_id'    => $appointment_id,
+                    'appointment_data'  => $appointment,
+                    'provider_data'     => $provider,
+                    'service_data'      => $service,
+                    'company_name'      => $company_name,
+                    'result'            => $result,
+                );
+                if($exceptions){
+                    $view['exceptions'] = $exceptions;
+                }
+                $this->load->view('appointments/payment_success', $view);
             }
-            $this->load->view('appointments/payment_success', $view);
         }
     }
 
