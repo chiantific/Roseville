@@ -774,7 +774,7 @@ var FrontendBook = {
                 }
 
                 window.location.replace(GlobalVariables.baseUrl
-                    + '/index.php/appointments/book_success/' + response.appointment_id);
+                    + '/index.php/appointments/payement/' + response.appointment_id);
             })
             .fail(function(jqxhr, textStatus, errorThrown) {
                 $('.captcha-title small').trigger('click');
