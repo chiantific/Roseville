@@ -324,7 +324,7 @@ Paiement
     <script>
         $("input[name='nb_persons']").TouchSpin({
             min: 1,
-            max: 5,
+            max: 6,
             verticalbuttons: true,
         });
     </script>
