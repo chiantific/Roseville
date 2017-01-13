@@ -307,12 +307,6 @@ var FrontendBook = {
             FrontendBook.registerAppointment();
         });
 
-        /**
-         * Event: Refresh captcha image.
-         */
-        $('.captcha-title small').click(function(event) {
-            $('.captcha-image').attr('src', GlobalVariables.baseUrl + '/index.php/captcha?' + Date.now());
-        });
     },
 
     /**
@@ -704,26 +698,12 @@ var FrontendBook = {
      * the appointment to the database.
      */
     registerAppointment: function() {
-        var $captchaText = $('.captcha-text');
-
-        if ($captchaText.length > 0) {
-            $captchaText.css('border', '');
-            if ($captchaText.val() === '') {
-                $captchaText.css('border', '1px solid #dc3b40');
-                return;
-            }
-        }
-
         var formData = jQuery.parseJSON($('input[name="post_data"]').val());
 
         var postData = {
             'csrfToken': GlobalVariables.csrfToken,
             'post_data': formData
         };
-
-        if ($captchaText.length > 0) {
-            postData.captcha = $captchaText.val();
-        }
 
         if (GlobalVariables.manageMode) {
             postData.exclude_appointment_id = GlobalVariables.appointmentData.id;
@@ -752,32 +732,10 @@ var FrontendBook = {
             }
         })
             .done(function(response) {
-                if (!GeneralFunctions.handleAjaxExceptions(response)) {
-                    $('.captcha-title small').trigger('click');
-                    return false;
-                }
-
-                if (response.captcha_verification === false) {
-                    $('#captcha-hint')
-                        .text(EALang['captcha_is_wrong'] + '(' + response.expected_phrase + ')')
-                        .fadeTo(400, 1);
-
-                    setTimeout(function() {
-                        $('#captcha-hint').fadeTo(400, 0);
-                    }, 3000);
-
-                    $('.captcha-title small').trigger('click');
-
-                    $captchaText.css('border', '1px solid #dc3b40');
-
-                    return false;
-                }
-
                 window.location.replace(GlobalVariables.baseUrl
                     + '/index.php/appointments/payement/' + response.appointment_id);
             })
             .fail(function(jqxhr, textStatus, errorThrown) {
-                $('.captcha-title small').trigger('click');
                 GeneralFunctions.ajaxFailureHandler(jqxhr, textStatus, errorThrown);
             })
             .always(function() {

@@ -484,16 +484,6 @@ class Appointments extends CI_Controller {
             $this->load->model('customers_model');
             $this->load->model('settings_model');
 
-            // Validate the CAPTCHA string.
-            if ($this->settings_model->get_setting('require_captcha') === '1'
-					&&  $this->session->userdata('captcha_phrase') !== $_POST['captcha']) {
-				echo json_encode(array(
-					'captcha_verification' => FALSE,
-					'expected_phrase' => $this->session->userdata('captcha_phrase')
-				));
-				return;
-            }
-
             // Check appointment availability.
             if (!$this->check_datetime_availability()) {
                 throw new Exception($this->lang->line('requested_hour_is_unavailable'));

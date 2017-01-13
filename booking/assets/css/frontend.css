@@ -287,33 +287,6 @@ body {
     color: #15595F;
 }
 
-#book-appointment-wizard .captcha-title {
-    float: left;
-    margin-right: 20px;
-    margin-top: 7px;
-}
-
-#book-appointment-wizard .captcha-title .glyphicon-refresh {
-    cursor: pointer;
-    transition: all 0.3s linear;
-}
-
-#book-appointment-wizard .captcha-title .glyphicon-refresh:hover {
-    color: #1A865F;
-}
-
-#book-appointment-wizard .captcha-image {
-    float: right;
-    margin-bottom: 20px;
-    border-radius: 3px;
-    box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
-}
-
-#book-appointment-wizard .captcha-text {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
 
 /* BOOK SUCCESS & MESSAGE
    ------------------------------------------------------------------------- */
@@ -515,14 +488,6 @@ body {
 
     #book-appointment-wizard {
         box-shadow: none;
-    }
-
-    #book-appointment-wizard .captcha-title {
-        margin: 7px 0 10px 0
-    }
-
-    #book-appointment-wizard .captcha-image {
-        float: left;
     }
 
     #message-frame,

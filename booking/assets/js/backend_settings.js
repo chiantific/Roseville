@@ -59,9 +59,6 @@ var BackendSettings = {
                 $('#customer-notifications').addClass('active');
             }
 
-            if (setting.name == 'require_captcha' && setting.value == '1') {
-                $('#require-captcha').addClass('active');
-            }
         });
 
         BackendSettings.wp = new WorkingPlan();
@@ -270,11 +267,6 @@ SystemSettings.prototype.get = function() {
     settings.push({
         'name': 'customer_notifications',
         'value': $('#customer-notifications').hasClass('active') === true ? '1' : '0'
-    });
-
-    settings.push({
-        'name': 'require_captcha',
-        'value': $('#require-captcha').hasClass('active') === true ? '1' : '0'
     });
 
     // Business Logic Tab
