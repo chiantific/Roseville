@@ -323,7 +323,7 @@ Paiement
         src="<?php echo $this->config->item('base_url'); ?>/assets/js/general_functions.js"></script>
     <script>
         $("input[name='nb_persons']").TouchSpin({
-            min: 1,
+            min: 2,
             max: 6,
             verticalbuttons: true,
         });
