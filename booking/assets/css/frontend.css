@@ -74,7 +74,7 @@ body {
 }
 
 #book-appointment-wizard .wizard-frame .frame-container {
-    height: 440px;
+    height: 100%;
     margin-bottom: 10px;
 }
 
@@ -94,6 +94,7 @@ body {
 
 #book-appointment-wizard .wizard-frame .command-buttons {
     float: right;
+    margin-bottom: 1em;
 }
 
 #book-appointment-wizard .wizard-frame .command-buttons .btn {
@@ -143,6 +144,7 @@ body {
 }
 
 #book-appointment-wizard #frame-footer {
+    clear: both;
     padding: 20px 0;
     text-align: center;
     background: #333;
