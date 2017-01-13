@@ -47,21 +47,6 @@
 
         <div id="calendar-actions">
             <div class="btn-group">
-                <?php if (($role_slug == DB_SLUG_ADMIN || $role_slug == DB_SLUG_PROVIDER)
-                        && Config::GOOGLE_SYNC_FEATURE == TRUE) { ?>
-                    <button id="google-sync" class="btn btn-primary"
-                            title="<?php echo $this->lang->line('trigger_google_sync_hint'); ?>">
-                        <span class="glyphicon glyphicon-refresh"></span>
-                        <span><?php echo $this->lang->line('synchronize'); ?></span>
-                    </button>
-
-                    <button id="enable-sync" class="btn btn-default" data-toggle="button"
-                            title="<?php echo $this->lang->line('enable_appointment_sync_hint'); ?>">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                        <span><?php echo $this->lang->line('enable_sync'); ?></span>
-                    </button>
-                <?php } ?>
-
                 <button id="reload-appointments" class="btn btn-default"
                         title="<?php echo $this->lang->line('reload_appointments_hint'); ?>">
                     <span class="glyphicon glyphicon-repeat"></span>
@@ -380,43 +365,6 @@
                 </button>
                 <button id="cancel-unavailable" class="btn btn-default" data-dismiss="modal">
                     <?php echo $this->lang->line('cancel'); ?>
-                </button>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<?php
-    // --------------------------------------------------------------------
-    //
-    // SELECT GOOGLE CALENDAR
-    //
-    // --------------------------------------------------------------------
-?>
-<div id="select-google-calendar" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"
-                        aria-hidden="true">&times;</button>
-                <h3 class="modal-title"><?php echo $this->lang->line('select_google_calendar'); ?></h3>
-            </div>
-
-            <div class="modal-body">
-                <p>
-                    <?php echo $this->lang->line('select_google_calendar_prompt'); ?>
-                </p>
-                <select id="google-calendar"></select>
-            </div>
-
-            <div class="modal-footer">
-                <button id="select-calendar" class="btn btn-primary">
-                    <?php echo $this->lang->line('select'); ?>
-                </button>
-                <button id="close-calendar" class="btn btn-default" data-dismiss="modal">
-                    <?php echo $this->lang->line('close'); ?>
                 </button>
             </div>
 

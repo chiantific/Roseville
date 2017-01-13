@@ -55,14 +55,6 @@
                             </a>
                         ';
 
-                        if ($this->config->item('ea_google_sync_feature')) {
-                            echo '
-                                <button id="add-to-google-calendar" class="btn btn-primary">
-                                    <span class="glyphicon glyphicon-plus"></span>
-                                    ' . $this->lang->line('add_to_google_calendar') . '
-                                </button>';
-                        }
-
                         // Display exceptions (if any).
                         if (isset($exceptions)) {
                             echo '<div class="col-xs-12" style="margin:10px">';
@@ -108,9 +100,6 @@
             'providerData'      : <?php echo json_encode($provider_data); ?>,
             'serviceData'       : <?php echo json_encode($service_data); ?>,
             'companyName'       : <?php echo '"' . $company_name . '"'; ?>,
-            'googleApiKey'      : <?php echo '"' . Config::GOOGLE_API_KEY . '"'; ?>,
-            'googleClientId'    : <?php echo '"' . Config::GOOGLE_CLIENT_ID . '"'; ?>,
-            'googleApiScope'    : 'https://www.googleapis.com/auth/calendar'
         };
 
         var EALang = <?php echo json_encode($this->lang->language); ?>;
@@ -123,7 +112,5 @@
     <script
         type="text/javascript"
         src="<?php echo $this->config->item('base_url'); ?>/assets/js/general_functions.js"></script>
-
-    <?php google_analytics_script(); ?>
 </body>
 </html>

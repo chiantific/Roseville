@@ -71,11 +71,6 @@ class Unit_tests_providers_model extends CI_Driver {
                 'password' => 'test_prov',
                 'working_plan' => $this->default_working_plan,
                 'notifications' => TRUE,
-                'google_sync' => 0,
-                'google_token' => NULL,
-                'google_calendar' => NULL, 
-                'sync_past_days' => '5',
-                'sync_future_days' => '5'
             )
         );
         
@@ -125,11 +120,6 @@ class Unit_tests_providers_model extends CI_Driver {
             'password' => 'test_prov',
             'working_plan' => $this->default_working_plan,
             'notifications' => TRUE,
-            'google_sync' => 0,
-            'google_token' => NULL,
-            'google_calendar' => NULL,
-            'sync_past_days' => '5',
-            'sync_future_days' => '5'
         );
         $this->ci->db->insert('ea_user_settings', $settings);
         
@@ -149,11 +139,6 @@ class Unit_tests_providers_model extends CI_Driver {
                 'password' => 'CHANGED',
                 'working_plan' => $this->default_working_plan,
                 'notifications' => TRUE,
-                'google_sync' => 0,
-                'google_token' => NULL,
-                'google_calendar' => NULL,
-                'sync_past_days' => '9', // changed
-                'sync_future_days' => '8' // changed
             )
         );
         
@@ -358,10 +343,6 @@ class Unit_tests_providers_model extends CI_Driver {
                 'password' => 'test_prov',
                 'working_plan' => $this->default_working_plan,
                 'notifications' => TRUE,
-                'google_sync' => FALSE,
-                'google_token' => NULL,
-                'sync_past_days' => '5',
-                'sync_future_days' => '5'
             )
         );
         
@@ -386,10 +367,6 @@ class Unit_tests_providers_model extends CI_Driver {
                 'password' => 'test_prov',
                 'working_plan' => $this->default_working_plan,
                 'notifications' => TRUE,
-                'google_sync' => FALSE,
-                'google_token' => NULL,
-                'sync_past_days' => '5',
-                'sync_future_days' => '5'
             )
         );
         
@@ -418,10 +395,6 @@ class Unit_tests_providers_model extends CI_Driver {
                 'password' => 'test_prov',
                 'working_plan' => $this->default_working_plan,
                 'notifications' => TRUE,
-                'google_sync' => FALSE,
-                'google_token' => NULL,
-                'sync_past_days' => '5',
-                'sync_future_days' => '5'
             )
         );
         
@@ -450,10 +423,6 @@ class Unit_tests_providers_model extends CI_Driver {
                 'password' => 'test_prov',
                 'working_plan' => $this->default_working_plan,
                 'notifications' => TRUE,
-                'google_sync' => FALSE,
-                'google_token' => NULL,
-                'sync_past_days' => '5',
-                'sync_future_days' => '5'
             )
         );
         
@@ -511,10 +480,6 @@ class Unit_tests_providers_model extends CI_Driver {
             'password' => 'test-prov',
             'notifications' => FALSE,
             'working_plan' => $this->default_working_plan,
-            'google_sync' => FALSE,
-            'google_token' => NULL,
-            'sync_past_days' => '5',
-            'sync_future_days' => 5
         );
         $this->ci->db->insert('ea_user_settings', $provider['settings']);
         
@@ -584,10 +549,6 @@ class Unit_tests_providers_model extends CI_Driver {
             'password' => 'testprov',
             'notifications' => FALSE,
             'working_plan' => $this->default_working_plan,
-            'google_sync' => FALSE,
-            'google_token' => NULL,
-            'sync_past_days' => '5',
-            'sync_future_days' => '5'
         );
         $this->ci->db->insert('ea_user_settings', $provider['settings']);
         unset($provider['settings']['id_users']);
@@ -752,10 +713,6 @@ class Unit_tests_providers_model extends CI_Driver {
             'password' => 'testprov', 
             'notifications' => FALSE,
             'working_plan' => $this->default_working_plan,
-            'google_sync' => FALSE,
-            'google_token' => NULL,
-            'sync_past_days' => '5',
-            'sync_future_days' => '5' 
         );
         $this->ci->db->insert('ea_user_settings', $settings);
         

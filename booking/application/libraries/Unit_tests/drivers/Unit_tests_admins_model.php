@@ -49,10 +49,6 @@ class Unit_tests_admins_model extends CI_Driver {
             'password' => 'test_pswd',
             'working_plan' => NULL,
             'notifications' => FALSE,
-            'google_sync' => 0, 
-            'google_token' => NULL,
-            'sync_past_days' => NULL,
-            'sync_future_days' => NULL
         );
     }
     

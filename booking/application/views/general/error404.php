@@ -118,7 +118,5 @@
             <?php echo $this->lang->line('backend_section'); ?>
         </a>
     </div>
-
-    <?php google_analytics_script(); ?>
 </body>
 </html>

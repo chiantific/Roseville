@@ -31,9 +31,6 @@
  *          'password'
  *          'notifications'
  *          'working_plan'
- *          'google_sync'
- *          'google_token'
- *          'google_calendar'
  *          'sync_past_days'
  *          'sync_future_days'
  *

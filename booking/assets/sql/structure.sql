@@ -107,11 +107,6 @@ CREATE TABLE IF NOT EXISTS `ea_user_settings` (
   `salt` varchar(512) DEFAULT NULL,
   `working_plan` text,
   `notifications` tinyint(4) DEFAULT '0',
-  `google_sync` tinyint(4) DEFAULT '0',
-  `google_token` text,
-  `google_calendar` varchar(128) DEFAULT NULL,
-  `sync_past_days` int(11) DEFAULT '5',
-  `sync_future_days` int(11) DEFAULT '5',
   PRIMARY KEY (`id_users`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

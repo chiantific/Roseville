@@ -33,9 +33,6 @@ class Appointments extends CI_Controller {
 		} else {
 			$this->lang->load('translations', $this->config->item('language')); // default
 		}
-
-		// Common helpers
-		$this->load->helper('google_analytics');
 	}
 
     /**
@@ -169,24 +166,6 @@ class Appointments extends CI_Controller {
             // :: DELETE APPOINTMENT RECORD FROM THE DATABASE.
             if (!$this->appointments_model->delete($appointment['id'])) {
                 throw new Exception('Appointment could not be deleted from the database.');
-            }
-
-            // :: SYNC APPOINTMENT REMOVAL WITH GOOGLE CALENDAR
-        	if ($appointment['id_google_calendar'] != NULL) {
-                try {
-                    $google_sync = filter_var($this->providers_model
-							->get_setting('google_sync',$appointment['id_users_provider']), FILTER_VALIDATE_BOOLEAN);
-
-                    if ($google_sync == TRUE) {
-                        $google_token = json_decode($this->providers_model
-                                ->get_setting('google_token', $provider['id']));
-                        $this->load->library('Google_Sync');
-                        $this->google_sync->refresh_token($google_token->refresh_token);
-                        $this->google_sync->delete_appointment($provider, $appointment['id_google_calendar']);
-                    }
-                } catch(Exception $exc) {
-                    $exceptions[] = $exc;
-                }
             }
 
             // :: SEND NOTIFICATION EMAILS TO CUSTOMER AND PROVIDER
@@ -512,40 +491,6 @@ class Appointments extends CI_Controller {
                 'company_link'  => $this->settings_model->get_setting('company_link'),
                 'company_email' => $this->settings_model->get_setting('company_email')
             );
-
-            // :: SYNCHRONIZE APPOINTMENT WITH PROVIDER'S GOOGLE CALENDAR
-            // The provider must have previously granted access to his google calendar account
-            // in order to sync the appointment.
-            try {
-                $google_sync = filter_var($this->providers_model->get_setting('google_sync',
-                        $appointment['id_users_provider']), FILTER_VALIDATE_BOOLEAN);
-
-                if ($google_sync == TRUE) {
-                    $google_token = json_decode($this->providers_model
-                            ->get_setting('google_token', $appointment['id_users_provider']));
-
-                    $this->load->library('google_sync');
-                    $this->google_sync->refresh_token($google_token->refresh_token);
-
-                    if ($post_data['manage_mode'] === FALSE) {
-                        // Add appointment to Google Calendar.
-                        $google_event = $this->google_sync->add_appointment($appointment, $provider,
-                                $service, $customer, $company_settings);
-                        $appointment['id_google_calendar'] = $google_event->id;
-                        $this->appointments_model->add($appointment);
-                    } else {
-                        // Update appointment to Google Calendar.
-                        $appointment['id_google_calendar'] = $this->appointments_model
-                                ->get_value('id_google_calendar', $appointment['id']);
-
-                        $this->google_sync->update_appointment($appointment, $provider,
-                                $service, $customer, $company_settings);
-                    }
-                }
-            } catch(Exception $exc) {
-                log_message('error', $exc->getMessage());
-                log_message('error', $exc->getTraceAsString());
-            }
 
             // :: SEND NOTIFICATION EMAILS TO BOTH CUSTOMER AND PROVIDER
             try {

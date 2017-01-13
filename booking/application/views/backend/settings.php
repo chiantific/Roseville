@@ -96,15 +96,6 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="google-analytics-code">
-                                Google Analytics ID</label>
-                            <input type="text" id="google-analytics-code" placeholder="UA-XXXXXXXX-X"
-                                data-field="google_analytics_code" class="form-control">
-                            <span class="help-block">
-                                <?php echo $this->lang->line('google_analytics_code_hint'); ?>
-                            </span>
-                        </div>
-                        <div class="form-group">
                             <label for="date-format">
                                 <?php echo $this->lang->line('date_format'); ?>
                             </label>

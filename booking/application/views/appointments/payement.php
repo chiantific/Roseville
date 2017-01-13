@@ -149,9 +149,6 @@
             'providerData'      : <?php echo json_encode($provider_data); ?>,
             'serviceData'       : <?php echo json_encode($service_data); ?>,
             'companyName'       : <?php echo '"' . $company_name . '"'; ?>,
-            'googleApiKey'      : <?php echo '"' . Config::GOOGLE_API_KEY . '"'; ?>,
-            'googleClientId'    : <?php echo '"' . Config::GOOGLE_CLIENT_ID . '"'; ?>,
-            'googleApiScope'    : 'https://www.googleapis.com/auth/calendar'
         };
 
         var EALang = <?php echo json_encode($this->lang->language); ?>;

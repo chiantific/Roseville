@@ -172,32 +172,6 @@ class Backend_api extends CI_Controller {
             	'company_email' => $this->settings_model->get_setting('company_email')
             );
 
-            // :: SYNC APPOINTMENT CHANGES WITH GOOGLE CALENDAR
-            try {
-                $google_sync = $this->providers_model->get_setting('google_sync',
-                        $appointment['id_users_provider']);
-
-                if ($google_sync == TRUE) {
-                    $google_token = json_decode($this->providers_model->get_setting('google_token',
-                            $appointment['id_users_provider']));
-
-                    $this->load->library('Google_Sync');
-                    $this->google_sync->refresh_token($google_token->refresh_token);
-
-                    if ($appointment['id_google_calendar'] == NULL) {
-                        $google_event = $this->google_sync->add_appointment($appointment, $provider,
-                                $service, $customer, $company_settings);
-                        $appointment['id_google_calendar'] = $google_event->id;
-                        $this->appointments_model->add($appointment); // Store google calendar id.
-                    } else {
-                        $this->google_sync->update_appointment($appointment, $provider,
-                                $service, $customer, $company_settings);
-                    }
-                }
-            } catch(Exception $exc) {
-                $warnings[] = exceptionToJavaScript($exc);
-            }
-
             // :: SEND EMAIL NOTIFICATIONS TO PROVIDER AND CUSTOMER
             try {
                 $this->load->library('Notifications');
@@ -265,8 +239,7 @@ class Backend_api extends CI_Controller {
      *
      * This method deletes an existing appointment from the database. Once this
      * action is finished it cannot be undone. Notification emails are send to both
-     * provider and customer and the delete action is executed to the Google Calendar
-     * account of the provider, if the "google_sync" setting is enabled.
+     * provider and customer
      *
      * @param int $_POST['appointment_id'] The appointment id to be deleted.
      */
@@ -301,23 +274,6 @@ class Backend_api extends CI_Controller {
             // :: DELETE APPOINTMENT RECORD FROM DATABASE
             $this->appointments_model->delete($_POST['appointment_id']);
 
-            // :: SYNC DELETE WITH GOOGLE CALENDAR
-            if ($appointment['id_google_calendar'] != NULL) {
-                try {
-                    $google_sync = $this->providers_model->get_setting('google_sync', $provider['id']);
-
-                    if ($google_sync == TRUE) {
-                        $google_token = json_decode($this->providers_model
-                                ->get_setting('google_token', $provider['id']));
-                        $this->load->library('Google_Sync');
-                        $this->google_sync->refresh_token($google_token->refresh_token);
-                        $this->google_sync->delete_appointment($provider, $appointment['id_google_calendar']);
-                    }
-                } catch(Exception $exc) {
-                    $warnings[] = exceptionToJavaScript($exc);
-                }
-            }
-
             // :: SEND NOTIFICATION EMAILS TO PROVIDER AND CUSTOMER
             try {
                 $this->load->library('Notifications');
@@ -350,40 +306,6 @@ class Backend_api extends CI_Controller {
                     'warnings' => $warnings // There were warnings during the operation.
                 ));
             }
-        } catch(Exception $exc) {
-            echo json_encode(array(
-                'exceptions' => array(exceptionToJavaScript($exc))
-            ));
-        }
-    }
-
-    /**
-     * [AJAX] Disable a providers sync setting.
-     *
-     * This method deletes the "google_sync" and "google_token" settings from the
-     * database. After that the provider's appointments will be no longer synced
-     * with google calendar.
-     *
-     * @param string $_POST['provider_id'] The selected provider record id.
-     */
-    public function ajax_disable_provider_sync() {
-        try {
-            if (!isset($_POST['provider_id']))
-                throw new Exception('Provider id not specified.');
-
-            if ($this->privileges[PRIV_USERS]['edit'] == FALSE
-                    && $this->session->userdata('user_id') != $_POST['provider_id']) {
-                throw new Exception('You do not have the required privileges for this task.');
-            }
-
-            $this->load->model('providers_model');
-            $this->load->model('appointments_model');
-            $this->providers_model->set_setting('google_sync', FALSE, $_POST['provider_id']);
-            $this->providers_model->set_setting('google_token', NULL, $_POST['provider_id']);
-            $this->appointments_model->clear_google_sync_ids($_POST['provider_id']);
-
-            echo json_encode(AJAX_SUCCESS);
-
         } catch(Exception $exc) {
             echo json_encode(array(
                 'exceptions' => array(exceptionToJavaScript($exc))
@@ -469,30 +391,6 @@ class Backend_api extends CI_Controller {
             $unavailable['id'] = $this->appointments_model->add_unavailable($unavailable);
             $unavailable = $this->appointments_model->get_row($unavailable['id']); // fetch all inserted data
 
-            // Google Sync
-            try {
-                $google_sync = $this->providers_model->get_setting('google_sync',
-                        $unavailable['id_users_provider']);
-
-                if ($google_sync) {
-                    $google_token = json_decode($this->providers_model->get_setting('google_token',
-                            $unavailable['id_users_provider']));
-
-                    $this->load->library('google_sync');
-                    $this->google_sync->refresh_token($google_token->refresh_token);
-
-                    if ($unavailable['id_google_calendar'] == NULL) {
-                        $google_event = $this->google_sync->add_unavailable($provider, $unavailable);
-                        $unavailable['id_google_calendar'] = $google_event->id;
-                        $this->appointments_model->add_unavailable($unavailable);
-                    } else {
-                        $google_event = $this->google_sync->update_unavailable($provider, $unavailable);
-                    }
-                }
-            } catch(Exception $exc) {
-                $warnings[] = $exc;
-            }
-
             if (isset($warnings)) {
                 echo json_encode(array(
                     'warnings' => $warnings
@@ -527,19 +425,6 @@ class Backend_api extends CI_Controller {
 
             // Delete unavailable
             $this->appointments_model->delete_unavailable($unavailable['id']);
-
-            // Google Sync
-            try {
-                $google_sync = $this->providers_model->get_setting('google_sync', $provider['id']);
-                if ($google_sync == TRUE) {
-                    $google_token = json_decode($this->providers_model->get_setting('google_token', $provider['id']));
-                    $this->load->library('google_sync');
-                    $this->google_sync->refresh_token($google_token->refresh_token);
-                    $this->google_sync->delete_unavailable($provider, $unavailable['id_google_calendar']);
-                }
-            } catch(Exception $exc) {
-                $warnings[] = $exc;
-            }
 
             if (isset($warnings)) {
                 echo json_encode(array(
@@ -1112,66 +997,6 @@ class Backend_api extends CI_Controller {
                 'exceptions' => array(exceptionToJavaScript($exc))
             ));
     	}
-    }
-
-    /**
-     * This method will return a list of the available google calendars.
-     *
-     * The user will need to select a specific calendar from this list to sync his
-     * appointments with. Google access must be already granted for the specific
-     * provider.
-     *
-     * @param string $_POST['provider_id'] Provider record id.
-     */
-    public function ajax_get_google_calendars() {
-    	try {
-            $this->load->library('google_sync');
-            $this->load->model('providers_model');
-
-            if (!isset($_POST['provider_id']))
-                throw new Exception('Provider id is required in order to fetch the google calendars.');
-
-            // Check if selected provider has sync enabled.
-            $google_sync = $this->providers_model->get_setting('google_sync', $_POST['provider_id']);
-            if ($google_sync) {
-                $google_token = json_decode($this->providers_model->get_setting('google_token', $_POST['provider_id']));
-                $this->google_sync->refresh_token($google_token->refresh_token);
-                $calendars = $this->google_sync->get_google_calendars();
-                echo json_encode($calendars);
-            } else {
-                echo json_encode(AJAX_FAILURE);
-            }
-    	} catch(Exception $exc) {
-            echo json_encode(array(
-                'exceptions' => array(exceptionToJavaScript($exc))
-            ));
-    	}
-    }
-
-    /**
-     * Select a specific google calendar for a provider.
-     *
-     * All the appointments will be synced with this particular calendar.
-     *
-     * @param numeric $_POST['provider_id'] Provider record id.
-     * @param string $_POST['calendar_id'] Google calendar's id.
-     */
-    public function ajax_select_google_calendar() {
-        try {
-            if ($this->privileges[PRIV_USERS]['edit'] == FALSE
-                    && $this->session->userdata('user_id') != $_POST['provider_id']) {
-                throw new Exception('You do not have the required privileges for this task.');
-            }
-
-            $this->load->model('providers_model');
-            $result = $this->providers_model->set_setting('google_calendar', $_POST['calendar_id'], $_POST['provider_id']);
-            echo json_encode(($result) ? AJAX_SUCCESS : AJAX_FAILURE);
-
-        } catch (Exception $exc) {
-            echo json_encode(array(
-                'exceptions' => array(exceptionToJavaScript($exc))
-            ));
-        }
     }
 }
 
