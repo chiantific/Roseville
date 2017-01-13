@@ -43,8 +43,6 @@
         <?php if ($privileges[PRIV_USER_SETTINGS]['view'] == TRUE) { ?>
         <li role="representation" class="user-tab tab"><a><?php echo $this->lang->line('current_user'); ?></a></li>
         <?php } ?>
-
-        <li role="representation" class="about-tab tab"><a><?php echo $this->lang->line('about_ea'); ?></a></li>
     </ul>
 
     <?php
@@ -372,67 +370,5 @@
                 </button>
             </fieldset>
         </form>
-    </div>
-
-    <?php
-        // --------------------------------------------------------------
-        //
-        // ABOUT TAB
-        //
-        // --------------------------------------------------------------
-    ?>
-    <div id="about" class="tab-content">
-        <h3>Easy!Appointments</h3>
-        <p>
-            <?php echo $this->lang->line('about_ea_info'); ?>
-        </p>
-
-        <br>
-
-        <div class="current-version">
-            <?php
-                echo $this->lang->line('current_version') . ' ';
-                echo $this->config->item('ea_version');
-                $release_title = $this->config->item('ea_release_title');
-                if ($release_title != '') {
-                    echo ' - ' . $release_title;
-                }
-            ?>
-        </div>
-
-		<br>
-
-        <h3><?php echo $this->lang->line('support'); ?></h3>
-        <p>
-            <?php echo $this->lang->line('about_ea_support'); ?>
-            <br><br>
-            <a href="http://easyappointments.org">
-                <?php echo $this->lang->line('official_website'); ?>
-            </a>
-            |
-            <a href="https://groups.google.com/forum/#!forum/easy-appointments">
-                <?php echo $this->lang->line('support_group'); ?>
-            </a>
-            |
-            <a href="https://github.com/alextselegidis/easyappointments/issues">
-                <?php echo $this->lang->line('project_issues'); ?>
-            </a>
-            |
-            <a href="http://easyappointments.wordpress.com">
-                E!A Blog
-            </a>
-            |
-            <a href="https://plus.google.com/communities/105333709485142846840">
-                <?php echo $this->lang->line('google_plus_community'); ?>
-            </a>
-        </p>
-
-		<br>
-
-		<h3><?php echo $this->lang->line('license'); ?></h3>
-		<p>
-            <?php echo $this->lang->line('about_ea_license'); ?>
-            <a href="http://www.gnu.org/copyleft/gpl.html">http://www.gnu.org/copyleft/gpl.html</a>
-        </p>
     </div>
 </div>
