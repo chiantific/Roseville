@@ -216,7 +216,7 @@ class Appointments extends CI_Controller {
      *
      * @param int $appointment_id Contains the id of the appointment to retrieve.
      */
-    public function payement($appointment_id, $error = false) {
+    public function payment($appointment_id) {
         //if the appointment id doesn't exist or zero redirect to index
         if(!$appointment_id){
             redirect('appointments');
@@ -231,7 +231,7 @@ class Appointments extends CI_Controller {
         $service = $this->services_model->get_row($appointment['id_services']);
         $company_name = $this->settings_model->get_setting('company_name');
         //get the exceptions
-        $exceptions = $this->session->flashdata('payement');
+        $exceptions = $this->session->flashdata('payment');
          // :: LOAD THE BOOK SUCCESS VIEW
         $view = array(
             'appointment_id'    => $appointment_id,
@@ -239,89 +239,11 @@ class Appointments extends CI_Controller {
             'provider_data'     => $provider,
             'service_data'      => $service,
             'company_name'      => $company_name,
-            'error'             => $error,
         );
         if($exceptions){
             $view['exceptions'] = $exceptions;
         }
-        $this->load->view('appointments/payement', $view);
-    }
-
-    /**
-     * Payment process
-     */
-    public function payment_process($appointment_id) {
-        //if the appointment id doesn't exist or zero redirect to index
-        if(!$appointment_id){
-            redirect('appointments');
-        }
-        $this->load->model('appointments_model');
-        $this->load->model('providers_model');
-        $this->load->model('services_model');
-        $this->load->model('settings_model');
-        $appointment =  $this->appointments_model->get_row($appointment_id);
-        $provider = $this->providers_model->get_row($appointment['id_users_provider']);
-        $service = $this->services_model->get_row($appointment['id_services']);
-        $date = $appointment['start_datetime'];
-        if(date('N', strtotime($date)) >= 6){
-            $price = $service['price_week_end'];
-        } else {
-            $price = $service['price_week'];
-        }
-        $price = str_replace('.', '', $price);
-        $submit_url = "https://e-payment.postfinance.ch/Ncol/Test/orderdirect.asp";
-        $exp_date = mktime(0,0,0,$_POST['exp_month'],1,$_POST['exp_year']);
-        $data = array(
-            "PSPID" => "rosevilleTEST",
-            "ORDERID" => $appointment_id,
-            "USERID" => "rosevilleTESTAPI",
-            "PSWD" => "Password123?!",
-            "AMOUNT" => $price,
-            "CURRENCY" => "CHF",
-            "CARDNO" => $_POST['number'],
-            "BRAND" => "VISA",
-            "ED" => date("mY", $exp_date),
-            "CVC" => $_POST['cvc'],
-            "OPERATION" => "SAL"
-        );
-
-        $options = array(
-            'http' => array(
-                'header' => "Content-type: application/x-www-form-urlencoded\r\n",
-                'method' => "POST",
-                'content' => http_build_query($data)
-            )
-        );
-
-        $context = stream_context_create($options);
-        $result = file_get_contents($submit_url, false, $context);
-        if($result == false ){
-            $this->payement($appointment_id, true);
-        } else {
-            $result = simplexml_load_string($result) or die("Fail to read XML file");
-            if($result['STATUS'] != 9){
-                $this->payement($appointment_id, true);
-            } else {
-                $appointment['is_paid'] = true;
-                $this->appointments_model->add($appointment);
-                $company_name = $this->settings_model->get_setting('company_name');
-                //get the exceptions
-                $exceptions = $this->session->flashdata('payement');
-                // :: LOAD THE BOOK SUCCESS VIEW
-                $view = array(
-                    'appointment_id'    => $appointment_id,
-                    'appointment_data'  => $appointment,
-                    'provider_data'     => $provider,
-                    'service_data'      => $service,
-                    'company_name'      => $company_name,
-                    'result'            => $result,
-                );
-                if($exceptions){
-                    $view['exceptions'] = $exceptions;
-                }
-                $this->load->view('appointments/payment_success', $view);
-            }
-        }
+        $this->load->view('appointments/payment', $view);
     }
 
 	/**
@@ -329,7 +251,7 @@ class Appointments extends CI_Controller {
      *
      * @param int $appointment_id Contains the id of the appointment to retrieve.
      */
-    public function book_success($appointment_id) {
+    public function payment_success($appointment_id) {
         //if the appointment id doesn't exist or zero redirect to index
         if(!$appointment_id){
             redirect('appointments');
@@ -345,17 +267,40 @@ class Appointments extends CI_Controller {
         $company_name = $this->settings_model->get_setting('company_name');
         //get the exceptions
         $exceptions = $this->session->flashdata('appointments/book_success');
-         // :: LOAD THE BOOK SUCCESS VIEW
-        $view = array(
-            'appointment_data'  => $appointment,
-            'provider_data'     => $provider,
-            'service_data'      => $service,
-            'company_name'      => $company_name,
-        );
-        if($exceptions){
-            $view['exceptions'] = $exceptions;
+
+        // Check the SHA-OUT of the server response
+        $sha_out = "cKC8QtsN6v*cKC8QtsN6v*";
+        $string_to_sha = "NCERROR=" . $_GET['NCERROR'] . $sha_out
+            . "ORDERID=" . $_GET['orderID'] . $sha_out
+            . "PAYID=" . $_GET['PAYID'] . $sha_out
+            . "STATUS=" . $_GET['STATUS'] . $sha_out;
+
+        $sha_sign = strtoupper(sha1($string_to_sha));
+
+        if($sha_sign != $_GET['SHASIGN'] || $_GET['STATUS'] != 9){
+            $view = array();
+            $this->load->view('appointments/payment_fail', $view);
+        } else {
+            $appointment['is_paid'] = true;
+            $this->appointments_model->add($appointment);
+            $company_name = $this->settings_model->get_setting('company_name');
+            //get the exceptions
+            $exceptions = $this->session->flashdata('payement');
+            // :: LOAD THE BOOK SUCCESS VIEW
+            $view = array(
+                'appointment_id'    => $appointment_id,
+                'appointment_data'  => $appointment,
+                'provider_data'     => $provider,
+                'service_data'      => $service,
+                'company_name'      => $company_name,
+                'result'            => $_GET,
+                'exp_sha'           => $sha_sign
+            );
+            if($exceptions){
+                $view['exceptions'] = $exceptions;
+            }
+            $this->load->view('appointments/payment_success', $view);
         }
-        $this->load->view('appointments/book_success', $view);
     }
 
     /**

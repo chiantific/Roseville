@@ -733,7 +733,7 @@ var FrontendBook = {
         })
             .done(function(response) {
                 window.location.replace(GlobalVariables.baseUrl
-                    + '/index.php/appointments/payement/' + response.appointment_id);
+                    + '/index.php/appointments/payment/' + response.appointment_id);
             })
             .fail(function(jqxhr, textStatus, errorThrown) {
                 GeneralFunctions.ajaxFailureHandler(jqxhr, textStatus, errorThrown);

@@ -147,15 +147,15 @@ foreach($available_services as $service) {
                             </select>
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="row">
                                         <h3>Choisissez une salle</h3>
                                         <select id="select-provider" class="form-control"></select>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="row">
                                         <h3>Nombre de personnes</h3>
                                         <input id="nb_persons" type="text" value="1"  name="nb_persons"/>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="hidden">
                                         <h3>Difficulté</h3>
                                         <select id="difficulty" class="form-control">
                                             <option value="1">Facile</option>
@@ -163,7 +163,7 @@ foreach($available_services as $service) {
                                             <option value="3">Difficile</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="row">
                                         <h3>Langue préférée</h3>
                                         <select id="language" class="form-control">
                                             <option value="1">Français</option>
