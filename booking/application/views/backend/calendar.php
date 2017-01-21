@@ -191,17 +191,6 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="difficulty" class="control-label col-sm-3" ><?php echo $this->lang->line('difficulty'); ?> *</label>
-                                <div class="col-sm-7">
-                                    <select id="difficulty" class="required form-control">
-                                        <option value="1">Facile</option>
-                                        <option value="2">Moyen</option>
-                                        <option value="3">Difficile</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
                                 <label for="language" class="control-label col-sm-3" ><?php echo $this->lang->line('language'); ?> *</label>
                                 <div class="col-sm-7">
                                     <select id="language" class="required form-control">

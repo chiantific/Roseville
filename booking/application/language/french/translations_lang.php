@@ -39,7 +39,6 @@ $lang['service'] = 'Prestations';
 $lang['provider'] = 'Exécutant';
 $lang['customer'] = 'Client';
 $lang['nb_persons'] = 'Participants';
-$lang['difficulty'] = 'Difficulté';
 $lang['language'] = 'Langue préférée';
 $lang['is_paid'] = 'Payé';
 $lang['start'] = 'Début';

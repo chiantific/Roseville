@@ -155,14 +155,6 @@ foreach($available_services as $service) {
                                         <h3>Nombre de personnes</h3>
                                         <input id="nb_persons" type="text" value="1"  name="nb_persons"/>
                                     </div>
-                                    <div class="hidden">
-                                        <h3>Difficulté</h3>
-                                        <select id="difficulty" class="form-control">
-                                            <option value="1">Facile</option>
-                                            <option value="2">Moyen</option>
-                                            <option value="3">Difficile</option>
-                                        </select>
-                                    </div>
                                     <div class="row">
                                         <h3>Langue préférée</h3>
                                         <select id="language" class="form-control">

@@ -201,7 +201,6 @@ var BackendCalendar = {
             $dialog.find('#select-service').val(appointment['id_services']).change();
             $dialog.find('#select-provider').val(appointment['id_users_provider']);
             $dialog.find('#nb_persons').val(appointment['nb_persons']);
-            $dialog.find('#difficulty').val(appointment['difficulty']);
             $dialog.find('#language').val(appointment['language']);
             $dialog.find('#is_paid').prop("checked", (parseInt(appointment['is_paid'])));
 
@@ -380,7 +379,6 @@ var BackendCalendar = {
                 $dialog.find('#select-service').val(appointment['id_services']).trigger('change');
                 $dialog.find('#select-provider').val(appointment['id_users_provider']);
                 $dialog.find('#nb_persons').val(appointment['nb_persons']);
-                $dialog.find('#difficulty').val(appointment['difficulty']);
                 $dialog.find('#language').val(appointment['language']);
                 $dialog.find('#is_paid').prop("checked", (parseInt(appointment['is_paid'])));
 
@@ -552,7 +550,6 @@ var BackendCalendar = {
                 'id_services': $dialog.find('#select-service').val(),
                 'id_users_provider': $dialog.find('#select-provider').val(),
                 'nb_persons': $dialog.find('#nb_persons').val(),
-                'difficulty': $dialog.find('#difficulty').val(),
                 'language' : $dialog.find('#language').val(),
                 'is_paid' : is_paid,
                 'start_datetime': startDatetime,
@@ -1609,9 +1606,6 @@ var BackendCalendar = {
                         + '<br>' +
                     '<strong>' + EALang['nb_persons'] + '</strong> '
                         + event.data['nb_persons']
-                        + '<br>' +
-                    '<string>' + EALang['difficulty'] + '</strong> '
-                        + event.data['difficulty']
                         + '<br>' +
                     '<string>' + EALang['language'] + '</strong> '
                         + event.data['language']

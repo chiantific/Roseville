@@ -187,13 +187,6 @@ var FrontendBook = {
                }
             }
 
-            // If we are on the first tab, then the user should have a selected difficulty
-            if ($(this).attr('data-step_index') === '1') {
-                if ($('#difficulty').val() == null || $('#difficulty').val() == "") {
-                    return;
-                }
-            }
-            
             // If we are on the first tab, then the user should have a selected language
             if ($(this).attr('data-step_index') === '1') {
                 if ($('#language').val() == null || $('#language').val() == "") {
@@ -515,7 +508,6 @@ var FrontendBook = {
                     + selectedDate + ' ' +  $('.selected-hour').text()
                     + servicePrice + ' ' + serviceCurrency + '<br>'
                     + nb_persons + ' participant' + pluriel_indicative + '<br>'
-                    + 'Difficulté : ' + $('#difficulty option:selected').text() + '<br>'
                     + 'Langue : ' + $('#language option:selected').text()
                 + '</strong>' +
             '</p>';
@@ -559,7 +551,6 @@ var FrontendBook = {
             'id_users_provider': $('#select-provider').val(),
             'id_services': $('#select-service').val(),
             'nb_persons': $('#nb_persons').val(),
-            'difficulty': $('#difficulty').val(),
             'language': $('#language').val()
         };
 
