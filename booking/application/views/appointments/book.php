@@ -86,7 +86,7 @@ $(document).ready(function() {
 
                 <div id="header">
                     <img id="logo" alt="Roseville logo" src="/img/logo_R.png" class="img-responsive"/>
-                    <span id="company-name">
+                    <span id="page-title">
                         <?php echo $this->lang->line('page_title'); ?>
                     </span>
                 </div>

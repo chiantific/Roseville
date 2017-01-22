@@ -51,7 +51,7 @@ body {
     margin-top: 0.7em;
 }
 
-#book-appointment-wizard #company-name {
+#book-appointment-wizard #page-title {
     font-weight: 700;
     color: #C74D00;
     font-size: 50px;
@@ -372,7 +372,7 @@ body {
         height: auto;
     }
 
-    #book-appointment-wizard #company-name {
+    #book-appointment-wizard #page-title {
         float: none;
         display: block;
         text-align: center;
