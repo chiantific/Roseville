@@ -232,7 +232,7 @@ foreach($available_services as $service) {
                                 <div class="form-group">
                                     <label for="phone-number" class="control-label">
                                         <?php
-                                            echo $this->lang->line('phone-number');
+                                            echo $this->lang->line('phone_number');
                                         ?> *
                                     </label>
                                     <input type="tel" id="phone-number" class="required form-control" maxlength="60" />
