@@ -150,15 +150,27 @@ foreach($available_services as $service) {
                             <div class="form-group">
                                 <div class="row">
                                     <div class="row">
-                                        <h3>Choisissez une salle</h3>
+                                        <h3>
+                                            <?php
+                                                echo $this->lang->line('select_room');
+                                            ?>
+                                        </h3>
                                         <select id="select-provider" class="form-control"></select>
                                     </div>
                                     <div class="row">
-                                        <h3>Nombre de personnes</h3>
-                                        <input id="nb_persons" type="text" value="1"  name="nb_persons"/>
+                                        <h3>
+                                            <?php
+                                                echo $this->lang->line('nb_participants');
+                                            ?>
+                                        </h3>
+                                        <input id="nb_participants" type="text" value="1"  name="nb_participants"/>
                                     </div>
                                     <div class="row">
-                                        <h3>Langue préférée</h3>
+                                        <h3>
+                                            <?php
+                                                echo $this->lang->line('language');
+                                            ?>
+                                        </h3>
                                         <select id="language" class="form-control">
                                             <option value="1">Français</option>
                                             <option value="2">Anglais</option>
@@ -172,7 +184,7 @@ foreach($available_services as $service) {
                     <div class="command-buttons">
                         <button type="button" id="button-next-1" class="btn button-next btn-primary"
                                 data-step_index="1">
-                            Suivant
+                            <?php echo $this->lang->line('next'); ?>
                         </button>
                     </div>
                 </div>
@@ -185,7 +197,11 @@ foreach($available_services as $service) {
                     <div class="frame-container">
                         <div class="frame-content">
                             <div class="form-group row">
-                                <h3 class="frame-title">Choissez la date & l'heure</h3>
+                                <h3 class="frame-title">
+                                    <?php
+                                        echo $this->lang->line('step_two-title');
+                                    ?>
+                                </h3>
                                 <div class="col-md-6">
                                     <div id="select-date"></div>
                                 </div>
@@ -193,7 +209,9 @@ foreach($available_services as $service) {
                                 <div class="col-md-6">
                                     <div class="hours">
                                         <div class="header">
-                                            Tranche horaire
+                                            <?php
+                                                echo $this->lang->line('schedule');
+                                            ?>
                                         </div>
                                         <?php // Available hours are going to be fetched via ajax call. ?>
                                         <div id="available-hours"></div>
@@ -206,11 +224,11 @@ foreach($available_services as $service) {
                     <div class="command-buttons">
                         <button type="button" id="button-back-2" class="btn button-back btn-default"
                                 data-step_index="2">
-                            Retour
+                            <?php echo $this->lang->line('back'); ?>
                         </button>
                         <button type="button" id="button-next-2" class="btn button-next btn-primary"
                                 data-step_index="2">
-                            Suivant
+                            <?php echo $this->lang->line('next'); ?>
                         </button>
                     </div>
                 </div>
@@ -227,42 +245,64 @@ foreach($available_services as $service) {
                         <div class="frame-content row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="first-name" class="control-label">Prénom *</label>
+                                    <label for="first-name" class="control-label">
+                                        <?php
+                                            echo $this->lang->line('first_name');
+                                        ?> *
+                                    </label>
                                     <input type="text" id="first-name" class="required form-control" maxlength="100" />
                                 </div>
                                 <div class="form-group">
-                                    <label for="last-name" class="control-label">Nom *</label>
+                                    <label for="last-name" class="control-label">
+                                        <?php
+                                            echo $this->lang->line('last_name');
+                                        ?> *
+                                    </label>
                                     <input type="text" id="last-name" class="required form-control" maxlength="250" />
                                 </div>
                                 <div class="form-group">
-                                    <label for="email" class="control-label">Email *</label>
+                                    <label for="email" class="control-label">
+                                        <?php
+                                            echo $this->lang->line('email');
+                                        ?> *</label>
                                     <input type="email" id="email" class="required form-control" maxlength="250" />
                                 </div>
                                 <div class="form-group">
-                                    <label for="phone-number" class="control-label">Numéro de téléphone *</label>
+                                    <label for="phone-number" class="control-label">
+                                        <?php
+                                            echo $this->lang->line('phone-number');
+                                        ?> *
+                                    </label>
                                     <input type="tel" id="phone-number" class="required form-control" maxlength="60" />
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="notes" class="control-label">Informations</label>
+                                    <label for="notes" class="control-label">
+                                        <?php
+                                            echo $this->lang->line('notes');
+                                        ?>
+                                    </label>
                                     <textarea id="notes" maxlength="500" class="form-control" rows="3"></textarea>
                                 </div>
-                                <em id="form-message" class="text-danger">Les champs avec un * sont obligatoires</em>
+                                <em id="form-message" class="text-danger">
+                                    <?php
+                                        echo $this->lang->line('fileds_are_required');
+                                    ?>
+                                </em>
                             </div>
-
                         </div>
                     </div>
 
                     <div class="command-buttons">
                         <button type="button" id="button-back-3" class="btn button-back btn-default"
                                 data-step_index="3">
-                            Retour
+                            <?php echo $this->lang->line('back'); ?>
                         </button>
                         <button type="button" id="button-next-3" class="btn button-next btn-primary"
                                 data-step_index="3">
-                            Suivant
+                            <?php echo $this->lang->line('next'); ?>
                         </button>
                     </div>
                 </div>
@@ -274,7 +314,11 @@ foreach($available_services as $service) {
 
                 <div id="wizard-frame-4" class="wizard-frame" style="display:none;">
                     <div class="frame-container">
-                        <h3 class="frame-title">Confirmation</h3>
+                        <h3 class="frame-title">
+                            <?php
+                                echo $this->lang->line('step_four_title');
+                            ?>
+                        </h3>
                         <div class="frame-content row">
                             <div id="appointment-details" class="col-md-6"></div>
                             <div id="customer-details" class="col-md-6"></div>
@@ -284,12 +328,12 @@ foreach($available_services as $service) {
                     <div class="command-buttons">
                         <button type="button" id="button-back-4" class="btn button-back btn-default"
                                 data-step_index="4">
-                            Retour
+                            <?php echo $this->lang->line('back'); ?>
                         </button>
                         <form id="book-appointment-form" style="display:inline-block" method="post">
                             <button id="book-appointment-submit" type="button" class="btn btn-success">
                                 <span class="glyphicon glyphicon-ok"></span>
-Paiement
+                                <?php echo $this->lang->line('payment'); ?>
                             </button>
                             <input type="hidden" name="csrfToken" />
                             <input type="hidden" name="post_data" />
@@ -316,7 +360,7 @@ Paiement
         type="text/javascript"
         src="<?php echo $this->config->item('base_url'); ?>/assets/js/general_functions.js"></script>
     <script>
-        $("input[name='nb_persons']").TouchSpin({
+        $("input[name='nb_participants']").TouchSpin({
             min: 2,
             max: 6,
             verticalbuttons: true,

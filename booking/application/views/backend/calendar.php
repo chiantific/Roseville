@@ -184,9 +184,9 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="nb_persons" class="control-label col-sm-3" ><?php echo $this->lang->line('nb_persons'); ?> *</label>
+                                <label for="nb_participants" class="control-label col-sm-3" ><?php echo $this->lang->line('nb_participants'); ?> *</label>
                                 <div class="col-sm-7">
-                                    <input type="number" id="nb_persons" class="required" />
+                                    <input type="number" id="nb_participants" class="required" />
                                 </div>
                             </div>
 

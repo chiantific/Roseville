@@ -200,7 +200,7 @@ var BackendCalendar = {
             $dialog.find('#appointment-id').val(appointment['id']);
             $dialog.find('#select-service').val(appointment['id_services']).change();
             $dialog.find('#select-provider').val(appointment['id_users_provider']);
-            $dialog.find('#nb_persons').val(appointment['nb_persons']);
+            $dialog.find('#nb_participants').val(appointment['nb_participants']);
             $dialog.find('#language').val(appointment['language']);
             $dialog.find('#is_paid').prop("checked", (parseInt(appointment['is_paid'])));
 
@@ -378,7 +378,7 @@ var BackendCalendar = {
                 $dialog.find('#appointment-id').val(appointment['id']);
                 $dialog.find('#select-service').val(appointment['id_services']).trigger('change');
                 $dialog.find('#select-provider').val(appointment['id_users_provider']);
-                $dialog.find('#nb_persons').val(appointment['nb_persons']);
+                $dialog.find('#nb_participants').val(appointment['nb_participants']);
                 $dialog.find('#language').val(appointment['language']);
                 $dialog.find('#is_paid').prop("checked", (parseInt(appointment['is_paid'])));
 
@@ -549,7 +549,7 @@ var BackendCalendar = {
             var appointment = {
                 'id_services': $dialog.find('#select-service').val(),
                 'id_users_provider': $dialog.find('#select-provider').val(),
-                'nb_persons': $dialog.find('#nb_persons').val(),
+                'nb_participants': $dialog.find('#nb_participants').val(),
                 'language' : $dialog.find('#language').val(),
                 'is_paid' : is_paid,
                 'start_datetime': startDatetime,
@@ -1604,8 +1604,8 @@ var BackendCalendar = {
                         + event.data['customer']['first_name'] + ' '
                         + event.data['customer']['last_name']
                         + '<br>' +
-                    '<strong>' + EALang['nb_persons'] + '</strong> '
-                        + event.data['nb_persons']
+                    '<strong>' + EALang['nb_participants'] + '</strong> '
+                        + event.data['nb_participants']
                         + '<br>' +
                     '<string>' + EALang['language'] + '</strong> '
                         + event.data['language']
@@ -2018,10 +2018,10 @@ var BackendCalendar = {
             }
 
             // :: CHECK NUMBER OF PARTICIPANTS
-            var nb_persons = $('#nb_persons').val();
-            if (nb_persons < 1 || nb_persons > 5) {
-                $dialog.find('#nb_persons').parents('.form-group').addClass('has-error');
-                throw EALang['invalid_nb_persons'];
+            var nb_participants = $('#nb_participants').val();
+            if (nb_participants < 1 || nb_participants > 5) {
+                $dialog.find('#nb_participants').parents('.form-group').addClass('has-error');
+                throw EALang['invalid_nb_participants'];
             }
 
             // :: CHECK EMAIL ADDRESS

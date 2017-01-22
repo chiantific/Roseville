@@ -182,7 +182,7 @@ var FrontendBook = {
 
             // If we are on the first tab then the user should have a number of participants
             if ($(this).attr('data-step_index') === '1') {
-               if ($('#nb_persons').val() == null || $('#nb_persons').val() == "") {
+               if ($('#nb_participants').val() == null || $('#nb_participants').val() == "") {
                 return;
                }
             }
@@ -494,11 +494,7 @@ var FrontendBook = {
             }
         });
 
-        var nb_persons = $('#nb_persons').val();
-        var pluriel_indicative = '';
-        if (nb_persons > 1) {
-            pluriel_indicative = 's';
-        }
+        var nb_participants = $('#nb_participants').val();
 
         var html =
             '<h4>' + $('#select-service option:selected').text() + '</h4>' +
@@ -507,7 +503,7 @@ var FrontendBook = {
                     + $('#select-provider option:selected').text() + '<br>'
                     + selectedDate + ' ' +  $('.selected-hour').text()
                     + servicePrice + ' ' + serviceCurrency + '<br>'
-                    + nb_persons + ' participant' + pluriel_indicative + '<br>'
+                    + nb_participants + ' participants' + '<br>'
                     + 'Langue : ' + $('#language option:selected').text()
                 + '</strong>' +
             '</p>';
@@ -550,7 +546,7 @@ var FrontendBook = {
             'is_unavailable': false,
             'id_users_provider': $('#select-provider').val(),
             'id_services': $('#select-service').val(),
-            'nb_persons': $('#nb_persons').val(),
+            'nb_participants': $('#nb_participants').val(),
             'language': $('#language').val()
         };
 
