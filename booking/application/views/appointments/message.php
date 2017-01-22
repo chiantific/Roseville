@@ -16,10 +16,6 @@
         href="<?php echo $this->config->item('base_url'); ?>/assets/ext/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css"
         href="<?php echo $this->config->item('base_url'); ?>/assets/css/frontend.css">
-    <link
-        rel="stylesheet"
-        type="text/css"
-        href="/css/style.css">
 
     <?php
         // ------------------------------------------------------------

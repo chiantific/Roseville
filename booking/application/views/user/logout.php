@@ -17,10 +17,6 @@
     <script
         type="text/javascript"
         src="/js/bootstrap.min.js"></script>
-	<link
-        rel="stylesheet"
-        type="text/css"
-        href="/css/style.css">
 
     <script type="text/javascript">
         var EALang = <?php echo json_encode($this->lang->language); ?>;

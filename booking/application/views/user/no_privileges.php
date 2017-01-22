@@ -14,10 +14,6 @@
     <script
         type="text/javascript"
         src="/js/bootstrap.min.js"></script>
-	<link
-        rel="stylesheet"
-        type="text/css"
-        href="/css/style.css">
 
     <?php // INCLUDE CSS FILES ?>
     <link

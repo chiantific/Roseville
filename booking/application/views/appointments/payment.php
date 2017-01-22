@@ -18,10 +18,6 @@
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css"
         href="<?php echo $this->config->item('base_url'); ?>/assets/css/frontend.css">
-    <link
-        rel="stylesheet"
-        type="text/css"
-        href="/css/style.css">
 
     <?php
         // ------------------------------------------------------------
