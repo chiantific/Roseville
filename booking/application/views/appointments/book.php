@@ -92,9 +92,7 @@ $(document).ready(function() {
                 </div>
 
 <?php
-// ------------------------------------------------------
-// DISPLAY EXCEPTIONS (IF ANY)
-// ------------------------------------------------------
+// Display exceptions (if any)
 if (isset($exceptions)) {
     echo '<div style="margin: 10px">';
     echo '<h4>' . $this->lang->line('unexpected_issues') . '</h4>';
@@ -105,11 +103,7 @@ if (isset($exceptions)) {
 }
 ?>
 
-<?php
-// ------------------------------------------------------
-// SELECT ROOM
-// ------------------------------------------------------ ?>
-
+<!-- Select room -->
                 <div id="wizard-frame-1" class="wizard-frame">
                     <div class="frame-container">
                         <div class="frame-content">
@@ -162,11 +156,8 @@ foreach($available_services as $service) {
                         </button>
                     </div>
                 </div>
-<?php
-// ------------------------------------------------------
-// SELECT DATE
-// ------------------------------------------------------ ?>
 
+<!-- Select schedule -->
                 <div id="wizard-frame-2" class="wizard-frame" style="display:none;">
                     <div class="frame-container">
                         <div class="frame-content">
@@ -206,11 +197,8 @@ foreach($available_services as $service) {
                         </button>
                     </div>
                 </div>
-<?php
-    // ------------------------------------------------------
-    // ENTER CUSTOMER DATA
-    // ------------------------------------------------------ ?>
 
+<!-- Customer data -->
                 <div id="wizard-frame-3" class="wizard-frame" style="display:none;">
                     <div class="frame-container">
 
@@ -281,11 +269,7 @@ foreach($available_services as $service) {
                     </div>
                 </div>
 
-<?php
-    // ------------------------------------------------------
-    // APPOINTMENT DATA CONFIRMATION
-    // ------------------------------------------------------ ?>
-
+<!-- Data confirmation -->
                 <div id="wizard-frame-4" class="wizard-frame" style="display:none;">
                     <div class="frame-container">
                         <h3 class="frame-title">
