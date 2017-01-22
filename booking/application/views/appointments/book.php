@@ -93,32 +93,6 @@ $(document).ready(function() {
 
 <?php
 // ------------------------------------------------------
-// CANCEL APPOINTMENT BUTTON
-// ------------------------------------------------------
-if ($manage_mode === TRUE) {
-    echo '
-                            <div id="cancel-appointment-frame" class="row">
-                                <div class="col-xs-12 col-sm-10">
-                                    <p>' .
-                                        $this->lang->line('cancel_appointment_hint') .
-                                    '</p>
-                                </div>
-                                <div class="col-xs-12 col-sm-2">
-                                    <form id="cancel-appointment-form" method="post"
-                                            action="' . $this->config->item('base_url')
-                                            . '/index.php/appointments/cancel/' . $appointment_data['hash'] . '">
-                                        <input type="hidden" name="csrfToken" value="' . $this->security->get_csrf_hash() . '" />
-                                        <textarea name="cancel_reason" style="display:none"></textarea>
-                                        <button id="cancel-appointment" class="btn btn-default">' .
-                                                $this->lang->line('cancel') . '</button>
-                                    </form>
-                                </div>
-                            </div>';
-}
-?>
-
-<?php
-// ------------------------------------------------------
 // DISPLAY EXCEPTIONS (IF ANY)
 // ------------------------------------------------------
 if (isset($exceptions)) {
