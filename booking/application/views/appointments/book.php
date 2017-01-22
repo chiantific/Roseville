@@ -297,7 +297,7 @@ Paiement
 
                 <div id="frame-footer">
                     <div class="container">
-                        <p>Copyright &copy; Roseville</p>
+                        <p>Copyright &copy; Roseville Escape</p>
                     <?php if ($this->session->userdata('user_id')): ?>
                         |
                         <a href="<?php echo $this->config->item('base_url'); ?>/index.php/backend">
