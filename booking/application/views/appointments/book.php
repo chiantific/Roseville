@@ -250,7 +250,7 @@ foreach($available_services as $service) {
                                 </div>
                                 <em id="form-message" class="text-danger">
                                     <?php
-                                        echo $this->lang->line('fileds_are_required');
+                                        echo $this->lang->line('fields_are_required');
                                     ?>
                                 </em>
                             </div>
