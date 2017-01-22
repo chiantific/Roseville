@@ -205,7 +205,7 @@ foreach($available_services as $service) {
                     <h3 class="frame-title"><?php echo $this->lang->line('step_three_title')?></h3>
 
                         <div class="frame-content row">
-                            <div class="col-md-6">
+                            <div class="col-md-6 col-left">
                                 <div class="form-group">
                                     <label for="first-name" class="control-label">
                                         <?php
@@ -239,7 +239,7 @@ foreach($available_services as $service) {
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 col-right">
                                 <div class="form-group">
                                     <label for="notes" class="control-label">
                                         <?php
