@@ -25,6 +25,8 @@ body {
 #main {
     display: table;
     vertical-align: middle;
+    padding-bottom: 6em;
+    height: 100%;
 }
 
 #main .wrapper {
@@ -155,6 +157,7 @@ body {
     color: #777;
     padding: 20px 0;
     text-align: center;
+    margin-top: -6em;
 }
 
 #footer a {
