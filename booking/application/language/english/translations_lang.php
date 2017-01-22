@@ -1,6 +1,6 @@
 <?php
 // English
-$lang['page_title'] = 'Book Appointment With';
+$lang['page_title'] = 'Booking';
 $lang['step_one_title'] = 'Select Service & Provider';
 $lang['select_service'] = 'Select Service';
 $lang['select_provider'] = 'Select Provider';

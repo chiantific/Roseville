@@ -1,6 +1,6 @@
 <?php
 // French
-$lang['page_title'] = 'Prendre rendez-vous avec ...';
+$lang['page_title'] = 'Réservations';
 $lang['step_one_title'] = 'Choisissez une prestation et un lieu';
 $lang['select_service'] = 'Choisissez une prestation';
 $lang['select_provider'] = 'Choisissez une salle';
