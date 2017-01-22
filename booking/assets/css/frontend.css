@@ -9,9 +9,13 @@
  * @since       v1.0.0
  * ---------------------------------------------------------------------------- */
 
-html,
-body {
-    height: 100%;
+body, html {
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    color: #777;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 body {
