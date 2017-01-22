@@ -58,7 +58,6 @@ body {
     margin: 20px 10px 0 15px;
     display: inline-block;
     float: left;
-    text-transform: uppercase;
 }
 
 #book-appointment-wizard #steps {
