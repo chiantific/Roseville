@@ -148,16 +148,24 @@ body {
     font-size: 18px;
 }
 
-#book-appointment-wizard #frame-footer {
-    clear: both;
-    padding: 20px 0;
-    text-align: center;
+#footer {
     background: #333;
     color: #777;
+    padding: 20px 0;
+    text-align: center;
 }
 
-#book-appointment-wizard #frame-footer p {
-    display: inline-block;
+#footer a {
+    color: #999999;
+}
+
+#footer a:hover, a:focus {
+    color: #e75926;
+}
+
+#footer p {
+    font-size: 13px;
+    margin-top: 10px;
 }
 
 #book-appointment-wizard #steps .custom-qtip {

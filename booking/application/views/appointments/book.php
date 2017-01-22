@@ -298,19 +298,20 @@ foreach($available_services as $service) {
                         </form>
                     </div>
                 </div>
-
-                <div id="frame-footer">
-                    <div class="container">
-                        <p>Copyright &copy; Roseville Escape</p>
-                    <?php if ($this->session->userdata('user_id')): ?>
-                        |
-                        <a href="<?php echo $this->config->item('base_url'); ?>/index.php/backend">
-                            <?php echo $this->lang->line('backend_section'); ?>
-                        </a>
-                    <?php endif; ?>
-                    </div>
-                </div>
             </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="container">
+            <p>Copyright &copy; Roseville Escape
+        <?php if ($this->session->userdata('user_id')): ?>
+            |
+            <a href="<?php echo $this->config->item('base_url'); ?>/index.php/backend">
+                <?php echo $this->lang->line('backend_section'); ?>
+            </a>
+        <?php endif; ?>
+            </p>
         </div>
     </div>
 
