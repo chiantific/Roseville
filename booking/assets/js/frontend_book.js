@@ -498,13 +498,11 @@ var FrontendBook = {
 
         var html =
             '<p>'
-                + '<strong class="text-primary">'
-                    + $('#select-provider option:selected').text() + '<br>'
-                    + selectedDate + ' ' +  $('.selected-hour').text()
-                    + servicePrice + ' ' + serviceCurrency + '<br>'
-                    + nb_participants + ' participants' + '<br>'
-                    + 'Langue : ' + $('#language option:selected').text()
-                + '</strong>' +
+                + $('#select-provider option:selected').text() + '<br>'
+                + selectedDate + ' ' +  $('.selected-hour').text()
+                + servicePrice + ' ' + serviceCurrency + '<br>'
+                + nb_participants + ' participants' + '<br>'
+                + 'Langue : ' + $('#language option:selected').text() +
             '</p>';
 
         $('#appointment-details').html(html);
@@ -517,11 +515,10 @@ var FrontendBook = {
             email = GeneralFunctions.escapeHtml($('#email').val()),
 
         html =
-            '<h4>' + firstname + ' ' + lastname + '</h4>' +
-            '<p>' +
-                EALang['phone'] + ': ' + phoneNumber +
-                '<br/>' +
-                EALang['email'] + ': ' + email +
+            '<p>'
+                + firstname + ' ' + lastname + '</br>'
+                + EALang['phone'] + ': ' + phoneNumber + '<br/>'
+                + EALang['email'] + ': ' + email +
             '</p>';
 
         $('#customer-details').html(html);
