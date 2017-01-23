@@ -359,6 +359,16 @@ body {
 
 /* MOBILE DEVICES
    ------------------------------------------------------------------------- */
+@media(max-width: 990px) {
+    #book-appointment-wizard #wizard-frame-3 .col-left {
+        padding-left: 15px;
+    }
+
+    #book-appointment-wizard #wizard-frame-3 .col-right {
+        padding-right: 15px;
+    }
+}
+
 @media(max-width:768px) {
     /**
      * BOOKING WIZARD
