@@ -497,7 +497,6 @@ var FrontendBook = {
         var nb_participants = $('#nb_participants').val();
 
         var html =
-            '<h4>' + $('#select-service option:selected').text() + '</h4>' +
             '<p>'
                 + '<strong class="text-primary">'
                     + $('#select-provider option:selected').text() + '<br>'

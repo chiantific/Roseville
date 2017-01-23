@@ -290,7 +290,6 @@ foreach($available_services as $service) {
                         </button>
                         <form id="book-appointment-form" style="display:inline-block" method="post">
                             <button id="book-appointment-submit" type="button" class="btn btn-success">
-                                <span class="glyphicon glyphicon-ok"></span>
                                 <?php echo $this->lang->line('payment'); ?>
                             </button>
                             <input type="hidden" name="csrfToken" />
