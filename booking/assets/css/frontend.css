@@ -240,6 +240,7 @@ body {
 #book-appointment-wizard #wizard-frame-2 .ui-datepicker,
 #book-appointment-wizard #wizard-frame-2 .ui-datepicker-content {
     border: none;
+    width: 261px;
 }
 
 #book-appointment-wizard #wizard-frame-2 .ui-datepicker-calendar tbody {
