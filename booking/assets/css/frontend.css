@@ -39,14 +39,12 @@ body {
 /* BOOK APPOINTMENT WIZARD
  ------------------------------------------------------------------------------ */
 #book-appointment-wizard {
-    background: rgba(0,0,0,0);
     padding: 0;
 }
 
 #book-appointment-wizard #header {
     padding: 5px 0px;
     height: 90px;
-    background: rgba(0,0,0,0);;
 }
 
 #book-appointment-wizard #logo {
@@ -507,10 +505,6 @@ body {
 }
 
 @media(max-width:480px) {
-    body {
-        background-color: #FAFAFA;
-    }
-
     #main {
         padding: 0;
     }
