@@ -336,5 +336,15 @@ foreach($available_services as $service) {
             verticalbuttons: true,
         });
     </script>
+    <script>
+        $("#phone-number").keyup(function() {
+            if ($("#phone-number").val().match(/^\+?[0-9]{0,15}$/)) {
+                return true;
+            } else {
+                document.getElementById("phone-number").value = $("#phone-number").val().slice(0,-1);
+                return false;
+            }
+        });
+    </script>
 </body>
 </html>
