@@ -164,7 +164,7 @@ foreach($available_services as $service) {
                             <div class="form-group row">
                                 <h3 class="frame-title">
                                     <?php
-                                        echo $this->lang->line('step_two-title');
+                                        echo $this->lang->line('step_two_title');
                                     ?>
                                 </h3>
                                 <div class="col-md-6">
