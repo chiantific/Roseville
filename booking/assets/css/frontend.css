@@ -424,6 +424,12 @@ body {
     #book-appointment-wizard .wizard-frame #select-date {
         width: 260px;
         margin: auto; /* center */
+        margin-bottom: 1em;
+    }
+
+    #book-appointment-wizard .hours {
+        margin: auto;
+        width: 260px;
     }
 
     #book-appointment-wizard #available-hours {

@@ -169,11 +169,11 @@ foreach($available_services as $service) {
                                         echo $this->lang->line('step_two_title');
                                     ?>
                                 </h3>
-                                <div class="col-md-6">
+                                <div class="col-sm-6">
                                     <div id="select-date"></div>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-sm-6">
                                     <div class="hours">
                                         <div class="header">
                                             <?php
