@@ -84,11 +84,13 @@ $(document).ready(function() {
         <div class="wrapper row">
             <div id="book-appointment-wizard" class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 
-                <div id="header">
-                    <img id="logo" alt="Roseville logo" src="/img/logo_R.png" class="img-responsive"/>
-                    <span id="page-title">
+                <div id="header" class="row">
+                    <div class="col-sm-4">
+                        <img id="logo" alt="Roseville logo" src="/img/logo_R.png"/>
+                    </div>
+                    <div id="page-title" class="col-sm-8">
                         <?php echo $this->lang->line('page_title'); ?>
-                    </span>
+                    </div>
                 </div>
 
 <?php
