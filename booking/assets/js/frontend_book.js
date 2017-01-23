@@ -485,9 +485,9 @@ var FrontendBook = {
         $.each(GlobalVariables.availableServices, function(index, service) {
             if (service.id == selServiceId) {
                 if (selectedDate_js.getDay() == 6 || selectedDate_js.getDay() == 0) {
-                    servicePrice = '<br>' + service.price_week_end;
+                    servicePrice = service.price_week_end;
                 } else {
-                    servicePrice = '<br>' + service.price_week;
+                    servicePrice = service.price_week;
                 }
                 serviceCurrency = service.currency;
                 return false; // break loop
@@ -497,30 +497,41 @@ var FrontendBook = {
         var nb_participants = $('#nb_participants').val();
 
         var html =
-            '<p>'
-                + $('#select-provider option:selected').text() + '<br>'
-                + selectedDate + ' ' +  $('.selected-hour').text()
-                + servicePrice + ' ' + serviceCurrency + '<br>'
-                + nb_participants + ' participants' + '<br>'
-                + 'Langue : ' + $('#language option:selected').text() +
-            '</p>';
-
+            '<tr>'
+                + '<td class="first">' + EALang['room'] + '</td>'
+                + '<td class="first">' + $('#select-provider option:selected').text() + '</td>'
+            + '</tr><tr>'
+                + '<td>' + EALang['date'] + '</td>'
+                + '<td>' + selectedDate + ' ' +  $('.selected-hour').text() + '</td>'
+            + '</tr><tr>'
+                + '<td>' + EALang['price'] + '</td>'
+                + '<td>' + servicePrice + ' ' + serviceCurrency + '</td>'
+            + '</tr><tr>'
+                + '<td>' + EALang['group_size'] + '</td>'
+                + '<td>' + nb_participants + '</td>'
+            + '</tr><tr>'
+                + '<td>' + EALang['language'] + '</td>'
+                + '<td>' + $('#language option:selected').text() + '</td>'
+            + '</tr>';
         $('#appointment-details').html(html);
 
         // Customer Details
-
         var firstname = GeneralFunctions.escapeHtml($('#first-name').val()),
             lastname = GeneralFunctions.escapeHtml($('#last-name').val()),
             phoneNumber = GeneralFunctions.escapeHtml($('#phone-number').val()),
             email = GeneralFunctions.escapeHtml($('#email').val()),
 
         html =
-            '<p>'
-                + firstname + ' ' + lastname + '</br>'
-                + EALang['phone'] + ': ' + phoneNumber + '<br/>'
-                + EALang['email'] + ': ' + email +
-            '</p>';
-
+            '<tr>'
+                + '<td class="first">' + EALang['name'] + '</td>'
+                + '<td class="first">' + firstname + ' ' + lastname + '</td>'
+            + '</tr><tr>'
+                + '<td>' + EALang['phone'] + '</td>'
+                + '<td>' + phoneNumber + '</td>'
+            + '</tr><tr>'
+                + '<td>' + EALang['email'] + '</td>'
+                + '<td>' + email + '</td>'
+            + '</tr>';
         $('#customer-details').html(html);
 
         // Update appointment form data for submission to server when the user confirms

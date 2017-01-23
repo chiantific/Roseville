@@ -308,10 +308,17 @@ body {
     border-radius: 3px;
 }
 
-#book-appointment-wizard #wizard-frame-4 .frame-content p,
-#book-appointment-wizard #wizard-frame-4 .frame-content strong {
+#book-appointment-wizard #wizard-frame-4 .frame-content table {
     color: #F2F2F2;
     font-weight: bold;
+}
+
+#book-appointment-wizard #wizard-frame-4 .frame-content td {
+    border-top: 1px dashed #F2F2F2;
+}
+
+#book-appointment-wizard #wizard-frame-4 .frame-content td.first {
+    border-top: none;
 }
 
 

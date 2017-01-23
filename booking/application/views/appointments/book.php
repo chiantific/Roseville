@@ -278,8 +278,18 @@ foreach($available_services as $service) {
                             ?>
                         </h3>
                         <div class="frame-content row">
-                            <div id="appointment-details" class="col-md-6"></div>
-                            <div id="customer-details" class="col-md-6"></div>
+                            <div class="col-md-6">
+                                <table class="table">
+                                    <tbody id="appointment-details">
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-6">
+                                <table class="table">
+                                    <tbody id="customer-details">
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
 
