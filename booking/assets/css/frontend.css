@@ -320,7 +320,8 @@ body {
 }
 
 #book-appointment-wizard #wizard-frame-4 .frame-content td {
-    border-top: 1px dashed #F2F2F2;
+    border-top: 1px solid #78C9BC;
+    width: 50%;
 }
 
 #book-appointment-wizard #wizard-frame-4 .frame-content td.first {
