@@ -384,7 +384,6 @@ body {
 
     #main {
         min-height: 100%;
-        padding: 0 5vw;
     }
 
     #main .wrapper {
@@ -406,7 +405,6 @@ body {
     #book-appointment-wizard .wizard-frame {
         padding: 0 10px;
         height: auto;
-        margin-bottom: 7em;
     }
 
     #book-appointment-wizard .wizard-frame .frame-container {
@@ -522,7 +520,8 @@ body {
 
 @media(max-width:480px) {
     #main {
-        padding: 0;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     #main .wrapper {
