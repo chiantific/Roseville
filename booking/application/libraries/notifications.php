@@ -103,7 +103,6 @@ class Notifications {
             'Name' => $this->ci->lang->line('name'),
             'Email' => $this->ci->lang->line('email'),
             'Phone' => $this->ci->lang->line('phone'),
-            'Appointment Link' => $this->ci->lang->line('appointment_link_title')
         );
 
         $email_html = file_get_contents(dirname(dirname(__FILE__))
@@ -118,6 +117,7 @@ class Notifications {
         $mail->CharSet = 'UTF-8';
         $mail->Subject = $title;
         $mail->Body    = $email_html;
+        $mail->addAddress($receiver_address);
 
         if (!$mail->Send()) {
             throw new Exception('Email could not been sent. Mailer Error (Line '

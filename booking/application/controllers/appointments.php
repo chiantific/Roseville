@@ -256,17 +256,6 @@ class Appointments extends CI_Controller {
         if(!$appointment_id){
             redirect('appointments');
         }
-        $this->load->model('appointments_model');
-        $this->load->model('providers_model');
-        $this->load->model('services_model');
-        $this->load->model('settings_model');
-        //retrieve the data needed in the view
-        $appointment =  $this->appointments_model->get_row($appointment_id);
-        $provider = $this->providers_model->get_row($appointment['id_users_provider']);
-        $service = $this->services_model->get_row($appointment['id_services']);
-        $company_name = $this->settings_model->get_setting('company_name');
-        //get the exceptions
-        $exceptions = $this->session->flashdata('appointments/book_success');
 
         // Check the SHA-OUT of the server response
         $sha_out = "cKC8QtsN6v*cKC8QtsN6v*";
@@ -281,11 +270,60 @@ class Appointments extends CI_Controller {
             $view = array();
             $this->load->view('appointments/payment_fail', $view);
         } else {
-            $appointment['is_paid'] = true;
-            $this->appointments_model->add($appointment);
+            $this->load->model('appointments_model');
+            $this->load->model('providers_model');
+            $this->load->model('services_model');
+            $this->load->model('customers_model');
+            $this->load->model('settings_model');
+
+            //retrieve the data needed in the view
+            $appointment =  $this->appointments_model->get_row($appointment_id);
+            $customer = $this->customers_model->get_row($appointment['id_users_customer']);
+            $provider = $this->providers_model->get_row($appointment['id_users_provider']);
+            $service = $this->services_model->get_row($appointment['id_services']);
             $company_name = $this->settings_model->get_setting('company_name');
+            $company_settings = array(
+                'company_name'  => $this->settings_model->get_setting('company_name'),
+                'company_link'  => $this->settings_model->get_setting('company_link'),
+                'company_email'  => $this->settings_model->get_setting('company_email')
+            );
+
+            // Register the appointment as paid
+            $appointment['is_paid'] = true;
+            $this->appointments_model->add($appointment);
+
+            // :: SEND NOTIFICATION EMAILS TO BOTH CUSTOMER AND PROVIDER
+            try {
+                $this->load->library('Notifications');
+
+                $customer_title = $this->lang->line('appointment_booked');
+                $customer_message = $this->lang->line('thank_you_for_appointment');
+                $customer_link = $this->config->item('base_url')
+                    . '/index.php/appointments/index/'
+                    . $appointment['hash'];
+
+                $provider_title = $this->lang->line('appointment_added_to_your_plan');
+                $provider_message = $this->lang->line('appointment_link_description');
+                $provider_link = $this->config->item('base_url') 
+                    . '/index.php/backend/index/'
+                    . $appointment['hash'];
+
+                $this->notifications->send_appointment_details($appointment, $provider,
+                        $service, $customer,$company_settings, $customer_title,
+                        $customer_message, $customer_link, $customer['email']);
+
+                $this->notifications->send_appointment_details($appointment, $provider,
+                        $service, $customer, $company_settings, $provider_title,
+                        $provider_message, $provider_link, $provider['email']);
+            } catch(Exception $exc) {
+                log_message('error', $exc->getMessage());
+                log_message('error', $exc->getTraceAsString());
+            }
+
+
             //get the exceptions
-            $exceptions = $this->session->flashdata('payement');
+            $exceptions = $this->session->flashdata('appointments/book_success');
+
             // :: LOAD THE BOOK SUCCESS VIEW
             $view = array(
                 'appointment_id'    => $appointment_id,
@@ -293,8 +331,6 @@ class Appointments extends CI_Controller {
                 'provider_data'     => $provider,
                 'service_data'      => $service,
                 'company_name'      => $company_name,
-                'result'            => $_GET,
-                'exp_sha'           => $sha_sign
             );
             if($exceptions){
                 $view['exceptions'] = $exceptions;
@@ -436,54 +472,6 @@ class Appointments extends CI_Controller {
                 'company_link'  => $this->settings_model->get_setting('company_link'),
                 'company_email' => $this->settings_model->get_setting('company_email')
             );
-
-            // :: SEND NOTIFICATION EMAILS TO BOTH CUSTOMER AND PROVIDER
-            try {
-                $this->load->library('Notifications');
-
-                if ($post_data['manage_mode'] == FALSE) {
-                    $customer_title = $this->lang->line('appointment_booked');
-                    $customer_message = $this->lang->line('thank_you_for_appointment');
-                    $customer_link = $this->config->item('base_url') . '/index.php/appointments/index/'
-                            . $appointment['hash'];
-
-                    $provider_title = $this->lang->line('appointment_added_to_your_plan');
-                    $provider_message = $this->lang->line('appointment_link_description');
-                    $provider_link = $this->config->item('base_url') . '/index.php/backend/index/'
-                            . $appointment['hash'];
-                } else {
-                    $customer_title = $this->lang->line('appointment_changes_saved');
-                    $customer_message = '';
-                    $customer_link = $this->config->item('base_url') . '/index.php/appointments/index/'
-                            . $appointment['hash'];
-
-                    $provider_title = $this->lang->line('appointment_details_changed');
-                    $provider_message = '';
-                    $provider_link = $this->config->item('base_url') . '/index.php/backend/index/'
-                            . $appointment['hash'];
-                }
-
-				$send_customer = filter_var($this->settings_model->get_setting('customer_notifications'),
-						FILTER_VALIDATE_BOOLEAN);
-
-				if ($send_customer == TRUE) {
-					$this->notifications->send_appointment_details($appointment, $provider,
-							$service, $customer,$company_settings, $customer_title,
-							$customer_message, $customer_link, $customer['email']);
-				}
-
-				$send_provider = filter_var($this->providers_model ->get_setting('notifications', $provider['id']),
-						FILTER_VALIDATE_BOOLEAN);
-
-                if ($send_provider == TRUE) {
-                    $this->notifications->send_appointment_details($appointment, $provider,
-                            $service, $customer, $company_settings, $provider_title,
-                            $provider_message, $provider_link, $provider['email']);
-                }
-            } catch(Exception $exc) {
-                log_message('error', $exc->getMessage());
-                log_message('error', $exc->getTraceAsString());
-            }
 
             echo json_encode(array(
                     'appointment_id' => $appointment['id']
