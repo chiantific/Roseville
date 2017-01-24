@@ -46,71 +46,29 @@
                         </div>
                     </div>
                     <div class="panel-body">
-
-<?php
-    $data = array(
-        'pspid'     => "rosevilleTEST",
-        'orderid'   => $appointment_id,
-        'amount'    => 0,
-        'currency'  => "CHF",
-        'language'  => "fr_CH",
-        'successurl'=> $this->config->item('base_url')
-            . "/index.php/appointments/payment_success/"
-            . $appointment_id,
-        'failurl'   => $this->config->item('base_url')
-            . "/index.php/appointments/payment_success",
-        'shasign'   => "",
-    );
-
-    // Calculate price
-    $appointment_date = $appointment_data['start_datetime'];
-    if(date('N', strtotime($appointment_date)) >= 6){
-        $data['amount'] = $service_data['price_week_end'];
-    } else {
-        $data['amount'] = $service_data['price_week'];
-    }
-    $data['amount'] = str_replace('.', '', $data['amount']);
-
-    // Calculate SHASIGN
-    $sha_in = "cKC8QtsN6v*cKC8QtsN6v*";
-    $string_to_sha = "ACCEPTURL=" . $data['successurl'] . $sha_in
-        . "AMOUNT=" . $data['amount'] . $sha_in
-        . "CANCELURL=" . $data['failurl'] . $sha_in
-        . "CURRENCY=" . $data['currency'] . $sha_in
-        . "DECLINEURL=" . $data['failurl'] . $sha_in
-        . "EXCEPTIONURL=" . $data['failurl'] . $sha_in
-        . "LANGUAGE=" . $data['language'] . $sha_in
-        . "ORDERID=" . $data['orderid'] . $sha_in
-        . "PSPID=" . $data['pspid'] . $sha_in;
-
-    $sha_sign = sha1($string_to_sha);
-
-    $data['shasign'] = $sha_sign;
-?>
-
-                        <form METHOD="post" action="https://e-payment.postfinance.ch/ncol/test/orderstandard.asp" id="form1" name="paymentform">
+                    <form METHOD="post" action="<?php echo $payment_data['post_link']; ?>" id="form1" name="paymentform">
                             <input type="hidden" name="PSPID"
-                                value="<?php echo $data['pspid']; ?>">
+                                value="<?php echo $payment_data['pspid']; ?>">
                             <input type="hidden" name="ORDERID"
-                                value="<?php echo $data['orderid']; ?>">
+                                value="<?php echo $payment_data['orderid']; ?>">
                             <input type="hidden" name="AMOUNT"
-                                value="<?php echo $data['amount']; ?>">
+                                value="<?php echo $payment_data['amount']; ?>">
                             <input type="hidden" name="CURRENCY"
-                                value="<?php echo $data['currency']; ?>">
+                                value="<?php echo $payment_data['currency']; ?>">
                             <input type="hidden" name="LANGUAGE"
-                                value="<?php echo $data['language']; ?>">
+                                value="<?php echo $payment_data['language']; ?>">
                             <input type="hidden" name="SHASIGN"
-                                value="<?php echo $data['shasign']; ?>">
+                                value="<?php echo $payment_data['shasign']; ?>">
 
                             <!-- post-payment redirection -->
                             <input type="hidden" name="ACCEPTURL"
-                                value="<?php echo $data['successurl']; ?>">
+                                value="<?php echo $payment_data['successurl']; ?>">
                             <input type="hidden" name="DECLINEURL"
-                                value="<?php echo $data['failurl']; ?>">
+                                value="<?php echo $payment_data['failurl']; ?>">
                             <input type="hidden" name="EXCEPTIONURL"
-                                value="<?php echo $data['failurl']; ?>">
+                                value="<?php echo $payment_data['failurl']; ?>">
                             <input type="hidden" name="CANCELURL"
-                                value="<?php echo $data['failurl']; ?>">
+                                value="<?php echo $payment_data['failurl']; ?>">
 
                             <!-- Submit -->
                             <input type="submit" value="Click here if you are not redirected in 5 seconds..." id="submit2" name="submit2">

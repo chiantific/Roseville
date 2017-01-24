@@ -230,6 +230,48 @@ class Appointments extends CI_Controller {
         $provider = $this->providers_model->get_row($appointment['id_users_provider']);
         $service = $this->services_model->get_row($appointment['id_services']);
         $company_name = $this->settings_model->get_setting('company_name');
+
+        $payment_data = array(
+            'pspid'         => $this->config->item('pspid'),
+            'orderid'       => $appointment_id,
+            'amount'        => 0,
+            'currency'      => $service['currency'],
+            'language'      => '',
+            'successurl'    => $this->config->item('base_url')
+                . "/index.php/appointments/payment_success/"
+                . $appointment_id,
+            'failurl'       => $this->config->item('base_url')
+                . "/index.php/appointments/payment_success/"
+                . $appointment_id,
+            'shasign'       => "",
+            'post_link' 	=> $this->config->item('post_link'),
+        );
+
+        // Calulate price
+        $appointment_date = $appointment['start_datetime'];
+        if(date('N', strtotime($appointment_date)) >= 6){
+            $payment_data['amount'] = $service['price_week_end'];
+        } else {
+            $payment_data['amount'] = $service['price_week'];
+        }
+        $payment_data['amount'] = str_replace('.', '', $payment_data['amount']);
+
+        // Select language
+        $payment_data['language'] = "fr_CH";
+
+        // Compute SHASIGN
+        $sha_in = $this->config->item('sha_in');
+		$string_to_sha = "ACCEPTURL=" . $payment_data['successurl'] . $sha_in
+			. "AMOUNT=" . $payment_data['amount'] . $sha_in
+			. "CANCELURL=" . $payment_data['failurl'] . $sha_in
+			. "CURRENCY=" . $payment_data['currency'] . $sha_in
+			. "DECLINEURL=" . $payment_data['failurl'] . $sha_in
+			. "EXCEPTIONURL=" . $payment_data['failurl'] . $sha_in
+			. "LANGUAGE=" . $payment_data['language'] . $sha_in
+			. "ORDERID=" . $payment_data['orderid'] . $sha_in
+			. "PSPID=" . $payment_data['pspid'] . $sha_in;
+		$payment_data['shasign'] = sha1($string_to_sha);
+
         //get the exceptions
         $exceptions = $this->session->flashdata('payment');
          // :: LOAD THE BOOK SUCCESS VIEW
@@ -239,6 +281,7 @@ class Appointments extends CI_Controller {
             'provider_data'     => $provider,
             'service_data'      => $service,
             'company_name'      => $company_name,
+            'payment_data'      => $payment_data,
         );
         if($exceptions){
             $view['exceptions'] = $exceptions;
@@ -258,7 +301,7 @@ class Appointments extends CI_Controller {
         }
 
         // Check the SHA-OUT of the server response
-        $sha_out = "cKC8QtsN6v*cKC8QtsN6v*";
+        $sha_out = $this->config->item('sha_out');
         $string_to_sha = "NCERROR=" . $_GET['NCERROR'] . $sha_out
             . "ORDERID=" . $_GET['orderID'] . $sha_out
             . "PAYID=" . $_GET['PAYID'] . $sha_out

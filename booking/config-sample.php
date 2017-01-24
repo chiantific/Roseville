@@ -39,6 +39,14 @@ class Config {
     const DB_NAME       = '';
     const DB_USERNAME   = '';
     const DB_PASSWORD   = '';
+
+    // ------------------------------------------------------------------------
+    // Payment Settings
+    // ------------------------------------------------------------------------
+    const PSPID         = '';
+    const SHA_IN        = '';
+    const SHA_OUT       = '';
+    const POST_LINK     = '';
 }
 /* End of file config.php */
 /* Location: ./config.php */

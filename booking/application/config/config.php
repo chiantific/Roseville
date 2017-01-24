@@ -112,6 +112,19 @@ $config['charset'] = 'UTF-8';
 
 /*
 |--------------------------------------------------------------------------
+| Payment parameters
+|--------------------------------------------------------------------------
+|
+| Information needed to submit a payment
+|
+*/
+$config['pspid'] = Config::PSPID;
+$config['sha_in'] = Config::SHA_IN;
+$config['sha_out'] = Config::SHA_OUT;
+$config['post_link'] = Config::POST_LINK;
+
+/*
+|--------------------------------------------------------------------------
 | Enable/Disable System Hooks
 |--------------------------------------------------------------------------
 |
