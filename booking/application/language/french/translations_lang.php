@@ -1,7 +1,8 @@
 <?php
 // French
 $lang['page_title'] = 'Réservations';
-$lang['select_room'] = 'Choisissez une salle';
+$lang['step_one_title'] = 'Choisissez votre jeu';
+$lang['select_room'] = 'Salle';
 $lang['nb_participants'] = 'Nombre de participants';
 $lang['language'] = 'Langue du jeu';
 $lang['duration'] = 'Durée';

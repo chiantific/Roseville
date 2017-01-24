@@ -87,7 +87,7 @@ body {
     color: #F2F2F2;
 }
 
-#book-appointment-wizard .frame-container .form-group .row {
+#book-appointment-wizard .frame-container .form-group {
     margin-left: 0;
     margin-right: 0;
 }
@@ -208,8 +208,8 @@ body {
 }
 
 #book-appointment-wizard #wizard-frame-1 label {
-    font-size: 19px;
-    margin-bottom: 12px;
+    color: #F2F2F2;
+    font-size: 1.2em;
 }
 
 #book-appointment-wizard #wizard-frame-1 select,

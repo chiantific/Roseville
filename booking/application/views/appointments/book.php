@@ -116,35 +116,38 @@ foreach($available_services as $service) {
 }
 ?>
                             </select>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="row">
-                                        <h3>
-                                            <?php
-                                                echo $this->lang->line('select_room');
-                                            ?>
-                                        </h3>
-                                        <select id="select-provider" class="form-control"></select>
-                                    </div>
-                                    <div class="row">
-                                        <h3>
-                                            <?php
-                                                echo $this->lang->line('nb_participants');
-                                            ?>
-                                        </h3>
-                                        <input id="nb_participants" type="text" value="1"  name="nb_participants"/>
-                                    </div>
-                                    <div class="row">
-                                        <h3>
-                                            <?php
-                                                echo $this->lang->line('language');
-                                            ?>
-                                        </h3>
-                                        <select id="language" class="form-control">
-                                            <option value="1">Français</option>
-                                            <option value="2">Anglais</option>
-                                        </select>
-                                    </div>
+                            <div class="form-group row">
+                                <h3 class="frame-title">
+                                    <?php
+                                        echo $this->lang->line('step_one_title');
+                                    ?>
+                                </h3>
+                                <div class="form-group">
+                                    <label for="select-provider" class="control-label">
+                                        <?php
+                                            echo $this->lang->line('select_room');
+                                        ?>
+                                    </label>
+                                    <select id="select-provider" class="form-control"></select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nb_participants" class="control-label">
+                                        <?php
+                                            echo $this->lang->line('nb_participants');
+                                        ?>
+                                    </label>
+                                    <input id="nb_participants" type="text" value="1"  name="nb_participants"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="language" class="control-label">
+                                        <?php
+                                            echo $this->lang->line('language');
+                                        ?>
+                                    </label>
+                                    <select id="language" class="form-control">
+                                        <option value="1">Français</option>
+                                        <option value="2">Anglais</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
