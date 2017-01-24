@@ -80,18 +80,17 @@ $(document).ready(function() {
 </head>
 
 <body>
+    <nav id="header" class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-brand">
+                <img src="/img/logo_R.png" alt="roseville escape logo" id="logo"/>
+                <span><?php echo $this->lang->line('page_title'); ?></span>
+            </div>
+        </div>
+    </nav>
     <div id="main" class="container">
         <div class="wrapper row">
             <div id="book-appointment-wizard" class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-
-                <div id="header" class="row">
-                    <div class="col-sm-4">
-                        <img id="logo" alt="Roseville logo" src="/img/logo_R.png"/>
-                    </div>
-                    <div id="page-title" class="col-sm-8">
-                        <?php echo $this->lang->line('page_title'); ?>
-                    </div>
-                </div>
 
 <?php
 // Display exceptions (if any)

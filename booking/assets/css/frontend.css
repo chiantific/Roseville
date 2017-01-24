@@ -22,9 +22,28 @@ body {
     background-color: #78C9BC;
 }
 
+#header {
+    height: 50px;
+}
+
+#header .navbar-brand #logo {
+    width: 128px;
+    height: auto;
+    float: left;
+}
+
+#header .navbar-brand span {
+    float: left;
+    color: #eee;
+    font-size: 18px;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
 #main {
     display: table;
     vertical-align: middle;
+    padding-top: 128px;
     padding-bottom: 6em;
     height: 100%;
 }
@@ -40,28 +59,6 @@ body {
  ------------------------------------------------------------------------------ */
 #book-appointment-wizard {
     padding: 0;
-}
-
-#book-appointment-wizard #header {
-    height: 20vw;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    text-align: center;
-}
-
-#book-appointment-wizard #logo {
-    height: 20vw;
-    width: auto;
-}
-
-#book-appointment-wizard #page-title {
-    font-weight: 700;
-    color: #C74D00;
-    font-size: 50px;
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
 }
 
 #book-appointment-wizard #steps {
@@ -537,5 +534,15 @@ body {
     #message-frame,
     #success-frame {
         height: 100%;
+    }
+}
+
+@media(max-width:350px) {
+    #header .navbar-brand #logo {
+        display: none;
+    }
+
+    #main {
+        padding-top: 50px;
     }
 }
