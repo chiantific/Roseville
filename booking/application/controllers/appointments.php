@@ -289,7 +289,7 @@ class Appointments extends CI_Controller {
             );
 
             // Register the appointment as paid
-            $appointment['is_paid'] = true;
+            $appointment['is_paid'] = true;
             $this->appointments_model->add($appointment);
 
             // :: SEND NOTIFICATION EMAILS TO BOTH CUSTOMER AND PROVIDER
