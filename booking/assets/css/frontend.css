@@ -219,9 +219,15 @@ body {
 #book-appointment-wizard #wizard-frame-1 input {
     background-color: #6AB0A4;
     border: #62A398;
+    border-radius: 4px;
     color: #F2F2F2;
     height: 2em;
     font-size: 1.2em;
+}
+
+#book-appointment-wizard #wizard-frame-1 input {
+    padding-left: 16px;
+    border-radius: 4px 0px 0px 4px;
 }
 
 #book-appointment-wizard #wizard-frame-1 .bootstrap-touchspin-up,
