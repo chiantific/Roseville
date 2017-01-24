@@ -153,11 +153,6 @@
         var EALang = <?php echo json_encode($this->lang->language); ?>;
     </script>
 
-    <script
-        type="text/javascript"
-        src="<?php echo $this->config->item('base_url'); ?>/assets/js/frontend_book_success.js">
-    </script>
-
     <script type="text/javascript">
          window.onload=function(){ 
                         window.setTimeout(function() { document.paymentform.submit(); }, 2000);

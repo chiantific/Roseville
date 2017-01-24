@@ -96,10 +96,6 @@
 
     <script
         type="text/javascript"
-        src="<?php echo $this->config->item('base_url'); ?>/assets/js/frontend_book_success.js"></script>
-
-    <script
-        type="text/javascript"
         src="<?php echo $this->config->item('base_url'); ?>/assets/js/general_functions.js"></script>
 </body>
 </html>
