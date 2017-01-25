@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#35A768">
-    <title>Paiement</title>
+    <title><?php echo $this->lang->line('payment'); ?></title>
 
     <?php
         // ------------------------------------------------------------
@@ -42,7 +42,9 @@
                 <div class="panel panel-default credit-card-box">
                     <div class="panel-heading">
                         <div class="row">
-                            <h3 class="panel-title">Redirection vers la page de paiement</h3>
+                            <h3 class="panel-title">
+                                <?php echo $this->lang->line('payment_frame_title'); ?>
+                            </h3>
                         </div>
                     </div>
                     <div class="panel-body">
@@ -71,7 +73,9 @@
                                 value="<?php echo $payment_data['failurl']; ?>">
 
                             <!-- Submit -->
-                            <input type="submit" value="Click here if you are not redirected in 5 seconds..." id="submit2" name="submit2">
+                            <input type="submit" value="<?php 
+                                echo $this->lang->line('submit_payment_button');
+                            ?>" id="submit2" name="submit2">
                         </form>
                     </div>
                 </div>
