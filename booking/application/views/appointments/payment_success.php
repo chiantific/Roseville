@@ -45,8 +45,10 @@
                         echo '
                             <h3>' . $this->lang->line('appointment_registered') . '</h3>
                             <p>' . $this->lang->line('appointment_details_was_sent_to_you') . '</p>
-                            <a href="'.$this->config->item('base_url').'" class="btn btn-success btn-large">
-                                <span class="glyphicon glyphicon-calendar"></span>' .
+                            <a href="http://'.$company_link.'" class="btn btn-success btn-large">' .
+                                $this->lang->line('go_to_company_site') . '
+                            </a>
+                            <a href="'.$this->config->item('base_url').'" class="btn btn-success btn-large">' .
                                 $this->lang->line('go_to_booking_page') . '
                             </a>
                         ';
@@ -80,9 +82,6 @@
     <script
         type="text/javascript"
         src="<?php echo $this->config->item('base_url'); ?>/assets/ext/datejs/date.js"></script>
-    <script
-        type="text/javascript"
-        src="https://apis.google.com/js/client.js"></script>
 
     <?php
         // ------------------------------------------------------------

@@ -353,6 +353,21 @@ body {
     text-align: center;
 }
 
+#success-frame .btn-success {
+    background-color: #C74D00;
+    border-color: #C74D00;
+    margin: 0.2em;
+}
+
+#success-frame h3,
+#success-frame p {
+    text-align: justify;
+}
+
+#success-frame {
+    text-align: center;
+}
+
 
 /* CANCEL APPOINTMENT
    ------------------------------------------------------------------------- */

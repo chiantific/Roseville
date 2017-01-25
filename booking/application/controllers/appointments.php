@@ -325,6 +325,7 @@ class Appointments extends CI_Controller {
             $provider = $this->providers_model->get_row($appointment['id_users_provider']);
             $service = $this->services_model->get_row($appointment['id_services']);
             $company_name = $this->settings_model->get_setting('company_name');
+            $company_link = $this->settings_model->get_setting('company_link');
             $company_settings = array(
                 'company_name'  => $this->settings_model->get_setting('company_name'),
                 'company_link'  => $this->settings_model->get_setting('company_link'),
@@ -374,6 +375,7 @@ class Appointments extends CI_Controller {
                 'provider_data'     => $provider,
                 'service_data'      => $service,
                 'company_name'      => $company_name,
+                'company_link'      => $company_link,
             );
             if($exceptions){
                 $view['exceptions'] = $exceptions;
