@@ -346,6 +346,13 @@ body {
     margin-top: 20px;
 }
 
+#message-frame .panel-title,
+#success-frame .panel-title,
+#message-frame #form1,
+#success-frame #form1 {
+    text-align: center;
+}
+
 
 /* CANCEL APPOINTMENT
    ------------------------------------------------------------------------- */
