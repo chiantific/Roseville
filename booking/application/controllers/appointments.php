@@ -238,10 +238,10 @@ class Appointments extends CI_Controller {
             'currency'      => $service['currency'],
             'language'      => '',
             'successurl'    => $this->config->item('base_url')
-                . "/index.php/appointments/payment_success/"
+                . "/index.php/appointments/post_payment/"
                 . $appointment_id,
             'failurl'       => $this->config->item('base_url')
-                . "/index.php/appointments/payment_success/"
+                . "/index.php/appointments/post_payment/"
                 . $appointment_id,
             'shasign'       => "",
             'post_link' 	=> $this->config->item('post_link'),
@@ -294,11 +294,30 @@ class Appointments extends CI_Controller {
      *
      * @param int $appointment_id Contains the id of the appointment to retrieve.
      */
-    public function payment_success($appointment_id) {
+    public function post_payment($appointment_id) {
         //if the appointment id doesn't exist or zero redirect to index
         if(!$appointment_id){
             redirect('appointments');
         }
+
+        $this->load->model('appointments_model');
+        $this->load->model('providers_model');
+        $this->load->model('services_model');
+        $this->load->model('customers_model');
+        $this->load->model('settings_model');
+
+        //retrieve the data needed in the view
+        $appointment =  $this->appointments_model->get_row($appointment_id);
+        $customer = $this->customers_model->get_row($appointment['id_users_customer']);
+        $provider = $this->providers_model->get_row($appointment['id_users_provider']);
+        $service = $this->services_model->get_row($appointment['id_services']);
+        $company_name = $this->settings_model->get_setting('company_name');
+        $company_link = $this->settings_model->get_setting('company_link');
+        $company_settings = array(
+            'company_name'  => $this->settings_model->get_setting('company_name'),
+            'company_link'  => $this->settings_model->get_setting('company_link'),
+            'company_email'  => $this->settings_model->get_setting('company_email')
+        );
 
         // Check the SHA-OUT of the server response
         $sha_out = $this->config->item('sha_out');
@@ -310,27 +329,25 @@ class Appointments extends CI_Controller {
         $sha_sign = strtoupper(sha1($string_to_sha));
 
         if($sha_sign != $_GET['SHASIGN'] || $_GET['STATUS'] != 9){
-            $view = array();
+            //get the exceptions
+            $exceptions = $this->session->flashdata('appointments/book_success');
+
+            // :: LOAD THE PAYMENT FAIL VIEW
+            $view = array(
+                'appointment_id'    => $appointment_id,
+                'appointment_data'  => $appointment,
+                'provider_data'     => $provider,
+                'service_data'      => $service,
+                'company_name'      => $company_name,
+                'company_link'      => $company_link,
+            );
+
+            if($exceptions){
+                $view['exceptions'] = $exceptions;
+            }
+
             $this->load->view('appointments/payment_fail', $view);
         } else {
-            $this->load->model('appointments_model');
-            $this->load->model('providers_model');
-            $this->load->model('services_model');
-            $this->load->model('customers_model');
-            $this->load->model('settings_model');
-
-            //retrieve the data needed in the view
-            $appointment =  $this->appointments_model->get_row($appointment_id);
-            $customer = $this->customers_model->get_row($appointment['id_users_customer']);
-            $provider = $this->providers_model->get_row($appointment['id_users_provider']);
-            $service = $this->services_model->get_row($appointment['id_services']);
-            $company_name = $this->settings_model->get_setting('company_name');
-            $company_link = $this->settings_model->get_setting('company_link');
-            $company_settings = array(
-                'company_name'  => $this->settings_model->get_setting('company_name'),
-                'company_link'  => $this->settings_model->get_setting('company_link'),
-                'company_email'  => $this->settings_model->get_setting('company_email')
-            );
 
             // Register the appointment as paid
             $appointment['is_paid'] = true;
@@ -363,7 +380,6 @@ class Appointments extends CI_Controller {
                 log_message('error', $exc->getMessage());
                 log_message('error', $exc->getTraceAsString());
             }
-
 
             //get the exceptions
             $exceptions = $this->session->flashdata('appointments/book_success');

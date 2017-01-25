@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#35A768">
-    <title><?php echo $this->lang->line('appointment_registered') . ' - ' . $company_name; ?></title>
+    <title><?php echo $this->lang->line('error') . ' - ' . $company_name; ?></title>
 
     <?php
         // ------------------------------------------------------------
@@ -38,11 +38,20 @@
                     col-lg-offset-2 col-lg-8">
 
                 <div class="col-xs-12 col-sm-2">
-                    <img id="success-icon" class="pull-right" src="<?php echo $this->config->item('base_url'); ?>/assets/img/success.png" />
+                    <img id="error-icon" class="pull-right" src="<?php echo $this->config->item('base_url'); ?>/assets/img/error.png" />
                 </div>
                 <div class="col-xs-12 col-sm-10">
                     <?php
-                        echo '<h3>Error!</h3>';
+                        echo '
+                            <h3>' . $this->lang->line('payment_fail') . '</h3>
+                            <p>' . $this->lang->line('retry_or_contact') . '</p>
+                            <a href="'.$this->config->item('base_url').'/index.php/appointments/payment/'.$appointment_id.'" class="btn btn-success btn-large">' .
+                                $this->lang->line('back_to_payment') . '
+                            </a>
+                            <a href="'.$this->config->item('base_url').'" class="btn btn-success btn-large">' .
+                                $this->lang->line('back_to_booking') . '
+                            </a>
+                        ';
 
                         // Display exceptions (if any).
                         if (isset($exceptions)) {
@@ -73,9 +82,6 @@
     <script
         type="text/javascript"
         src="<?php echo $this->config->item('base_url'); ?>/assets/ext/datejs/date.js"></script>
-    <script
-        type="text/javascript"
-        src="https://apis.google.com/js/client.js"></script>
 
     <?php
         // ------------------------------------------------------------
