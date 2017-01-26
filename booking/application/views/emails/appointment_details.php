@@ -4,16 +4,17 @@
 </head>
 <body style="font: 13px arial, helvetica, tahoma;">
     <div class="email-container" style="width: 650px; border: 1px solid #eee;">
-        <div id="header" style="background-color: #3DD481; border-bottom: 4px solid #1A865F;
-                height: 45px; padding: 10px 15px;">
+        <div id="header" style="background-color: #15595F; border-bottom: 4px solid #115595F;
+                height: 55px; padding: 10px 20px;">
+            <img src="http://$company_link/img/logo_escape.png" alt="logo" style="height: 60px; float: left;"/>
             <strong id="logo" style="color: white; font-size: 20px;
-                    text-shadow: 1px 1px 1px #8F8888; margin-top: 10px; display: inline-block">
+                    text-shadow: 1px 1px 1px #8F8888; margin-top: 10px; margin-left: 10px;display: inline-block; float: left;">
                     $company_name</strong>
         </div>
 
         <div id="content" style="padding: 10px 15px;">
-            <h2>$email_title</h2>
-            <p>$email_message</p>
+            <h2>$email_message_title</h2>
+            <p>$email_message_1</p>
 
             <h2>Appointment Details</h2>
             <table id="appointment-details">
@@ -26,14 +27,15 @@
                     <td style="padding: 3px;">$appointment_provider</td>
                 </tr>
                 <tr>
-                    <td class="label" style="padding: 3px;font-weight: bold;">Start</td>
-                    <td style="padding: 3px;">$appointment_start_date</td>
+                    <td class="label" style="padding: 3px;font-weight: bold;">Date</td>
+                    <td style="padding: 3px;">$appointment_date</td>
                 </tr>
                 <tr>
-                    <td class="label" style="padding: 3px;font-weight: bold;">End</td>
-                    <td style="padding: 3px;">$appointment_end_date</td>
+                    <td class="label" style="padding: 3px;font-weight: bold;">Hour</td>
+                    <td style="padding: 3px;">$appointment_hour</td>
                 </tr>
             </table>
+            <p>$email_message_2</p>
 
             <h2>Customer Details</h2>
             <table id="customer-details">
@@ -50,18 +52,20 @@
                     <td style="padding: 3px;">$customer_phone</td>
                 </tr>
                 <tr>
-                    <td class="label" style="padding: 3px;font-weight: bold;">Address</td>
-                    <td style="padding: 3px;">$customer_address</td>
+                    <td class="label" style="padding: 3px;font-weight: bold;">Notes</td>
+                    <td style="padding: 3px;">$appointment_notes</td>
                 </tr>
             </table>
+            <p>$email_message_3</p>
+        </div>
+
+        <div id="content" style="padding: 10px 15px;">
+            <p>Footer</p>
         </div>
 
         <div id="footer" style="padding: 10px; text-align: center; margin-top: 10px;
                 border-top: 1px solid #EEE; background: #FAFAFA;">
-            Powered by
-            <a href="http://easyappointments.org" style="text-decoration: none;">Easy!Appointments</a>
-            |
-            <a href="$company_link" style="text-decoration: none;">$company_name</a>
+            <a href="http://$company_link" style="text-decoration: none;">$company_name</a>
         </div>
     </div>
 </body>

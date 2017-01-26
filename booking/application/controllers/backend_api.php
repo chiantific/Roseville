@@ -207,13 +207,15 @@ class Backend_api extends CI_Controller {
 				if ((bool)$send_customer === TRUE) {
                     $this->notifications->send_appointment_details($appointment, $provider,
                             $service, $customer, $company_settings, $customer_title,
-                            $customer_message, $customer_link, $customer['email']);
+                            $customer_title, $customer_message, '', '', $customer_link,
+                            $customer['email']);
                 }
 
                 if ($send_provider == TRUE) {
                     $this->notifications->send_appointment_details($appointment, $provider,
                             $service, $customer, $company_settings, $provider_title,
-                            $provider_message, $provider_link, $provider['email']);
+                            $provider_title, $provider_message, '', '', $provider_link,
+                            $provider['email']);
                 }
 
             } catch(Exception $exc) {

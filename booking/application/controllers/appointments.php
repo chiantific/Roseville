@@ -358,7 +358,10 @@ class Appointments extends CI_Controller {
                 $this->load->library('Notifications');
 
                 $customer_title = $this->lang->line('appointment_booked');
+                $customer_title_message = $this->lang->line('appointment_payment_confirmed');
                 $customer_message = $this->lang->line('thank_you_for_appointment');
+                $customer_message_2 = $this->lang->line('please_hour');
+                $customer_message_3 = $this->lang->line('cant_wait');
                 $customer_link = $this->config->item('base_url')
                     . '/index.php/appointments/index/'
                     . $appointment['hash'];
@@ -371,11 +374,13 @@ class Appointments extends CI_Controller {
 
                 $this->notifications->send_appointment_details($appointment, $provider,
                         $service, $customer,$company_settings, $customer_title,
-                        $customer_message, $customer_link, $customer['email']);
+                        $customer_title_message, $customer_message, $customer_message_2, 
+                        $customer_message_3, $customer_link, $customer['email']);
 
                 $this->notifications->send_appointment_details($appointment, $provider,
                         $service, $customer, $company_settings, $provider_title,
-                        $provider_message, $provider_link, $provider['email']);
+                        $provider_title, $provider_message, '', '',  $provider_link,
+                        $provider['email']);
             } catch(Exception $exc) {
                 log_message('error', $exc->getMessage());
                 log_message('error', $exc->getTraceAsString());

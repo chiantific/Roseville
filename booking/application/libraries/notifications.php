@@ -71,19 +71,22 @@ class Notifications {
      * @param string $receiver_address The receiver email address.
      * @return bool Returns the operation result.
      */
-    public function send_appointment_details($appointment_data, $provider_data, $service_data,
-            $customer_data, $company_settings, $title, $message, $appointment_link,
-            $receiver_address) {
+    public function send_appointment_details($appointment_data, $provider_data,
+            $service_data, $customer_data, $company_settings, $title, $title_message,
+            $message_1, $message_2, $message_3, $appointment_link, $receiver_address) {
 
         // :: PREPARE THE EMAIL TEMPLATE REPLACE ARRAY
         $replace_array = array(
             '$email_title'              => $title,
-            '$email_message'            => $message,
+            '$email_message_title'      => $title_message,
+            '$email_message_1'          => $message_1,
+            '$email_message_2'          => $message_2,
+            '$email_message_3'          => $message_3,
 
             '$appointment_service'      => $service_data['name'],
-            '$appointment_provider'     => $provider_data['first_name'] . ' ' . $provider_data['last_name'],
-            '$appointment_start_date'   => date('d/m/Y H:i', strtotime($appointment_data['start_datetime'])),
-            '$appointment_end_date'     => date('d/m/Y H:i', strtotime($appointment_data['end_datetime'])),
+            '$appointment_provider'     => $provider_data['last_name'],
+            '$appointment_date'   => date('d/m/Y', strtotime($appointment_data['start_datetime'])),
+            '$appointment_hour'     => date('H:i', strtotime($appointment_data['start_datetime'])),
             '$appointment_link'         => $appointment_link,
 
             '$company_link'             => $company_settings['company_link'],
@@ -92,17 +95,20 @@ class Notifications {
             '$customer_name'            => $customer_data['first_name'] . ' ' . $customer_data['last_name'],
             '$customer_email'           => $customer_data['email'],
             '$customer_phone'           => $customer_data['phone_number'],
+            '$appointment_notes'        => $appointment_data['notes'],
 
             // Translations
             'Appointment Details' => $this->ci->lang->line('appointment_details_title'),
             'Service' => $this->ci->lang->line('service'),
             'Provider' => $this->ci->lang->line('provider'),
-            'Start' => $this->ci->lang->line('start'),
-            'End' => $this->ci->lang->line('end'),
+            'Date' => $this->ci->lang->line('date'),
+            'Hour' => $this->ci->lang->line('hour'),
             'Customer Details' => $this->ci->lang->line('customer_details_title'),
             'Name' => $this->ci->lang->line('name'),
             'Email' => $this->ci->lang->line('email'),
             'Phone' => $this->ci->lang->line('phone'),
+            'Notes' => $this->ci->lang->line('notes'),
+            'Footer' => $this->ci->lang->line('mail_footer'),
         );
 
         $email_html = file_get_contents(dirname(dirname(__FILE__))

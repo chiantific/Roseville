@@ -43,12 +43,20 @@ $lang['back_to_booking'] = 'Retour aux réservations';
 $lang['reason'] = 'Motif';
 $lang['appointment_removed_from_schedule'] = 'Le rendez-vous suivant a été supprimé de l\'agenda.';
 $lang['appointment_details_was_sent_to_you'] = 'Votre réservation et votre paiement ont été enregistrés avec succès. Un email de confirmation avec les détails de votre réservation vous a été envoyé.';
-$lang['appointment_booked'] = 'Votre rendez-vous a été confimé avec succès !';
-$lang['thank_you_for_appointment'] = 'Merci de votre prise de rendez-vous avec nous.Trouvez ci-joint les détails de votre rendez-vous. Faites les changements souhaités en cliquant sur le lien du rendez-vous.';
-$lang['appointment_details_title'] = 'Détails du rendez-vous';
-$lang['customer_details_title'] = 'Vos informations';
+$lang['appointment_booked'] = 'Votre réservation est confirmée';
+$lang['appointment_payment_confirmed'] = 'Votre réservation et votre paiement ont été enregistrés avec succès.';
+$lang['thank_you_for_appointment'] = 'L’équipe de Roseville Escape vous remercie de votre intérêt et de votre confiance.';
+$lang['please_hour'] = 'Il faut prévoir approximativement 1h30 en comptant un quart d’heure pour les explications, 60 minutes pour le jeu et un quart d’heure supplémentaire pour le débriefing. Merci d’arriver à l’heure indiquée.';
+$lang['cant_wait'] = 'L’équipe de Roseville Escape est impatiente de vous accueillir dans ses lieux pour vous faire vivre une expérience inoubliable.';
+$lang['appointment_details_title'] = 'Voici les détails de votre réservation';
+$lang['customer_details_title'] = 'Vos coordonnées';
+$lang['mail_footer'] = 'route de Lavaux 44<br/>
+    CH-1802 Corseaux<br/>
+ <br/>
+   079 623 04 11 (francine)<br/>
+   078 638 80 70 (whitney)';
 $lang['service'] = 'Prestations';
-$lang['provider'] = 'Exécutant';
+$lang['provider'] = 'Salle';
 $lang['customer'] = 'Client';
 $lang['is_paid'] = 'Payé';
 $lang['start'] = 'Début';
