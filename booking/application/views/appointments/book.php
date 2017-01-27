@@ -190,7 +190,7 @@ foreach($available_services as $service) {
                         </div>
                     </div>
 
-                    <div class="command-buttons">
+                    <div class="col-sm-6 col-sm-offset-6 command-buttons">
                         <button type="button" id="button-back-2" class="btn button-back btn-default"
                                 data-step_index="2">
                             <?php echo $this->lang->line('back'); ?>

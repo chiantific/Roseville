@@ -109,7 +109,8 @@ body {
     font-size: 18px;
     transition: all 0.5s;
     background-color: #C74D00;
-    margin-left: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 #book-appointment-wizard .book-step {
@@ -245,6 +246,7 @@ body {
 #book-appointment-wizard #wizard-frame-2 .ui-datepicker-content {
     border: none;
     width: 261px;
+    margin: auto;
 }
 
 #book-appointment-wizard #wizard-frame-2 .ui-datepicker-calendar tbody {
@@ -269,6 +271,7 @@ body {
     background-color: #A3D1C8;
     border-radius: 3px;
     width: 260px;
+    margin: auto;
 }
 
 #book-appointment-wizard #wizard-frame-2 .hours .header {
@@ -281,6 +284,10 @@ body {
 
 #book-appointment-wizard #wizard-frame-2 .hours #available-hours {
     padding: 1em;
+}
+
+#book-appointment-wizard #wizard-frame-2 .command-buttons {
+    text-align: center;
 }
 
 #book-appointment-wizard #wizard-frame-3 textarea,
@@ -324,6 +331,11 @@ body {
 
 #book-appointment-wizard #wizard-frame-4 .frame-content td.first {
     border-top: none;
+}
+
+#book-appointment-wizard #wizard-frame-4 .command-buttons {
+    padding-left: 11px;
+    padding-right: 11px;
 }
 
 
