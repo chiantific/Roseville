@@ -153,7 +153,7 @@ var FrontendBook = {
                     // add him to the listbox.
                     if (serviceId == currServiceId) {
                         var optionHtml = '<option value="' + provider['id'] + '">'
-                                + provider['first_name']  + ' ' + provider['last_name']
+                                + provider['last_name']
                                 + '</option>';
                         $('#select-provider').append(optionHtml);
                     }
