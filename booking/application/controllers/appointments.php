@@ -328,7 +328,26 @@ class Appointments extends CI_Controller {
 
         $sha_sign = strtoupper(sha1($string_to_sha));
 
-        if($sha_sign != $_GET['SHASIGN'] || $_GET['STATUS'] != 9){
+        if($sha_sign != $_GET['SHASIGN'] || ($_GET['STATUS'] != 9 && $_GET['STATUS'] != 2)){
+            //get the exceptions
+            $exceptions = $this->session->flashdata('appointments/book_success');
+
+            // :: LOAD THE PAYMENT FAIL VIEW
+            $view = array(
+                'appointment_id'    => $appointment_id,
+                'appointment_data'  => $appointment,
+                'provider_data'     => $provider,
+                'service_data'      => $service,
+                'company_name'      => $company_name,
+                'company_link'      => $company_link,
+            );
+
+            if($exceptions){
+                $view['exceptions'] = $exceptions;
+            }
+
+            $this->load->view('appointments/payment_error', $view);
+        } elseif ($_GET['STATUS'] == 2) { // refused
             //get the exceptions
             $exceptions = $this->session->flashdata('appointments/book_success');
 
@@ -347,7 +366,7 @@ class Appointments extends CI_Controller {
             }
 
             $this->load->view('appointments/payment_fail', $view);
-        } else {
+        } else { // STATUS == 9 : accepted
 
             // Register the appointment as paid
             $appointment['is_paid'] = true;
