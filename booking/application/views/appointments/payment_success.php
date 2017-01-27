@@ -43,8 +43,10 @@
                 <div class="col-xs-12 col-sm-10">
                     <?php
                         echo '
-                            <h3>' . $this->lang->line('appointment_registered') . '</h3>
-                            <p>' . $this->lang->line('appointment_details_was_sent_to_you') . '</p>
+                            <h3>' . $this->lang->line('appointment_payment_confirmed') . '</h3>
+                            <p>' . $this->lang->line('thank_you_trust') . ' '
+                                . $this->lang->line('appointment_details_was_sent_to_you') . ' ' 
+                                . $this->lang->line('cant_wait') . '</p>
                             <a href="http://'.$company_link.'" class="btn btn-success btn-large">' .
                                 $this->lang->line('go_to_company_site') . '
                             </a>

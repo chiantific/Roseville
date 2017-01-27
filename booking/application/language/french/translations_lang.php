@@ -32,7 +32,7 @@ $lang['payment_frame_title'] = 'Redirection vers la page de paiement';
 $lang['submit_payment_button'] = 'Cliquez ici si vous n\'êtes pas redirigé dans 5 secondes...';
 $lang['cancel_appointment_hint'] = 'Appuyer sur le bouton "annuler" pour supprimer un rendez-vous de l\'agenda.';
 $lang['cancel'] = 'Annuler';
-$lang['appointment_registered'] = 'Merci de votre intérêt et de votre confiance. Nous nous réjouissons de vous accueillir.';
+$lang['thank_you_trust'] = 'Merci de votre intérêt et de votre confiance.';
 $lang['cancel_appointment_title'] = 'Annuler le rendez-vous';
 $lang['appointment_cancelled'] = 'Votre rendez-vous a été annulé avec succès !';
 $lang['appointment_cancelled_title'] = 'Rendez-vous annulé';
@@ -44,10 +44,9 @@ $lang['back_to_payment'] = 'Retour aux moyens de paiements';
 $lang['back_to_booking'] = 'Retour aux réservations';
 $lang['reason'] = 'Motif';
 $lang['appointment_removed_from_schedule'] = 'Le rendez-vous suivant a été supprimé de l\'agenda.';
-$lang['appointment_details_was_sent_to_you'] = 'Votre réservation et votre paiement ont été enregistrés avec succès. Un email de confirmation avec les détails de votre réservation vous a été envoyé.';
+$lang['appointment_details_was_sent_to_you'] = 'Un email de confirmation avec les détails de votre réservation vous a été envoyé.';
 $lang['appointment_booked'] = 'Votre réservation est confirmée';
 $lang['appointment_payment_confirmed'] = 'Votre réservation et votre paiement ont été enregistrés avec succès.';
-$lang['thank_you_for_appointment'] = 'L’équipe de Roseville Escape vous remercie de votre intérêt et de votre confiance.';
 $lang['please_hour'] = 'Il faut prévoir approximativement 1h30 en comptant un quart d’heure pour les explications, 60 minutes pour le jeu et un quart d’heure supplémentaire pour le débriefing. Merci d’arriver à l’heure indiquée.';
 $lang['cant_wait'] = 'L’équipe de Roseville Escape est impatiente de vous accueillir dans ses lieux pour vous faire vivre une expérience inoubliable.';
 $lang['appointment_details_title'] = 'Voici les détails de votre réservation';
@@ -55,8 +54,8 @@ $lang['customer_details_title'] = 'Vos coordonnées';
 $lang['mail_footer'] = 'route de Lavaux 44<br/>
     CH-1802 Corseaux<br/>
  <br/>
-   079 623 04 11 (francine)<br/>
-   078 638 80 70 (whitney)';
+   078 638 80 79 (whitney)<br/>
+   079 623 04 11 (francine)';
 $lang['service'] = 'Prestations';
 $lang['provider'] = 'Salle';
 $lang['customer'] = 'Client';

@@ -378,7 +378,7 @@ class Appointments extends CI_Controller {
 
                 $customer_title = $this->lang->line('appointment_booked');
                 $customer_title_message = $this->lang->line('appointment_payment_confirmed');
-                $customer_message = $this->lang->line('thank_you_for_appointment');
+                $customer_message = $this->lang->line('thank_you_trust');
                 $customer_message_2 = $this->lang->line('please_hour');
                 $customer_message_3 = $this->lang->line('cant_wait');
                 $customer_link = $this->config->item('base_url')
