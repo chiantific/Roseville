@@ -338,7 +338,6 @@ hr {
     padding-bottom: 50px;
 }
 #section3 .jumbotron {
-   
     background-color: #6ab0a4;
 }
 
@@ -490,8 +489,7 @@ box-shadow: 6px 5px 10px -1px rgba(69,68,69,1);
 #price .btn-default:hover, #contact .btn-default:focus {
     color: #CCCCCC;
     background: #753064;
-}    
-
+}
 #price p{
     text-align: left;
 }#price ul{
@@ -504,14 +502,9 @@ box-shadow: 6px 5px 10px -1px rgba(69,68,69,1);
     color: #5D264F;
 }
 
-
-
 /* Section 5 */
 #section5 {
     background: #78C9BC;
-/*    background: url(../img/section5-bg.jpg);
-    background-size: cover; 
-    background-attachment: fixed; */
     color: #ddd;
     min-height: 100%;
 }
@@ -528,20 +521,8 @@ box-shadow: 6px 5px 10px -1px rgba(69,68,69,1);
     color:    #C74D00;
 }
 #section5 .panel-title > a
- { 
+{
     color: #f2f2f2;
-}
-/*#section5 .panel-title > a:focus, #section5 .panel-title > a:hover {
-    text-decoration: none;
-    color: #fff;    
-}*/
-/*
-.panel-title > a:before {
-    content: '\02795';
-    font-size: 13px;
-    color: #fff;
-    float: left;
-    margin-right: 5px;    max-width: 40 px;
 }
 .panel-title > a.focus:before {
     content: "\2796";
@@ -551,13 +532,10 @@ box-shadow: 6px 5px 10px -1px rgba(69,68,69,1);
     content: "\2796";
     margin-right: 5px;    max-width: 40 px;
 }
-    
 #section5 .panel-title a.collapsed:before {
     content: "\2795";
     margin-right: 5px;    max-width: 40 px;
 }
-    
-
 #section5 .panel-default {
     margin-bottom: 20px;
 }
@@ -740,7 +718,6 @@ img.img-thumbnail.section4-img {
 #contact .jumbotron{
     background: #bca262;
     margin-bottom: 50px;
-    
 }
 #contact h2 {
     color: #f6f6f6;
@@ -752,8 +729,8 @@ img.img-thumbnail.section4-img {
     font-size: 80px;
     color: #5D264F;
     margin-bottom: 20px;
-}    
-#contact .atelier_view p {    
+}
+#contact .atelier_view p {
     font-size: 1.2em;
 }
 #contact .atelier_view .fa {
@@ -780,8 +757,7 @@ img.img-thumbnail.section4-img {
 #contact .btn-default:hover, #contact .btn-default:focus {
     color: #f6f6f6;
     background: #a13e1a;
-}    
-
+}
 #contact .contact-item {
     padding: 10px;
     margin: 10px;
