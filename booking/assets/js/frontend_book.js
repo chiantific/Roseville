@@ -18,13 +18,6 @@
  */
 var FrontendBook = {
     /**
-     * Determines the functionality of the page.
-     *
-     * @type {bool}
-     */
-    manageMode: false,
-
-    /**
      * Contains the free dates of the displayed month
      *
      * @type {string[]}
@@ -36,23 +29,15 @@ var FrontendBook = {
      *
      * @param {bool} bindEventHandlers (OPTIONAL) Determines whether the default
      * event handlers will be binded to the dom elements.
-     * @param {bool} manageMode (OPTIONAL) Determines whether the customer is going
-     * to make  changes to an existing appointment rather than booking a new one.
      */
-    initialize: function(bindEventHandlers, manageMode) {
+    initialize: function(bindEventHandlers) {
         if (bindEventHandlers === undefined) {
             bindEventHandlers = true; // Default Value
-        }
-
-        if (manageMode === undefined) {
-            manageMode = false; // Default Value
         }
 
         if (window.console === undefined) {
             window.console = function() {} // IE compatibility
         }
-
-        FrontendBook.manageMode = manageMode;
 
         // Initialize page's components (tooltips, datepickers etc).
         $('.book-step').qtip({
@@ -111,14 +96,7 @@ var FrontendBook = {
             FrontendBook.bindEventHandlers();
         }
 
-        // If the manage mode is true, the appointments data should be
-        // loaded by default.
-        if (FrontendBook.manageMode) {
-            FrontendBook.applyAppointmentData(GlobalVariables.appointmentData,
-                    GlobalVariables.providerData, GlobalVariables.customerData);
-        } else {
-            $('#select-service').trigger('change'); // Load the available hours.
-        }
+        $('#select-service').trigger('change'); // Load the available hours.
     },
 
     /**
@@ -256,39 +234,6 @@ var FrontendBook = {
             FrontendBook.updateConfirmFrame();
         });
 
-        if (FrontendBook.manageMode) {
-            /**
-             * Event: Cancel Appointment Button "Click"
-             *
-             * When the user clicks the "Cancel" button this form is going to
-             * be submitted. We need the user to confirm this action because
-             * once the appointment is cancelled, it will be delete from the
-             * database.
-             */
-            $('#cancel-appointment').click(function(event) {
-                var dialogButtons = {};
-                dialogButtons['OK'] = function() {
-                    if ($('#cancel-reason').val() === '') {
-                        $('#cancel-reason').css('border', '2px solid red');
-                        return;
-                    }
-                    $('#cancel-appointment-form textarea').val($('#cancel-reason').val());
-                    $('#cancel-appointment-form').submit();
-                };
-
-                dialogButtons[EALang['cancel']] = function() {
-                    $('#message_box').dialog('close');
-                };
-
-                GeneralFunctions.displayMessageBox(EALang['cancel_appointment_title'],
-                        EALang['write_appointment_removal_reason'], dialogButtons);
-
-                $('#message_box').append('<textarea id="cancel-reason" rows="3"></textarea>');
-                $('#cancel-reason').css('width', '100%');
-                return false;
-            });
-        }
-
         /**
          * Event: Book Appointment Form "Submit"
          *
@@ -320,11 +265,6 @@ var FrontendBook = {
             }
         });
 
-        // If the manage mode is true then the appointment's start
-        // date should return as available too.
-        var appointmentId = (FrontendBook.manageMode)
-                ? GlobalVariables.appointmentData['id'] : undefined;
-
         // Make ajax post request and get the available hours.
         var postUrl = GlobalVariables.baseUrl + '/index.php/appointments/ajax_get_available_dates';
 
@@ -335,8 +275,7 @@ var FrontendBook = {
             'provider_id': $('#select-provider').val(),
             'date': date,
             'service_duration': selServiceDuration,
-            'manage_mode': FrontendBook.manageMode,
-            'appointment_id': 1
+            'appointment_id': undefined,
         };
 
         $.post(postUrl, postData, function(response) {
@@ -373,11 +312,6 @@ var FrontendBook = {
             }
         });
 
-        // If the manage mode is true then the appointment's start
-        // date should return as available too.
-        var appointmentId = (FrontendBook.manageMode)
-                ? GlobalVariables.appointmentData['id'] : undefined;
-
         // Make ajax post request and get the available hours.
         var postUrl = GlobalVariables.baseUrl + '/index.php/appointments/ajax_get_available_hours';
 
@@ -387,8 +321,7 @@ var FrontendBook = {
             'provider_id': $('#select-provider').val(),
             'selected_date': selDate,
             'service_duration': selServiceDuration,
-            'manage_mode': FrontendBook.manageMode,
-            'appointment_id': appointmentId
+            'appointment_id': undefined,
         };
 
         $.post(postUrl, postData, function(response) {
@@ -409,18 +342,8 @@ var FrontendBook = {
                             '<span class="available-hour">' + availableHour + '</span><br/>');
                 });
 
-                if (FrontendBook.manageMode) {
-                    // Set the appointment's start time as the default selection.
-                    $('.available-hour').removeClass('selected-hour');
-                    $('.available-hour').filter(function() {
-                        return $(this).text() === Date.parseExact(
-                                GlobalVariables.appointmentData['start_datetime'],
-                                'yyyy-MM-dd HH:mm:ss').toString('HH:mm');
-                    }).addClass('selected-hour');
-                } else {
-                    // Set the first available hour as the default selection.
-                    $('.available-hour:eq(0)').addClass('selected-hour');
-                }
+                // Set the first available hour as the default selection.
+                $('.available-hour:eq(0)').addClass('selected-hour');
 
                 FrontendBook.updateConfirmFrame();
 
@@ -557,12 +480,6 @@ var FrontendBook = {
             'language': $('#language').val()
         };
 
-        postData['manage_mode'] = FrontendBook.manageMode;
-
-        if (FrontendBook.manageMode) {
-            postData['appointment']['id'] = GlobalVariables.appointmentData['id'];
-            postData['customer']['id'] = GlobalVariables.customerData['id'];
-        }
         $('input[name="csrfToken"]').val(GlobalVariables.csrfToken);
         $('input[name="post_data"]').val(JSON.stringify(postData));
     },
@@ -698,10 +615,6 @@ var FrontendBook = {
             'csrfToken': GlobalVariables.csrfToken,
             'post_data': formData
         };
-
-        if (GlobalVariables.manageMode) {
-            postData.exclude_appointment_id = GlobalVariables.appointmentData.id;
-        }
 
         var postUrl = GlobalVariables.baseUrl + '/index.php/appointments/ajax_register_appointment',
             $layer = $('<div/>');

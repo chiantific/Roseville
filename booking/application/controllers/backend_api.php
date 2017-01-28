@@ -151,7 +151,6 @@ class Backend_api extends CI_Controller {
                     throw new Exception('You do not have the required privileges for this task.');
                 }
 
-                $manage_mode = isset($appointment['id']);
                 // If the appointment does not contain the customer record id, then it
                 // means that is is going to be inserted. Get the customer's record id.
                 if (!isset($appointment['id_users_customer'])) {
@@ -179,27 +178,15 @@ class Backend_api extends CI_Controller {
                 $send_provider = $this->providers_model
                             ->get_setting('notifications', $provider['id']);
 
-                if (!$manage_mode) {
-                    $customer_title = $this->lang->line('appointment_booked');
-                    $customer_message = $this->lang->line('thank_you_for_appointment');
-                    $customer_link = $this->config->item('base_url') . '/index.php/appointments/index/'
-                            . $appointment['hash'];
+                $customer_title = $this->lang->line('appointment_booked');
+                $customer_message = $this->lang->line('thank_you_for_appointment');
+                $customer_link = $this->config->item('base_url') . '/index.php/appointments/index/'
+                        . $appointment['hash'];
 
-                    $provider_title = $this->lang->line('appointment_added_to_your_plan');
-                    $provider_message = $this->lang->line('appointment_link_description');
-                    $provider_link = $this->config->item('base_url') . '/index.php/backend/index/'
-                            . $appointment['hash'];
-                } else {
-                    $customer_title = $this->lang->line('appointment_changes_saved');
-                    $customer_message = '';
-                    $customer_link = $this->config->item('base_url') . '/index.php/appointments/index/'
-                            . $appointment['hash'];
-
-                    $provider_title = $this->lang->line('appointment_details_changed');
-                    $provider_message = '';
-                    $provider_link = $this->config->item('base_url') . '/index.php/backend/index/'
-                            . $appointment['hash'];
-                }
+                $provider_title = $this->lang->line('appointment_added_to_your_plan');
+                $provider_message = $this->lang->line('appointment_link_description');
+                $provider_link = $this->config->item('base_url') . '/index.php/backend/index/'
+                        . $appointment['hash'];
 
 
                 $send_customer = $this->settings_model->get_setting('customer_notifications');

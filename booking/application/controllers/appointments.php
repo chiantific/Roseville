@@ -42,9 +42,8 @@ class Appointments extends CI_Controller {
      * is provided then it means that the customer followed the appointment
      * manage link that was send with the book success email.
      *
-     * @param string $appointment_hash The db appointment hash of an existing record.
      */
-    public function index($appointment_hash = '') {
+    public function index() {
         if (!is_ea_installed()) {
             redirect('installation/index');
             return;
@@ -73,46 +72,15 @@ class Appointments extends CI_Controller {
 				$available_providers[$index] = $stripped_data;
 			}
 
-            // If an appointment hash is provided then it means that the customer
-            // is trying to edit a registered appointment record.
-            if ($appointment_hash !== '') {
-                // Load the appointments data and enable the manage mode of the page.
-                $manage_mode = TRUE;
-
-                $results = $this->appointments_model->get_batch(array('hash' => $appointment_hash));
-
-                if (count($results) === 0) {
-                    // The requested appointment doesn't exist in the database. Display
-                    // a message to the customer.
-                    $view = array(
-                        'message_title' => $this->lang->line('appointment_not_found'),
-                        'message_text'  => $this->lang->line('appointment_does_not_exist_in_db'),
-                        'message_icon'  => $this->config->item('base_url')
-                                         . '/assets/img/error.png'
-                    );
-                    $this->load->view('appointments/message', $view);
-                    return;
-                }
-
-                $appointment = $results[0];
-                $provider = $this->providers_model->get_row($appointment['id_users_provider']);
-                $customer = $this->customers_model->get_row($appointment['id_users_customer']);
-
-            } else {
-                // The customer is going to book a new appointment so there is no
-                // need for the manage functionality to be initialized.
-                $manage_mode = FALSE;
-                $appointment = array();
-                $provider = array();
-                $customer = array();
-            }
+            $appointment = array();
+            $provider = array();
+            $customer = array();
 
             // Load the book appointment view.
             $view = array (
                 'available_services'    => $available_services,
                 'available_providers'   => $available_providers,
                 'company_name'          => $company_name,
-                'manage_mode'           => $manage_mode,
 				'date_format'           => $date_format,
                 'appointment_data'      => $appointment,
                 'provider_data'         => $provider,
@@ -434,8 +402,6 @@ class Appointments extends CI_Controller {
      * @param numeric|string $_POST['provider_id'] The selected provider's record id, can also be 'any-provider'.
      * @param string $_POST['date'] A date of the month of which the available dates we want to see.
      * @param numeric $_POST['service_duration'] The selected service duration in minutes.
-     * @param string $_POST['manage_mode'] Contains either 'true' or 'false' and determines the if current user
-     * is managing an already booked appointment or not.
      * @return Returns a json object with the available dates.
      */
     public function ajax_get_available_dates() {
@@ -466,8 +432,6 @@ class Appointments extends CI_Controller {
      * @param numeric|string $_POST['provider_id'] The selected provider's record id, can also be 'any-provider'.
      * @param string $_POST['selected_date'] The selected date of which the available hours we want to see.
      * @param numeric $_POST['service_duration'] The selected service duration in minutes.
-     * @param string $_POST['manage_mode'] Contains either 'true' or 'false' and determines the if current user
-     * is managing an already booked appointment or not.
      * @return Returns a json object with the available hours.
      */
     public function ajax_get_available_hours() {
@@ -482,12 +446,6 @@ class Appointments extends CI_Controller {
 				return;
 			}
 
-            // If manage mode is TRUE then the following we should not consider the selected
-            // appointment when calculating the available time periods of the provider.
-            $exclude_appointments = ($_POST['manage_mode'] === 'true')
-                    ? array($_POST['appointment_id'])
-                    : array();
-
 			// If the user has selected the "any-provider" option then we will need to search
 			// for an available provider that will provide the requested service.
 			if ($_POST['provider_id'] === ANY_PROVIDER) {
@@ -499,10 +457,11 @@ class Appointments extends CI_Controller {
 			}
 
 			$empty_periods = $this->get_provider_available_time_periods($_POST['provider_id'],
-					$_POST['selected_date'], $exclude_appointments);
+					$_POST['selected_date'], []);
 
-            $available_hours = $this->calculate_available_hours($empty_periods, $_POST['selected_date'],
-					$_POST['service_duration'], filter_var($_POST['manage_mode'], FILTER_VALIDATE_BOOLEAN));
+            $available_hours = $this->calculate_available_hours($empty_periods,
+                    $_POST['selected_date'],
+					$_POST['service_duration']);
 
             echo json_encode($available_hours);
 
@@ -521,7 +480,6 @@ class Appointments extends CI_Controller {
     public function ajax_register_appointment() {
         try {
             $post_data = $_POST['post_data']; // alias
-			$post_data['manage_mode'] = filter_var($post_data['manage_mode'], FILTER_VALIDATE_BOOLEAN);
 
 			$this->load->model('appointments_model');
             $this->load->model('providers_model');
@@ -816,12 +774,10 @@ class Appointments extends CI_Controller {
 	 * "get_provider_available_time_periods" method.
 	 * @param string $selected_date The selected date to be search (format )
 	 * @param numeric $service_duration The service duration is required for the hour calculation.
-	 * @param bool $manage_mode (optional) Whether we are currently on manage mode (editing an existing appointment).
 	 *
 	 * @return array Returns an array with the available hours for the appointment.
 	 */
-	private function calculate_available_hours(array $empty_periods, $selected_date, $service_duration,
-			$manage_mode = FALSE) {
+	private function calculate_available_hours(array $empty_periods, $selected_date, $service_duration) {
 		$this->load->model('settings_model');
 
 		$available_hours = array();

@@ -61,7 +61,6 @@ var GlobalVariables = {
 availableServices   : <?php echo json_encode($available_services); ?>,
     availableProviders  : <?php echo json_encode($available_providers); ?>,
     baseUrl             : <?php echo '"' . $this->config->item('base_url') . '"'; ?>,
-    manageMode          : <?php echo ($manage_mode) ? 'true' : 'false'; ?>,
     dateFormat          : <?php echo json_encode($date_format); ?>,
     appointmentData     : <?php echo json_encode($appointment_data); ?>,
     providerData        : <?php echo json_encode($provider_data); ?>,
