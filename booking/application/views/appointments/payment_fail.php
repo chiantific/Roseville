@@ -13,7 +13,7 @@
         // ------------------------------------------------------------ ?>
 
     <link rel="stylesheet" type="text/css"
-        href="/css/bootstrap.min.css">
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css"
         href="<?php echo $this->config->item('base_url'); ?>/assets/css/frontend.css">
 

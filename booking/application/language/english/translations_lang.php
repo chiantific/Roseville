@@ -36,7 +36,7 @@ $lang['cancel_appointment_title'] = 'Cancel Appointment';
 $lang['appointment_cancelled'] = 'Your appointment has been successfully cancelled!';
 $lang['appointment_cancelled_title'] = 'Appointment Cancelled';
 $lang['payment_fail'] = 'Your payment has not been registered.';
-$lang['retry_or_contact'] = 'Please try again with another payment syste,; or contact us at info@roseville.ch or by phone at 078 638 80 79 or 079 623 04 11.';
+$lang['retry_or_contact'] = 'Please try again with another payment syste,; or contact us at <a href="mailto:info@roseville.ch">info@roseville.ch</a> or by phone at 078 638 80 79 or 079 623 04 11.';
 $lang['back_to_payment'] = 'Back to payment';
 $lang['back_to_booking'] = 'Back to booking';
 $lang['reason'] = 'Reason';
