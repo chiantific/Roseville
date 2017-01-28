@@ -6,6 +6,25 @@ body, html {
     width: 100% !important;
     height: 100% !important;
 }
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ddd;
+    z-index: 99999;
+    height: 100%;
+}
+#preloader-img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 64px;
+    height: 64px;
+    margin: -32px 0 0 -32px;
+    padding: 0;
+}
 h1 {
     font-weight: 700;
 }
@@ -51,25 +70,6 @@ ul, ol {
 }
 .clearfix {
     display: block;
-}
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #ddd;
-    z-index: 99999;
-    height: 100%;
-}
-#status {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 64px;
-    height: 64px;
-    margin: -32px 0 0 -32px;
-    padding: 0;
 }
 ul, ol {
     padding: 0;
