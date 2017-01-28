@@ -72,7 +72,7 @@
 <body>
 <div id="header">
     <div id="header-logo">
-        <img src="/img/logo_R.png">
+        <img src="/img/logo_escape.png">
         <span><?php echo $company_name; ?></span>
     </div>
 

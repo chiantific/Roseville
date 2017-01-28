@@ -83,7 +83,7 @@ $(document).ready(function() {
     <nav id="header" class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-brand">
-                <img src="/img/logo_R.png" alt="roseville escape logo" id="logo"/>
+                <img src="/img/logo_escape.png" alt="roseville escape logo" id="logo"/>
                 <span><?php echo $this->lang->line('page_title'); ?></span>
             </div>
         </div>
