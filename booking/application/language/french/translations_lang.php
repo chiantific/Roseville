@@ -51,11 +51,10 @@ $lang['please_hour'] = 'Il faut prévoir approximativement 1h30 en comptant un q
 $lang['cant_wait'] = 'L’équipe de Roseville Escape est impatiente de vous accueillir dans ses lieux pour vous faire vivre une expérience inoubliable.';
 $lang['appointment_details_title'] = 'Voici les détails de votre réservation';
 $lang['customer_details_title'] = 'Vos coordonnées';
-$lang['mail_footer'] = 'route de Lavaux 44<br/>
-    CH-1802 Corseaux<br/>
- <br/>
-   078 638 80 79 (whitney)<br/>
-   079 623 04 11 (francine)';
+$lang['address'] = 'route de Lavaux 44<br/>
+    CH-1802 Corseaux';
+$lang['phone_numbers'] = '078 638 80 79 (Whitney)<br/>
+079 623 04 11 (Francine)';
 $lang['service'] = 'Prestations';
 $lang['provider'] = 'Salle';
 $lang['customer'] = 'Client';
@@ -261,6 +260,7 @@ $lang['now'] = 'Maintenant';
 $lang['select_time'] = 'Choisir le temps';
 $lang['time'] = 'Temps';
 $lang['hour'] = 'Heure';
+$lang['paid_amount'] = 'Montant payé';
 $lang['minute'] = 'Minute';
 $lang['oops_something_went_wrong'] = 'Oops! Une erreur s\'est produite !';
 $lang['ea_update_success'] = 'Easy!Appointments à été mis à jour avec succès !';

@@ -76,6 +76,14 @@ class Notifications {
             $message_1, $message_2, $message_3, $appointment_link, $receiver_address) {
 
         // :: PREPARE THE EMAIL TEMPLATE REPLACE ARRAY
+        $appointment_date = $appointment_data['start_datetime'];
+        if(date('N', strtotime($appointment_date)) >= 6){
+            $price = $service_data['price_week_end'];
+        } else {
+            $price = $service_data['price_week'];
+        }
+        $price = $service_data['currency'] . ' ' . $price;
+
         $replace_array = array(
             '$email_title'              => $title,
             '$email_message_title'      => $title_message,
@@ -85,8 +93,9 @@ class Notifications {
 
             '$appointment_service'      => $service_data['name'],
             '$appointment_provider'     => $provider_data['last_name'],
-            '$appointment_date'   => date('d/m/Y', strtotime($appointment_data['start_datetime'])),
-            '$appointment_hour'     => date('H:i', strtotime($appointment_data['start_datetime'])),
+            '$appointment_date'         => date('d/m/Y', strtotime($appointment_data['start_datetime'])),
+            '$appointment_hour'         => date('H:i', strtotime($appointment_data['start_datetime'])),
+            '$paid_amount'              => $price,
             '$appointment_link'         => $appointment_link,
 
             '$company_link'             => $company_settings['company_link'],
@@ -96,6 +105,9 @@ class Notifications {
             '$customer_email'           => $customer_data['email'],
             '$customer_phone'           => $customer_data['phone_number'],
             '$appointment_notes'        => $appointment_data['notes'],
+            '$address'                  => $this->ci->lang->line('address'),
+            '$phone_numbers'            => $this->ci->lang->line('phone_numbers'),
+            '$fb_link'                  => 'https://www.facebook.com/rosevilleescape/',
 
             // Translations
             'Appointment Details' => $this->ci->lang->line('appointment_details_title'),
@@ -103,6 +115,7 @@ class Notifications {
             'Provider' => $this->ci->lang->line('provider'),
             'Date' => $this->ci->lang->line('date'),
             'Hour' => $this->ci->lang->line('hour'),
+            'Amount' => $this->ci->lang->line('paid_amount'),
             'Customer Details' => $this->ci->lang->line('customer_details_title'),
             'Name' => $this->ci->lang->line('name'),
             'Email' => $this->ci->lang->line('email'),
