@@ -53,6 +53,9 @@ a:hover, a:focus {
 }
 ul, ol {
     list-style: none;
+    padding: 0;
+    webkit-padding: 0;
+    moz-padding: 0;
 }
 .clearfix:after {
     visibility: hidden;
@@ -70,11 +73,6 @@ ul, ol {
 }
 .clearfix {
     display: block;
-}
-ul, ol {
-    padding: 0;
-    webkit-padding: 0;
-    moz-padding: 0;
 }
 hr {
     height: 4px;
