@@ -55,7 +55,7 @@ $lang['address'] = 'route de Lavaux 44<br/>
     CH-1802 Corseaux';
 $lang['phone_numbers'] = '078 638 80 79 (Whitney)<br/>
 079 623 04 11 (Francine)';
-$lang['service'] = 'Prestations';
+$lang['service'] = 'Prestation';
 $lang['provider'] = 'Salle';
 $lang['customer'] = 'Client';
 $lang['is_paid'] = 'Payé';
