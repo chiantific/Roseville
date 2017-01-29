@@ -786,24 +786,6 @@ class Appointments extends CI_Controller {
 			$start_hour = new DateTime($selected_date . ' ' . $period['start']);
 			$end_hour = new DateTime($selected_date . ' ' . $period['end']);
 
-            /*
-			$minutes = $start_hour->format('i');
-
-			if ($minutes % 15 != 0) {
-				// Change the start hour of the current space in order to be
-				// on of the following: 00, 15, 30, 45.
-				if ($minutes < 15) {
-					$start_hour->setTime($start_hour->format('H'), 15);
-				} else if ($minutes < 30) {
-					$start_hour->setTime($start_hour->format('H'), 30);
-				} else if ($minutes < 45) {
-					$start_hour->setTime($start_hour->format('H'), 45);
-				} else {
-					$start_hour->setTime($start_hour->format('H') + 1, 00);
-				}
-			}
-             */
-
 			$current_hour = $start_hour;
 			$diff = $current_hour->diff($end_hour);
 
