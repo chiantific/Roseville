@@ -674,6 +674,14 @@ for (i = 0; i < acc.length; i++) {
                     maxZoom: 18,
             }).addTo(mymap);
             var marker = L.marker([46.470892, 6.813895]).addTo(mymap);
+            var contentString = '<div class="markerWindow">'+
+                '<h4 id="firstHeading" class="firstHeading">Roseville Escape</h4>'+
+                '<div id="bodyContent">'+
+                '<p>Route du Lavaux 44'+'<br />'+
+                'CH-1802 Corseaux</p>'+
+                '</div>'+
+                '</div>';
+            marker.bindPopup(contentString).openPopup();
         </script>
         <!-- Piwik -->
         <script type="text/javascript">
