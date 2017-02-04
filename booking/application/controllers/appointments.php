@@ -289,53 +289,26 @@ class Appointments extends CI_Controller {
 
         // Check the SHA-OUT of the server response
         $sha_out = $this->config->item('sha_out');
-        $string_to_sha = "NCERROR=" . $_GET['NCERROR'] . $sha_out
-            . "ORDERID=" . $_GET['orderID'] . $sha_out
-            . "PAYID=" . $_GET['PAYID'] . $sha_out
-            . "STATUS=" . $_GET['STATUS'] . $sha_out;
+        $string_to_sha = '';
+
+        if ($_GET['NCERROR'] !== '') {
+            $string_to_sha .= "NCERROR=" . $_GET['NCERROR'] . $sha_out;
+        }
+        if ($_GET['orderID'] !== '') {
+            $string_to_sha .= "ORDERID=" . $_GET['orderID'] . $sha_out;
+        }
+        if ($_GET['PAYID'] !== '') {
+            $string_to_sha .= "PAYID=" . $_GET['PAYID'] . $sha_out;
+        }
+        if ($_GET['STATUS'] !== '') {
+            $string_to_sha .= "STATUS=" . $_GET['STATUS'] . $sha_out;
+        }
 
         $sha_sign = strtoupper(sha1($string_to_sha));
 
-        if($sha_sign != $_GET['SHASIGN'] || ($_GET['STATUS'] != 9 && $_GET['STATUS'] != 2)){
-            //get the exceptions
-            $exceptions = $this->session->flashdata('appointments/book_success');
-
-            // :: LOAD THE PAYMENT FAIL VIEW
-            $view = array(
-                'appointment_id'    => $appointment_id,
-                'appointment_data'  => $appointment,
-                'provider_data'     => $provider,
-                'service_data'      => $service,
-                'company_name'      => $company_name,
-                'company_link'      => $company_link,
-            );
-
-            if($exceptions){
-                $view['exceptions'] = $exceptions;
-            }
-
-            $this->load->view('appointments/payment_error', $view);
-        } elseif ($_GET['STATUS'] == 2) { // refused
-            //get the exceptions
-            $exceptions = $this->session->flashdata('appointments/book_success');
-
-            // :: LOAD THE PAYMENT FAIL VIEW
-            $view = array(
-                'appointment_id'    => $appointment_id,
-                'appointment_data'  => $appointment,
-                'provider_data'     => $provider,
-                'service_data'      => $service,
-                'company_name'      => $company_name,
-                'company_link'      => $company_link,
-            );
-
-            if($exceptions){
-                $view['exceptions'] = $exceptions;
-            }
-
-            $this->load->view('appointments/payment_fail', $view);
-        } else { // STATUS == 9 : accepted
-
+        if($sha_sign == $_GET['SHASIGN'] && ($_GET['STATUS'] == 9 || $_GET['STATUS'] == 91))
+        {
+            // Accepted or in progress
             // Register the appointment as paid
             $appointment['is_paid'] = true;
             $this->appointments_model->add($appointment);
@@ -389,6 +362,68 @@ class Appointments extends CI_Controller {
                 $view['exceptions'] = $exceptions;
             }
             $this->load->view('appointments/payment_success', $view);
+        } elseif ($sha_sign == $_GET['SHASIGN'] && $_GET['STATUS'] == 2) { // Refused
+            //get the exceptions
+            $exceptions = $this->session->flashdata('appointments/book_success');
+
+            // :: LOAD THE PAYMENT FAIL VIEW
+            $view = array(
+                'appointment_id'    => $appointment_id,
+                'appointment_data'  => $appointment,
+                'provider_data'     => $provider,
+                'service_data'      => $service,
+                'company_name'      => $company_name,
+                'company_link'      => $company_link,
+            );
+
+            if($exceptions){
+                $view['exceptions'] = $exceptions;
+            }
+
+            $this->load->view('appointments/payment_fail', $view);
+        } elseif ($sha_sign == $_GET['SHASIGN'] && $_GET['STATUS'] == 1) { // Cancelled
+            // delete appointment
+            if (!$this->appointments_model->delete($appointment_id)) {
+                throw new Exception('Appointment could not be deleted from the database.');
+            }
+
+            //get the exceptions
+            $exceptions = $this->session->flashdata('appointments/book_success');
+
+            // :: LOAD THE PAYMENT FAIL VIEW
+            $view = array(
+                'appointment_id'    => $appointment_id,
+                'appointment_data'  => $appointment,
+                'provider_data'     => $provider,
+                'service_data'      => $service,
+                'company_name'      => $company_name,
+                'company_link'      => $company_link,
+            );
+
+            if($exceptions){
+                $view['exceptions'] = $exceptions;
+            }
+
+            $this->load->view('appointments/payment_cancel', $view);
+        } else { // Error
+            //get the exceptions
+            $exceptions = $this->session->flashdata('appointments/book_success');
+
+            // :: LOAD THE PAYMENT FAIL VIEW
+            $view = array(
+                'appointment_id'    => $appointment_id,
+                'appointment_data'  => $appointment,
+                'provider_data'     => $provider,
+                'service_data'      => $service,
+                'company_name'      => $company_name,
+                'company_link'      => $company_link,
+            );
+
+            if($exceptions){
+                $view['exceptions'] = $exceptions;
+            }
+
+            $this->load->view('appointments/payment_error', $view);
         }
     }
 
