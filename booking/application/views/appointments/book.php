@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#35A768">
-    <title>Réservation</title>
+    <title><?php echo $this->lang->line('page_title'); ?></title>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
     <link
