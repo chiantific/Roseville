@@ -82,7 +82,7 @@ $(document).ready(function() {
     <nav id="header" class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-brand">
-                <a href="http://<?php echo $company_link; ?>">
+                <a href="<?php echo $company_link; ?>">
                     <img src="/img/logo_escape.png" alt="roseville escape logo" id="logo"/>
                 </a>
                 <span><?php echo $this->lang->line('page_title'); ?></span>
@@ -319,7 +319,7 @@ foreach($available_services as $service) {
     <div id="footer">
         <div class="container">
             <p>Copyright &copy;
-                <a href="http://<?php echo $company_link; ?>">
+                <a href="<?php echo $company_link; ?>">
                     <?php echo $company_name; ?>
                 </a>
         <?php if ($this->session->userdata('user_id')): ?>

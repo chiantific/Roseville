@@ -48,7 +48,7 @@
                             <a href="'.$this->config->item('base_url').'" class="btn btn-success btn-large">' .
                                 $this->lang->line('back_to_booking') . '
                             </a>
-                            <a href="http://'.$company_link.'" class="btn btn-success btn-large">' .
+                            <a href="'.$company_link.'" class="btn btn-success btn-large">' .
                                 $this->lang->line('go_to_company_site') . '
                             </a>
                         ';

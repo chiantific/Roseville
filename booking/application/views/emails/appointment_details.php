@@ -68,7 +68,7 @@ img#facebook { width: 30px; }
             <p>$email_message_3</p>
 
             <div style="width: 60px; display: inline-block; float: left;">
-                <a href="http://$company_link">
+                <a href="$company_link">
                     <img id="logo" alt="logo" src="http://$company_link/img/logo_escape.png" style="height: 60px; max-width: 100%;" height="60"/>
                 </a>
             </div>

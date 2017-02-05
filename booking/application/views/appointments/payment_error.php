@@ -45,7 +45,7 @@
                         echo '
                             <h3>' . $this->lang->line('payment_error') . '</h3>
                             <p>' . $this->lang->line('contact_error') . '</p>
-                            <a href="http://'.$company_link.'" class="btn btn-success btn-large">' .
+                            <a href="'.$company_link.'" class="btn btn-success btn-large">' .
                                 $this->lang->line('go_to_company_site') . '
                             </a>
                         ';

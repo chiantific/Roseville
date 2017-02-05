@@ -47,7 +47,7 @@
                             <p>' . $this->lang->line('thank_you_trust') . ' '
                                 . $this->lang->line('appointment_details_was_sent_to_you') . ' ' 
                                 . $this->lang->line('cant_wait') . '</p>
-                            <a href="http://'.$company_link.'" class="btn btn-success btn-large">' .
+                            <a href="'.$company_link.'" class="btn btn-success btn-large">' .
                                 $this->lang->line('go_to_company_site') . '
                             </a>
                             <a href="'.$this->config->item('base_url').'" class="btn btn-success btn-large">' .
