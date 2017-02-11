@@ -14,6 +14,7 @@ $lang['about'] = 'About';
 $lang['faq'] = 'FAQ';
 $lang['location'] = 'Location';
 $lang['contact_us'] = 'Contact us';
+$lang['contact_us_verb'] = 'contact us';
 $lang['welcome_to'] = 'Welcome to';
 $lang['brand'] = $lang['main_title'];
 $lang['intro_text'] = 'Find the clues, solve the puzzles, beat the clock. Will you escape in time ?';
