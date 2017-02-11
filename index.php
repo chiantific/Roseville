@@ -19,6 +19,12 @@ if (!empty($_GET["language"])) {
 if (empty($_SESSION["lang"])) {
     $_SESSION["lang"] = $defaultLang;
 }
+
+$lang_file = "lang_" . $_SESSION["lang"] . ".php";
+include($lang_file);
+/*
+lang array is now available. Just use $lang['main_title'] to access the corresponding line
+*/
 ?>
 
 <!DOCTYPE html>
