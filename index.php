@@ -1,3 +1,26 @@
+<?php
+session_start();
+$defaultLang = 'fr';
+
+if (!empty($_GET["language"])) {
+    switch (strtolower($_GET["language"])) {
+        case "en":
+            $_SESSION['lang'] = 'en';
+            break;
+        case "tr":
+            $_SESSION['lang'] = 'tr';
+            break;
+        default:
+            $_SESSION['lang'] = $defaultLang;
+            break;
+    }
+}
+
+if (empty($_SESSION["lang"])) {
+    $_SESSION["lang"] = $defaultLang;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
