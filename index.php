@@ -30,13 +30,13 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title>Roseville Escape Room</title>
+        <title><?php echo $lang['main_title']; ?></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description"
-              content="Roseville Escape est un jeu d'évasion situé à deux pas de Vevy. Une activité originale dans un décor insolite faisant appel à l'esprit d'équipe pour s'amuser en famille, entre amis ou collègues.">
+              content="<?php echo $lang['meta_description_content']; ?>">
         <meta name="keywords"
-              content="escape, Lavaux, jeu, enigme, vevey, riviera, corseaux">
+              content="<?php echo $lang['meta_keywords_content']; ?>">
         <!--[if IE]><link rel="shortcut icon" href="img/favicon.ico"><![endif]-->
         <link href="img/favicon.ico" rel="icon" type="image/x-icon" />
         <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
@@ -82,60 +82,60 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                         </li>
                         <li>
                             <a class="page-scroll" href="#section1">
-                                Concept
+                                <?php echo $lang['how_it_works']; ?>
                             </a>
                         </li>
                         <li>
                             <a class="page-scroll" href="#section2">
-                                Quel public
+                                <?php echo $lang['what_public']; ?>
                             </a>
                         </li>
                         <li>
                             <a class="page-scroll" href="#section3">
-                                Notre lieu
+                                <?php echo $lang['our_rooms'];?>
                             </a>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle"
                                         data-toggle="dropdown">
-                                Réservations<b class="caret"></b>
+                                <?php echo $lang['bookings']; ?><b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a class="page-scroll" href="booking">
-                                        Réservez maintenant
+                                        <?php echo $lang['book_now']; ?>
                                     </a>
                                 </li>
                                 <li>
                                     <a class="page-scroll" href="#gcard">
-                                        Bon cadeau
+                                        <?php echo $lang['gift_certificate']; ?>
                                     </a>
                                 </li>
                                 <li>
                                     <a class="page-scroll" href="#price">
-                                        Nos tarifs
+                                        <?php echo $lang['our_pricing']; ?>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                À propos<b class="caret"></b>
+                                <?php echo $lang['about']; ?><b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a class="page-scroll" href="#section5">
-                                        FAQ
+                                        <?php echo $lang['faq']; ?>
                                     </a>
                                 </li>
                                 <li>
                                     <a class="page-scroll" href="#where">
-                                        Situation
+                                        <?php echo $lang['location']; ?>
                                     </a>
                                 </li>
                                 <li>
                                     <a class="page-scroll" href="#contact">
-                                        Contact
+                                        <?php echo $lang['contact_us']; ?>
                                     </a>
                                 </li>
                             </ul>
@@ -156,10 +156,18 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                 </div>
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1 col-xs-12">
-                        <h1>Bienvenue à <span class="brand-heading">Roseville</span></h1>
-                        <p class="intro-text">Trouverez-vous la sortie ?</p>
-                        <a href="#section1" class="btn btn-default page-scroll">Entrée</a>
-                        <a href="booking" class="btn btn-default page-scroll">Réservations</a>
+                        <h1><?php echo $lang['welcome_to']; ?> 
+							<span class="brand-heading">
+								<?php echo $lang['brand']; ?>
+							</span>
+						</h1>
+                        <p class="intro-text"><?php echo $lang['intro_text']; ?></p>
+                        <a href="#section1" class="btn btn-default page-scroll">
+                            <?php echo $lang['enter']; ?>
+                        </a>
+                        <a href="booking" class="btn btn-default page-scroll">
+                            <?php echo $lang['bookings']; ?>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -169,33 +177,31 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
         <div id="section1">
             <div class="container">
                 <div class="col-md-10 col-md-offset-1 jumbotron">
-                    <h3>L'aventure dont vous êtes les héros</h3>
-                    <p>Une aventure inoubliable grandeur nature dans des décors insolites. Le jeu d'évasion consiste à s’échapper d’une pièce en moins de 60 minutes.
-                    Enfermés dans un environnement immersif, les joueurs, par groupes de 2 à 5 participants,
-                    cherchent des indices disséminés dans la pièce. Ils les combinent afin de résoudre les casse-tête qui
-                    permettent d'avancer dans l'énigme et sortir de la salle
-                    </p>
+                <h3><?php echo $lang['header_adventure_heros']; ?></h3>
+                <p><?php echo $lang['text_adventure_heros']; ?></p>
                 </div>
                 <div class="row">
                     <div class="col-md-3 col-sm-6 sub-section">
-                        <img src="img/ancientdoorlock.jpg" alt="cadenas pour illustrer le jeu" class="img-rounded" class="img-responsive">
+                    <img src="img/ancientdoorlock.jpg"
+                        alt="<?php echo $lang['alt_lock_to_illustrate_the_game']; ?>"
+                        class="img-rounded" class="img-responsive">
                     </div>
                     <div class="col-md-3 col-sm-6 sub-section">
                         <i class="fa fa-lock"></i>
-                        <h4>L'univers du jeu</h4>
-                        <p>Plongez dans une aventure exaltante. Laissez vous enfermer dans un univers fantastique avec des décors saisissants</p>
+                        <h4><?php echo $lang['header_game_univers']; ?></h4>
+                        <p><?php echo $lang['text_game_univers']; ?></p>
                     </div>
                     <div class="clearfix visible-sm"></div>
                     <div class="col-md-3 col-sm-6 sub-section">
                         <i class="fa fa-cogs"></i>
-                        <h4>Trouvez la solution</h4>
-                        <p>En faisant preuve de curiosité, d'un peu de logique et d'ingéniosité, récoltez les indices, déjouez les pièges et résolvez les énigmes</p>
+                        <h4><?php echo $lang['header_find_the_solution']; ?></h4>
+                        <p><?php echo $lang['text_find_the_solution']; ?></p>
                     </div>
 
                     <div class="col-md-3 col-sm-6 sub-section">
                         <i class="fa fa-trophy"></i>
-                        <h4>Le temps est compté</h4>
-                        <p>Travaillez en équipe pour mener à bien votre mission. Si vous y arrivez en moins de 60 minutes vous serez récompensés</p>
+                        <h4><?php echo $lang['header_the_clock_is_ticking']; ?></h4>
+                        <p><?php echo $lang['text_the_clock_is_ticking']; ?></p>
                     </div>
                 </div>
             </div>
@@ -205,36 +211,32 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
         <div id="section2" class="text-center">
             <div class="container">
                 <div class="jumbotron">
-                    <h3>Quel public</h3>
-                    <p>Le jeu d'évasion à Roseville s'adresse à un public de plus de 14 ans. 
-                    Nos énigmes ne comportent aucun élément physique ou effrayant.
-                    Le scénario a été conçu pour satisfaire l'intérêt des novices comme celui des initiés de jeu d'évasion
-                    </p>
+                <h3><?php echo $lang['what_public']; ?></h3>
+                <p><?php echo $lang['text_what_public']; ?></p>
                 </div>
                 <div class="space"></div>
 
                 <div class="row">
-
                     <div class="col-md-3 col-sm-6 sub-section">
                         <i class="fa fa-users"></i>
-                        <h4>Groupe d'amis et famille</h4>
-                        <p>Une activité qui sort de l’ordinaire à faire en famille ou entre amis</p>
+                        <h4><?php echo $lang['header_family_and_friends']; ?></h4>
+                        <p><?php echo $lang['text_family_and_friends']; ?></p>
                     </div>
                     <div class="col-md-3 col-sm-6 sub-section">
                         <i class="fa fa-black-tie"></i>
-                        <h4>Collègues</h4>
-                        <p>Pour renforcer l'esprit d'équipe ou tout simplement passer un bon moment avec le gang du boulot</p>
+                        <h4><?php echo $lang['header_colleagues']; ?></h4>
+                        <p><?php echo $lang['text_colleagues']; ?></p>
                     </div>
                     <div class="clearfix visible-sm"></div>
                     <div class="col-md-3 col-sm-6 sub-section">
                         <i class="fa fa-camera"></i>
-                        <h4>Touristes</h4>
-                        <p>De passage dans la région avec une envie de vivre une expérience exaltante conçue sur des thèmes régionaux ?</p>
+                        <h4><?php echo $lang['header_tourists']; ?></h4>
+                        <p><?php echo $lang['text_tourists']; ?></p>
                     </div>
                     <div class="col-md-3 col-sm-6 sub-section">
                         <i class="fa fa-briefcase"></i>
-                        <h4>Entreprises</h4>
-                        <p>Une occasion nouvelle pour favoriser la cohésion de groupe ou organiser des entretiens d'embauche</p>
+                        <h4><?php echo $lang['header_compagnies']; ?></h4>
+                        <p><?php echo $lang['text_compagnies']; ?></p>
                     </div>
                 </div>
             </div>
@@ -244,19 +246,24 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
         <div id="section3">
             <div class="container">
                 <div class="jumbotron text-center">
-                    <h2>Notre lieu</h2>
-                    <p>Venez découvrir notre jeu d'évasion "Chocolat" et notre "R" de fête</p>
-                    <a href="booking" class="btn btn-default">réservations</a>
-                    <a href="#contact" class="btn btn-default page-scroll">contactez-nous</a>
+                <h2><?php echo $lang['our_rooms']; ?></h2>
+                <p><?php echo $lang['text_our_rooms']; ?></p>
+                    <a href="booking" class="btn btn-default">
+                        <?php echo $lang['bookings']; ?>
+                    </a>
+                    <a href="#contact" class="btn btn-default page-scroll">
+                        <?php echo $lang['btn_contact_us']; ?>
+                    </a>
                 </div>
                 <div class="row">
                     <div class="col-sm-4 sub-section">
                         <img src="img/chocolat.jpg" alt="chocolat fondant pour illustrer la salle chocolat" class="img-thumbnail" width="100%"/>
-                        <h3>"Chocolat"</h3>
-                        <p>Un bug informatique a détruit tout le savoir stocké sur internet, dont une fameuse recette de chocolat. 
-                        Vous êtes engagés pour retourner dans le passé pour la retrouver. Mais attention rester trop longtemps dans l'espace temps peut s'avérer dangereux</p>
+                        <h3><?php echo $lang['header_chocolate']; ?></h3>
+                        <p><?php echo $lang['text_chocolate']; ?></p>
                         <div class="grouped-buttons">
-                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">plus d'info</button>
+                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+                                <?php echo $lang['btn_more_info']; ?>
+                            </button>
                             <!-- Modal -->
                             <div class="modal fade" id="myModal" role="dialog">
                                 <div class="modal-dialog">
@@ -264,19 +271,18 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Introduction pour la salle "Chocolat"</h4>
+                                            <h4 class="modal-title">
+                                                <?php echo $lang['header_intro_room_chocolate']; ?>
+                                            </h4>
                                         </div>
                                         <div class="modal-body">
-                                            <p>Dans un monde alternatif, en 2016, un bug à échelle planétaire a détruit toutes les informations contenues sur le net.
-                                            Or, la plupart du savoir de l’humanité s’y trouvait. Une association d’aventuriers appelée Roseville, qui possède le pouvoir de voyager dans le temps,
-                                            se propose de retrouver ces secrets en retournant dans le passé contre rémunération, bien entendu. Le Capitaine, l’aventurier le plus expérimenté de Roseville,
-                                            est élu pour aider la jeune héritière d’une richissime famille de chocolatiers souhaitant retrouver la recette du chocolat
-                                            qui a fait la fortune de la famille depuis des générations. Hors, ce dernier est introuvable. Il appartient donc à vous de partir à la recherche de la recette 
-                                            et d’essayer de découvrir ce qui est arrivé au Capitaine. Mais attention! Les voyages dans le temps sont instables et rester trop longtemps 
-                                            dans le passé pourrait être fatal!</p>
+                                        <p><?php echo $lang['text_intro_room_chocolate']; ?>
+                                        </p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">fermer</button>
+                                            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">
+                                                <?php echo $lang['close']; ?>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -289,20 +295,24 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                         </div>
                     </div>
                     <div class="col-sm-4 sub-section">
-                        <img class="img-thumbnail" src="img/raisin.jpg" alt="grappe de raisin" width="100%"/>
-                        <h3>Prochainement ...</h3>
-                        <p>Nous créons une nouvelle salle de jeu pour vous sur un thème local typiquement approprié pour le Lavaux.
-                        In Vino Veritas ... Ouverture avril 2017</p>
-                        <a data-html="true" type="button" class="btn btn-default bottom" data-toggle="popover" data-content="petit curieux !<br />Il faudra encore patienter" href="#">plus d'info</a>
-
+                        <img class="img-thumbnail" src="img/raisin.jpg"
+                            alt="<?php echo $lang['alt_grappe_bunch']; ?>" width="100%"/>
+                        <h3><?php echo $lang['header_coming_soon']; ?></h3>
+                        <p><?php echo $lang['text_coming_soon'];
+                            echo $lang['in_vino_veritas']; ?></p>
+                                <a data-html="true" type="button" class="btn btn-default bottom" data-toggle="popover" data-content="<?php
+                                echo $lang['curious'] . '<br />'. $lang['be_patient']; ?>" href="#">
+                                    <?php echo $lang['btn_more_info']; ?>
+                                </a>
                     </div>
                     <div class="col-sm-4 sub-section">
-                        <img class="img-thumbnail" src="img/aire_de_fete2.jpg" alt="espace R de fête" width="100%"/>
-                        <h3>"R" de fête</h3>
-                        <p>Nous vous accueillons dans un espace insolite où les consignes du jeu vous
-                        seront expliquées par notre coach. Profitez aussi de l'ambiance magique et relaxante de cet espace pour 
-                        débriefer à la fin du jeu en buvant un verre. Il est possible de louer cette salle pour y organiser anniversaires, fêtes ou soirées privées</p>
-                        <a type="button" href="http://espace.roseville.ch" target="_blank" class="btn btn-default bottom">plus d'info</a>
+                        <img class="img-thumbnail" src="img/aire_de_fete2.jpg"
+                            alt="<?php echo $lang['alt_r_lounge']; ?>" width="100%"/>
+                            <h3><?php echo $lang['header_area_R']; ?></h3>
+                            <p><?php echo $lang['text_area_R']; ?></p>
+                        <a type="button" href="http://espace.roseville.ch" target="_blank" class="btn btn-default bottom">
+                            <?php echo $lang['btn_more_info']; ?>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -312,17 +322,24 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
         <div id="gcard">
             <div class="container">
                 <div class="section-title text-center center">
-                    <h2>Bon cadeau</h2>
+                <h2><?php echo $lang['gift_certificate']; ?></h2>
                 </div>
                 <div id="row">
                     <div class="col-sm-6 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-1 sub-section">
                         <i class="fa fa-gift"></i>
-                        <h4>Bon cadeau pour un jeu d’évasion à Roseville Escape de 2 à 5 personnes d’une valeur de CHF 140.- </h4>
-                        <p>Pour commander un bon cadeau veuillez nous contacter via le <a class="page-scroll" href="#contact">formulaire</a></p>
-                        <p>Les informations pour le paiement vous seront envoyées immédiatement par courriel puis le bon cadeau vous 
-                        parviendra par la poste après confirmation du paiement.</p>
-                        <p>Pour utiliser le bon, <a class="page-scroll" href="#contact">contactez-nous</a> par mail en indiquant la date et l’heure choisie.</p>
-                        <p>Le bon cadeau est valable 1 an à compter de la date d'achat</p>
+                        <h4><?php echo $lang['sub_header_gift_card']; ?></h4>
+                        <p><?php echo $lang['how_to_order_gift_card']; ?>
+                            <a class="page-scroll" href="#contact">
+                                <?php echo $lang['contact_form']; ?>
+                            </a>.
+                        </p>
+                        <p><?php echo $lang['payment_gift_card']; ?></p>
+                        <p><?php echo $lang['how_to_use_gift_card']; ?>
+                            <a class="page-scroll" href="#contact">
+                                <?php echo $lang['btn_contact_us']; ?>
+                            </a>
+                            <?php echo $lang['send_mail_indicating_date_time']; ?></p>
+                            <p><?php echo $lang['gift_card_validity']; ?></p>
                     </div>
                     <div class="col-sm-6 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2 carton">
                         <img src="img/bon_cadeau.jpg" alt="bon cadeau" class="img-responsive img-rounded" height="450px" width="300px">
@@ -335,28 +352,27 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
         <div id="price">
             <div class="container atelier_view">
                 <div class="jumbotron">
-                    <h2>Nos tarifs</h2>
+                <h2><?php echo $lang['our_pricing']; ?></h2>
                 </div>
                 <div class="row">
                     <div class="col-md-4 ">
-                        <h3>Formule</h3>
+                    <h3><?php echo $lang['header_what_you_get']; ?></h3>
                         <i class="fa fa_big fa-users" aria-hidden="true"></i>
-                        <p>Vous réservez pour une session de 2 à 5 participants. Nous limitons la taille des groupes à 5 personnes pour que vous
-                        puissiez vous sentir à l'aise et profiter un maximum de votre expérience</p>
+                        <p><?php echo $lang['text_what_you_get']; ?></p>
                     </div>
                     <div class="col-md-4 ">
-                        <h3>Tarifs</h3>
+                    <h3><?php echo $lang['prices']; ?></h3>
                         <i class="fa fa_big fa-shopping-cart" aria-hidden="true"></i>
                         <ul>
-                            <li>CHF 120 pour les sessions du mercredi et du jeudi</li>
-                            <li>CHF 140 pour celles du vendredi, samedi, dimanche et jours fériés</li>
-                            <li>CHF 140 pour un bon cadeau</li>
+                            <li><?php echo $lang['cost_weekdays']; ?></li>
+                            <li><?php echo $lang['cost_weekend']; ?></li>
+                            <li><?php echo $lang['cost_gift_card']; ?></li>
                         </ul>
                     </div>
                     <div class="col-md-4 ">
-                        <h3>Moyens de paiements</h3>
+                        <h3><?php echo $lang['header_payment_methods']; ?></h3>
                         <img class="fc" src="img/money_bag.png" alt="money bag icon">
-                        <p>Cartes de crédit, PostFinance, virement bancaire ou en espèces (si vous passez nous voir à Roseville pour faire la réservation)</p>
+                        <p><?php echo $lang['text_payment_methods']; ?></p>
                         <ul>
                             <li><img class="ic" src="img/cc.png" alt="transfer icon"</li>
                             <li><img class="ic" src="img/transfer.png" alt="transfer icon"></li>
@@ -366,8 +382,12 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <a href="booking" class="btn btn-default page-scroll">réservez maintenant</a>
-                        <a href="#contact" class="btn btn-default page-scroll">contactez-nous</a>
+                        <a href="booking" class="btn btn-default page-scroll">
+                            <?php echo $lang['book_now']; ?>
+                        </a>
+                        <a href="#contact" class="btn btn-default page-scroll">
+                            <?php echo $lang['btn_contact_us']; ?>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -377,170 +397,218 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
         <div id="section5">
             <div class="container">
                 <div class="section-title text-center center">
-                    <h2>La foire aux questions</h2>
-                    <h4>N'hésitez pas à nous <a class="page-scroll" href="#contact">contacter</a> si vous ne trouvez pas les réponses à vos questions</h4>
+                <h2><?php echo $lang['frequently_asked_questions']; ?></h2>
+                <h4><?php echo $lang['dont_hesitate']; ?>
+                    <a class="page-scroll" href="#contact">
+                        <?php echo $lang['contact_us_verb']; ?>
+                    </a>
+                    <?php echo $lang['no_answer_to_question']; ?></h4>
                 </div>
                 <div id="section-question" class="text-left">
                     <div class="panel-group" id="accordion">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1">Quel est le niveau de difficulté du jeu ?</a>
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                        <?php echo $lang['question_how_difficult']; ?>
+                                    </a>
                                 </h4>
                             </div>
                             <div id="collapse1" class="panel-collapse collapse">
-                                <div class="panel-body">Le niveau de difficulté de notre salle est considéré de moyen à difficile. Une version allégée est proposée aux débutants. 
-                                    Afin de maintenir un intérêt optimal tout au long du jeu, notre coach peut envoyer des indices sur un écran de contrôle
-                                    lorsqu'une énigme vous pose problème. Pour les équipes expérimentées et compétitives cette option peut être supprimée.
-                                    Nous nous adaptons à tous les niveaux pour que chacun s'amuse
+                                <div class="panel-body">
+                                    <?php echo $lang['answer_how_difficult']; ?>
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2">Type de paiement</a>
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                        <?php echo $lang['question_how_to_pay']; ?>
+                                    </a>
                                 </h4>
                             </div>
                             <div id="collapse2" class="panel-collapse collapse">
-                                <div class="panel-body">Le paiement se fait au moment de la réservation sur internet, par carte bancaire: Visa, Mastercard et American Express. 
-                                    La possibilité d'effectuer un virement bancaire est également proposée. Vous pouvez aussi passer nous voir à Roseville 
-                                    pour une réservation en personne et un paiement en espèce. Prière de nous contacter pour s'assurer de notre présence sur place
+                                <div class="panel-body">
+                                    <?php echo $lang['answer_how_to_pay']; ?>
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3">Nos horaires</a>
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                        <?php echo $lang['question_opening_hours']; ?>
+                                    </a>
                                 </h4>
                             </div>
                             <div id="collapse3" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <p>lundi/mardi: fermé</p>
-                                    <p>mercredi/jeudi: 16h-22h</p>
-                                    <p>vendredi: 16h-23h</p>
-                                    <p>samedi: 10h-23h</p>
-                                    <p>dimanche: 10h-22h</p>
+                                    <p><?php echo $lang['monday_tuesday']; ?></p>
+                                    <p><?php echo $lang['wednesday_thursday_friday_hours']; ?></p>
+                                    <p><?php echo $lang['saturday_sunday']; ?></p>
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4">Où nous trouver ?</a>
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                                        <?php echo $lang['question_where_location']; ?>
+                                    </a>
                                 </h4>
                             </div>
                             <div id="collapse4" class="panel-collapse collapse">
-                                <div class="panel-body">Nous sommes situés à la route de Lavaux 44, 1802 Corseaux à 2 minutes de Vevey en direction de Lausanne.
-                                    Voir <a class="page-scroll" href="#where">plan</a>
+                                <div class="panel-body">
+                                    <?php echo $lang['answer_where_location']; ?>
+                                    <a class="page-scroll" href="#where">
+                                        <?php echo $lang['map']; ?>
+                                    </a>.
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse5">Le prix</a>
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+                                        <?php echo $lang['question_cost']; ?>
+                                    </a>
                                 </h4>
                             </div>
                             <div id="collapse5" class="panel-collapse collapse">
-                                <div class="panel-body">CHF 120 pour les sessions du mercredi et du jeudi, CHF 140 pour celles du vendredi, samedi, dimanche et jours fériés
+                                <div class="panel-body">
+                                        <?php echo $lang['answer_cost']; ?>
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse6">Nombre de personnes par groupe</a>
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+                                        <?php echo $lang['question_group_size']; ?>
+                                    </a>
                                 </h4>
                             </div>
                             <div id="collapse6" class="panel-collapse collapse">
-                                <div class="panel-body">Pour une expérience optimale nous limitons le nombre de personnes à 5 participants par groupe
+                                <div class="panel-body">
+                                        <?php echo $lang['answer_group_size']; ?>
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse7">Compétences et connaissances nécessaires</a>
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+                                        <?php echo $lang['question_skills']; ?>
+                                    </a>
                                 </h4>
                             </div>
                             <div id="collapse7" class="panel-collapse collapse">
-                                <div class="panel-body">A part une envie de passer un bon moment, aucune compétence particulière n'est nécessaire. 
-                                    Toutes les informations dont vous aurez besoin seront fournies ... ou cachées ... à vous de les découvrir
+                                <div class="panel-body">
+                                    <?php echo $lang['answer_skills']; ?>
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse8">Est-ce que je peux annuler une réservation ?</a>
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+                                        <?php echo $lang['question_cancellation']; ?>
+                                    </a>
                                 </h4>
                             </div>
                             <div id="collapse8" class="panel-collapse collapse">
-                                <div class="panel-body">Non, malheureusement pas
+                                <div class="panel-body">
+                                        <?php echo $lang['answer_cancellation']; ?>
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse9">Combien de temps faut-il prévoir à Roseville ?</a>
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+                                        <?php echo $lang['question_time_in_roseville']; ?>
+                                    </a>
                                 </h4>
                             </div>
                             <div id="collapse9" class="panel-collapse collapse">
-                                <div class="panel-body">Il faut compter environ 90 minutes, un quart d'heure pour les explications, 60 minutes pour le jeu et un quart d'heure 
-                                    supplémentaire pour le débriefing. Vous pourrez également vous relaxer et vous désaltérer avant ou après le jeu
-                                    dans notre salle d'accueil au décor peu banal.
+                                <div class="panel-body">
+                                        <?php echo $lang['answer_time_in_roseville']; ?>
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse10">Age minimum</a>
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse10">
+                                        <?php echo $lang['question_minimum_age']; ?>
+                                    </a>
                                 </h4>
                             </div>
                             <div id="collapse10" class="panel-collapse collapse">
-                                <div class="panel-body">L'âge minimum pour participer à notre jeu est de 14 ans. Nous acceptons cependant les enfants plus jeunes
-                                    s'ils sont accompagnés par deux adultes. Nous déconseillons le jeu au moins de 9 ans.
-                                    Les enfants ne s’amuseraient pas, les parents encore moins ... 
+                                <div class="panel-body">
+                                    <?php echo $lang['answer_minimum_age']; ?>
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse11">Accessibilité</a>
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse11">
+                                        <?php echo $lang['question_accessibility']; ?>
+                                    </a>
                                 </h4>
                             </div>
                             <div id="collapse11" class="panel-collapse collapse">
-                                <div class="panel-body">Malheureusement, pour l'instant nous ne pouvons pas assurer l'accès aux personnes en fauteuil roulant.
-                                    Nous cherchons une solution 
+                                <div class="panel-body">
+                                    <?php echo $lang['answer_accessibility']; ?>
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a class="collapsed"data-toggle="collapse" data-parent="#accordion" href="#collapse12">Sécurité et santé</a>
+                                    <a class="collapsed"data-toggle="collapse" data-parent="#accordion" href="#collapse12">
+                                        <?php echo $lang['question_health_safety']; ?>
+                                    </a>
                                 </h4>
                             </div>
                             <div id="collapse12" class="panel-collapse collapse">
-                                <div class="panel-body">Un système de vidéo surveillance nous permet de veiller à votre sécurité pendant toute la durée du jeu. En cas de problème,
-                                    vous pourrez sortir du jeu à tout moment en quelques secondes. Notre scénario et notre environnement n’ont rien d’effrayant ou d’oppressant. 
+                                <div class="panel-body">
+                                    <?php echo $lang['answer_health_safety']; ?>
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a class="collapsed"data-toggle="collapse" data-parent="#accordion" href="#collapse13">Besoin d'une réservation ?</a>
+                                    <a class="collapsed"data-toggle="collapse" data-parent="#accordion" href="#collapse13">
+                                        <?php echo $lang['question_showing_up_without_reservation']; ?>
+                                    </a>
                                 </h4>
                             </div>
                             <div id="collapse13" class="panel-collapse collapse">
-                                <div class="panel-body">Oui, les réservations sont obligatoires. Cela permet d’organiser le jeu à l’avance et vous recevoir dans les meilleures
-                                    conditions. Si vous avez reçu un bon cadeau, prière de nous <a class="page-scroll" href="#contact">contacter</a> par courriel ou téléphone pour réserver.</div>
+                                <div class="panel-body">
+                                    <?php echo $lang['answer_showing_up_without_reservation']; ?>
+                                    <a class="page-scroll" href="#contact">
+                                        <?php echo $lang['contact_us_verb']; ?>
+                                    </a>
+                                    <?php echo $lang['by_email_or_by_phone']; ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="collapsed"data-toggle="collapse" data-parent="#accordion" href="#collapse14">
+                                        <?php echo $lang['question_reading_glasses']; ?>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse14" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <?php echo $lang['answer_reading_glasses']; ?>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -551,42 +619,40 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
         <div id="where">
             <div class="container">
                 <div class="jumbotron">
-                    <h2>Où nous trouver ?</h2>
+                <h2><?php echo $lang['where_to_find_us']; ?></h2>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div id="mapid" style="width:100%;height:500px"></div>
                     </div>
                     <div class="col-md-6">
-                        <h4>Adresse</h4>
-                        <p>Roseville Escape est situé au 44 route de Lavaux à Corseaux, à deux pas de Vevey. Le bâtiment se trouve proche 
-                        du bord du lac et à l'orée des vignes dans le paysage du Lavaux, patrimoine mondial du l'UNESCO.</p>
+                    <h4><?php echo $lang['header_address']; ?></h4>
+                    <p><?php echo $lang['text_address']; ?></p>
                         <div class="atelier_view">
-                            <img src="img/atelier.jpg" class="img-responsive img-thumbnail" alt="Facade du bâtiment où se situe Roseville Escape Room" style="width:70%"/>
+                            <img src="img/atelier.jpg" class="img-responsive img-thumbnail" 
+alt="<?php echo $lang['alt_atelier']; ?>" style="width:70%"/>
                         </div>
-                        <h4>Transport public</h4>
-                        <p>Roseville Escape est desservi par les bus VMCV de la ligne 211 à partir de la gare de Vevey. L'arrêt le plus proche
-                        "Gonelles" est situé à environ 100 m. Vous pouvez consulter les horaires <a class="page-scroll"  href="http://www.vmcv.ch/ligne211?d=A&a=COXGONEA"
-                                                                                                                           target="_blank">ici</a>.
+                        <h4><?php echo $lang['header_public_transport']; ?></h4>
+                        <p><?php echo $lang['text_public_transport']; ?>
+                            <a class="page-scroll"
+                                href="http://www.vmcv.ch/ligne211?d=A&a=COXGONEA" 
+                                target="_blank">
+                                <?php echo $lang['VMCV_site']; ?>
+                            </a>.
                         </p>
-                        <h4>Parking</h4>
-                        <p>Il y a quelques places devant la porte d'entrée. Sinon, si vous arrivez de Vevey, merci de vous garer sur l'herbe
-                        le long du trottoir en arrivant au n°44. En provenance de Lausanne, le plus simple est de vous stationner
-                        aux abords du camping de la Pichette.
+                        <h4><?php echo $lang['header_parking']; ?></h4>
+                        <p><?php echo $lang['text_parking']; ?>
                         </p>   
                     </div>
-
                 </div>
             </div>
         </div>
-
-
         </div>
         <!-- Contact Section -->
         <div id="contact">
             <div class="container">
                 <div class="jumbotron">
-                    <h2>Contactez-nous</h2>
+                <h2><?php echo $lang['contact_us']; ?></h2>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
@@ -606,18 +672,16 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                         <div class="atelier_view">
                             <i class="fa fa-clock-o"></i>
                             <div class="schedule">
-                                <p>lundi/mardi: fermé</p>
-                                <p>mercredi/jeudi: 16h-22h</p>
-                                <p>vendredi: 16h-23h</p>
-                                <p>samedi: 10h-23h</p>
-                                <p>dimanche: 10h-22h</p>
+                                <p><?php echo $lang['monday_tuesday']; ?></p>
+                                <p><?php echo $lang['wednesday_thursday_friday_hours']; ?></p>
+                                <p><?php echo $lang['saturday_sunday']; ?></p>
                             </div>
                         </div>
                     </div>  
                 </div>
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h3>Laissez-nous un message</h3>
+                    <h3><?php echo $lang['leave_us_a_message']; ?></h3>
                         <form name="sentMessage" id="contactForm" novalidate>
                             <div class="row">
                                 <div class="col-md-6">
@@ -640,12 +704,14 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     <div id="success"></div>
-                                    <button type="submit" class="btn btn-default">Envoyer</button>
+                                    <button type="submit" class="btn btn-default">
+                                        <?php echo $lang['send']; ?>
+                                    </button>
                                 </div>
                             </div>
                         </form>
                         <div class="row social">
-                            <h3>Suivez-nous sur les réseaux sociaux</h3>
+                            <h3><?php echo $lang['follow_us']; ?></h3>
                             <div class="col-md-3">
                                 <a href="https://www.facebook.com/rosevilleescape/" target="_blank"><i class="fa fa-facebook"></i></a>
                             </div>
