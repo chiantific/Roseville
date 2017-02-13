@@ -7,8 +7,8 @@ if (!empty($_GET["language"])) {
         case "en":
             $_SESSION['lang'] = 'en';
             break;
-        case "tr":
-            $_SESSION['lang'] = 'tr';
+        case "fr":
+            $_SESSION['lang'] = 'fr';
             break;
         default:
             $_SESSION['lang'] = $defaultLang;
