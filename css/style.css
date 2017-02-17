@@ -53,9 +53,6 @@ a:hover, a:focus {
 }
 ul, ol {
     list-style: none;
-    padding: 0;
-    webkit-padding: 0;
-    moz-padding: 0;
 }
 .clearfix:after {
     visibility: hidden;
@@ -103,7 +100,7 @@ hr {
 .navbar-inverse .navbar-brand span:hover {
     color: #E75926;
 }
-.navbar-inverse .navbar-nav li a {
+.navbar-inverse li a {
     color: #eee;
     -webkit-transition: background .3s ease-in-out;
     -moz-transition: background .3s ease-in-out;
@@ -129,9 +126,6 @@ hr {
     .navbar.navbar-inverse .navbar-collapse {
         border: none;
         box-shadow: none;
-    }
-    .navbar-brand {
-        padding-left: 0;
     }
 }
 @media (max-width: 350px) {

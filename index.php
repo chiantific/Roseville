@@ -61,8 +61,14 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
         </div>
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle"
+                <div class="navbar-header pull-left">
+                    <a class="navbar-brand page-scroll" href="#page-top">
+                        <img src="img/logo_escape.png" alt="logo" id="logo">
+                        <span>Roseville Escape</span>
+                    </a>
+                </div>
+                <div class="pull-right">
+                    <button type="button" class="navbar-toggle pull-left"
                                           data-toggle="collapse"
                                           data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -70,10 +76,26 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                             <i class="fa fa-bars"></i>
                         </span>
                     </button>
-                    <a class="navbar-brand page-scroll" href="#page-top">
-                        <img src="img/logo_escape.png" alt="logo" id="logo">
-                        <span>Roseville Escape</span>
-                    </a>
+                    <ul class="nav navbar-nav pull-left">
+                        <li>
+                            <a class="language"
+                                <?php
+                                    switch ($_SESSION["lang"]) {
+                                        case "en":
+                                            echo 'href=index.php?language=fr';
+                                            break;
+                                        case "fr":
+                                            echo 'href=index.php?language=en';
+                                            break;
+                                        default:
+                                            echo 'href=index.php?language=en';
+                                            break;
+                                    }
+                                ?>>
+                                <?php echo $lang['other_language']; ?>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -139,24 +161,6 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                                     </a>
                                 </li>
                             </ul>
-                        </li>
-                        <li>
-                            <a class="page-scroll"
-                                <?php 
-                                    switch ($_SESSION["lang"]) {
-                                        case "en":
-                                            echo 'href=index.php?language=fr';
-                                            break;
-                                        case "fr":
-                                            echo 'href=index.php?language=en';
-                                            break;
-                                        default:
-                                            echo 'href=index.php?language=en';
-                                            break;
-                                    }
-                                ?>>
-                                <?php echo $lang['other_language']; ?>
-                            </a>
                         </li>
                     </ul>
                 </div>
