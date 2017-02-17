@@ -14,6 +14,7 @@ $lang['about'] = 'About';
 $lang['faq'] = 'FAQ';
 $lang['location'] = 'Location';
 $lang['contact_us'] = 'Contact us';
+$lang['other_language'] = 'FR';
 $lang['contact_us_verb'] = 'contact us';
 $lang['welcome_to'] = 'Welcome to';
 $lang['brand'] = $lang['main_title'];

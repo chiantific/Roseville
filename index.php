@@ -140,6 +140,24 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                                 </li>
                             </ul>
                         </li>
+                        <li>
+                            <a class="page-scroll"
+                                <?php 
+                                    switch ($_SESSION["lang"]) {
+                                        case "en":
+                                            echo 'href=index.php?language=fr';
+                                            break;
+                                        case "fr":
+                                            echo 'href=index.php?language=en';
+                                            break;
+                                        default:
+                                            echo 'href=index.php?language=en';
+                                            break;
+                                    }
+                                ?>>
+                                <?php echo $lang['other_language']; ?>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
