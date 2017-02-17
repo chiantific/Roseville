@@ -328,7 +328,7 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                                 </a>
                     </div>
                     <div class="col-sm-4 sub-section">
-                        <img class="img-thumbnail" src="img/aire_de_fete2.jpg"
+                        <img class="img-thumbnail" src="img/R_de_fete.jpg"
                             alt="<?php echo $lang['alt_r_lounge']; ?>" width="100%"/>
                             <h3><?php echo $lang['header_area_R']; ?></h3>
                             <p><?php echo $lang['text_area_R']; ?></p>
