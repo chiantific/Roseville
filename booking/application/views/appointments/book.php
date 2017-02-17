@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#35A768">
-    <title>Réservation</title>
+    <title><?php echo $this->lang->line('page_title'); ?></title>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
     <link
         rel="stylesheet"
         type="text/css"
-        href="/css/bootstrap.min.css">
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link
         rel="stylesheet"
         type="text/css"
@@ -61,7 +61,6 @@ var GlobalVariables = {
 availableServices   : <?php echo json_encode($available_services); ?>,
     availableProviders  : <?php echo json_encode($available_providers); ?>,
     baseUrl             : <?php echo '"' . $this->config->item('base_url') . '"'; ?>,
-    manageMode          : <?php echo ($manage_mode) ? 'true' : 'false'; ?>,
     dateFormat          : <?php echo json_encode($date_format); ?>,
     appointmentData     : <?php echo json_encode($appointment_data); ?>,
     providerData        : <?php echo json_encode($provider_data); ?>,
@@ -83,7 +82,9 @@ $(document).ready(function() {
     <nav id="header" class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-brand">
-                <img src="/img/logo_R.png" alt="roseville escape logo" id="logo"/>
+                <a href="<?php echo $company_link; ?>">
+                    <img src="/img/logo_escape.png" alt="roseville escape logo" id="logo"/>
+                </a>
                 <span><?php echo $this->lang->line('page_title'); ?></span>
             </div>
         </div>
@@ -317,7 +318,10 @@ foreach($available_services as $service) {
 
     <div id="footer">
         <div class="container">
-            <p>Copyright &copy; Roseville Escape
+            <p>Copyright &copy;
+                <a href="<?php echo $company_link; ?>">
+                    <?php echo $company_name; ?>
+                </a>
         <?php if ($this->session->userdata('user_id')): ?>
             |
             <a href="<?php echo $this->config->item('base_url'); ?>/index.php/backend">

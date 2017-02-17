@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#35A768">
-    <title><?php echo $this->lang->line('appointment_registered') . ' - ' . $company_name; ?></title>
+    <title><?php echo $this->lang->line('error') . ' - ' . $company_name; ?></title>
 
     <?php
         // ------------------------------------------------------------
@@ -38,20 +38,18 @@
                     col-lg-offset-2 col-lg-8">
 
                 <div class="col-xs-12 col-sm-2">
-                    <img id="success-icon" class="pull-right" src="<?php echo $this->config->item('base_url'); ?>/assets/img/success.png" />
+                    <img id="error-icon" class="pull-right" src="<?php echo $this->config->item('base_url'); ?>/assets/img/error.png" />
                 </div>
                 <div class="col-xs-12 col-sm-10">
                     <?php
                         echo '
-                            <h3>' . $this->lang->line('appointment_payment_confirmed') . '</h3>
-                            <p>' . $this->lang->line('thank_you_trust') . ' '
-                                . $this->lang->line('appointment_details_was_sent_to_you') . ' ' 
-                                . $this->lang->line('cant_wait') . '</p>
+                            <h3>' . $this->lang->line('payment_cancel') . '</h3>
+                            <p>' . $this->lang->line('no_booking') . '</p>
+                            <a href="'.$this->config->item('base_url').'" class="btn btn-success btn-large">' .
+                                $this->lang->line('back_to_booking') . '
+                            </a>
                             <a href="'.$company_link.'" class="btn btn-success btn-large">' .
                                 $this->lang->line('go_to_company_site') . '
-                            </a>
-                            <a href="'.$this->config->item('base_url').'" class="btn btn-success btn-large">' .
-                                $this->lang->line('go_to_booking_page') . '
                             </a>
                         ';
 

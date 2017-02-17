@@ -13,7 +13,7 @@
         // ------------------------------------------------------------ ?>
 
     <link rel="stylesheet" type="text/css"
-        href="/css/bootstrap.min.css">
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css"
         href="<?php echo $this->config->item('base_url'); ?>/assets/css/frontend.css">
 
@@ -26,7 +26,7 @@
         href="/img/favicon.ico">
 
     <link rel="icon" sizes="192x192"
-        href="/img/logo_R.png">
+        href="/img/logo_escape.png">
 </head>
 <body>
     <div id="main" class="container">

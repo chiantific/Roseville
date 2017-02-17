@@ -38,8 +38,10 @@ $lang['appointment_cancelled'] = 'Votre rendez-vous a été annulé avec succès
 $lang['appointment_cancelled_title'] = 'Rendez-vous annulé';
 $lang['payment_fail'] = 'Votre paiement n’a pas été enregistré.';
 $lang['payment_error'] = 'Une erreur est survenue durant le paiement.';
-$lang['retry_or_contact'] = 'Veuillez essayer à nouveau avec un autre mode de paiement ou nous contacter à info@roseville.ch ou par tel au 078 638 80 79 ou au 079 623 04 11.';
-$lang['contact_error'] = 'Veuillez nous contacter à info@roseville.ch pour nous informer de la situation. Nous pourrons vérifier l\'état du paiement et vous envoyer une confirmation.';
+$lang['payment_cancel'] = 'Le processus de réservation a été interrompu.';
+$lang['no_booking'] = 'Votre réservation n’a pas été prise en compte.';
+$lang['retry_or_contact'] = 'Veuillez essayer à nouveau avec un autre mode de paiement ou nous contacter à <a href="mailto:info@roseville.ch">info@roseville.ch</a> ou par tel au 078 638 80 79 ou au 079 623 04 11.';
+$lang['contact_error'] = 'Veuillez nous contacter à <a href="mailto:info@roseville.ch">info@roseville.ch</a> pour nous informer de la situation. Nous pourrons vérifier l\'état du paiement et vous envoyer une confirmation.';
 $lang['back_to_payment'] = 'Retour aux moyens de paiements';
 $lang['back_to_booking'] = 'Retour aux réservations';
 $lang['reason'] = 'Motif';
@@ -55,7 +57,7 @@ $lang['address'] = 'route de Lavaux 44<br/>
     CH-1802 Corseaux';
 $lang['phone_numbers'] = '078 638 80 79 (Whitney)<br/>
 079 623 04 11 (Francine)';
-$lang['service'] = 'Prestations';
+$lang['service'] = 'Prestation';
 $lang['provider'] = 'Salle';
 $lang['customer'] = 'Client';
 $lang['is_paid'] = 'Payé';

@@ -13,7 +13,7 @@
         // ------------------------------------------------------------ ?>
 
     <link rel="stylesheet" type="text/css"
-        href="/css/bootstrap.min.css">
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css"
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css"
@@ -28,7 +28,7 @@
         href="/img/favicon.ico">
 
     <link rel="icon" sizes="192x192"
-        href="/img/logo_R.png">
+        href="/img/logo_escape.png">
 </head>
 <body>
     <div id="main" class="container">
