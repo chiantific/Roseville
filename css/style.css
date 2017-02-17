@@ -162,6 +162,9 @@ hr {
     height: auto;
     float: left;
 }
+.language {
+    margin-top: -4px;
+}
 /* Intro */
 #intro {
     text-align: center;
