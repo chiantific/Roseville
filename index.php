@@ -7,8 +7,8 @@ if (!empty($_GET["language"])) {
         case "en":
             $_SESSION['lang'] = 'en';
             break;
-        case "tr":
-            $_SESSION['lang'] = 'tr';
+        case "fr":
+            $_SESSION['lang'] = 'fr';
             break;
         default:
             $_SESSION['lang'] = $defaultLang;
@@ -331,12 +331,12 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                         <p><?php echo $lang['how_to_order_gift_card']; ?>
                             <a class="page-scroll" href="#contact">
                                 <?php echo $lang['contact_form']; ?>
-                            </a>.
+                            .</a>
                         </p>
                         <p><?php echo $lang['payment_gift_card']; ?></p>
                         <p><?php echo $lang['how_to_use_gift_card']; ?>
                             <a class="page-scroll" href="#contact">
-                                <?php echo $lang['btn_contact_us']; ?>
+                                <?php echo $lang['contact_us_verb']; ?>
                             </a>
                             <?php echo $lang['send_mail_indicating_date_time']; ?></p>
                             <p><?php echo $lang['gift_card_validity']; ?></p>
@@ -463,7 +463,7 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                                     <?php echo $lang['answer_where_location']; ?>
                                     <a class="page-scroll" href="#where">
                                         <?php echo $lang['map']; ?>
-                                    </a>.
+                                    .</a>
                                 </div>
                             </div>
                         </div>
@@ -638,7 +638,7 @@ alt="<?php echo $lang['alt_atelier']; ?>" style="width:70%"/>
                                 href="http://www.vmcv.ch/ligne211?d=A&a=COXGONEA" 
                                 target="_blank">
                                 <?php echo $lang['VMCV_site']; ?>
-                            </a>.
+                            </a>
                         </p>
                         <h4><?php echo $lang['header_parking']; ?></h4>
                         <p><?php echo $lang['text_parking']; ?>
