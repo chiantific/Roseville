@@ -128,8 +128,8 @@ hr {
         box-shadow: none;
     }
 }
-@media (max-width: 350px) {
-    .navbar-brand img {
+@media (max-width: 410px) {
+    .navbar-brand #logo {
         display: none;
     }
 }
