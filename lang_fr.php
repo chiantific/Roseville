@@ -38,7 +38,9 @@ $lang['header_tourists'] = 'Touristes';
 $lang['text_tourists'] = 'De passage dans la région avec une envie de vivre une expérience exaltante conçue sur des thèmes régionaux ?';
 $lang['header_compagnies'] = 'Entreprises';
 $lang['text_compagnies'] = 'Une occasion nouvelle pour favoriser la cohésion de groupe ou organiser des entretiens d\'embauche.';
-$lang['text_our_rooms'] = 'Venez découvrir notre jeu d\'évasion "Chocolat" et notre "R" de fête.';
+$lang['text_our_rooms'] = 'Venez nous rendre visite à Roseville Escape pour des aventures palpitantes dans des décors bluffants et découvrez notre jeu d\'évasion "Chocolat" et notre "R" de fête.';
+
+Come to Roseville Escape Room for a live adventure in our beautifully designed areas and discover the room "Chocolat" and our pre-game area "R".
 $lang['btn_contact_us'] = 'Contactez-nous';
 $lang['header_chocolate'] = 'Chocolat';
 $lang['text_chocolate'] = 'Un bug informatique a détruit tout le savoir stocké sur internet, dont une fameuse recette de chocolat. Vous êtes engagés pour retourner dans le passé pour la retrouver. Mais attention rester trop longtemps dans l\'espace temps peut s\'avérer dangereux.';
@@ -55,13 +57,13 @@ $lang['be_patient'] = 'Il faudra encore patienter.';
 $lang['alt_r_lounge'] = 'espace R de fête';
 $lang['header_area_R'] = '"R" de fête';
 $lang['text_area_R'] = 'Nous vous accueillons dans un espace insolite où les consignes du jeu vous seront expliquées par notre coach. Profitez aussi de l\'ambiance magique et relaxante de cet espace pour débriefer à la fin du jeu en buvant un verre. Il est possible de louer cette salle pour y organiser anniversaires, fêtes ou soirées privées.';
-$lang['sub_header_gift_card'] = 'Bon cadeau pour un jeu d\'évasion à Roseville Escape de 2 à 6 personnes d\'une valeur de CHF 140.- ';
+$lang['sub_header_gift_card'] = 'Bon cadeau pour un jeu d\'évasion à Roseville Escape de 2 à 6 personnes d\'une valeur de CHF 140.';
 $lang['how_to_order_gift_card'] = 'Pour commander un bon cadeau veuillez nous contacter via le';
 $lang['contact_form'] = 'formulaire de contact';
 $lang['payment_gift_card'] = 'Les informations pour le paiement vous seront envoyées immédiatement par courriel puis le bon cadeau vous parviendra par la poste après confirmation du paiement.';
 $lang['how_to_use_gift_card'] = 'Pour utiliser le bon, ';
 $lang['send_mail_indicating_date_time'] = ' par mail en indiquant la date et l’heure choisie.';
-$lang['gift_card_validity'] = 'Le bon cadeau est valable 1 an à compter de la date d\'achat';
+$lang['gift_card_validity'] = 'Le bon cadeau est valable 1 an à compter de la date d\'achat.';
 $lang['header_what_you_get'] = 'Formule';
 $lang['text_what_you_get'] = 'Vous réservez pour une session de 2 à 6 participants. Nous limitons la taille des groupes à 6 personnes pour que vous puissiez vous sentir à l\'aise et profiter un maximum de votre expérience.';
 $lang['prices'] = 'Tarifs';
