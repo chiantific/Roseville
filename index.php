@@ -354,8 +354,8 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                         <h4><?php echo $lang['sub_header_gift_card']; ?></h4>
                         <p><?php echo $lang['how_to_order_gift_card']; ?>
                             <a class="page-scroll" href="#contact">
-                                <?php echo $lang['contact_form']; ?>
-                            .</a>
+                                <?php echo $lang['contact_form']; ?>.
+                            </a>
                         </p>
                         <p><?php echo $lang['payment_gift_card']; ?></p>
                         <p><?php echo $lang['how_to_use_gift_card']; ?>
@@ -468,9 +468,13 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                             </div>
                             <div id="collapse3" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <p><?php echo $lang['monday_tuesday']; ?></p>
-                                    <p><?php echo $lang['wednesday_thursday_friday_hours']; ?></p>
-                                    <p><?php echo $lang['saturday_sunday']; ?></p>
+                                    <p><?php echo $lang['monday'] . ': ' . $lang['closed']; ?></p>
+                                    <p><?php echo $lang['tuesday'] . ': ' .$lang['closed']; ?></p>
+                                    <p><?php echo $lang['wednesday'] . ': ' .$lang['hours_wks']; ?></p>
+                                    <p><?php echo $lang['thursday'] . ': ' .$lang['hours_wks']; ?></p>
+                                    <p><?php echo $lang['friday'] . ': ' .$lang['hours_we']; ?></p>
+                                    <p><?php echo $lang['saturday'] . ': ' .$lang['hours_we']; ?></p>
+                                    <p><?php echo $lang['sunday'] . ': ' .$lang['hours_we']; ?></p>
                                 </div>
                             </div>
                         </div>
@@ -486,8 +490,8 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                                 <div class="panel-body">
                                     <?php echo $lang['answer_where_location']; ?>
                                     <a class="page-scroll" href="#where">
-                                        <?php echo $lang['map']; ?>
-                                    .</a>
+                                        <?php echo $lang['map']; ?>.
+                                    </a>
                                 </div>
                             </div>
                         </div>
