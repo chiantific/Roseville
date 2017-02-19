@@ -686,7 +686,14 @@ alt="<?php echo $lang['alt_atelier']; ?>"/>
                     <div class="col-md-4">
                         <div class="atelier_view">
                             <i class="fa fa-envelope-o"></i>
-                            <p>info@roseville.ch</p>
+                            <p>
+                                <script type="text/javascript">
+                                    var username = "info";
+                                    var hostname = "roseville.ch";
+                                    var linktext = username + "@" + hostname ;
+                                    document.write("<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a>");
+                                </script>
+                            </p>
                         </div>
                     </div>
                     <div class="col-md-4">

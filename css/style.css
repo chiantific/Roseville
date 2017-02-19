@@ -708,7 +708,7 @@ img.img-thumbnail.section4-img {
 #contact h2 {
     color: #f6f6f6;
 }
-#contact p{
+#contact p, #contact a{
     color: #e8e8e8;
 }
 #contact i.fa {
