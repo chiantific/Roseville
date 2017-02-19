@@ -407,7 +407,7 @@ var FrontendBook = {
         var servicePrice, serviceCurrency;
         $.each(GlobalVariables.availableServices, function(index, service) {
             if (service.id == selServiceId) {
-                if (selectedDate_js.getDay() == 6 || selectedDate_js.getDay() == 0) {
+                if (selectedDate_js.getDay() >= 5 || selectedDate_js.getDay() == 0) {
                     servicePrice = service.price_week_end;
                 } else {
                     servicePrice = service.price_week;
