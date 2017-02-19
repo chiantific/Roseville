@@ -67,7 +67,7 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                         <span>Roseville Escape</span>
                     </a>
                 </div>
-                <div class="pull-right">
+                <div class="pull-right align-center">
                     <button type="button" class="navbar-toggle pull-left"
                                           data-toggle="collapse"
                                           data-target=".navbar-collapse">

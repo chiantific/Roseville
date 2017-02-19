@@ -162,8 +162,9 @@ hr {
     height: auto;
     float: left;
 }
-.language {
-    margin-top: -4px;
+.navbar .align-center {
+    display: flex;
+    align-items: center;
 }
 /* Intro */
 #intro {
