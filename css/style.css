@@ -105,7 +105,7 @@ hr {
 .navbar-inverse .navbar-brand span:hover {
     color: #E75926;
 }
-.navbar-inverse li a {
+.navbar-inverse .navbar-nav li a {
     color: #eee;
     -webkit-transition: background .3s ease-in-out;
     -moz-transition: background .3s ease-in-out;
