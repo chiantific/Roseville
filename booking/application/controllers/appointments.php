@@ -27,6 +27,9 @@ class Appointments extends CI_Controller {
         $this->load->helper('installation');
 
         // Set user's selected language.
+        if (!empty($_GET["lang"])) {
+            $this->session->set_userdata('language', $_GET['lang']);
+        }
 		if ($this->session->userdata('language')) {
 			$this->config->set_item('language', $this->session->userdata('language'));
 			$this->lang->load('translations', $this->session->userdata('language'));
