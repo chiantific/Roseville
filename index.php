@@ -25,6 +25,8 @@ include($lang_file);
 /*
 lang array is now available. Just use $lang['main_title'] to access the corresponding line
 */
+
+$booking_url = 'booking/?lang=' . $_SESSION["lang"];
 ?>
 
 <!DOCTYPE html>
@@ -124,7 +126,8 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a class="page-scroll" href="booking">
+                                    <a class="page-scroll"
+                                        href="<?php echo $booking_url; ?>">
                                         <?php echo $lang['book_now']; ?>
                                     </a>
                                 </li>
@@ -187,7 +190,8 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                         <a href="#section1" class="btn btn-default page-scroll">
                             <?php echo $lang['enter']; ?>
                         </a>
-                        <a href="booking" class="btn btn-default page-scroll">
+                            <a href="<?php echo $booking_url; ?>"
+                                 class="btn btn-default page-scroll">
                             <?php echo $lang['bookings']; ?>
                         </a>
                     </div>
@@ -271,7 +275,8 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                     <h2><?php echo $lang['our_rooms']; ?></h2>
                     <p><?php echo $lang['text_our_rooms']; ?></p>
                     <div class="text-center">
-                        <a href="booking" class="btn btn-default">
+                    <a href="<?php echo $booking_url; ?>"
+                             class="btn btn-default">
                             <?php echo $lang['bookings']; ?>
                         </a>
                         <a href="#contact" class="btn btn-default page-scroll">
@@ -406,7 +411,8 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                 </div>
                 <div class="row">
                     <div class="col-sm-12 text-center">
-                        <a href="booking" class="btn btn-default page-scroll">
+                        <a href="<?php echo $booking_url; ?>"
+                             class="btn btn-default page-scroll">
                             <?php echo $lang['book_now']; ?>
                         </a>
                         <a href="#contact" class="btn btn-default page-scroll">
