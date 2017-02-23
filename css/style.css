@@ -105,7 +105,7 @@ hr {
 .navbar-inverse .navbar-brand span:hover {
     color: #E75926;
 }
-.navbar-inverse li a {
+.navbar-inverse .navbar-nav li a {
     color: #eee;
     -webkit-transition: background .3s ease-in-out;
     -moz-transition: background .3s ease-in-out;
@@ -162,8 +162,9 @@ hr {
     height: auto;
     float: left;
 }
-.language {
-    margin-top: -4px;
+.navbar .align-center {
+    display: flex;
+    align-items: center;
 }
 /* Intro */
 #intro {
@@ -707,7 +708,7 @@ img.img-thumbnail.section4-img {
 #contact h2 {
     color: #f6f6f6;
 }
-#contact p{
+#contact p, #contact a{
     color: #e8e8e8;
 }
 #contact i.fa {
