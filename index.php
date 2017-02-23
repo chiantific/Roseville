@@ -2,8 +2,8 @@
 session_start();
 $defaultLang = 'fr';
 
-if (!empty($_GET["language"])) {
-    switch (strtolower($_GET["language"])) {
+if (!empty($_GET["lang"])) {
+    switch (strtolower($_GET["lang"])) {
         case "en":
             $_SESSION['lang'] = 'en';
             break;
@@ -82,13 +82,13 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                                 <?php
                                     switch ($_SESSION["lang"]) {
                                         case "en":
-                                            echo 'href=index.php?language=fr';
+                                            echo 'href=index.php?lang=fr';
                                             break;
                                         case "fr":
-                                            echo 'href=index.php?language=en';
+                                            echo 'href=index.php?lang=en';
                                             break;
                                         default:
-                                            echo 'href=index.php?language=en';
+                                            echo 'href=index.php?lang=en';
                                             break;
                                     }
                                 ?>>
