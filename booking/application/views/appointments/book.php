@@ -87,6 +87,26 @@ $(document).ready(function() {
                 </a>
                 <span><?php echo $this->lang->line('page_title'); ?></span>
             </div>
+            <div class="pull-right align-center">
+                <li>
+                    <a class="language"
+                        <?php
+                            switch ($this->config->item('language')) {
+                                case "english":
+                                    echo 'href=' . $this->config->item('base_url') . '?lang=fr';
+                                    break;
+                                case "french":
+                                    echo 'href=' . $this->config->item('base_url') . '?lang=en';
+                                    break;
+                                case "default":
+                                    echo 'href=' . $this->config->item('base_url') . '?lang=en';
+                                    break;
+                            }
+                        ?>>
+                        <?php echo $this->lang->line('other_language'); ?>
+                    </a>
+                </li>
+            </div>
         </div>
     </nav>
     <div id="main" class="container">
