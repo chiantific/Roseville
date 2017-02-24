@@ -49,11 +49,15 @@ $lang['appointment_details_was_sent_to_you'] = 'An email with the booking detail
 $lang['appointment_booked'] = 'Your booking is confirmed.';
 $lang['appointment_payment_confirmed'] = 'Your booking and your payment have been succesfully taken into account';
 $lang['please_hour'] = 'The time you will spend at Roseville Escape is approximately one and half hour including 15 minutes of explanations, 1 hour for the game and an extra 15 minutes for the debriefing. Please arrive at the indicated time';
-$lang['thank_you_for_appointment'] = 'Thank you for arranging an appointment with us. Below you can see the appointment details. Make changes by clicking the appointment link.';
-$lang['appointment_details_title'] = 'Appointment Details';
-$lang['customer_details_title'] = 'Customer Details';
+$lang['cant_wait'] = 'Our team looks forward to welcoming you at Roseville Escape and guarantees you an unforgetable and unique experience';
+$lang['appointment_details_title'] = 'Booking details';
+$lang['customer_details_title'] = 'Your details';
+$lang['address'] = 'route de Lavaux 44<br/>
+    CH-1802 Corseaux';
+$lang['phone_numbers'] = '078 638 80 79 (Whitney)<br/>
+079 623 04 11 (Francine)';
 $lang['service'] = 'Service';
-$lang['provider'] = 'Provider';
+$lang['provider'] = 'Room';
 $lang['customer'] = 'Customer';
 $lang['is_paid'] = 'Paid';
 $lang['start'] = 'Start';
