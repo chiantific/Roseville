@@ -39,7 +39,7 @@ $lang['appointment_cancelled'] = 'Your appointment has been successfully cancell
 $lang['appointment_cancelled_title'] = 'Appointment Cancelled';
 $lang['payment_fail'] = 'Your payment has not been registered.';
 $lang['payment_error'] = 'An error has been encountered during the payment process.';
-$lang['payment_cancel'] = 'The booking process has been terminated';
+$lang['payment_cancel'] = 'The booking process has been interrupted';
 $lang['no_booking'] = 'Your booking request has not been taken into account';
 $lang['retry_or_contact'] = 'Please try again with another payment method or contact us at <a href="mailto:info@roseville.ch">info@roseville.ch</a> or by phone at + 41 78 638 80 79 or + 41 79 623 04 11.';
 $lang['contact_error'] = 'Please contact us at <a href="mailto:info@roseville.ch">info@roseville.ch</a> to inform us about the situation. We will be able to verify the payment status and send you a confirmation.';
