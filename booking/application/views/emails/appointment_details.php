@@ -69,7 +69,7 @@ img#facebook { width: 30px; }
 
             <div style="width: 60px; display: inline-block; float: left;">
                 <a href="$company_link">
-                    <img id="logo" alt="logo" src="http://$company_link/img/logo_escape.png" style="height: 60px; max-width: 100%;" height="60"/>
+                    <img id="logo" alt="logo" src="$company_link/img/logo_escape.png" style="height: 60px; max-width: 100%;" height="60"/>
                 </a>
             </div>
             <p style="padding: 3px; display: inline-block; float: left;">$address</p>
@@ -87,7 +87,7 @@ img#facebook { width: 30px; }
 
         <div id="footer" style="padding: 10px; text-align: center; margin-top: 10px;
                 border-top: 1px solid #EEE; background: #FAFAFA;">
-            <a href="http://$company_link" style="text-decoration: none;">$company_name</a>
+            <a href="$company_link" style="text-decoration: none;">$company_name</a>
         </div>
     </div>
 </body>
