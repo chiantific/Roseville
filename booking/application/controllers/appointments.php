@@ -27,6 +27,13 @@ class Appointments extends CI_Controller {
         $this->load->helper('installation');
 
         // Set user's selected language.
+        if (!empty($_GET["lang"])) {
+            if ($_GET["lang"] == "en") {
+                $this->session->set_userdata('language', 'english');
+            } else {
+                $this->session->set_userdata('language', 'french');
+            }
+        }
 		if ($this->session->userdata('language')) {
 			$this->config->set_item('language', $this->session->userdata('language'));
 			$this->lang->load('translations', $this->session->userdata('language'));
@@ -219,7 +226,7 @@ class Appointments extends CI_Controller {
 
         // Calulate price
         $appointment_date = $appointment['start_datetime'];
-        if(date('N', strtotime($appointment_date)) >= 6){
+        if(date('N', strtotime($appointment_date)) >= 5){
             $payment_data['amount'] = $service['price_week_end'];
         } else {
             $payment_data['amount'] = $service['price_week'];

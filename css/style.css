@@ -5,6 +5,7 @@ body, html {
     color: #777;
     width: 100% !important;
     height: 100% !important;
+    text-align: justify;
 }
 #preloader {
     position: fixed;
@@ -34,11 +35,15 @@ h1 strong {
 h2 {
     margin: 20px 0;
     color: #555;
+    text-align: center;
 }
-
+h3 {
+    text-align: center;
+}
 h4 {
     font-weight: 500;
     color: #555;
+    text-align: center;
 }
 
 p {
@@ -53,9 +58,10 @@ a:hover, a:focus {
 }
 ul, ol {
     list-style: none;
-    padding: 0;
-    webkit-padding: 0;
-    moz-padding: 0;
+}
+.fa {
+    text-align: center;
+    display: block;
 }
 .clearfix:after {
     visibility: hidden;
@@ -64,15 +70,6 @@ ul, ol {
     content: " ";
     clear: both;
     height: 0;
-}
-.clearfix {
-    display: inline-block;
-}
-* html .clearfix {
-    height: 1%;
-}
-.clearfix {
-    display: block;
 }
 hr {
     height: 4px;
@@ -85,13 +82,18 @@ hr {
     border: 0;
 }
 .jumbotron{
-    text-align: center;
     margin-top: 60px;
 }
 .img-thumbnail{
     background-color: none;
     border: none;
     padding: 0;
+}
+.text-center {
+    text-align: center;
+}
+.fa_custom {
+    line-height: 0;
 }
 /* Navigation */
 .navbar-inverse {
@@ -130,12 +132,9 @@ hr {
         border: none;
         box-shadow: none;
     }
-    .navbar-brand {
-        padding-left: 0;
-    }
 }
-@media (max-width: 350px) {
-    .navbar-brand img {
+@media (max-width: 410px) {
+    .navbar-brand #logo {
         display: none;
     }
 }
@@ -162,6 +161,10 @@ hr {
     width: 128px;
     height: auto;
     float: left;
+}
+.navbar .align-center {
+    display: flex;
+    align-items: center;
 }
 /* Intro */
 #intro {
@@ -241,14 +244,10 @@ hr {
 #section1 .section1-text {
     margin-left: 10px;
 }
-#section1 h3 {
-    text-align: center;
-}
 .jumbotron p {
     margin-bottom: 15px;
     font-size: 18px;
     font-weight: 200;
-    text-align: justify;
 }
 
 #section1 h4 {
@@ -271,16 +270,12 @@ hr {
     color: #e75926;
 }
 #section1 .sub-section {
-    text-align: center;
     margin: 20px 0px;
 }
 #section1 i.fa {
     font-size: 80px;
     color: #C74D00;
     transition: all 0.5s;
-}
-#section1 .sub-section p {
-    text-align: left;
 }
 #section1 img {
     max-width: 100%
@@ -353,7 +348,6 @@ hr {
 }
 
 #section3 .jumbotron p {
-    text-align: center;
     margin-bottom: 30px;
     color: #e8e8e8;
 }
@@ -410,10 +404,6 @@ hr {
     font-size: 80px;
     color: #5d2a65;
 }
-#gcard .sub-section {
-    text-align: center;
-    margin: ;
-}
 #gcard .carton img {
     margin: 0 auto;
 }
@@ -433,11 +423,11 @@ hr {
     font-size: 1.2em;
     margin-bottom: 20px;
     margin-top: 20px;
+    text-align: justify;
 }
 #gcard .sub-section p {
     color: #e8e8e8;
     font-size: 1.1em;
-    text-align: left;
 }
 #gcard .sub-section p a {
     color: #8d4099;
@@ -488,10 +478,9 @@ hr {
     color: #CCCCCC;
     background: #753064;
 }
-#price p{
+#price ul{
     text-align: left;
-}#price ul{
-    text-align: left;
+    padding-left: 0;
 }
 #price h3 {
     margin-top: 20px;
@@ -719,7 +708,7 @@ img.img-thumbnail.section4-img {
 #contact h2 {
     color: #f6f6f6;
 }
-#contact p{
+#contact p, #contact a{
     color: #e8e8e8;
 }
 #contact i.fa {
@@ -740,7 +729,6 @@ img.img-thumbnail.section4-img {
 #contact h3 {
     margin-top: 40px;
     color: #f6f6f6;
-    text-align: center;
 }
 #contact .btn-default {
     background: #5D264F;
@@ -871,6 +859,9 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
         font-size: 3em;
     }
 }
+#accordion, #accordion h4{
+    text-align: justify;
+}
 /* --accordion with javascript and css
 #section5 button.accordion {
 background: #71bdb0;
@@ -916,29 +907,33 @@ opacity: 0;
 } */
 
     /* directions */
-    .markerWindow h4 {
-        color: #a6a6a6;
-    }
-    .atelier_view {
-        text-align:center;
-    }
-    #where  p a {
-        color: #C74D00;
-    }
-    #where  p a:hover, #where  p a:focus {
-        color: #15595F;
-    }
-    #where {
-        background-color: #C1D6D2;
-        padding-bottom: 50px;
-    }
-    #where .jumbotron {
-        background-color: #B2D1CB;
-    }
+.markerWindow h4 {
+    color: #a6a6a6;
+}
+.atelier_view {
+    text-align:center;
+    margin: 2em;
+}
+.atelier_view img {
+    width: 90%;
+}
+#where  p a {
+    color: #C74D00;
+}
+#where  p a:hover, #where  p a:focus {
+    color: #15595F;
+}
+#where {
+    background-color: #C1D6D2;
+    padding-bottom: 50px;
+}
+#where .jumbotron {
+    background-color: #B2D1CB;
+}
 
-    /* Reservation */
-    #sectionR {
-        padding: 140px 0;
-        background: #e6e6e6;
-        min-height: 100%;
-    }
+/* Reservation */
+#sectionR {
+    padding: 140px 0;
+    background: #e6e6e6;
+    min-height: 100%;
+}

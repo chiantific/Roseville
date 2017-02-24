@@ -40,6 +40,21 @@ body {
     text-transform: uppercase;
 }
 
+#header .align-center {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+#header .language {
+    color: #eee;
+    text-decoration: none;
+}
+
+#header .language:hover {
+    color: #E75926;
+}
+
 #main {
     display: table;
     vertical-align: middle;

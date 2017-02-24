@@ -77,7 +77,7 @@ class Notifications {
 
         // :: PREPARE THE EMAIL TEMPLATE REPLACE ARRAY
         $appointment_date = $appointment_data['start_datetime'];
-        if(date('N', strtotime($appointment_date)) >= 6){
+        if(date('N', strtotime($appointment_date)) >= 5){
             $price = $service_data['price_week_end'];
         } else {
             $price = $service_data['price_week'];

@@ -2,8 +2,8 @@
 session_start();
 $defaultLang = 'fr';
 
-if (!empty($_GET["language"])) {
-    switch (strtolower($_GET["language"])) {
+if (!empty($_GET["lang"])) {
+    switch (strtolower($_GET["lang"])) {
         case "en":
             $_SESSION['lang'] = 'en';
             break;
@@ -25,6 +25,8 @@ include($lang_file);
 /*
 lang array is now available. Just use $lang['main_title'] to access the corresponding line
 */
+
+$booking_url = 'booking/?lang=' . $_SESSION["lang"];
 ?>
 
 <!DOCTYPE html>
@@ -61,8 +63,14 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
         </div>
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle"
+                <div class="navbar-header pull-left">
+                    <a class="navbar-brand page-scroll" href="#page-top">
+                        <img src="img/logo_escape.png" alt="logo" id="logo">
+                        <span>Roseville Escape</span>
+                    </a>
+                </div>
+                <div class="pull-right align-center">
+                    <button type="button" class="navbar-toggle pull-left"
                                           data-toggle="collapse"
                                           data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -70,10 +78,26 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                             <i class="fa fa-bars"></i>
                         </span>
                     </button>
-                    <a class="navbar-brand page-scroll" href="#page-top">
-                        <img src="img/logo_escape.png" alt="logo" id="logo">
-                        <span>Roseville Escape</span>
-                    </a>
+                    <ul class="nav navbar-nav pull-left">
+                        <li>
+                            <a class="language"
+                                <?php
+                                    switch ($_SESSION["lang"]) {
+                                        case "en":
+                                            echo 'href=index.php?lang=fr';
+                                            break;
+                                        case "fr":
+                                            echo 'href=index.php?lang=en';
+                                            break;
+                                        default:
+                                            echo 'href=index.php?lang=en';
+                                            break;
+                                    }
+                                ?>>
+                                <?php echo $lang['other_language']; ?>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -102,7 +126,8 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a class="page-scroll" href="booking">
+                                    <a class="page-scroll"
+                                        href="<?php echo $booking_url; ?>">
                                         <?php echo $lang['book_now']; ?>
                                     </a>
                                 </li>
@@ -165,7 +190,8 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                         <a href="#section1" class="btn btn-default page-scroll">
                             <?php echo $lang['enter']; ?>
                         </a>
-                        <a href="booking" class="btn btn-default page-scroll">
+                            <a href="<?php echo $booking_url; ?>"
+                                 class="btn btn-default page-scroll">
                             <?php echo $lang['bookings']; ?>
                         </a>
                     </div>
@@ -181,7 +207,7 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                 <p><?php echo $lang['text_adventure_heros']; ?></p>
                 </div>
                 <div class="row">
-                    <div class="col-md-3 col-sm-6 sub-section">
+                    <div class="col-md-3 col-sm-6 sub-section text-center">
                     <img src="img/ancientdoorlock.jpg"
                         alt="<?php echo $lang['alt_lock_to_illustrate_the_game']; ?>"
                         class="img-rounded" class="img-responsive">
@@ -208,7 +234,7 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
         </div>
 
         <!-- Section 2 -->
-        <div id="section2" class="text-center">
+        <div id="section2">
             <div class="container">
                 <div class="jumbotron">
                 <h3><?php echo $lang['what_public']; ?></h3>
@@ -245,15 +271,18 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
         <!-- Section 3 -->
         <div id="section3">
             <div class="container">
-                <div class="jumbotron text-center">
-                <h2><?php echo $lang['our_rooms']; ?></h2>
-                <p><?php echo $lang['text_our_rooms']; ?></p>
-                    <a href="booking" class="btn btn-default">
-                        <?php echo $lang['bookings']; ?>
-                    </a>
-                    <a href="#contact" class="btn btn-default page-scroll">
-                        <?php echo $lang['btn_contact_us']; ?>
-                    </a>
+                <div class="jumbotron">
+                    <h2><?php echo $lang['our_rooms']; ?></h2>
+                    <p><?php echo $lang['text_our_rooms']; ?></p>
+                    <div class="text-center">
+                    <a href="<?php echo $booking_url; ?>"
+                             class="btn btn-default">
+                            <?php echo $lang['bookings']; ?>
+                        </a>
+                        <a href="#contact" class="btn btn-default page-scroll">
+                            <?php echo $lang['btn_contact_us']; ?>
+                        </a>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-4 sub-section">
@@ -307,7 +336,7 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                         </a>
                     </div>
                     <div class="col-sm-4 sub-section">
-                        <img class="img-thumbnail" src="img/aire_de_fete2.jpg"
+                        <img class="img-thumbnail" src="img/R_de_fete.jpg"
                             alt="<?php echo $lang['alt_r_lounge']; ?>" width="100%"/>
                             <h3><?php echo $lang['header_area_R']; ?></h3>
                             <p><?php echo $lang['text_area_R']; ?></p>
@@ -331,8 +360,8 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                         <h4><?php echo $lang['sub_header_gift_card']; ?></h4>
                         <p><?php echo $lang['how_to_order_gift_card']; ?>
                             <a class="page-scroll" href="#contact">
-                                <?php echo $lang['contact_form']; ?>
-                            .</a>
+                                <?php echo $lang['contact_form']; ?>.
+                            </a>
                         </p>
                         <p><?php echo $lang['payment_gift_card']; ?></p>
                         <p><?php echo $lang['how_to_use_gift_card']; ?>
@@ -351,7 +380,7 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
 
         <!-- Section tarifs -->
         <div id="price">
-            <div class="container atelier_view">
+            <div class="container">
                 <div class="jumbotron">
                 <h2><?php echo $lang['our_pricing']; ?></h2>
                 </div>
@@ -364,15 +393,15 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                     <div class="col-md-4 ">
                     <h3><?php echo $lang['prices']; ?></h3>
                         <i class="fa fa_big fa-shopping-cart" aria-hidden="true"></i>
-                        <ul>
-                            <li><?php echo $lang['cost_weekdays']; ?></li>
-                            <li><?php echo $lang['cost_weekend']; ?></li>
-                            <li><?php echo $lang['cost_gift_card']; ?></li>
-                        </ul>
+                        <p><?php echo $lang['cost_weekdays']; ?></p>
+                        <p><?php echo $lang['cost_weekend']; ?></p>
+                        <p><?php echo $lang['cost_gift_card']; ?></>
                     </div>
                     <div class="col-md-4 ">
                         <h3><?php echo $lang['header_payment_methods']; ?></h3>
-                        <img class="fc" src="img/money_bag.png" alt="money bag icon">
+                        <i class="fa fa_big fa_custom">
+                            <img src="img/money_bag.png" alt="money bag icon">
+                        </i>
                         <p><?php echo $lang['text_payment_methods']; ?></p>
                         <ul>
                             <li><img class="ic" src="img/cc.png" alt="transfer icon"</li>
@@ -382,8 +411,9 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12">
-                        <a href="booking" class="btn btn-default page-scroll">
+                    <div class="col-sm-12 text-center">
+                        <a href="<?php echo $booking_url; ?>"
+                             class="btn btn-default page-scroll">
                             <?php echo $lang['book_now']; ?>
                         </a>
                         <a href="#contact" class="btn btn-default page-scroll">
@@ -397,7 +427,7 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
         <!-- Section 5 -->
         <div id="section5">
             <div class="container">
-                <div class="section-title text-center center">
+                <div class="section-title text-center">
                 <h2><?php echo $lang['frequently_asked_questions']; ?></h2>
                 <h4><?php echo $lang['dont_hesitate']; ?>
                     <a class="page-scroll" href="#contact">
@@ -445,9 +475,13 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                             </div>
                             <div id="collapse3" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <p><?php echo $lang['monday_tuesday']; ?></p>
-                                    <p><?php echo $lang['wednesday_thursday_friday_hours']; ?></p>
-                                    <p><?php echo $lang['saturday_sunday']; ?></p>
+                                    <p><?php echo $lang['monday'] . ': ' . $lang['closed']; ?></p>
+                                    <p><?php echo $lang['tuesday'] . ': ' .$lang['closed']; ?></p>
+                                    <p><?php echo $lang['wednesday'] . ': ' .$lang['hours_wks']; ?></p>
+                                    <p><?php echo $lang['thursday'] . ': ' .$lang['hours_wks']; ?></p>
+                                    <p><?php echo $lang['friday'] . ': ' .$lang['hours_we']; ?></p>
+                                    <p><?php echo $lang['saturday'] . ': ' .$lang['hours_we']; ?></p>
+                                    <p><?php echo $lang['sunday'] . ': ' .$lang['hours_we']; ?></p>
                                 </div>
                             </div>
                         </div>
@@ -463,8 +497,8 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                                 <div class="panel-body">
                                     <?php echo $lang['answer_where_location']; ?>
                                     <a class="page-scroll" href="#where">
-                                        <?php echo $lang['map']; ?>
-                                    .</a>
+                                        <?php echo $lang['map']; ?>.
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -631,7 +665,7 @@ lang array is now available. Just use $lang['main_title'] to access the correspo
                     <p><?php echo $lang['text_address']; ?></p>
                         <div class="atelier_view">
                             <img src="img/atelier.jpg" class="img-responsive img-thumbnail" 
-alt="<?php echo $lang['alt_atelier']; ?>" style="width:70%"/>
+alt="<?php echo $lang['alt_atelier']; ?>"/>
                         </div>
                         <h4><?php echo $lang['header_public_transport']; ?></h4>
                         <p><?php echo $lang['text_public_transport']; ?>
@@ -659,7 +693,14 @@ alt="<?php echo $lang['alt_atelier']; ?>" style="width:70%"/>
                     <div class="col-md-4">
                         <div class="atelier_view">
                             <i class="fa fa-envelope-o"></i>
-                            <p>info@roseville.ch</p>
+                            <p>
+                                <script type="text/javascript">
+                                    var username = "info";
+                                    var hostname = "roseville.ch";
+                                    var linktext = username + "@" + hostname ;
+                                    document.write("<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a>");
+                                </script>
+                            </p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -673,9 +714,13 @@ alt="<?php echo $lang['alt_atelier']; ?>" style="width:70%"/>
                         <div class="atelier_view">
                             <i class="fa fa-clock-o"></i>
                             <div class="schedule">
-                                <p><?php echo $lang['monday_tuesday']; ?></p>
-                                <p><?php echo $lang['wednesday_thursday_friday_hours']; ?></p>
-                                <p><?php echo $lang['saturday_sunday']; ?></p>
+                                <p><?php echo $lang['monday'] . ': ' . $lang['closed']; ?></p>
+                                <p><?php echo $lang['tuesday'] . ': ' .$lang['closed']; ?></p>
+                                <p><?php echo $lang['wednesday'] . ': ' .$lang['hours_wks']; ?></p>
+                                <p><?php echo $lang['thursday'] . ': ' .$lang['hours_wks']; ?></p>
+                                <p><?php echo $lang['friday'] . ': ' .$lang['hours_we']; ?></p>
+                                <p><?php echo $lang['saturday'] . ': ' .$lang['hours_we']; ?></p>
+                                <p><?php echo $lang['sunday'] . ': ' .$lang['hours_we']; ?></p>
                             </div>
                         </div>
                     </div>  
@@ -687,13 +732,17 @@ alt="<?php echo $lang['alt_atelier']; ?>" style="width:70%"/>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" id="name" class="form-control" placeholder="Nom" required="required">
+                                        <input type="text" id="name" class="form-control" 
+                                            placeholder="<?php echo $lang['name']; ?>"
+                                            required="required">
                                         <p class="help-block text-danger"></p>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="email" id="email" class="form-control" placeholder="Email" required="required">
+                                        <input type="email" id="email" class="form-control"
+                                            placeholder="<?php echo $lang['email']; ?>"
+                                            required="required">
                                         <p class="help-block text-danger"></p>
                                     </div>
                                 </div>
@@ -701,7 +750,9 @@ alt="<?php echo $lang['alt_atelier']; ?>" style="width:70%"/>
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <textarea name="message" id="message" class="form-control" rows="4" placeholder="Message" required></textarea>
+                                        <textarea name="message" id="message" class="form-control" rows="4"
+                                            placeholder="<?php echo $lang['message']; ?>"
+                                            required="required"></textarea>
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     <div id="success"></div>

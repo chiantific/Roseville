@@ -1,6 +1,7 @@
 <?php
 // French
 $lang['page_title'] = 'Réservations';
+$lang['other_language'] = 'EN';
 $lang['step_one_title'] = 'Choisissez votre jeu';
 $lang['select_room'] = 'Salle';
 $lang['nb_participants'] = 'Nombre de participants';
@@ -12,8 +13,8 @@ $lang['price_week_end'] = 'Prix week-end';
 $lang['back'] = 'Retour';
 $lang['step_two_title'] = 'Choisissez la date et l\'heure de votre jeu';
 $lang['schedule'] = 'Horaires disponibles';
-$lang['no_available_hours'] = 'Il n\'y a pas d\'heures  de rendez-vous disponibles pour la date sélectionnée.  Choisissez une autre date s\'il vous plaît.';
-$lang['appointment_hour_missing'] = 'S\'il vous plaît, choisissez une heure de rendez-vous avant de poursuivre !';
+$lang['no_available_hours'] = 'Pour cette salle il n\'y a pas de tranche horaire disponible pour la date sélectionnée.  Merci de modifier votre requête.';
+$lang['appointment_hour_missing'] = 'Veuillez choisir une tranche horaire avant de poursuivre !';
 $lang['step_three_title'] = 'Ajoutez vos coordonnées';
 $lang['first_name'] = 'Prénom';
 $lang['last_name'] = 'Nom';
