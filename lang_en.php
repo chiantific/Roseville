@@ -2,7 +2,7 @@
 // french
 $lang['main_title'] = 'Roseville Escape Room';
 $lang['meta_description_content'] = 'Work as team, find the clues, solve the puzzles and beat the clock. Located near Vevey, Roseville Escape is a fun activity to do with family, friends or co-workers.';
-$lang['meta_keywords_content'] = 'escape game, chocolate, Lavaux, escape room, life-size adventure, gift card, gift voucher, gift certificate, immersive game, cohesion, team spirit, scenery, decoration, entertainment, team building, Vevey, Riviera, Corseaux, riddle, clue, puzzle, hint';
+$lang['meta_keywords_content'] = 'escape room vevey, escape game vevey, jeu d\'évasion vevey, exit game vevey, team building activities vevey, divertissement vevey';
 $lang['how_it_works'] = 'Concept';
 $lang['what_public'] = 'Who can play';
 $lang['our_rooms'] = 'Our rooms';

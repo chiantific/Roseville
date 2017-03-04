@@ -2,7 +2,7 @@
 // french
 $lang['main_title'] = 'Roseville Escape Room';
 $lang['meta_description_content'] = 'Escape Game à Vevey vous immerge dans des décors époustouflants! Scénarios bien ficelés à la difficulté savamment dosée, une équipe aux petits soins';
-$lang['meta_keywords_content'] = 'escape room, Vevey, escape game, Rivievra, Lavaux, activité, divertissement';
+$lang['meta_keywords_content'] = 'escape room vevey, escape game vevey, jeu d\'évasion vevey, exit game vevey, team building activities vevey, divertissement vevey';
 $lang['how_it_works'] = 'Concept';
 $lang['what_public'] = 'Quel public';
 $lang['our_rooms'] = 'Notre lieu';
