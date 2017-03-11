@@ -718,7 +718,7 @@ alt="<?php echo $lang['alt_atelier']; ?>"/>
                                 <p><?php echo $lang['tuesday'] . ': ' .$lang['closed']; ?></p>
                                 <p><?php echo $lang['wednesday'] . ': ' .$lang['hours_wks']; ?></p>
                                 <p><?php echo $lang['thursday'] . ': ' .$lang['hours_wks']; ?></p>
-                                <p><?php echo $lang['friday'] . ': ' .$lang['hours_we']; ?></p>
+                                <p><?php echo $lang['friday'] . ': ' .$lang['hours_wks']; ?></p>
                                 <p><?php echo $lang['saturday'] . ': ' .$lang['hours_we']; ?></p>
                                 <p><?php echo $lang['sunday'] . ': ' .$lang['hours_we']; ?></p>
                             </div>
