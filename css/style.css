@@ -822,9 +822,10 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 #contact .social i.fa:hover {
     color: #a13e1a;
 }
-#map {
+#mapid {
     width: 100%;
     height: 100%;
+    margin-top: 50px;
 }
 /* Footer Section*/
 #footer {
