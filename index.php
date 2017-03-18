@@ -57,7 +57,6 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
               rel="stylesheet" />
         <link rel="stylesheet" type="text/css"  href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css" />
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css' />
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -673,7 +672,7 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                     <p><?php echo $lang['text_address']; ?></p>
                         <div class="atelier_view">
                             <img src="img/atelier.jpg" class="img-responsive img-thumbnail" 
-alt="<?php echo $lang['alt_atelier']; ?>"/>
+                                 alt="<?php echo $lang['alt_atelier']; ?>"/>
                         </div>
                         <h4><?php echo $lang['header_public_transport']; ?></h4>
                         <p><?php echo $lang['text_public_transport']; ?>
@@ -818,24 +817,38 @@ for (i = 0; i < acc.length; i++) {
     }
 }
         </script>
-        <!-- Open StreetMap -->
-        <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+        <!-- Google Map -->
         <script>
-            var mymap = L.map('mapid').setView([46.470892, 6.813895], 16);
-            L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZHVuYXRvdGF0b3MiLCJhIjoiY2l5aGI4ODRtMDAyejMybW1wb2gzZHZuMCJ9.9keE9dHEowti3VanahXsRA', {
-                    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-                    maxZoom: 18,
-            }).addTo(mymap);
-            var marker = L.marker([46.470892, 6.813895]).addTo(mymap);
-            var contentString = '<div class="markerWindow">'+
-                '<h4 id="firstHeading" class="firstHeading">Roseville Escape</h4>'+
-                '<div id="bodyContent">'+
-                '<p>Route du Lavaux 44'+'<br />'+
-                'CH-1802 Corseaux</p>'+
-                '</div>'+
-                '</div>';
-            marker.bindPopup(contentString).openPopup();
+            function initMap() {
+                var myLatLng = {lat: 46.470892, lng: 6.813895};
+                var map = new google.maps.Map(document.getElementById('mapid'), {
+                center: myLatLng,
+                zoom: 16,
+                mapTypeId: google.maps.MapTypeId.HYBRID
+                });
+                var contentString = '<div class="markerWindow">'+
+                    '<h4 id="firstHeading" class="firstHeading">Roseville Escape</h4>'+
+                    '<div id="bodyContent">'+
+                    '<p>Route du Lavaux 44'+'<br />'+
+                    'CH-1802 Corseaux</p>'+
+                    '</div>'+
+                    '</div>';
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+                
+                var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    title: 'Roseville Escape Room'
+                });
+            
+                marker.addListener('click', function() {
+                    infowindow.open(map, marker);
+                });
+            }
         </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOgXOBkD944XhomrMeeNRhD8pBbxroVeM&callback=initMap" async defer>
         <!-- Piwik -->
         <script type="text/javascript">
 var _paq = _paq || [];
