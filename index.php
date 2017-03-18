@@ -1,6 +1,10 @@
 <?php
 session_start();
-$defaultLang = 'fr';
+$available_lang = array(
+    'fr',
+    'en',
+);
+$default_lang = 'fr';
 
 if (!empty($_GET["lang"])) {
     switch (strtolower($_GET["lang"])) {
@@ -17,7 +21,12 @@ if (!empty($_GET["lang"])) {
 }
 
 if (empty($_SESSION["lang"])) {
-    $_SESSION["lang"] = $defaultLang;
+    $locale = locale_lookup($available_lang, $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+    $_SESSION['lang'] = $locale;
+}
+
+if (empty($_SESSION["lang"])) {
+    $_SESSION['lang'] = $default_lang;
 }
 
 $lang_file = "lang_" . $_SESSION["lang"] . ".php";
@@ -30,7 +39,7 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html>
     <head>
         <title><?php echo $lang['main_title']; ?></title>
         <meta charset="utf-8">
