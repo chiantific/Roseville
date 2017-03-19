@@ -794,9 +794,7 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
             </div>
         </div>
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
         <script type="text/javascript" src="js/jquery.1.11.1.js"></script> 
-        <!-- Include all compiled plugins (below), or include individual files as needed --> 
         <script type="text/javascript" src="js/bootstrap.js"></script> 
         <script type="text/javascript" src="js/SmoothScroll.js"></script> 
         <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script> 
@@ -805,36 +803,10 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
         <script type="text/javascript" src="js/jqBootstrapValidation.js"></script> 
         <script type="text/javascript" src="js/contact_me.js"></script> 
         <script type="text/javascript" src="js/main.js"></script> 
-        <!-- Accodion  -->
-        <script>
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-    acc[i].onclick = function(){
-        this.classList.toggle("active");
-        this.nextElementSibling.classList.toggle("show");
-    }
-}
-        </script>
-        <!-- Google Map -->
+        <script type="text/javascript" src="js/accordion.js"></script>
         <script type="text/javascript" src="js/gmaps.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOgXOBkD944XhomrMeeNRhD8pBbxroVeM&callback=initMap">
-        <!-- Piwik -->
-        <script type="text/javascript">
-var _paq = _paq || [];
-_paq.push(["setDomains", ["*.escape.roseville.ch"]]);
-_paq.push(['trackPageView']);
-_paq.push(['enableLinkTracking']);
-(function() {
-    var u="//roseville.ch/piwik/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', '2']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-})();
-        </script>
+        <script type="text/javascript" src="js/piwik.js"></script>
         <noscript><p><img src="//roseville.ch/piwik/piwik.php?idsite=2" style="border:0;" alt="Piwik" /></p></noscript>
-        <!-- End Piwik Code -->
     </body>
 </html>
