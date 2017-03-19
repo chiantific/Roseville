@@ -804,8 +804,8 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
         <script type="text/javascript" src="js/contact_me.js"></script> 
         <script type="text/javascript" src="js/main.js"></script> 
         <script type="text/javascript" src="js/accordion.js"></script>
-        <script type="text/javascript" src="js/gmaps.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOgXOBkD944XhomrMeeNRhD8pBbxroVeM&callback=initMap">
+        <script type="text/javascript" aftersrc="js/gmaps.js"></script>
+        <script type="text/javascript" aftersrc="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOgXOBkD944XhomrMeeNRhD8pBbxroVeM&callback=initMap"></script>
         <script type="text/javascript" src="js/piwik.js"></script>
         <noscript><p><img src="//roseville.ch/piwik/piwik.php?idsite=2" style="border:0;" alt="Piwik" /></p></noscript>
     </body>

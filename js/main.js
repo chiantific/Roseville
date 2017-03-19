@@ -30,6 +30,12 @@ function main() {
     	// will fade out the whole DIV that covers the website. 
     	$("#preloader").delay(500).fadeOut("slow").remove();      
 
+        // load the map
+        $('[aftersrc]').each(function() {
+            var aftersrc = $(this).attr("aftersrc");
+            $(this).attr("src", aftersrc);
+            $(this).removeAttr("aftersrc");
+        });
   	}) 
 
    // Page scroll
