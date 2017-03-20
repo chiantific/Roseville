@@ -16,7 +16,7 @@ $email_address = $_POST['email'];
 $message = $_POST['message'];
 	
 // Create the email and send the message
-$to = 'dunatotatos@dunatotatos.com';
+$to = 'info@roseville.ch';
 $email_subject = "Roseville Escape contact from:  $name";
 $email_body = "You have received a new message from the Roseville Escape contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nMessage:\n$message";
 
