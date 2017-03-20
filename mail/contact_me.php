@@ -1,4 +1,6 @@
 <?php
+require 'PHPMailer/PHPMailerAutoload.php';
+
 // Check for empty fields
 if(empty($_POST['name'])  		||
    empty($_POST['email']) 		||
@@ -14,11 +16,18 @@ $email_address = $_POST['email'];
 $message = $_POST['message'];
 	
 // Create the email and send the message
-$to = 'info@roseville.ch';
+$to = 'dunatotatos@dunatotatos.com';
 $email_subject = "Roseville Escape contact from:  $name";
 $email_body = "You have received a new message from the Roseville Escape contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nMessage:\n$message";
-$headers = "From: noreply@roseville.ch\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
-$headers .= "Reply-To: $email_address";	
-mail($to,$email_subject,$email_body,$headers);
+
+$mail = new PHPMailer;
+$mail->AddReplyTo($email_address);
+$mail->setFrom('noreply@roseville.ch');
+$mail->addAddress($to);
+$mail->Subject = $email_subject;
+$mail->Body = $email_body;
+$mail->CharSet = 'UTF-8';
+
+$mail->send();
 return true;			
 ?>
