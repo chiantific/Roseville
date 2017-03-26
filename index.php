@@ -1,6 +1,10 @@
 <?php
 session_start();
-$defaultLang = 'fr';
+$available_lang = array(
+    'fr',
+    'en',
+);
+$default_lang = 'fr';
 
 if (!empty($_GET["lang"])) {
     switch (strtolower($_GET["lang"])) {
@@ -17,7 +21,12 @@ if (!empty($_GET["lang"])) {
 }
 
 if (empty($_SESSION["lang"])) {
-    $_SESSION["lang"] = $defaultLang;
+    $locale = locale_lookup($available_lang, $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+    $_SESSION['lang'] = $locale;
+}
+
+if (empty($_SESSION["lang"])) {
+    $_SESSION['lang'] = $default_lang;
 }
 
 $lang_file = "lang_" . $_SESSION["lang"] . ".php";
@@ -30,7 +39,7 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html>
     <head>
         <title><?php echo $lang['main_title']; ?></title>
         <meta charset="utf-8">
@@ -48,7 +57,6 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
               rel="stylesheet" />
         <link rel="stylesheet" type="text/css"  href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css" />
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css' />
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -665,7 +673,7 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                     <p><?php echo $lang['text_address']; ?></p>
                         <div class="atelier_view">
                             <img src="img/atelier.jpg" class="img-responsive img-thumbnail" 
-alt="<?php echo $lang['alt_atelier']; ?>"/>
+                                 alt="<?php echo $lang['alt_atelier']; ?>"/>
                         </div>
                         <h4><?php echo $lang['header_public_transport']; ?></h4>
                         <p><?php echo $lang['text_public_transport']; ?>
@@ -789,9 +797,7 @@ alt="<?php echo $lang['alt_atelier']; ?>"/>
             </div>
         </div>
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
         <script type="text/javascript" src="js/jquery.1.11.1.js"></script> 
-        <!-- Include all compiled plugins (below), or include individual files as needed --> 
         <script type="text/javascript" src="js/bootstrap.js"></script> 
         <script type="text/javascript" src="js/SmoothScroll.js"></script> 
         <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script> 
@@ -800,51 +806,10 @@ alt="<?php echo $lang['alt_atelier']; ?>"/>
         <script type="text/javascript" src="js/jqBootstrapValidation.js"></script> 
         <script type="text/javascript" src="js/contact_me.js"></script> 
         <script type="text/javascript" src="js/main.js"></script> 
-        <!-- Accodion  -->
-        <script>
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-    acc[i].onclick = function(){
-        this.classList.toggle("active");
-        this.nextElementSibling.classList.toggle("show");
-    }
-}
-        </script>
-        <!-- Open StreetMap -->
-        <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-        <script>
-            var mymap = L.map('mapid').setView([46.470892, 6.813895], 16);
-            L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZHVuYXRvdGF0b3MiLCJhIjoiY2l5aGI4ODRtMDAyejMybW1wb2gzZHZuMCJ9.9keE9dHEowti3VanahXsRA', {
-                    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-                    maxZoom: 18,
-            }).addTo(mymap);
-            var marker = L.marker([46.470892, 6.813895]).addTo(mymap);
-            var contentString = '<div class="markerWindow">'+
-                '<h4 id="firstHeading" class="firstHeading">Roseville Escape</h4>'+
-                '<div id="bodyContent">'+
-                '<p>Route du Lavaux 44'+'<br />'+
-                'CH-1802 Corseaux</p>'+
-                '</div>'+
-                '</div>';
-            marker.bindPopup(contentString).openPopup();
-        </script>
-        <!-- Piwik -->
-        <script type="text/javascript">
-var _paq = _paq || [];
-_paq.push(["setDomains", ["*.escape.roseville.ch"]]);
-_paq.push(['trackPageView']);
-_paq.push(['enableLinkTracking']);
-(function() {
-    var u="//roseville.ch/piwik/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', '2']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-})();
-        </script>
-        <noscript><p><img src="//roseville.ch/piwik/piwik.php?idsite=2" style="border:0;" alt="Piwik" /></p></noscript>
-        <!-- End Piwik Code -->
+        <script type="text/javascript" src="js/accordion.js"></script>
+        <script type="text/javascript" aftersrc="js/gmaps.js"></script>
+        <script type="text/javascript" aftersrc="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOgXOBkD944XhomrMeeNRhD8pBbxroVeM&callback=initMap"></script>
+        <script type="text/javascript" aftersrc="js/piwik.js"></script>
+        <noscript><p><img aftersrc="//roseville.ch/piwik/piwik.php?idsite=2" style="border:0;" alt="Piwik" /></p></noscript>
     </body>
 </html>
