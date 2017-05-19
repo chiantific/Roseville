@@ -160,30 +160,6 @@ var BackendCalendar = {
             $('#select-filter-item').prop('disabled', true);
         }
 
-        if (GlobalVariables.user.role_slug == Backend.DB_SLUG_SECRETARY) {
-            $('#select-filter-item optgroup:eq(1)').remove();
-        }
-
-        if (GlobalVariables.user.role_slug == Backend.DB_SLUG_SECRETARY) {
-            // Remove the providers that are not connected to the secretary.
-            $('#select-filter-item option[type="provider"]').each(function(index, option) {
-                var found = false;
-                $.each(GlobalVariables.secretaryProviders, function(index, id) {
-                    if ($(option).val() == id) {
-                        found = true;
-                        return false;
-                    }
-                });
-
-                if (!found)
-                    $(option).remove();
-            });
-
-            if ($('#select-filter-item option[type="provider"]').length == 0) {
-                $('#select-filter-item optgroup[type="providers-group"]').remove();
-            }
-        }
-
         // :: BIND THE DEFAULT EVENT HANDLERS (IF NEEDED)
         if (defaultEventHandlers === true) {
             BackendCalendar.bindEventHandlers();

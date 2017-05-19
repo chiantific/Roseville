@@ -20,7 +20,6 @@
         'dateFormat'            : <?php echo json_encode($date_format); ?>,
         'editAppointment'       : <?php echo json_encode($edit_appointment); ?>,
         'customers'             : <?php echo json_encode($customers); ?>,
-        'secretaryProviders'    : <?php echo json_encode($secretary_providers); ?>,
         'user'                  : {
             'id'        : <?php echo $user_id; ?>,
             'email'     : <?php echo '"' . $user_email . '"'; ?>,

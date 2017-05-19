@@ -52,7 +52,6 @@ class Backend extends CI_Controller {
         $this->load->model('settings_model');
         $this->load->model('roles_model');
         $this->load->model('user_model');
-        $this->load->model('secretaries_model');
 
         $view['base_url'] = $this->config->item('base_url');
         $view['user_display_name'] = $this->user_model->get_user_display_name($this->session->userdata('user_id'));
@@ -64,13 +63,6 @@ class Backend extends CI_Controller {
         $view['available_services'] = $this->services_model->get_available_services();
         $view['customers'] = $this->customers_model->get_batch();
         $this->set_user_data($view);
-
-        if ($this->session->userdata('role_slug') == DB_SLUG_SECRETARY) {
-            $secretary = $this->secretaries_model->get_row($this->session->userdata('user_id'));
-            $view['secretary_providers'] = $secretary['providers'];
-        } else {
-            $view['secretary_providers'] = array();
-        }
 
         $results = $this->appointments_model->get_batch(array('hash' => $appointment_hash));
         if ($appointment_hash != '' && count($results) > 0) {
@@ -152,7 +144,7 @@ class Backend extends CI_Controller {
      * Display the backend users page.
      *
      * In this page the admin user will be able to manage the system users.
-     * By this, we mean the provider, secretary and admin users. This is also
+     * By this, we mean the provider, and admin users. This is also
      * the page where the admin defines which service can each provider provide.
      */
     public function users() {
@@ -160,7 +152,6 @@ class Backend extends CI_Controller {
         if (!$this->has_privileges(PRIV_USERS)) return;
 
         $this->load->model('providers_model');
-        $this->load->model('secretaries_model');
         $this->load->model('admins_model');
         $this->load->model('services_model');
         $this->load->model('settings_model');
@@ -173,7 +164,6 @@ class Backend extends CI_Controller {
         $view['date_format'] = $this->settings_model->get_setting('date_format');
         $view['admins'] = $this->admins_model->get_batch();
         $view['providers'] = $this->providers_model->get_batch();
-        $view['secretaries'] = $this->secretaries_model->get_batch();
         $view['services'] = $this->services_model->get_batch();
         $view['working_plan'] = $this->settings_model->get_setting('company_working_plan');
         $this->set_user_data($view);

@@ -39,7 +39,6 @@ class Unit_tests extends CI_Driver_Library {
             'Unit_tests_services_model',
             'Unit_tests_settings_model',
             'Unit_tests_admins_model',
-            'Unit_tests_secretaries_model'
         );
     }
     
@@ -72,7 +71,6 @@ class Unit_tests extends CI_Driver_Library {
         $this->providers_model->run_all();
         $this->services_model->run_all();
         $this->admins_model->run_all();
-        $this->secretaries_model->run_all();
         
         if ($output_report) {
             $this->CI->output->append_output($this->CI->unit->report());

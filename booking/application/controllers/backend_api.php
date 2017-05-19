@@ -815,91 +815,6 @@ class Backend_api extends CI_Controller {
     }
 
     /**
-     * [AJAX] Filter secretary records with string key.
-     *
-     * @param string $_POST['key'] The key string used to filter the records.
-     *
-     * @return array Returns a json encoded array back to client with the secretary records.
-     */
-    public function ajax_filter_secretaries() {
-        try {
-            if ($this->privileges[PRIV_USERS]['view'] == FALSE) {
-                throw new Exception('You do not have the required privileges for this task.');
-            }
-
-            $this->load->model('secretaries_model');
-            $key = $this->db->escape_str($_POST['key']);
-            $where =
-                '(first_name LIKE "%' . $key . '%" OR last_name LIKE "%' . $key . '%" ' .
-                'OR email LIKE "%' . $key . '%" OR mobile_number LIKE "%' . $key . '%" ' .
-                'OR phone_number LIKE "%' . $key . '%" OR notes LIKE "%' . $key . '%")';
-            $secretaries = $this->secretaries_model->get_batch($where);
-            echo json_encode($secretaries);
-        } catch(Exception $exc) {
-            echo json_encode(array(
-                'exceptions' => array(exceptionToJavaScript($exc))
-            ));
-        }
-    }
-
-    /**
-     * [AJAX] Save (insert or update) a secretary record into database.
-     *
-     * @param array $_POST['secretary'] A json encoded array that contains the secretary data.
-     * If an 'id' value is provided then the record is going to be updated.
-     *
-     * @return string Returns the success contant 'AJAX_SUCCESS' so javascript knows that
-     * everything completed successfully.
-     */
-    public function ajax_save_secretary() {
-        try {
-            $this->load->model('secretaries_model');
-            $secretary = json_decode($_POST['secretary'], true);
-
-            $REQUIRED_PRIV = (!isset($secretary['id']))
-                    ? $this->privileges[PRIV_USERS]['add']
-                    : $this->privileges[PRIV_USERS]['edit'];
-            if ($REQUIRED_PRIV == FALSE) {
-                throw new Exception('You do not have the required privileges for this task.');
-            }
-
-            $secretary_id = $this->secretaries_model->add($secretary);
-
-            echo json_encode(array(
-                'status' => AJAX_SUCCESS,
-                'id' => $secretary_id
-            ));
-        } catch(Exception $exc) {
-            echo json_encode(array(
-                'exceptions' => array(exceptionToJavaScript($exc))
-            ));
-        }
-    }
-
-    /**
-     * [AJAX] Delete a secretary record from the database.
-     *
-     * @param numeric $_POST['secretary_id'] The id of the record to be deleted.
-     *
-     * @return string Returns the operation result constant (AJAX_SUCESS or AJAX_FAILURE).
-     */
-    public function ajax_delete_secretary() {
-        try {
-            if ($this->privileges[PRIV_USERS]['delete'] == FALSE) {
-                throw new Exception('You do not have the required privileges for this task.');
-            }
-
-            $this->load->model('secretaries_model');
-            $result = $this->secretaries_model->delete($_POST['secretary_id']);
-            echo ($result) ? json_encode(AJAX_SUCCESS) : json_encode(AJAX_FAILURE);
-        } catch(Exception $exc) {
-            echo json_encode(array(
-                'exceptions' => array(exceptionToJavaScript($exc))
-            ));
-        }
-    }
-
-    /**
      * [AJAX] Save a setting or multiple settings in the database.
      *
      * This method is used to store settings in the database. It can be either system
@@ -943,7 +858,7 @@ class Backend_api extends CI_Controller {
     public function ajax_validate_username() {
         try {
             // We will only use the function in the admins_model because it is sufficient
-            // for the rest user types for now (providers, secretaries).
+            // for the rest user types for now (providers).
             $this->load->model('admins_model');
             $is_valid = $this->admins_model->validate_username($_POST['username'], $_POST['user_id']);
             echo json_encode($is_valid);

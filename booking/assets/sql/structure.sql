@@ -38,15 +38,6 @@ CREATE TABLE IF NOT EXISTS `ea_roles` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 
-CREATE TABLE IF NOT EXISTS `ea_secretaries_providers` (
-  `id_users_secretary` bigint(20) unsigned NOT NULL,
-  `id_users_provider` bigint(20) unsigned NOT NULL,
-  PRIMARY KEY (`id_users_secretary`,`id_users_provider`),
-  KEY `fk_ea_secretaries_providers_1` (`id_users_secretary`),
-  KEY `fk_ea_secretaries_providers_2` (`id_users_provider`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
 CREATE TABLE IF NOT EXISTS `ea_services` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(256) DEFAULT NULL,
@@ -116,11 +107,6 @@ ALTER TABLE `ea_appointments`
   ADD CONSTRAINT `ea_appointments_ibfk_4` FOREIGN KEY (`id_users_provider`) REFERENCES `ea_users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 
-ALTER TABLE `ea_secretaries_providers`
-  ADD CONSTRAINT `fk_ea_secretaries_providers_1` FOREIGN KEY (`id_users_secretary`) REFERENCES `ea_users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_ea_secretaries_providers_2` FOREIGN KEY (`id_users_provider`) REFERENCES `ea_users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
-
 ALTER TABLE `ea_services`
   ADD CONSTRAINT `ea_services_ibfk_1` FOREIGN KEY (`id_service_categories`) REFERENCES `ea_service_categories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
@@ -142,7 +128,6 @@ INSERT INTO `ea_roles` (`id`, `name`, `slug`, `is_admin`, `appointments`, `custo
 (1, 'Administrator', 'admin', 1, 15, 15, 15, 15, 15, 15),
 (2, 'Provider', 'provider', 0, 15, 15, 0, 0, 0, 15),
 (3, 'Customer', 'customer', 0, 0, 0, 0, 0, 0, 0),
-(4, 'Secretary', 'secretary', 0, 15, 15, 0, 0, 0, 15);
 
 INSERT INTO `ea_settings` (`name`, `value`) VALUES
 ('company_working_plan', '{"monday":{"start":"09:00","end":"18:00","breaks":[{"start":"11:20","end":"11:30"},{"start":"14:30","end":"15:00"}]},"tuesday":{"start":"09:00","end":"18:00","breaks":[{"start":"11:20","end":"11:30"},{"start":"14:30","end":"15:00"}]},"wednesday":{"start":"09:00","end":"18:00","breaks":[{"start":"11:20","end":"11:30"},{"start":"14:30","end":"15:00"}]},"thursday":{"start":"09:00","end":"18:00","breaks":[{"start":"11:20","end":"11:30"},{"start":"14:30","end":"15:00"}]},"friday":{"start":"09:00","end":"18:00","breaks":[{"start":"11:20","end":"11:30"},{"start":"14:30","end":"15:00"}]},"saturday":{"start":"09:00","end":"18:00","breaks":[{"start":"11:20","end":"11:30"},{"start":"14:30","end":"15:00"}]},"sunday":{"start":"09:00","end":"18:00","breaks":[{"start":"11:20","end":"11:30"},{"start":"14:30","end":"15:00"}]}}'),

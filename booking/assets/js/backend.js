@@ -54,7 +54,6 @@ var Backend = {
      */
     DB_SLUG_ADMIN: 'admin',
     DB_SLUG_PROVIDER: 'provider',
-    DB_SLUG_SECRETARY: 'secretary',
     DB_SLUG_CUSTOMER: 'customer',
 
     PRIV_VIEW: 1,

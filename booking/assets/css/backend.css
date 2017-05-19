@@ -546,13 +546,11 @@ body .form-horizontal .controls {
     outline: none;
 }
 
-#users-page .secretary-row,
 #users-page .provider-row,
 #users-page .admin-row {
     padding: 10px 7px;
 }
 
-#users-page .secretary-row:hover:not(.selected-row),
 #users-page .provider-row:hover:not(.selected-row),
 #users-page .admin-row:hover:not(.selected-row) {
     cursor: pointer;
@@ -571,14 +569,12 @@ body .form-horizontal .controls {
     cursor: pointer;
 }
 
-#users-page #secretary-notifications.active,
 #users-page #provider-notifications.active,
 #users-page #admin-notifications.active {
     background: #B6DCFF;
     box-shadow: none;
 }
 
-#users-page #secretary-providers,
 #users-page #provider-services {
     border: 4px solid #ccc;
     width: 315px;
