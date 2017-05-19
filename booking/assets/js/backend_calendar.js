@@ -999,6 +999,9 @@ var BackendCalendar = {
                     'allDay': false,
                     'data': appointment // Store appointment data for later use.
                 };
+                if (appointment.is_paid == 0) {
+                    event['color'] = '#ED5959';
+                }
 
                 calendarEvents.push(event);
             });
