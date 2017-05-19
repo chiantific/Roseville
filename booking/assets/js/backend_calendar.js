@@ -275,46 +275,6 @@ var BackendCalendar = {
         });
 
         /**
-         * Event: Google Sync Button "Click"
-         *
-         * Trigger the synchronization algorithm.
-         */
-        $('#google-sync').click(function() {
-            var getUrl = GlobalVariables.baseUrl + '/index.php/google/sync/' + $('#select-filter-item').val();
-            $.ajax({
-                'type': 'GET',
-                'url': getUrl,
-                'dataType': 'json',
-                'success': function(response) {
-                    /////////////////////////////////////////////////
-                    console.log('Google Sync Response:', response);
-                    /////////////////////////////////////////////////
-
-                    if (response.exceptions) {
-                        response.exceptions = GeneralFunctions.parseExceptions(response.exceptions);
-                        GeneralFunctions.displayMessageBox(GeneralFunctions.EXCEPTIONS_TITLE,
-                        		GeneralFunctions.EXCEPTIONS_MESSAGE);
-                        $('#message_box').append(GeneralFunctions.exceptionsToHtml(response.exceptions));
-                        return;
-                    }
-
-                    if (response.warnings) {
-                        response.warnings = GeneralFunctions.parseExceptions(response.warnings);
-                        GeneralFunctions.displayMessageBox(GeneralFunctions.WARNINGS_TITLE,
-                        		GeneralFunctions.WARNINGS_MESSAGE);
-                        $('#message_box').append(GeneralFunctions.exceptionsToHtml(response.warnings));
-                    }
-
-                    Backend.displayNotification(EALang['google_sync_completed']);
-                    $('#reload-appointments').trigger('click');
-                },
-                'error': function(jqXHR, textStatus, errorThrown) {
-                    Backend.displayNotification(EALang['google_sync_failed']);
-                }
-            });
-        });
-
-        /**
          * Event: Reload Button "Click"
          *
          * When the user clicks the reload button an the calendar items need to
