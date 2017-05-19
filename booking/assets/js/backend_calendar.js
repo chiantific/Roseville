@@ -1543,11 +1543,11 @@ var BackendCalendar = {
                     '<strong>' + EALang['nb_participants'] + '</strong> '
                         + event.data['nb_participants']
                         + '<br>' +
-                    '<string>' + EALang['language'] + '</strong> '
-                        + event.data['language']
+                    '<strong>' + EALang['language'] + '</strong> '
+                        + EALang['languages'][event.data['language']-1]
                         + '<br>' +
-                    '<string>' + EALang['is_paid'] + '</strong> '
-                        + event.data['is_paid']
+                    '<strong>' + EALang['is_paid'] + '</strong> '
+                        + EALang['paid_status'][event.data['is_paid']]
                         + '<hr>' +
                     '<center>' +
                         '<button class="edit-popover btn btn-primary ' + displayEdit + '">' + EALang['edit'] + '</button>' +
