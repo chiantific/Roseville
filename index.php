@@ -186,6 +186,9 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                     col-xs-6 col-xs-offset-3">
                         <img alt="Logo" class="img-responsive" src="img/logo_escape.png"/>
                     </div>
+                    <a href="paleo_raffle.html" alt="tombola pour gagner 2 billets pour le Paléo 2017">
+                        <img src="img/stain.png" onmouseover="this.src='img/stain_hover.png'" onmouseout="this.src='img/stain.png'"/>
+                    </a>              
                 </div>
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1 col-xs-12">
