@@ -1,0 +1,108 @@
+/*  font-family: 'Ubuntu', sans-serif;
+    font-family: 'Stardos Stencil', cursive;
+    font-family: 'Open Sans', sans-serif; */
+
+/* global styles
+-----------------------*/
+body {
+    background-color: #78C9BC;
+    font-family: 'Ubuntu', sans-serif;
+    padding-top: 20px;
+}
+.row{
+    text-align: center;
+}
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    color: #0e9d80;
+    font-size: 3em;
+    font-weight: 700;
+    margin-top: 30px;
+}
+/* header
+-----------------------*/
+header h1 {
+    color: #0e9d80;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 4em;
+}
+header h1 em {
+    color: #E75926;
+    text-shadow: 0 2px #a13e1a;
+    font-style: normal;
+}
+header img {
+    width: 200px;
+}
+/* flyer
+-----------------------*/
+.bg-box {
+    background-color: #5e6963;
+    padding: 20px;
+    margin-top: 50px;
+}
+.flyer {
+    border: 6px #f7ff00 solid;
+    border-radius: 12px;
+    padding: 0 5% 20px;
+}
+.tag-line {
+    color: #0e9d80;
+    font-size: 2em;
+}
+.playAndWin {
+    color: #f7ff00;
+    max-width: 650px; 
+    margin: 40px auto; 
+} 
+.flyer img {
+    opacity: 0.5;
+    border-radius: 6px;
+    -webkit-box-shadow: 6px 5px 10px -1px rgba(69,68,69,1);
+    -moz-box-shadow: 6px 5px 10px -1px rgba(69,68,69,1);
+    box-shadow: 6px 5px 10px -1px rgba(69,68,69,1);
+    max-width: 75%;
+    margin-bottom: 40px;
+}
+.condition {
+    color: #f7ff00;
+    text-align: left;
+    font-size: 1.5em;
+}
+.btn-default {
+    color: #f7ff00;
+    background: #C74D00;
+    border: 0;
+    padding: 12px 24px;
+    margin: 2em 0 1em;
+    font-size: 18px;
+    transition: all 0.5s;
+}
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active {
+    color: #f7ff00;
+    background-color: #a13e1a;   
+}
+/* section comments
+-----------------------*/
+.comments {
+    margin: 30px 0;
+    color: #0e9d80;
+    font-size: 1.25em;   
+}
+/* footer
+-----------------------*/
+footer {
+    background: #333;
+    color: #777;
+    padding: 20px 0;
+    text-align: center;
+}
+footer a {
+    color: #999999;
+}
+footer a:hover, a:focus {
+    color: #e75926;
+    text-decoration: none;
+}
