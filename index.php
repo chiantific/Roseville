@@ -722,8 +722,8 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                         <div class="atelier_view">
                             <i class="fa fa-clock-o"></i>
                             <div class="schedule">
-                                <p><?php echo $lang['monday'] . ': ' . $lang['closed']; ?></p>
-                                <p><?php echo $lang['tuesday'] . ': ' .$lang['closed']; ?></p>
+                                <p><?php echo $lang['monday'] . ': ' . $lang['hours_wks']; ?></p>
+                                <p><?php echo $lang['tuesday'] . ': ' .$lang['hours_wks']; ?></p>
                                 <p><?php echo $lang['wednesday'] . ': ' .$lang['hours_wks']; ?></p>
                                 <p><?php echo $lang['thursday'] . ': ' .$lang['hours_wks']; ?></p>
                                 <p><?php echo $lang['friday'] . ': ' .$lang['hours_wks']; ?></p>
