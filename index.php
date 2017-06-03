@@ -483,8 +483,8 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                             </div>
                             <div id="collapse3" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <p><?php echo $lang['monday'] . ': ' . $lang['closed']; ?></p>
-                                    <p><?php echo $lang['tuesday'] . ': ' .$lang['closed']; ?></p>
+                                    <p><?php echo $lang['monday'] . ': ' . $lang['hours_wks']; ?></p>
+                                    <p><?php echo $lang['tuesday'] . ': ' .$lang['hours_wks']; ?></p>
                                     <p><?php echo $lang['wednesday'] . ': ' .$lang['hours_wks']; ?></p>
                                     <p><?php echo $lang['thursday'] . ': ' .$lang['hours_wks']; ?></p>
                                     <p><?php echo $lang['friday'] . ': ' .$lang['hours_wks']; ?></p>
