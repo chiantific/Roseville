@@ -5,8 +5,6 @@
         src="<?php echo $base_url; ?>/assets/js/backend_users_admins.js"></script>
 <script type="text/javascript"
         src="<?php echo $base_url; ?>/assets/js/backend_users_providers.js"></script>
-<script type="text/javascript"
-        src="<?php echo $base_url; ?>/assets/js/backend_users_secretaries.js"></script>
 
 <script type="text/javascript"
         src="<?php echo $base_url; ?>/assets/js/working_plan.js"></script>
@@ -23,7 +21,6 @@
         'dateFormat'    : <?php echo json_encode($date_format); ?>,
         'admins'        : <?php echo json_encode($admins); ?>,
         'providers'     : <?php echo json_encode($providers); ?>,
-        'secretaries'   : <?php echo json_encode($secretaries); ?>,
         'services'      : <?php echo json_encode($services); ?>,
         'workingPlan'   : $.parseJSON(<?php echo json_encode($working_plan); ?>),
         'user'          : {
@@ -51,7 +48,6 @@
     <ul class="nav nav-tabs">
         <li role="presentation" class="admins-tab tab active"><a><?php echo $this->lang->line('admins'); ?></a></li>
         <li role="presentation" class="providers-tab tab"><a><?php echo $this->lang->line('providers'); ?></a></li>
-        <li role="presentation" class="secretaries-tab tab"><a><?php echo $this->lang->line('secretaries'); ?></a></li>
     </ul>
 
     <?php
@@ -424,132 +420,6 @@
                         </thead>
                         <tbody></tbody>
                     </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <?php
-        // ---------------------------------------------------------------------
-        //
-        // Secretaries Tab
-        //
-        // ---------------------------------------------------------------------
-    ?>
-    <div id="secretaries" class="tab-content" style="display:none;">
-        <div class="row">
-            <div id="filter-secretaries" class="filter-records column col-md-4">
-                <form class="input-append">
-                    <input class="key" type="text" />
-                    <div class="btn-group">
-                        <button class="filter btn btn-default btn-sm" type="submit" title="<?php echo $this->lang->line('filter');?>">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        <button class="clear btn btn-default btn-sm" type="button" title="<?php echo $this->lang->line('clear');?>">
-                            <span class="glyphicon glyphicon-repeat"></span>
-                        </button>
-                    </div>
-                </form>
-
-                <h3><?php echo $this->lang->line('secretaries');?></h3>
-                <div class="results"></div>
-            </div>
-
-            <div class="details column col-md-7">
-                <div class="btn-toolbar">
-                    <div class="add-edit-delete-group btn-group">
-                        <button id="add-secretary" class="btn btn-primary">
-                            <span class="glyphicon glyphicon-plus"></span>
-                            <?php echo $this->lang->line('add');?>
-                        </button>
-                        <button id="edit-secretary" class="btn btn-default" disabled="disabled">
-                            <span class="glyphicon glyphicon-pencil"></span>
-                            <?php echo $this->lang->line('edit');?>
-                        </button>
-                        <button id="delete-secretary" class="btn btn-default" disabled="disabled">
-                            <span class="glyphicon glyphicon-remove"></span>
-                            <?php echo $this->lang->line('delete');?>
-                        </button>
-                    </div>
-
-                    <div class="save-cancel-group btn-group" style="display:none;">
-                        <button id="save-secretary" class="btn btn-primary">
-                            <span class="glyphicon glyphicon-ok"></span>
-                            <?php echo $this->lang->line('save');?>
-                        </button>
-                        <button id="cancel-secretary" class="btn btn-default">
-                            <span class="glyphicon glyphicon-ban-circle"></span>
-                            <?php echo $this->lang->line('cancel');?>
-                        </button>
-                    </div>
-                </div>
-
-                <h3><?php echo $this->lang->line('details');?></h3>
-
-                <div class="form-message alert" style="display:none;"></div>
-
-                <input type="hidden" id="secretary-id" class="record-id" />
-
-                <div class="">
-                    <div class="secretary-details col-md-6">
-                        <div class="form-group">
-                            <label for="secretary-first-name"><?php echo $this->lang->line('first_name');?> *</label>
-                            <input type="text" id="secretary-first-name" class="form-control required" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="secretary-last-name"><?php echo $this->lang->line('last_name');?> *</label>
-                            <input type="text" id="secretary-last-name" class="form-control required" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="secretary-email"><?php echo $this->lang->line('email');?> *</label>
-                            <input type="text" id="secretary-email" class="form-control required" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="secretary-phone-number"><?php echo $this->lang->line('phone_number');?> *</label>
-                            <input type="text" id="secretary-phone-number" class="form-control required" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="secretary-mobile-number"><?php echo $this->lang->line('mobile_number');?></label>
-                            <input type="text" id="secretary-mobile-number" class="form-control" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="secretary-notes"><?php echo $this->lang->line('notes');?></label>
-                            <textarea id="secretary-notes" class="form-control" rows="3"></textarea>
-                        </div>
-                    </div>
-                    <div class="secretary-settings col-md-6">
-                        <div class="form-group">
-                            <label for="secretary-username"><?php echo $this->lang->line('username');?> *</label>
-                            <input type="text" id="secretary-username" class="form-control required" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="secretary-password"><?php echo $this->lang->line('password');?> *</label>
-                            <input type="password" id="secretary-password" class="form-control required"/>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="secretary-password-confirm"><?php echo $this->lang->line('retype_password');?> *</label>
-                            <input type="password" id="secretary-password-confirm" class="form-control required" />
-                        </div>
-
-                        <br>
-
-                        <button type="button" id="secretary-notifications" class="btn btn-default" data-toggle="button">
-                            <span class="glyphicon glyphicon-envelope"></span>
-                            <span><?php echo $this->lang->line('receive_notifications');?></span>
-                        </button>
-
-                        <br><br>
-
-                        <h4><?php echo $this->lang->line('providers');?></h4>
-                        <div id="secretary-providers"></div>
-                    </div>
                 </div>
             </div>
         </div>

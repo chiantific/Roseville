@@ -160,30 +160,6 @@ var BackendCalendar = {
             $('#select-filter-item').prop('disabled', true);
         }
 
-        if (GlobalVariables.user.role_slug == Backend.DB_SLUG_SECRETARY) {
-            $('#select-filter-item optgroup:eq(1)').remove();
-        }
-
-        if (GlobalVariables.user.role_slug == Backend.DB_SLUG_SECRETARY) {
-            // Remove the providers that are not connected to the secretary.
-            $('#select-filter-item option[type="provider"]').each(function(index, option) {
-                var found = false;
-                $.each(GlobalVariables.secretaryProviders, function(index, id) {
-                    if ($(option).val() == id) {
-                        found = true;
-                        return false;
-                    }
-                });
-
-                if (!found)
-                    $(option).remove();
-            });
-
-            if ($('#select-filter-item option[type="provider"]').length == 0) {
-                $('#select-filter-item optgroup[type="providers-group"]').remove();
-            }
-        }
-
         // :: BIND THE DEFAULT EVENT HANDLERS (IF NEEDED)
         if (defaultEventHandlers === true) {
             BackendCalendar.bindEventHandlers();
@@ -296,46 +272,6 @@ var BackendCalendar = {
                     $('#google-sync').prop('disabled', true);
                 }
             }
-        });
-
-        /**
-         * Event: Google Sync Button "Click"
-         *
-         * Trigger the synchronization algorithm.
-         */
-        $('#google-sync').click(function() {
-            var getUrl = GlobalVariables.baseUrl + '/index.php/google/sync/' + $('#select-filter-item').val();
-            $.ajax({
-                'type': 'GET',
-                'url': getUrl,
-                'dataType': 'json',
-                'success': function(response) {
-                    /////////////////////////////////////////////////
-                    console.log('Google Sync Response:', response);
-                    /////////////////////////////////////////////////
-
-                    if (response.exceptions) {
-                        response.exceptions = GeneralFunctions.parseExceptions(response.exceptions);
-                        GeneralFunctions.displayMessageBox(GeneralFunctions.EXCEPTIONS_TITLE,
-                        		GeneralFunctions.EXCEPTIONS_MESSAGE);
-                        $('#message_box').append(GeneralFunctions.exceptionsToHtml(response.exceptions));
-                        return;
-                    }
-
-                    if (response.warnings) {
-                        response.warnings = GeneralFunctions.parseExceptions(response.warnings);
-                        GeneralFunctions.displayMessageBox(GeneralFunctions.WARNINGS_TITLE,
-                        		GeneralFunctions.WARNINGS_MESSAGE);
-                        $('#message_box').append(GeneralFunctions.exceptionsToHtml(response.warnings));
-                    }
-
-                    Backend.displayNotification(EALang['google_sync_completed']);
-                    $('#reload-appointments').trigger('click');
-                },
-                'error': function(jqXHR, textStatus, errorThrown) {
-                    Backend.displayNotification(EALang['google_sync_failed']);
-                }
-            });
         });
 
         /**
@@ -1063,6 +999,9 @@ var BackendCalendar = {
                     'allDay': false,
                     'data': appointment // Store appointment data for later use.
                 };
+                if (appointment.is_paid == 0) {
+                    event['color'] = '#ED5959';
+                }
 
                 calendarEvents.push(event);
             });
@@ -1607,11 +1546,11 @@ var BackendCalendar = {
                     '<strong>' + EALang['nb_participants'] + '</strong> '
                         + event.data['nb_participants']
                         + '<br>' +
-                    '<string>' + EALang['language'] + '</strong> '
-                        + event.data['language']
+                    '<strong>' + EALang['language'] + '</strong> '
+                        + EALang['languages'][event.data['language']-1]
                         + '<br>' +
-                    '<string>' + EALang['is_paid'] + '</strong> '
-                        + event.data['is_paid']
+                    '<strong>' + EALang['is_paid'] + '</strong> '
+                        + EALang['paid_status'][event.data['is_paid']]
                         + '<hr>' +
                     '<center>' +
                         '<button class="edit-popover btn btn-primary ' + displayEdit + '">' + EALang['edit'] + '</button>' +

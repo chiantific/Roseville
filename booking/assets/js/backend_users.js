@@ -11,7 +11,7 @@
 
 /**
  * This namespace handles the js functionality of the users backend page. It uses three other
- * classes (defined below) in order to handle the admin, provider and secretary record types.
+ * classes (defined below) in order to handle the admin, and provider record types.
  *
  * @namespace BackendUsers
  */
@@ -21,7 +21,7 @@ var BackendUsers = {
     /**
      * Contains the current tab record methods for the page.
      *
-     * @type AdminsHelper|ProvidersHelper|SecretariesHelper
+     * @type AdminsHelper|ProvidersHelper
      */
     helper: {},
 
@@ -44,7 +44,6 @@ var BackendUsers = {
         // Initialize jScrollPane Scrollbars
         $('#filter-admins .results').jScrollPane();
         $('#filter-providers .results').jScrollPane();
-        $('#filter-secretaries .results').jScrollPane();
 
         // Instanciate default helper object (admin).
         BackendUsers.helper = new AdminsHelper();
@@ -82,8 +81,6 @@ var BackendUsers = {
 
         });
         html += '</div>';
-        $('#secretary-providers').html(html);
-        $('#secretary-providers').jScrollPane({ mouseWheelSpeed: 70 });
 
         $('#reset-working-plan').qtip({
             position: {
@@ -122,44 +119,6 @@ var BackendUsers = {
                 $('#provider-services').data('jsp').destroy();
                 $('#provider-services').jScrollPane({ mouseWheelSpeed: 70 });
                 BackendUsers.helper = new ProvidersHelper();
-            } else if ($(this).hasClass('secretaries-tab')) { // display secretaries tab
-                $('#secretaries').show();
-                BackendUsers.helper = new SecretariesHelper();
-
-                // Update the list with the all the available providers.
-                var postUrl = GlobalVariables.baseUrl + '/index.php/backend_api/ajax_filter_providers';
-                var postData = {
-                    'csrfToken': GlobalVariables.csrfToken,
-                    'key': ''
-                };
-                $.post(postUrl, postData, function(response) {
-                    //////////////////////////////////////////////////////////
-                    //console.log('Get all db providers response:', response);
-                    //////////////////////////////////////////////////////////
-
-                    if (!GeneralFunctions.handleAjaxExceptions(response)) return;
-
-                    GlobalVariables.providers = response;
-
-                    $('#secretary-providers').data('jsp').destroy();
-
-                    var html = '<div class="col-md-12">';
-                    $.each(GlobalVariables.providers, function(index, provider) {
-                       html +=
-                            '<div class="checkbox">' +
-                                '<label class="checkbox">'  +
-                                    '<input type="checkbox" data-id="' + provider.id + '" />' +
-                                    provider.first_name + ' ' + provider.last_name +
-                                '</label>' +
-                            '</div>';
-
-                    });
-                    html += '</div>';
-                    $('#secretary-providers').html(html);
-
-                    $('#secretary-providers input[type="checkbox"]').prop('disabled', true);
-                    $('#secretary-providers').jScrollPane({ mouseWheelSpeed: 70 });
-                }, 'json').fail(GeneralFunctions.ajaxFailureHandler);
             }
 
             BackendUsers.helper.resetForm();
@@ -168,12 +127,12 @@ var BackendUsers = {
         });
 
         /**
-         * Event: Admin, Provider, Secretary Username "Focusout"
+         * Event: Admin, Provider Username "Focusout"
          *
          * When the user leaves the username input field we will need to check if the username
          * is not taken by another record in the system. Usernames must be unique.
          */
-        $('#admin-username, #provider-username, #secretary-username').focusout(function() {
+        $('#admin-username, #provider-username').focusout(function() {
             var $input = $(this);
 
             if ($input.prop('readonly') == true || $input.val() == '') {
@@ -220,10 +179,6 @@ var BackendUsers = {
         // ------------------------------------------------------------------------
 
         ProvidersHelper.prototype.bindEventHandlers();
-
-        // ------------------------------------------------------------------------
-
-        SecretariesHelper.prototype.bindEventHandlers();
 
         // ------------------------------------------------------------------------
     }
