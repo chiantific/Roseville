@@ -1,4 +1,6 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 /*
 | -------------------------------------------------------------------
 | AUTO-LOADER
@@ -29,31 +31,33 @@
 
 /*
 | -------------------------------------------------------------------
-|  Auto-load Packges
+|  Auto-load Packages
 | -------------------------------------------------------------------
 | Prototype:
 |
 |  $autoload['packages'] = array(APPPATH.'third_party', '/usr/local/shared');
 |
 */
-
 $autoload['packages'] = array();
-
 
 /*
 | -------------------------------------------------------------------
 |  Auto-load Libraries
 | -------------------------------------------------------------------
-| These are the classes located in the system/libraries folder
-| or in your application/libraries folder.
+| These are the classes located in system/libraries/ or your
+| application/libraries/ directory, with the addition of the
+| 'database' library, which is somewhat of a special case.
 |
 | Prototype:
 |
-|	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
+|	$autoload['libraries'] = array('database', 'email', 'session');
+|
+| You can also supply an alternative library name to be assigned
+| in the controller:
+|
+|	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-
 $autoload['libraries'] = array('database');
-
 
 /*
 | -------------------------------------------------------------------
@@ -63,9 +67,7 @@ $autoload['libraries'] = array('database');
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-
 $autoload['helper'] = array('custom_exceptions', 'url', 'file');
-
 
 /*
 | -------------------------------------------------------------------
@@ -79,9 +81,7 @@ $autoload['helper'] = array('custom_exceptions', 'url', 'file');
 | config files.  Otherwise, leave it blank.
 |
 */
-
 $autoload['config'] = array();
-
 
 /*
 | -------------------------------------------------------------------
@@ -95,9 +95,7 @@ $autoload['config'] = array();
 | "codeigniter_lang.php" would be referenced as array('codeigniter');
 |
 */
-
 $autoload['language'] = array();
-
 
 /*
 | -------------------------------------------------------------------
@@ -105,12 +103,11 @@ $autoload['language'] = array();
 | -------------------------------------------------------------------
 | Prototype:
 |
-|	$autoload['model'] = array('model1', 'model2');
+|	$autoload['model'] = array('first_model', 'second_model');
 |
+| You can also supply an alternative model name to be assigned
+| in the controller:
+|
+|	$autoload['model'] = array('first_model' => 'first');
 */
-
 $autoload['model'] = array();
-
-
-/* End of file autoload.php */
-/* Location: ./application/config/autoload.php */
