@@ -83,3 +83,38 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+/*
+|--------------------------------------------------------------------------
+| Application Data
+|--------------------------------------------------------------------------
+|
+| These constants are used globally from the application when handling data.
+|
+*/
+defined('DB_SLUG_CUSTOMER')     OR define('DB_SLUG_CUSTOMER', 'customer');
+defined('DB_SLUG_PROVIDER')		OR define('DB_SLUG_PROVIDER', 'provider');
+defined('DB_SLUG_ADMIN')		OR define('DB_SLUG_ADMIN', 'admin');
+defined('FILTER_TYPE_PROVIDER')	OR define('FILTER_TYPE_PROVIDER', 'provider');
+defined('FILTER_TYPE_SERVICE')	OR define('FILTER_TYPE_SERVICE', 'service');
+defined('AJAX_SUCCESS')	    	OR define('AJAX_SUCCESS', 'SUCCESS');
+defined('AJAX_FAILURE') 		OR define('AJAX_FAILURE', 'FAILURE');
+defined('SETTINGS_SYSTEM')		OR define('SETTINGS_SYSTEM', 'SETTINGS_SYSTEM');
+defined('SETTINGS_USER')		OR define('SETTINGS_USER', 'SETTINGS_USER');
+defined('PRIV_VIEW')	    	OR define('PRIV_VIEW', 1);
+defined('PRIV_ADD')     		OR define('PRIV_ADD', 2);
+defined('PRIV_EDIT')    		OR define('PRIV_EDIT', 4);
+defined('PRIV_DELETE')	    	OR define('PRIV_DELETE', 8);
+defined('PRIV_APPOINTMENTS')	OR define('PRIV_APPOINTMENTS', 'appointments');
+defined('PRIV_CUSTOMERS')		OR define('PRIV_CUSTOMERS', 'customers');
+defined('PRIV_SERVICES')		OR define('PRIV_SERVICES', 'services');
+defined('PRIV_USERS')	    	OR define('PRIV_USERS', 'users');
+defined('PRIV_SYSTEM_SETTINGS')	OR define('PRIV_SYSTEM_SETTINGS', 'system_settings');
+defined('PRIV_USER_SETTINGS')	OR define('PRIV_USER_SETTINGS', 'user_settings');
+defined('DATE_FORMAT_DMY')		OR define('DATE_FORMAT_DMY', 'DMY');
+defined('DATE_FORMAT_MDY')		OR define('DATE_FORMAT_MDY', 'MDY');
+defined('DATE_FORMAT_YMD')		OR define('DATE_FORMAT_YMD', 'YMD');
+defined('MIN_PASSWORD_LENGTH')	OR define('MIN_PASSWORD_LENGTH', 7);
+defined('ANY_PROVIDER')	    	OR define('ANY_PROVIDER', 'any-provider');
+/* End of file constants.php */
+/* Location: ./application/config/constants.php */
