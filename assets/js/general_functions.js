@@ -283,14 +283,29 @@ var GeneralFunctions = {
     },
 
     /**
-     * Enables the language selection functionality. Must be called on every page has a
-     * language selection button. This method requires the global variable 'availableLanguages'
-     * to be initialized before the execution.
+     * Create a dropdown menu to allow the language selection. Should not be called directly.
+     * See enableLanguageSelection below.
      *
      * @param {object} $element Selected element button for the language selection.
      */
-    enableLanguageSelection: function($element) {
-    	// Select Language
+    createDropdownLanguageSelection: function($element) {
+        var html = '<ul class="dropdown-menu" id="language-list">';
+        $.each(availableLanguages, function() {
+            html += '<li class="language" data-language="' + this + '">'
+                + '<a>' + GeneralFunctions.ucaseFirstLetter(this) + '</a></li>';
+        });
+        html += '</ul>';
+
+        $element.append(html);
+    },
+
+    /**
+     * Create a popover to allow the language selection. Should not be called directly.
+     * See enableLanguageSelection below.
+     *
+     * @param {object} $element Selected element for the language selection
+     */
+    createPopoverLanguageSelection: function($element) {
         var html = '<ul id="language-list">';
         $.each(availableLanguages, function() {
         	html += '<li class="language" data-language="' + this + '">'
@@ -306,6 +321,23 @@ var GeneralFunctions = {
             'container': 'body',
             'trigger': 'manual'
         });
+    },
+
+    /**
+     * Enables the language selection functionality. Must be called on every page has a
+     * language selection button. This method requires the global variable 'availableLanguages'
+     * to be initialized before the execution.
+     *
+     * @param {object} $element Selected element button for the language selection.
+     * @param {string} $style "popover" or "dropdown", to select the menu style
+     */
+    enableLanguageSelection: function($element, style = "popover") {
+        // Select Language
+        if (style == "popover") {
+            this.createPopoverLanguageSelection($element);
+        } else {
+            this.createDropdownLanguageSelection($element);
+        }
 
         $element.click(function() {
         	if ($('#language-list').length == 0) {

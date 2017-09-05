@@ -11,14 +11,17 @@
         <title><?php echo $this->lang->line('main_title'); ?></title>
 
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-              rel="stylesheet" />
+              rel="stylesheet" type="text/css" />
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-              rel="stylesheet" />
+              rel="stylesheet" type="text/css" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/prettyPhoto/3.1.6/css/prettyPhoto.min.css"
               rel="stylesheet" type="text/css" />
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300'
               rel='stylesheet' type='text/css' />
-        <!--[if IE]><link rel="shortcut icon" href="img/favicon.ico"><![endif]-->
+        <!--[if IE]>
+            <link href="<?php echo $this->config->item('base_url'); ?>/assets/img/favicon.ico"
+                  rel="shortcut icon">
+        <![endif]-->
         <link href="<?php echo $this->config->item('base_url'); ?>/assets/img/favicon.ico"
               rel="icon" type="image/x-icon" />
         <link href="<?php echo $this->config->item('base_url'); ?>/assets/img/apple-touch-icon.png"
@@ -51,13 +54,6 @@
                             <i class="fa fa-bars"></i>
                         </span>
                     </button>
-                    <ul class="nav navbar-nav pull-left">
-                        <li>
-                            <span id="select-language" class="label-success">
-                                <?php echo ucfirst($this->config->item('language')); ?>
-                            </span>
-                        </li>
-                    </ul>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -125,6 +121,11 @@
                                     </a>
                                 </li>
                             </ul>
+                        </li>
+                        <li class="dropdown" id="select-language">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <?php echo ucfirst($this->config->item('language'));; ?><b class="caret"></b>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -794,6 +795,24 @@
                 type="text/javascript">
         </script>
         <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/jqBootstrapValidation.js"
+                type="text/javascript">
+        </script>
+        <script type="text/javascript">
+            var GlobalVariables = {
+                'csrfToken': <?php echo json_encode($this->security->get_csrf_hash()); ?>,
+                'baseUrl': <?php echo '"' . $base_url . '"'; ?>,
+                'AJAX_SUCCESS': 'SUCCESS',
+                'AJAX_FAILURE': 'FAILURE'
+            };
+            
+            var EALang = <?php echo json_encode($this->lang->language); ?>;
+            var availableLanguages = <?php echo json_encode($this->config->item('available_languages')); ?>;
+
+            $(document).ready(function() {
+                GeneralFunctions.enableLanguageSelection($('#select-language'), "dropdown");
+            });
+        </script>
+        <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/general_functions.js"
                 type="text/javascript">
         </script>
         <script aftersrc="<?php echo $this->config->item('base_url'); ?>/assets/js/piwik.js"
