@@ -44,18 +44,21 @@ class Admins_Model extends CI_Model {
      * @throws Exception When the admin data are invalid (see validate() method).
      */
     public function add($admin) {
+        echo json_encode($admin);
         $this->validate($admin);
+        echo "0";
         
         if ($this->exists($admin) && !isset($admin['id'])) {
             $admin['id'] = $this->find_record_id($admin);
         }
-        
+        echo "1";
         if (!isset($admin['id'])) {
             $admin['id'] = $this->insert($admin);
         } else {
             $admin['id'] = $this->update($admin);
         }
-        
+        echo "2";
+        echo intval($admin['id']);
         return intval($admin['id']);
     }
     
