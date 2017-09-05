@@ -39,6 +39,7 @@ class Errors extends CI_Controller {
     public function error404() {
         $this->load->model('settings_model');
         $view['company_name'] = $this->settings_model->get_setting('company_name');
+        $this->output->set_status_header('404');
         $this->load->view('general/error404', $view);
     }
 }
