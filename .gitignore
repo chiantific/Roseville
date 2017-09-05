@@ -1,3 +1,4 @@
 _notes/
-booking/application/logs/*
-booking/config_prod.php
+application/logs/*
+config_prod.php
+config.php
