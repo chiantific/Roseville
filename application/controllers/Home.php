@@ -12,6 +12,8 @@ class Home extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->library('session');
+        $this->load->helper('installation');
+
 		// Set user's selected language.
 		if ($this->session->userdata('language')) {
 			$this->config->set_item('language', $this->session->userdata('language'));
@@ -22,6 +24,11 @@ class Home extends CI_Controller {
 	}
 
     public function index() {
+        if (!is_ea_installed()) {
+            redirect('installation/index');
+            return;
+        }
+
         $view['base_url'] = $this->config->item('base_url');
         $this->load->view('home', $view);
     }

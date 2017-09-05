@@ -15,7 +15,6 @@ CREATE TABLE IF NOT EXISTS `ea_appointments` (
   `id_users_provider` bigint(20) unsigned DEFAULT NULL,
   `id_users_customer` bigint(20) unsigned DEFAULT NULL,
   `id_services` bigint(20) unsigned DEFAULT NULL,
-  `id_google_calendar` text,
   PRIMARY KEY (`id`),
   KEY `id_users_customer` (`id_users_customer`),
   KEY `id_services` (`id_services`),
@@ -127,7 +126,7 @@ ALTER TABLE `ea_user_settings`
 INSERT INTO `ea_roles` (`id`, `name`, `slug`, `is_admin`, `appointments`, `customers`, `services`, `users`, `system_settings`, `user_settings`) VALUES
 (1, 'Administrator', 'admin', 1, 15, 15, 15, 15, 15, 15),
 (2, 'Provider', 'provider', 0, 15, 15, 0, 0, 0, 15),
-(3, 'Customer', 'customer', 0, 0, 0, 0, 0, 0, 0),
+(3, 'Customer', 'customer', 0, 0, 0, 0, 0, 0, 0);
 
 INSERT INTO `ea_settings` (`name`, `value`) VALUES
 ('company_working_plan', '{"monday":{"start":"09:00","end":"18:00","breaks":[{"start":"11:20","end":"11:30"},{"start":"14:30","end":"15:00"}]},"tuesday":{"start":"09:00","end":"18:00","breaks":[{"start":"11:20","end":"11:30"},{"start":"14:30","end":"15:00"}]},"wednesday":{"start":"09:00","end":"18:00","breaks":[{"start":"11:20","end":"11:30"},{"start":"14:30","end":"15:00"}]},"thursday":{"start":"09:00","end":"18:00","breaks":[{"start":"11:20","end":"11:30"},{"start":"14:30","end":"15:00"}]},"friday":{"start":"09:00","end":"18:00","breaks":[{"start":"11:20","end":"11:30"},{"start":"14:30","end":"15:00"}]},"saturday":{"start":"09:00","end":"18:00","breaks":[{"start":"11:20","end":"11:30"},{"start":"14:30","end":"15:00"}]},"sunday":{"start":"09:00","end":"18:00","breaks":[{"start":"11:20","end":"11:30"},{"start":"14:30","end":"15:00"}]}}'),
