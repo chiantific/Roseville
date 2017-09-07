@@ -294,7 +294,7 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                 </div>
                 <div class="row">
                     <div class="col-sm-4 sub-section">
-                        <img src="img/chocolat.jpg" alt="chocolat fondant pour illustrer la salle chocolat" class="img-thumbnail" width="100%"/>
+                        <img src="img/chocolat.jpg" alt="<?php echo $lang['alt_chocolat']; ?>" class="img-thumbnail" width="100%"/>
                         <h3><?php echo $lang['header_chocolate']; ?></h3>
                         <p><?php echo $lang['text_chocolate']; ?></p>
                         <div class="grouped-buttons">
@@ -334,14 +334,36 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                     <div class="col-sm-4 sub-section">
                         <img class="img-thumbnail" src="img/raisin.jpg"
                             alt="<?php echo $lang['alt_grappe_bunch']; ?>" width="100%"/>
-                        <h3><?php echo $lang['header_coming_soon']; ?></h3>
-                        <p><?php echo $lang['text_coming_soon'];
-                            echo $lang['in_vino_veritas']; ?>
-                        </p>
-                        <a data-html="true" type="button" class="btn btn-default bottom" data-toggle="popover"
-                                data-content="<?php echo $lang['curious'] . '<br />'. $lang['be_patient']; ?>" href="#">
+                        <h3><?php echo $lang['header_ivv']; ?></h3>
+                        <p><?php echo $lang['text_ivv']; ?></p>
+                        <div class="grouped-buttons">
+                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal_ivv">
                                 <?php echo $lang['btn_more_info']; ?>
-                        </a>
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="modal_ivv" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">
+                                                <?php echo $lang['header_intro_room_ivv']; ?>
+                                            </h4>
+                                        </div>
+                                        <div class="modal-body">
+                                        <p><?php echo $lang['text_intro_room_ivv']; ?>
+                                        </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">
+                                                <?php echo $lang['close']; ?>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- End modal -->
+                        </div>
                     </div>
                     <div class="col-sm-4 sub-section">
                         <img class="img-thumbnail" src="img/R_de_fete.jpg"

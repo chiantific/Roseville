@@ -269,5 +269,5 @@ $lang['customer_notifications'] = 'Customer Notifications';
 $lang['customer_notifications_hint'] = 'Defines whether the customer will receive email notifications whenever there is a schedule change on one of his appointments.';
 $lang['date_format'] = 'Date Format';
 $lang['date_format_hint'] = 'Change the date display format (D - Date, M - Month, Y - Year).';
-$lang['paid_status'] = ['Oui', 'Non'];
+$lang['paid_status'] = ['Non', 'Oui'];
 $lang['languages'] = ['Français', 'Anglais'];
