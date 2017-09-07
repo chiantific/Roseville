@@ -1,6 +1,7 @@
 <?php
 // English
 $lang['page_title'] = 'Booking';
+$lang['booking_title'] = 'Booking';
 $lang['other_language'] = 'FR';
 $lang['step_one_title'] = 'Choose your game';
 $lang['select_room'] = 'Select a room';

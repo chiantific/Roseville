@@ -45,7 +45,7 @@
                         echo '
                             <h3>' . $this->lang->line('payment_fail') . '</h3>
                             <p>' . $this->lang->line('retry_or_contact') . '</p>
-                            <a href="'.$this->config->item('base_url').'/index.php/appointments/payment/'.$appointment_id.'" class="btn btn-success btn-large">' .
+                            <a href="'.$this->config->item('base_url').'/index.php/booking/payment/'.$appointment_id.'" class="btn btn-success btn-large">' .
                                 $this->lang->line('back_to_payment') . '
                             </a>
                             <a href="'.$this->config->item('base_url').'" class="btn btn-success btn-large">' .

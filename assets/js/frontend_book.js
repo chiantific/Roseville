@@ -1,14 +1,3 @@
-/* ----------------------------------------------------------------------------
- * Easy!Appointments - Open Source Web Scheduler
- *
- * @package     EasyAppointments
- * @author      A.Tselegidis <alextselegidis@gmail.com>
- * @copyright   Copyright (c) 2013 - 2016, Alex Tselegidis
- * @license     http://opensource.org/licenses/GPL-3.0 - GPLv3
- * @link        http://easyappointments.org
- * @since       v1.0.0
- * ---------------------------------------------------------------------------- */
-
 /**
  * This namespace contains functions that implement the book appointment page
  * functionality. Once the initialize() method is called the page is fully
@@ -266,7 +255,7 @@ var FrontendBook = {
         });
 
         // Make ajax post request and get the available hours.
-        var postUrl = GlobalVariables.baseUrl + '/index.php/appointments/ajax_get_available_dates';
+        var postUrl = GlobalVariables.baseUrl + '/index.php/booking/ajax_get_available_dates';
 
         var date="01-" + month + "-" + year;
         var postData = {
@@ -313,7 +302,7 @@ var FrontendBook = {
         });
 
         // Make ajax post request and get the available hours.
-        var postUrl = GlobalVariables.baseUrl + '/index.php/appointments/ajax_get_available_hours';
+        var postUrl = GlobalVariables.baseUrl + '/index.php/booking/ajax_get_available_hours';
 
         var postData = {
             'csrfToken': GlobalVariables.csrfToken,
@@ -616,7 +605,7 @@ var FrontendBook = {
             'post_data': formData
         };
 
-        var postUrl = GlobalVariables.baseUrl + '/index.php/appointments/ajax_register_appointment',
+        var postUrl = GlobalVariables.baseUrl + '/index.php/booking/ajax_register_appointment',
             $layer = $('<div/>');
 
         $.ajax({
@@ -640,7 +629,7 @@ var FrontendBook = {
         })
             .done(function(response) {
                 window.location.replace(GlobalVariables.baseUrl
-                    + '/index.php/appointments/payment/' + response.appointment_id);
+                    + '/index.php/booking/payment/' + response.appointment_id);
             })
             .fail(function(jqxhr, textStatus, errorThrown) {
                 GeneralFunctions.ajaxFailureHandler(jqxhr, textStatus, errorThrown);

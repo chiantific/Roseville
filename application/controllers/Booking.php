@@ -16,7 +16,7 @@
  *
  * @package Controllers
  */
-class Appointments extends CI_Controller {
+class Booking extends CI_Controller {
     /**
      * Class Constructor
      */
@@ -99,7 +99,7 @@ class Appointments extends CI_Controller {
             $view['exceptions'][] = $exc;
         }
 
-        $this->load->view('appointments/book', $view);
+        $this->load->view('booking/book', $view);
     }
 
     /**

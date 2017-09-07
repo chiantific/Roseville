@@ -15,7 +15,7 @@
         	<?php echo ucfirst($this->config->item('language')); ?>
         </span>
         |
-        <a href="<?php echo $base_url; ?>/index.php/appointments">
+        <a href="<?php echo $base_url; ?>/index.php/booking">
             <?php echo $this->lang->line('go_to_booking_page') ?>
         </a>
     </div>

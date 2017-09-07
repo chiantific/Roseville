@@ -180,7 +180,7 @@ class Backend_api extends CI_Controller {
 
                 $customer_title = $this->lang->line('appointment_booked');
                 $customer_message = $this->lang->line('thank_you_for_appointment');
-                $customer_link = $this->config->item('base_url') . '/index.php/appointments/index/'
+                $customer_link = $this->config->item('base_url') . '/index.php/booking/index/'
                         . $appointment['hash'];
 
                 $provider_title = $this->lang->line('appointment_added_to_your_plan');
