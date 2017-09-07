@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#35A768">
         <meta name="description"
               content="<?php echo $this->lang->line('meta_description_content'); ?>" />
         <meta name="keywords"
@@ -84,7 +85,7 @@
                             <ul class="dropdown-menu">
                                 <li>
                                     <a class="page-scroll"
-                                        href="<?php echo $this->config->item('base_url'); ?>/booking">
+                                        href="<?php echo $this->config->item('base_url'); ?>/index.php/booking">
                                         <?php echo $this->lang->line('book_now'); ?>
                                     </a>
                                 </li>
@@ -124,7 +125,7 @@
                         </li>
                         <li class="dropdown" id="select-language">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <?php echo ucfirst($this->config->item('language'));; ?><b class="caret"></b>
+                                <?php echo ucfirst($this->config->item('language')); ?><b class="caret"></b>
                             </a>
                         </li>
                     </ul>
@@ -153,7 +154,7 @@
                         <a href="#section1" class="btn btn-default page-scroll">
                             <?php echo $this->lang->line('enter'); ?>
                         </a>
-                            <a href="<?php echo $this->config->item('base_url'); ?>/booking"
+                            <a href="<?php echo $this->config->item('base_url'); ?>/index.php/booking"
                                  class="btn btn-default page-scroll">
                             <?php echo $this->lang->line('bookings'); ?>
                         </a>
@@ -237,7 +238,7 @@
                     <h2><?php echo $this->lang->line('our_rooms'); ?></h2>
                     <p><?php echo $this->lang->line('text_our_rooms'); ?></p>
                     <div class="text-center">
-                        <a href="<?php echo $this->config->item('base_url') ?>/booking"
+                        <a href="<?php echo $this->config->item('base_url') ?>/index.php/booking"
                            class="btn btn-default">
                             <?php echo $this->lang->line('bookings'); ?>
                         </a>
@@ -381,7 +382,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12 text-center">
-                        <a href="<?php echo $this->config->item('base_url'); ?>/booking"
+                        <a href="<?php echo $this->config->item('base_url'); ?>/index.php/booking"
                            class="btn btn-default page-scroll">
                             <?php echo $this->lang->line('book_now'); ?>
                         </a>
