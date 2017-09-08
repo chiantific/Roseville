@@ -1,60 +1,3 @@
-/* ----------------------------------------------------------------------------
- * Easy!Appointments - Open Source Web Scheduler
- *
- * @package     EasyAppointments
- * @author      A.Tselegidis <alextselegidis@gmail.com>
- * @copyright   Copyright (c) 2013 - 2016, Alex Tselegidis
- * @license     http://opensource.org/licenses/GPL-3.0 - GPLv3
- * @link        http://easyappointments.org
- * @since       v1.0.0
- * ---------------------------------------------------------------------------- */
-
-body, html {
-    font-family: 'Open Sans', sans-serif;
-    text-rendering: optimizeLegibility !important;
-    -webkit-font-smoothing: antialiased !important;
-    color: #777;
-    width: 100% !important;
-    height: 100% !important;
-}
-
-body {
-    background-color: #78C9BC;
-}
-
-#header {
-    height: 50px;
-}
-
-#header .navbar-brand #logo {
-    width: 128px;
-    height: auto;
-    float: left;
-}
-
-#header .navbar-brand span {
-    float: left;
-    color: #eee;
-    font-size: 18px;
-    line-height: 20px;
-    text-transform: uppercase;
-}
-
-#header .align-center {
-    height: 50px;
-    display: flex;
-    align-items: center;
-}
-
-#header .language {
-    color: #eee;
-    text-decoration: none;
-}
-
-#header .language:hover {
-    color: #E75926;
-}
-
 #main {
     display: table;
     vertical-align: middle;
@@ -162,6 +105,20 @@ body {
 #book-appointment-wizard .active-step strong {
     color: #38A07A;
     font-size: 18px;
+}
+
+#book-appointment-wizard .ui-widget-header {
+    color: #fff;
+}
+
+#book-appointment-wizard .ui-datepicker-next .ui-icon {
+    cursor: pointer;
+    background-image: url("https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/images/ui-icons_ffffff_256x240.png");
+}
+
+#book-appointment-wizard .ui-datepicker-prev .ui-icon {
+    cursor: pointer;
+    background-image: url("https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/images/ui-icons_ffffff_256x240.png");
 }
 
 #footer {

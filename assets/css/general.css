@@ -1,3 +1,123 @@
+body, html {
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    color: #777;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #78C9BC;
+}
+
+p {
+    font-size: 14px;
+}
+.fa {
+    text-align: center;
+    display: block;
+}
+a {
+    color: #754747;
+}
+a:hover, a:focus {
+    text-decoration: none;
+    color: #F4D03F;
+}
+
+ul, ol {
+    list-style: none;
+}
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ddd;
+    z-index: 99999;
+    height: 100%;
+}
+#preloader img {
+    width: 64px;
+    height: 64px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Navigation */
+.navbar-inverse {
+    text-transform: uppercase;
+}
+.navbar-inverse .navbar-brand {
+    color: #eee;
+}
+.navbar-inverse .navbar-brand span:hover {
+    color: #E75926;
+}
+.navbar-inverse .navbar-nav li a {
+    color: #eee;
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+.navbar-inverse .navbar-nav .open a:hover {
+    color: #E75926;
+    background-color: transparent;
+}
+.navbar-inverse .navbar-nav .open a:focus{
+    background-color: transparent;
+}
+@media (max-width: 991px) {
+    .navbar-inverse .navbar-nav .open .dropdown-menu li a {
+        color: #eee;
+    }
+    .navbar-inverse .navbar-nav .open .dropdown-menu li a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu li a:hover {
+        color: #E75926;
+    }
+    .navbar-inverse .nav li a {
+        text-align: right;
+    }
+    .navbar.navbar-inverse .navbar-collapse {
+        border: none;
+        box-shadow: none;
+    }
+}
+@media (max-width: 410px) {
+    .navbar-brand #logo {
+        display: none;
+    }
+}
+.navbar-inverse .nav li a:hover, .navbar-inverse .nav li a:focus {
+    color: #E75926;
+}
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background-color: #E75926;
+    color: #ffffff;
+}
+.navbar-inverse i.fa {
+    color: #eee;
+}
+.navbar-toggle {
+    border: 0;
+}
+.dropdown-menu {
+    background-color: #363636;
+}
+.navbar-collapse.collapse ul li a:hover {
+    background-color: transparent;
+}
+.navbar-inverse #logo {
+    width: 128px;
+    height: auto;
+    float: left;
+}
+.navbar .align-center {
+    display: flex;
+    align-items: center;
+}
+
 body .custom-qtip {
     border: none;
     border-radius: 0;
@@ -120,25 +240,6 @@ body .ui-datepicker .ui-datepicker-next-hover {
     vertical-align: middle;
 }
 
-li.language:hover {
-	cursor: pointer;
-	color: #005580;
-}
-
-#select-language {
-	cursor: pointer;
-    display: inline-block;
-    padding: 4px 5px;
-}
-
-#select-language.active {
-    box-shadow: 0 0 20px #1A865F;
-}
-
-#language-list {
-    list-style: none;
-    padding-left: 0px;
-}
 
 /* JQUERY UI DATETIME PICKER ADDON
    ------------------------------------------------------------------------- */

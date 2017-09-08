@@ -27,7 +27,9 @@
               rel="icon" type="image/x-icon" />
         <link href="<?php echo $this->config->item('base_url'); ?>/assets/img/apple-touch-icon.png"
               rel="apple-touch-icon" />
-        <link href="<?php echo $this->config->item('base_url'); ?>/assets/css/style.css"
+        <link href="<?php echo $this->config->item('base_url'); ?>/assets/css/general.css"
+              rel="stylesheet" type="text/css" />
+        <link href="<?php echo $this->config->item('base_url'); ?>/assets/css/home.css"
               rel="stylesheet" type="text/css" />
     </head>
     <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -811,6 +813,8 @@
 
             $(document).ready(function() {
                 GeneralFunctions.enableLanguageSelection($('#select-language'), "dropdown");
+                GeneralFunctions.hidePreloader();
+                GeneralFunctions.autoToggleNavbar();
             });
         </script>
         <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/general_functions.js"

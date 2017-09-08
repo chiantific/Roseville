@@ -4,32 +4,7 @@ function main() {
 (function () {
    'use strict';
 
-	// Hide .navbar first
-	$(".navbar").hide();
-	
-	// Fade in .navbar
-	$(function () {
-		$(window).scroll(function () {
-            // set distance user needs to scroll before we fadeIn navbar
-			if ($(this).scrollTop() > 200) {
-				$('.navbar').fadeIn();
-			} else {
-				$('.navbar').fadeOut();
-			}
-		});
-
-	
-	});
-	
-	// Preloader */
-	  	$(window).load(function() {
-
-   	// will first fade out the loading animation 
-    	$("#status").fadeOut("slow"); 
-
-    	// will fade out the whole DIV that covers the website. 
-    	$("#preloader").delay(500).fadeOut("slow").remove();      
-
+    $(window).load(function() {
         // load the map
         $('[aftersrc]').each(function() {
             var aftersrc = $(this).attr("aftersrc");
@@ -51,21 +26,6 @@ function main() {
           }
         }
       });
-
-    // Show Menu on Book
-    $(window).bind('scroll', function() {
-        var navHeight = $(window).height() - 100;
-        if ($(window).scrollTop() > navHeight) {
-            $('.navbar-default').addClass('on');
-        } else {
-            $('.navbar-default').removeClass('on');
-        }
-    });
-
-    $('body').scrollspy({ 
-        target: '.navbar-default',
-        offset: 80
-    })
 
   	// Portfolio Isotope Filter
     $(window).load(function() {

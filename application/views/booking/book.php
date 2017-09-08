@@ -9,6 +9,8 @@
 
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
               rel="stylesheet" type="text/css" />
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+              rel="stylesheet" type="text/css" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
               rel="stylesheet" type="text/css" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/basic/jquery.qtip.min.css"
@@ -25,23 +27,45 @@
               rel="apple-touch-icon" />
         <link href="<?php echo $this->config->item('base_url'); ?>/assets/css/general.css"
               rel="stylesheet" type="text/css" />
-        <link href="<?php echo $this->config->item('base_url'); ?>/assets/css/frontend.css"
+        <link href="<?php echo $this->config->item('base_url'); ?>/assets/css/book.css"
               rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <nav id="header" class="navbar navbar-inverse navbar-fixed-top">
+        <div id="preloader">
+            <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/preloader.gif"
+                 alt="preloader animation" />
+        </div>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
-                <div class="navbar-brand">
-                    <a href="<?php echo $company_link; ?>">
-                        <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/logo_escape.png"
-                             alt="roseville escape logo" id="logo" />
-                    </a>
-                    <span><?php echo $this->lang->line('booking_title'); ?></span>
+                <div class="navbar-header pull-left">
+                    <div class="navbar-brand">
+                        <a href="<?php echo $company_link; ?>">
+                            <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/logo_escape.png"
+                                 alt="logo" id="logo" />
+                        </a>
+                        <span><?php echo $this->lang->line('booking_title'); ?></span>
+                    </div>
                 </div>
-                <div class="pull-right align-center dropdown" id="select-language">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <?php echo ucfirst($this->config->item('language')); ?><b class="caret"></b>
-                    </a>
+                <div class="pull-right align-center">
+                    <button type="button" class="navbar-toggle pull-left"
+                                          data-toggle="collapse"
+                                          data-target=".navbar-collapse">
+                        <span class="sr-only">
+                            <?php echo $this->lang->line('toggle_navigation'); ?>
+                        </span>
+                        <span>
+                            <i class="fa fa-bars"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown" id="select-language">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <?php echo ucfirst($this->config->item('language')); ?><b class="caret"></b>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -304,9 +328,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js"
                 type="text/javascript">
         </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"
-                type="text/javascript">
-        </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"
                 type="text/javascript">
         </script>
@@ -315,7 +336,11 @@
         </script>
         <script
             type="text/javascript"
-            src="<?php echo $this->config->item('base_url'); ?>/assets/js/frontend_book.js"></script>
+            src="<?php echo $this->config->item('base_url'); ?>/assets/js/frontend_book.js">
+        </script>
+        <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/main.js"
+                type="text/javascript">
+        </script>
         <script type="text/javascript">
             var GlobalVariables = {
                 availableServices   : <?php echo json_encode($available_services); ?>,
@@ -334,6 +359,7 @@
             $(document).ready(function() {
                 FrontendBook.initialize(true, GlobalVariables.manageMode);
                 GeneralFunctions.enableLanguageSelection($('#select-language'), "dropdown");
+                GeneralFunctions.hidePreloader();
             });
         </script>
         <script
