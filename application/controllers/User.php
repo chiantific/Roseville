@@ -1,16 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-/* ----------------------------------------------------------------------------
- * Easy!Appointments - Open Source Web Scheduler
- *
- * @package     EasyAppointments
- * @author      A.Tselegidis <alextselegidis@gmail.com>
- * @copyright   Copyright (c) 2013 - 2016, Alex Tselegidis
- * @license     http://opensource.org/licenses/GPL-3.0 - GPLv3
- * @link        http://easyappointments.org
- * @since       v1.0.0
- * ---------------------------------------------------------------------------- */
-
 /**
  * User Controller
  *
@@ -56,6 +45,7 @@ class User extends CI_Controller {
         }
 
         $view['company_name'] = $this->settings_model->get_setting('company_name');
+        $view['company_link'] = $this->settings_model->get_setting('company_link');
         $this->load->view('user/login', $view);
     }
 
@@ -73,6 +63,7 @@ class User extends CI_Controller {
 
         $view['base_url'] = $this->config->item('base_url');
         $view['company_name'] = $this->settings_model->get_setting('company_name');
+        $view['company_link'] = $this->settings_model->get_setting('company_link');
         $this->load->view('user/logout', $view);
     }
 
