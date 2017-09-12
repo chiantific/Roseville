@@ -1,81 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title><?php echo $company_name; ?> | Easy!Appointments</title>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#35A768">
+        <title><?php echo $company_name . " | " . $this->lang->line('administration'); ?></title>
 
-    <link rel="icon" type="image/x-icon"
-          href="/img/favicon.ico">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+              rel="stylesheet" type="text/css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+              rel="stylesheet" type="text/css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/basic/jquery.qtip.min.css"
+              rel="stylesheet" type="text/css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/jScrollPane/2.0.23/style/jquery.jscrollpane.min.css"
+              rel="stylesheet" type="text/css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.min.css"
+              rel="stylesheet" type="text/css" />
 
-    <?php
-        // ------------------------------------------------------------
-        // INCLUDE CSS FILES
-        // ------------------------------------------------------------ ?>
-    <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link
-        rel="stylesheet"
-        type="text/css"
-        href="/jquery-ui/jquery-ui.min.css">
-    <link
-        rel="stylesheet"
-        type="text/css"
-        href="/jquery-qtip/jquery.qtip.min.css">
-    <link
-        rel="stylesheet"
-        type="text/css"
-        href="<?php echo $base_url; ?>/assets/ext/jquery-jscrollpane/jquery.jscrollpane.css">
-    <link
-        rel="stylesheet"
-        type="text/css"
-        href="<?php echo $base_url; ?>/assets/css/backend.css">
-    <link
-        rel="stylesheet"
-        type="text/css"
-        href="<?php echo $base_url; ?>/assets/css/general.css">
+        <!--[if IE]>
+            <link href="<?php echo $this->config->item('base_url'); ?>/assets/img/favicon.ico"
+                  rel="shortcut icon">
+        <![endif]-->
+        <link href="<?php echo $this->config->item('base_url'); ?>/assets/img/favicon.ico"
+              rel="icon" type="image/x-icon" />
+        <link href="<?php echo $this->config->item('base_url'); ?>/assets/img/apple-touch-icon.png"
+              rel="apple-touch-icon" />
 
-    <?php
-        // ------------------------------------------------------------
-        // INCLUDE JAVASCRIPT FILES
-        // ------------------------------------------------------------ ?>
-    <script
-        type="text/javascript"
-        src="/js/jquery.min.js"></script>
-    <script
-        type="text/javascript"
-        src="/jquery-ui/jquery-ui.min.js"></script>
-    <script
-        type="text/javascript"
-        src="/jquery-qtip/jquery.qtip.min.js"></script>
-    <script
-        type="text/javascript"
-        src="/js/bootstrap.min.js"></script>
-    <script
-        type="text/javascript"
-        src="<?php echo $base_url; ?>/assets/ext/datejs/date.js"></script>
-    <script
-        type="text/javascript"
-        src="<?php echo $base_url; ?>/assets/ext/jquery-jscrollpane/jquery.jscrollpane.min.js"></script>
-    <script
-        type="text/javascript"
-        src="<?php echo $base_url; ?>/assets/ext/jquery-mousewheel/jquery.mousewheel.js"></script>
+        <link href="<?php echo $this->config->item('base_url'); ?>/assets/css/general.css"
+              rel="stylesheet" type="text/css" />
+        <link href="<?php echo $this->config->item('base_url'); ?>/assets/css/backend.css"
+              rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div id="preloader">
+            <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/preloader.gif"
+                 alt="preloader animation" />
+        </div>
+<?php /*
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header pull-left">
+                    <div class="navbar-brand">
+                        <a href="<?php echo $company_link; ?>">
+                            <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/logo_escape.png"
+                                 alt="logo" id="logo" />
+                        </a>
+                        <span><?php echo $company_name; ?></span>
+                    </div>
+                </div>
+                <div class="pull-right align-center">
+                    <button type="button" class="navbar-toggle pull-left"
+                                          data-toggle="collapse"
+                                          data-target=".navbar-collapse">
+                        <span class="sr-only">
+                            <?php echo $this->lang->line('toggle_navigation'); ?>
+                        </span>
+                        <span>
+                            <i class="fa fa-bars"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown" id="select-language">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <?php echo ucfirst($this->config->item('language')); ?><b class="caret"></b>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+ */ ?>
 
-    <script type="text/javascript">
-    	// Global JavaScript Variables - Used in all backend pages.
-    	var availableLanguages = <?php echo json_encode($this->config->item('available_languages')); ?>;
-    	var EALang = <?php echo json_encode($this->lang->language); ?>;
-    </script>
-</head>
-
-<body>
 <div id="header">
     <div id="header-logo">
         <img src="/img/logo_escape.png">
         <span><?php echo $company_name; ?></span>
     </div>
-
     <div id="header-menu">
         <?php // CALENDAR MENU ITEM
               // ------------------------------------------------------ ?>
@@ -138,3 +141,4 @@
 <div id="loading" style="display: none;">
     <img src="<?php echo $base_url; ?>/assets/img/loading.gif" />
 </div>
+
