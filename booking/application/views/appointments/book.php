@@ -359,6 +359,17 @@ foreach($available_services as $service) {
             max: 6,
             verticalbuttons: true,
         });
+
+        $("#select-provider").change(function () {
+            if ($("#select-provider option:selected").text() == "Chocolat")
+            {
+                $("input[name='nb_participants']").trigger("touchspin.updatesettings",
+                    {max: 6});
+            } else {
+                $("input[name='nb_participants']").trigger("touchspin.updatesettings",
+                    {max: 5});
+            }
+        });
     </script>
     <script>
         $("#phone-number").keyup(function() {
