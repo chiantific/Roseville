@@ -76,7 +76,7 @@
 
 <div id="header">
     <div id="header-logo">
-        <img src="/img/logo_escape.png">
+    <img src="<?php echo $base_url; ?>/assets/img/logo_escape.png">
         <span><?php echo $company_name; ?></span>
     </div>
     <div id="header-menu">
