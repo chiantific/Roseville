@@ -298,6 +298,9 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                         <h3><?php echo $lang['header_chocolate']; ?></h3>
                         <p><?php echo $lang['text_chocolate']; ?></p>
                         <div class="grouped-buttons">
+                          <?php echo $lang['group_chocolate']; ?>
+                        </div>
+                        <div class="grouped-buttons">
                             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
                                 <?php echo $lang['btn_more_info']; ?>
                             </button>
@@ -337,6 +340,9 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                         <h3><?php echo $lang['header_ivv']; ?></h3>
                         <p><?php echo $lang['text_ivv']; ?></p>
                         <div class="grouped-buttons">
+                          <?php echo $lang['group_ivv']; ?>
+                        </div>
+                        <div class="grouped-buttons">
                             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal_ivv">
                                 <?php echo $lang['btn_more_info']; ?>
                             </button>
@@ -363,6 +369,74 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                                     </div>
                                 </div>
                             </div> <!-- End modal -->
+                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal_carousel_ivv">
+                                <?php echo $lang['peek_inside']; ?>
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="modal_carousel_ivv" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">
+                                                <?php echo $lang['header_intro_room_ivv']; ?>
+                                            </h4>
+                                        </div>
+                                        <div class="modal-body">
+                                           <!-- Carousel -->
+                                          <div id="IVVcarousel" class="carousel slide" data-ride="carousel">
+                                            <!-- Indicators -->
+                                            <ol class="carousel-indicators">
+                                              <li data-target="#IVVcarousel" data-slide-to="0" class="active"></li>
+                                              <li data-target="#IVVcarousel" data-slide-to="1"></li>
+                                              <li data-target="#IVVcarousel" data-slide-to="2"></li>
+                                              <li data-target="#IVVcarousel" data-slide-to="3"></li>
+                                              <li data-target="#IVVcarousel" data-slide-to="4"></li>
+                                              <li data-target="#IVVcarousel" data-slide-to="5"></li>
+                                            </ol>
+                                            <!-- Wrapper for slides -->
+                                            <div class="carousel-inner">
+                                              <div class="item active">
+                                                <img class="img-responsive center-block" src="img/entree.jpg" alt="entrée de la salle In Vino Véritas">
+                                              </div>
+                                              <div class="item">
+                                                <img class="img-responsive center-block" src="img/pompe.jpg" alt="pompe et arrosoirs">
+                                              </div>
+                                              <div class="item">
+                                                <img class="img-responsive center-block" src="img/shelf.jpg" alt="étagère">
+                                              </div>
+                                              <div class="item">
+                                                <img class="img-responsive center-block" src="img/liter_register.jpg" alt="doseur">
+                                              </div>
+                                              <div class="item">
+                                                <img class="img-responsive center-block" src="img/tonneau.jpg" alt="tonneau">
+                                              </div>
+                                              <div class="item">
+                                                <img class="img-responsive center-block" src="img/manivelle.jpg" alt="Manivelle">
+                                              </div>
+                                            </div>
+                                            <!-- Left and right controls -->
+                                            <a class="left carousel-control" href="#IVVcarousel" data-slide="prev">
+                                              <span class="glyphicon glyphicon-chevron-left"></span>
+                                              <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="right carousel-control" href="#IVVcarousel" data-slide="next">
+                                              <span class="glyphicon glyphicon-chevron-right"></span>
+                                              <span class="sr-only">Next</span>
+                                            </a>
+                                          </div> <!-- Carousel -->
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">
+                                                <?php echo $lang['close']; ?>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- End modal -->
+                            
+                            
                         </div>
                     </div>
                     <div class="col-sm-4 sub-section">

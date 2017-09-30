@@ -44,19 +44,23 @@ $lang['alt_chocolat'] = 'melting chocolate to illustrate the room "Chocolat"';
 $lang['header_chocolate'] = '"Chocolat"';
 $lang['text_chocolate'] = 'A computer bug has destroyed all the knowledge stored on the Internet, including a famous recipe for chocolate. You are hired to go back in time to find it. But be careful, staying too long in space-time can be dangerous!';
 $lang['btn_more_info'] = 'More info';
+$lang['group_chocolate'] = 'For groups from 2 to 6 persons';
 $lang['header_intro_room_chocolate'] = 'Introduction for the room "Chocolat"';
 $lang['text_intro_room_chocolate'] = 'In an alternative world, in 2046, a planetary glitch has destroyed all the information contained on the web. This is a terrible loss since most of the knowledge of humanity was found there. A group of adventurers called Roseville, who have the power to travel in time, propose to find these secrets by returning to the past for a fee, of course. The Captain, Roseville\'s most experienced adventurer, is elected to help the young heiress of a rich family of chocolate makers who want to find the recipe for chocolate that has made the fortune of their family for generations. However, the Captain cannot be found!  So it is up to you to go looking for the recipe and to try to find out what happened to the Captain. But beware ! Traveling through time is unstable and staying too long in the past could be fatal !';
 $lang['close'] = 'close';
 $lang['alt_grappe_bunch'] = 'bunch of grapes';
 $lang['header_ivv'] = '"In Vino Veritas"';
 $lang['text_ivv'] = 'Detective action with a biodynamic mood. After an important historical change, Lavaux has become an arid land on which only a few mushrooms grow with difficulty. What became of the Lavaux vines ? You must go back in time to investigate and restore the conditions that made the vineyards so successful years before.';
+$lang['group_ivv'] = 'For groups from 2 to 5 persons';
 $lang['header_intro_room_ivv'] = 'Introduction for the room "In Vino Veritas"';
 $lang['text_intro_room_ivv'] = 'A historian has evidence which suggest that very good wine-producing grapes used to grow on the Lavaux terraces. Apparently this landscape was classified as a UNESCO World Heritage Site and a winegrower\'s festival was celebrated once a generation in Vevey, a town located in the heart of the Lavaux vineyards.<br>
 The adventurers find themselves at the end of the 14th century during the turmoil of the Papal States rebellion, known as the “War of the Eight Saints”. At that time the anti-pope of Avignon, Clement VII, who was the son of the Count of Geneva, reigned over lands that included the village of Chateauneuf-du-Pape. In this region, lush vineyards were an important source of income for the prosperous Avignon Papacy.<br>
 After the failure of the crusade against the barbarians, the Roman Pope Boniface IX began to lose his popularity compared to Clement VII. Jealous, he decides to weaken Clement VII by releasing a fungus that contaminates the vines. The Châteauneuf-du-Pape vineyard is ravaged in one season. Shaken by this underhanded blow, Clement VII shows interest in lands located on the shores of Lake of Geneva, his country of origin. In the 12th century, the Holy Roman Emperor and the Count of Burgundy, Fréderic the 1st (Barberousse" of Hohenstaufen), offered hillside lands located near the lake to the Bishop of Lausanne, where monks started to build terraces and cultivate grapes. At the end of the 14th century, these vineyards were flourishing. In a bold move, Clement VII convinced the Lavaux monks to relocate their vines to Chateauneuf-du-Pape, leaving the terraces deserted. The cunning move of Clement VII worked. The Châteauneuf-du-Pape region regains his prosperity but Lavaux becomes a barren and austere landscape.';
+$lang['peek_inside'] = 'peek inside';
 $lang['alt_r_lounge'] = 'R lounge';
 $lang['header_area_R'] = 'The "R" lounge';
 $lang['text_area_R'] = 'Visit the "R" lounge for a festive atmosphere. We are pleased to receive you in a surprising setting where our coach will introduce the escape game. You are also welcome to stay for a drink and de-brief in this magical and relaxing environment after your session. This lounge is available for rent for birthdays, parties or private events.';
+$lang['group_area'] = 'Available for rent for events, birthdays ...';
 $lang['sub_header_gift_card'] = 'Gift card for a game at Roseville Escape, valid for a group of 2 to 6 persons, price CHF 140.';
 $lang['how_to_order_gift_card'] = 'A gift card for a Roseville Escape game is an original and appreciated gift. We provide nicely designed vouchers for you to give loved ones for any occasion. To order please contact us using the ';
 $lang['contact_form'] = 'contact page';

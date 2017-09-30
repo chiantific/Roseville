@@ -388,7 +388,11 @@ hr {
 #section3 .popover .arrow:after {
     border-right-color: #5B998F;
 }
-
+.carousel-inner>.item>img {
+    display: block;
+    max-height: 300px;
+    width: auto;
+}
 
 /* Section gcard */
 #gcard {

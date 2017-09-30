@@ -43,6 +43,7 @@ $lang['btn_contact_us'] = 'Contactez-nous';
 $lang['alt_chocolat'] = 'chocolat fondant pour illustrer la salle chocolat';
 $lang['header_chocolate'] = '"Chocolat"';
 $lang['text_chocolate'] = 'Un bug informatique a détruit tout le savoir stocké sur internet, dont une fameuse recette de chocolat. Vous êtes engagés pour retourner dans le passé pour la retrouver. Mais attention rester trop longtemps dans l\'espace temps peut s\'avérer dangereux.';
+$lang['group_chocolate'] = 'Pour groupes de 2 à 6 personnes';
 $lang['btn_more_info'] = 'plus d\'info';
 $lang['header_intro_room_chocolate'] = 'Introduction pour la salle "Chocolat"';
 $lang['text_intro_room_chocolate'] = 'Dans un monde alternatif, en 2016, un bug à échelle planétaire a détruit toutes les informations contenues sur le net. Or, la plupart du savoir de l\'humanité s\'y trouvait. Une association d\'aventuriers appelée Roseville, qui possède le pouvoir de voyager dans le temps, se propose de retrouver ces secrets en retournant dans le passé contre rémunération, bien entendu. Le Capitaine, l\'aventurier le plus expérimenté de Roseville, est élu pour aider la jeune héritière d\'une richissime famille de chocolatiers souhaitant retrouver la recette du chocolat qui a fait la fortune de la famille depuis des générations. Hors, ce dernier est introuvable. Il appartient donc à vous de partir à la recherche de la recette et d\'essayer de découvrir ce qui est arrivé au Capitaine. Mais attention ! Les voyages dans le temps sont instables et rester trop longtemps dans le passé pourrait être fatal !';
@@ -50,13 +51,16 @@ $lang['close'] = 'fermer';
 $lang['alt_grappe_bunch'] = 'grappe de raisin';
 $lang['header_ivv'] = '"In Vino Veritas"';
 $lang['text_ivv'] = 'Polar à consonance biodynamique.  Suite à une altération du cours de l\'Histoire, le Lavaux est une terre aride sur laquelle seuls quelques champignons poussent laborieusement. Mais que sont devenues les vignes de Lavaux ? Vous devez remonter dans le temps pour investiguer et rétablir les conditions qui ont fait le succès du vignoble d\'antan.';
+$lang['group_ivv'] = 'Pour groupes de 2 à 5 personnes';
 $lang['header_intro_room_ivv'] = 'Introduction pour la salle "In Vino Veritas"';
 $lang['text_intro_room_ivv'] = 'Un historien possède des évidences qui indiquent que sur les terrasses du Lavaux poussaient jadis des vignes magnifiques qui produisaient des vins de très bonne qualité. Ce paysage était semble-t-il classé au patrimoine mondial de l\'UNESCO. Tous les quarts de siècle, une fête des vignerons de renommée international y était même célébrée.<br>
 Les aventuriers se retrouvent dans la tourmente de la Guerre des Papes au XIVème siècle. A cette époque, l’antipape d\'Avignon Clément VII, fils du Comte de Genève, règne sur des terres qui incluent le village de Châteauneuf-du-Pape. Dans cette région, des vignobles prolifiques sont une importante source de revenu pour la prospère papauté d\'Avignon.<br>
 Après l\'échec de la croisade contre les barbares à la fin du XIVème siècle, le pape de Rome Boniface IX perd en popularité face à Clément VII. Jaloux, il décide d\'affaiblir Clément VII en inoculant un champignon qui contamine la vigne. En une saison le vignoble de Châteauneuf-du-Pape est ravagé. Secoué par ce coup sournois Clément VII réagit en s\'intéressant à des terres situées au bord du lac Léman, sa région d\'origine. Au XIIème siècle, le Saint Empereur romain et Comte de Bourgogne, Fréderic 1er « Barberousse » de Hohenstaufen, offrait à l\'Evêque de Lausanne des terres à flanc de coteaux au bord du lac sur lesquels des moines y firent construire des terrasses et cultivèrent du raisin. En fin XIVème siècle ces vignes se portent à merveille. Dans un coup d\'audace, Clément VII convainc les moines du Lavaux de déplacer leurs ceps à Châteauneuf-du-Pape, laissant derrière des terrasses désertiques. Le coup de folie de Clément VII fonctionne. La région de Châteauneuf-du-Pape est à nouveau prospère mais le Lavaux devient ce paysage aride et austère.';
+$lang['peek_inside'] = 'guigner';
 $lang['alt_r_lounge'] = 'espace R de fête';
 $lang['header_area_R'] = '"R" de fête';
 $lang['text_area_R'] = 'Nous vous accueillons dans un espace insolite où les consignes du jeu vous seront expliquées par notre coach. Profitez aussi de l\'ambiance magique et relaxante de cet espace pour débriefer à la fin du jeu en buvant un verre. Il est possible de louer cette salle pour y organiser anniversaires, fêtes ou soirées privées.';
+$lang['group_area'] = 'Possibilité de louer la salle pour des événements';
 $lang['sub_header_gift_card'] = 'Bon cadeau pour un jeu d\'évasion à Roseville Escape de 2 à 6 personnes d\'une valeur de CHF 140.';
 $lang['how_to_order_gift_card'] = 'Pour commander un bon cadeau veuillez nous contacter via le';
 $lang['contact_form'] = 'formulaire de contact';
