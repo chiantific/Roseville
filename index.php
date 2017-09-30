@@ -442,8 +442,11 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                     <div class="col-sm-4 sub-section">
                         <img class="img-thumbnail" src="img/R_de_fete.jpg"
                             alt="<?php echo $lang['alt_r_lounge']; ?>" width="100%"/>
-                            <h3><?php echo $lang['header_area_R']; ?></h3>
-                            <p><?php echo $lang['text_area_R']; ?></p>
+                        <h3><?php echo $lang['header_area_R']; ?></h3>
+                        <p><?php echo $lang['text_area_R']; ?></p>
+                        <div class="grouped-buttons">
+                          <?php echo $lang['group_area']; ?>
+                        </div>
                         <a type="button" href="http://espace.roseville.ch" target="_blank" class="btn btn-default bottom">
                             <?php echo $lang['btn_more_info']; ?>
                         </a>
