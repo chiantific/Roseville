@@ -1,70 +1,47 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- meta -->
         <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#35A768">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#35A768" />
         <title><?php echo $this->lang->line('login') . ' - ' . $company_name; ?></title>
 
+        <!-- CSS -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
             rel="stylesheet" type="text/css" />
         <link href="<?php echo $this->config->item('base_url'); ?>/assets/css/general.css"
             rel="stylesheet" type="text/css" />
+        <link href="<?php echo $this->config->item('base_url'); ?>/assets/css/small_page.css"
+            rel="stylesheet" type="text/css" />
 
+        <!-- favicon -->
         <!--[if IE]>
             <link href="<?php echo $this->config->item('base_url'); ?>/assets/img/favicon.ico"
                   rel="shortcut icon">
         <![endif]-->
         <link href="<?php echo $this->config->item('base_url'); ?>/assets/img/favicon.ico"
-              rel="icon" type="image/x-icon" />
+              rel="shortcut icon" type="image/x-icon" />
         <link href="<?php echo $this->config->item('base_url'); ?>/assets/img/apple-touch-icon.png"
               rel="apple-touch-icon" />
-
-<!--
-
-        <style>
-            body {
-                width: 100vw;
-                height: 100vh;
-                display: table-cell;
-                vertical-align: middle;
-                background-color: #CAEDF3;
-            }
-
-            #login-frame {
-                width: 630px;
-                margin: auto;
-                background: #FFF;
-                border: 1px solid #DDDADA;
-                padding: 70px;
-            }
-
-            @media(max-width: 640px) {
-                #login-frame {
-                    width: 100%;
-                    padding: 20px;
-                }
-            }
-        </style>
--->
-
     </head>
     <body>
+        <!-- preloader -->
         <div id="preloader">
             <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/preloader.gif"
                  alt="preloader animation" />
         </div>
+
+        <!-- navbar -->
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header pull-left">
-                    <div class="navbar-brand">
-                        <a href="<?php echo $company_link; ?>">
-                            <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/logo_escape.png"
-                                 alt="logo" id="logo" />
-                        </a>
+                    <a class="navbar-brand" href="<?php echo $company_link; ?>">
+                        <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/logo_escape.png"
+                             alt="logo" id="logo" />
                         <span><?php echo $this->lang->line('booking_title'); ?></span>
-                    </div>
+                    </a>
                 </div>
                 <div class="pull-right align-center">
                     <button type="button" class="navbar-toggle pull-left"
@@ -89,41 +66,44 @@
                 </div>
             </div>
         </nav>
-        <div id="login-frame" class="frame-container">
-            <h2><?php echo $this->lang->line('backend_section'); ?></h2>
-            <p><?php echo $this->lang->line('you_need_to_login'); ?></p>
-            <hr>
-            <div class="alert hidden"></div>
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="username"><?php echo $this->lang->line('username'); ?></label>
-                    <input type="text" id="username"
-                            placeholder="<?php echo $this->lang->line('enter_username_here'); ?>"
-                            class="form-control" />
+
+        <!-- login -->
+        <div id="login-frame" class="simple-frame">
+            <div class="container">
+                <div class="row">
+                    <h1><?php echo $this->lang->line('backend_section'); ?></h1>
+                    <p><?php echo $this->lang->line('you_need_to_login'); ?></p>
+                    <hr>
+                    <div class="alert hidden"></div>
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="username"><?php echo $this->lang->line('username'); ?></label>
+                            <input type="text" id="username"
+                                    placeholder="<?php echo $this->lang->line('enter_username_here'); ?>"
+                                    class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="password"><?php echo $this->lang->line('password'); ?></label>
+                            <input type="password" id="password"
+                                    placeholder="<?php echo $this->lang->line('enter_password_here'); ?>"
+                                    class="form-control" />
+                        </div>
+                        <br>
+
+                        <button type="submit" id="login" class="btn btn-primary">
+                            <?php echo $this->lang->line('login'); ?>
+                        </button>
+
+                        <br><br>
+
+                        <a href="<?php echo $base_url; ?>/index.php/user/forgot_password" class="forgot-password">
+                            <?php echo $this->lang->line('forgot_your_password'); ?></a>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="password"><?php echo $this->lang->line('password'); ?></label>
-                    <input type="password" id="password"
-                            placeholder="<?php echo $this->lang->line('enter_password_here'); ?>"
-                            class="form-control" />
-                </div>
-                <br>
-
-                <button type="submit" id="login" class="btn btn-primary">
-                    <?php echo $this->lang->line('login'); ?>
-                </button>
-
-                <br><br>
-
-                <a href="<?php echo $base_url; ?>/index.php/user/forgot_password" class="forgot-password">
-                    <?php echo $this->lang->line('forgot_your_password'); ?></a>
-                |
-                <span id="select-language" class="label label-success">
-                    <?php echo ucfirst($this->config->item('language')); ?>
-                </span>
-            </form>
+            </div>
         </div>
 
+        <!-- JS scripts -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
