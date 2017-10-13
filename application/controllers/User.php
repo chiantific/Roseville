@@ -74,6 +74,7 @@ class User extends CI_Controller {
         $this->load->model('settings_model');
         $view['base_url'] = $this->config->item('base_url');
         $view['company_name'] = $this->settings_model->get_setting('company_name');
+        $view['company_link'] = $this->settings_model->get_setting('company_link');
         $this->load->view('user/forgot_password', $view);
     }
 

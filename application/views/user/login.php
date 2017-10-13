@@ -73,7 +73,7 @@
                 <div class="row">
                     <h1><?php echo $this->lang->line('backend_section'); ?></h1>
                     <p><?php echo $this->lang->line('you_need_to_login'); ?></p>
-                    <hr>
+                    <hr />
                     <div class="alert hidden"></div>
                     <form id="login-form">
                         <div class="form-group">
@@ -88,14 +88,12 @@
                                     placeholder="<?php echo $this->lang->line('enter_password_here'); ?>"
                                     class="form-control" />
                         </div>
-                        <br>
-
+                        <br />
                         <button type="submit" id="login" class="btn btn-primary">
                             <?php echo $this->lang->line('login'); ?>
                         </button>
-
-                        <br><br>
-
+                        <br />
+                        <br />
                         <a href="<?php echo $base_url; ?>/index.php/user/forgot_password" class="forgot-password">
                             <?php echo $this->lang->line('forgot_your_password'); ?></a>
                     </form>
@@ -112,9 +110,6 @@
                 type="text/javascript">
         </script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-                type="text/javascript">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"
                 type="text/javascript">
         </script>
         <script type="text/javascript">
