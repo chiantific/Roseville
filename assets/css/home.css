@@ -711,23 +711,6 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
     height: 100%;
     margin-top: 50px;
 }
-/* Footer Section*/
-#footer {
-    background: #333;
-    color: #777;
-    padding: 20px 0;
-    text-align: center;
-}
-#footer a {
-    color: #999999;
-}
-#footer a:hover, a:focus {
-    color: #e75926;
-}
-#footer p {
-    font-size: 13px;
-    margin-top: 10px;
-}
 
 @media (max-width: 768px) {
     .hover-bg .hover-text {

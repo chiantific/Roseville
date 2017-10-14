@@ -1,5 +1,6 @@
 <?php
 // English
+$lang['administration'] = 'Administration';
 $lang['page_title'] = 'Booking';
 $lang['booking_title'] = 'Booking';
 $lang['other_language'] = 'FR';

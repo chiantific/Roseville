@@ -17,10 +17,6 @@ $(document).ready(function() {
         window.console = function() {} // IE compatibility
     }
 
-    $(window).resize(function() {
-        Backend.placeFooterToBottom();
-    }).trigger('resize');
-
     $(document).ajaxStart(function() {
         $('#loading').show();
     });
@@ -67,25 +63,6 @@ var Backend = {
     PRIV_USERS: 'users',
     PRIV_SYSTEM_SETTINGS: 'system_settings',
     PRIV_USER_SETTINGS: 'user_settings',
-
-    /**
-     * Place the backend footer always on the bottom of the page.
-     */
-    placeFooterToBottom: function() {
-        var $footer = $('#footer');
-
-        if (window.innerHeight > $('body').height()) {
-            $footer.css({
-                'position': 'absolute',
-                'width': '100%',
-                'bottom': '0px'
-            });
-        } else {
-            $footer.css({
-                'position': 'static'
-            });
-        }
-    },
 
     /**
      * Display backend notifications to user.

@@ -121,10 +121,6 @@ var BackendCalendar = {
             }
         });
 
-        // Trigger once to set the proper footer position after calendar
-        // initialization.
-        BackendCalendar.calendarWindowResize();
-
         // Fill the select listboxes of the page.
         if (GlobalVariables.availableProviders.length > 0) {
             var optgroupHtml = '<optgroup label="' + EALang['providers'] + '" type="providers-group">';
@@ -221,11 +217,6 @@ var BackendCalendar = {
                 classes: 'qtip-green qtip-shadow custom-qtip'
             }
         });
-
-        // Fine tune the footer's position only for this page.
-        if (window.innerHeight < 700) {
-            $('#footer').css('position', 'static');
-        }
 
         if ($('#select-filter-item option').length == 0)
             $('#calendar-actions button').prop('disabled', true);
@@ -1378,7 +1369,6 @@ var BackendCalendar = {
                         'function': undoFunction
                     }
                 ]);
-                $('#footer').css('position', 'static'); // Footer position fix.
             };
 
             // :: UPDATE APPOINTMENT DATA VIA AJAX CALL
@@ -1434,7 +1424,6 @@ var BackendCalendar = {
                         'function': undoFunction
                     }
                 ]);
-                $('#footer').css('position', 'static'); // Footer position fix.
             };
 
             BackendCalendar.saveUnavailable(unavailable, successCallback, undefined);
@@ -1671,7 +1660,6 @@ var BackendCalendar = {
                     }
                 ]);
 
-                $('#footer').css('position', 'static'); // Footer position fix.
             };
 
             // :: UPDATE APPOINTMENT DATA VIA AJAX CALL
@@ -1736,7 +1724,6 @@ var BackendCalendar = {
                     }
                 ]);
 
-                $('#footer').css('position', 'static'); // Footer position fix.
             };
 
             BackendCalendar.saveUnavailable(unavailable, successCallback, undefined);
@@ -1760,7 +1747,6 @@ var BackendCalendar = {
                 $('#select-filter-item option:selected').attr('type'),
                 $('#calendar').fullCalendar('getView').visStart,
                 $('#calendar').fullCalendar('getView').visEnd);
-        $(window).trigger('resize'); // Places the footer on the bottom.
 
         // Remove all open popovers.
         $('.close-popover').each(function() {
