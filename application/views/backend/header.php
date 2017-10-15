@@ -42,13 +42,13 @@
         </div>
 
         <!-- navbar -->
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-inverse">
             <div class="container">
                 <div class="navbar-header pull-left">
                     <div class="navbar-brand">
                         <a href="<?php echo $company_link; ?>">
                             <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/logo_escape.png"
-                                 alt="logo" id="logo" />
+                                 alt="logo" id="logo" class="logo_small" />
                         </a>
                         <span><?php echo $company_name; ?></span>
                     </div>
