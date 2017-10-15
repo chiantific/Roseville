@@ -107,8 +107,6 @@ var BackendSettings = {
             $('#user').find('select, input, textarea').prop('readonly', true);
             $('#user').find('button').prop('disabled', true);
         }
-
-        Backend.placeFooterToBottom();
     },
 
     /**
@@ -153,8 +151,6 @@ var BackendSettings = {
             } else if ($(this).hasClass('about-tab')) {0
                 $('#about').show();
             }
-
-            Backend.placeFooterToBottom();
         });
 
         /**
