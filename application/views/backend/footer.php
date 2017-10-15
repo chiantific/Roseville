@@ -45,7 +45,6 @@
             var EALang = <?php echo json_encode($this->lang->language); ?>;
             $(document).ready(function () {
                 GeneralFunctions.hidePreloader();
-                BackendCalendar.initialize(true);
             });
         </script>
         <script src="<?php echo $base_url; ?>/assets/js/backend.js"

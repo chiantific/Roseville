@@ -29,7 +29,7 @@
         }
     };
 
-    $(document).ready(function() {
+    document.addEventListener("DOMContentLoaded", function() {
         BackendUsers.initialize(true);
     });
 </script>

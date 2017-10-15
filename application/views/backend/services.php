@@ -16,7 +16,7 @@
         }
     };
 
-    $(document).ready(function() {
+    document.addEventListener("DOMContentLoaded", function() {
         BackendServices.initialize(true);
     });
 </script>

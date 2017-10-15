@@ -19,6 +19,10 @@
         }
     };
 
+    document.addEventListener("DOMContentLoaded", function() {
+        BackendCalendar.initialize(true);
+    });
+
 </script>
 
 <div id="calendar-page">

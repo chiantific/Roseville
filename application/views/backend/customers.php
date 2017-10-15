@@ -17,7 +17,7 @@
         }
     };
 
-    $(document).ready(function() {
+    document.addEventListener("DOMContentLoaded", function() {
         BackendCustomers.initialize(true);
     });
 </script>

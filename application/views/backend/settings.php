@@ -23,7 +23,7 @@
         }
     };
 
-    $(document).ready(function() {
+    document.addEventListener("DOMContentLoaded", function() {
         BackendSettings.initialize(true);
     });
 </script>
