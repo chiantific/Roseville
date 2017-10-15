@@ -87,6 +87,7 @@ class Backend extends CI_Controller {
         $view['user_display_name'] = $this->user_model->get_user_display_name($this->session->userdata('user_id'));
         $view['active_menu'] = PRIV_CUSTOMERS;
         $view['company_name'] = $this->settings_model->get_setting('company_name');
+        $view['company_link'] = $this->settings_model->get_setting('company_link');
         $view['date_format'] = $this->settings_model->get_setting('date_format');
         $view['customers'] = $this->customers_model->get_batch();
         $view['available_providers'] = $this->providers_model->get_available_providers();
@@ -120,6 +121,7 @@ class Backend extends CI_Controller {
         $view['user_display_name'] = $this->user_model->get_user_display_name($this->session->userdata('user_id'));
         $view['active_menu'] = PRIV_SERVICES;
         $view['company_name'] = $this->settings_model->get_setting('company_name');
+        $view['company_link'] = $this->settings_model->get_setting('company_link');
         $view['date_format'] = $this->settings_model->get_setting('date_format');
         $view['services'] = $this->services_model->get_batch();
         $view['categories'] = $this->services_model->get_all_categories();
@@ -151,6 +153,7 @@ class Backend extends CI_Controller {
         $view['user_display_name'] = $this->user_model->get_user_display_name($this->session->userdata('user_id'));
         $view['active_menu'] = PRIV_USERS;
         $view['company_name'] = $this->settings_model->get_setting('company_name');
+        $view['company_link'] = $this->settings_model->get_setting('company_link');
         $view['date_format'] = $this->settings_model->get_setting('date_format');
         $view['admins'] = $this->admins_model->get_batch();
         $view['providers'] = $this->providers_model->get_batch();
@@ -185,6 +188,7 @@ class Backend extends CI_Controller {
         $view['user_display_name'] = $this->user_model->get_user_display_name($user_id);
         $view['active_menu'] = PRIV_SYSTEM_SETTINGS;
         $view['company_name'] = $this->settings_model->get_setting('company_name');
+        $view['company_link'] = $this->settings_model->get_setting('company_link');
         $view['date_format'] = $this->settings_model->get_setting('date_format');
         $view['role_slug'] = $this->session->userdata('role_slug');
         $view['system_settings'] = $this->settings_model->get_settings();
