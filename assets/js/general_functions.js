@@ -320,7 +320,7 @@ var GeneralFunctions = {
      * @param {object} $element Selected element button for the language selection.
      * @param {string} $style "popover" or "dropdown", to select the menu style
      */
-    enableLanguageSelection: function($element, style = "popover") {
+    enableLanguageSelection: function($element, style = "dropdown") {
         // Select Language
         if (style == "popover") {
             this.createPopoverLanguageSelection($element);
