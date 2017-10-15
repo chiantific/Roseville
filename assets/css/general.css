@@ -121,6 +121,12 @@ ul, ol {
     height: auto;
     float: left;
 }
+.navbar-inverse #logo.logo_small {
+    width: 64px;
+    height: auto;
+    float: left;
+    margin-right: 1em;
+}
 .navbar .align-center {
     display: flex;
     align-items: center;

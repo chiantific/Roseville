@@ -13,8 +13,6 @@
             rel="stylesheet" type="text/css" />
         <link href="<?php echo $this->config->item('base_url'); ?>/assets/css/general.css"
             rel="stylesheet" type="text/css" />
-        <link href="<?php echo $this->config->item('base_url'); ?>/assets/css/small_page.css"
-            rel="stylesheet" type="text/css" />
 
         <!-- favicon -->
         <!--[if IE]>
@@ -34,12 +32,12 @@
         </div>
 
         <!-- navbar -->
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-inverse">
             <div class="container">
                 <div class="navbar-header pull-left">
                     <a class="navbar-brand" href="<?php echo $company_link; ?>">
                         <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/logo_escape.png"
-                             alt="logo" id="logo" />
+                             alt="logo" id="logo" class="logo_small" />
                         <span><?php echo $this->lang->line('booking_title'); ?></span>
                     </a>
                 </div>
@@ -68,7 +66,7 @@
         </nav>
 
         <!-- forgot password -->
-        <div id="forgot-password-frame" class="simple-frame">
+        <div id="forgot-password-frame" class="clear-frame">
             <div class="container">
                 <div class="row">
                     <h1><?php echo $this->lang->line('forgot_your_password'); ?></h1>
