@@ -31,7 +31,7 @@ $(document).ready(function() {
             at: 'bottom center'
         },
         style: {
-            classes: 'qtip-green qtip-shadow custom-qtip'
+            classes: 'qtip-dark custom-qtip'
         }
     });
 

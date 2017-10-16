@@ -133,14 +133,15 @@ ul, ol {
 }
 
 body .custom-qtip {
-    border: none;
-    border-radius: 0;
+    margin-top: 0;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
     padding: 10px;
-    box-shadow: 1px 1px 3px #767676;
-    background: #EFFDF6;
+    padding-top: 5px;
+    background: #363636;
     font-size: 12px;
     line-height: 20px;
-    color: #258D53;
+    color: #eee;
 }
 
 body .ui-widget-overlay {
