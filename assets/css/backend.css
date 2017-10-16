@@ -333,6 +333,10 @@ body .form-horizontal .controls {
 
 /* BACKEND SERVICES PAGE
    -------------------------------------------------------------------- */
+#services-page {
+    color: #F2F2F2;
+}
+
 #services-page h2 {
     color: #525252;
 }
@@ -343,40 +347,49 @@ body .form-horizontal .controls {
 
 #services-page .nav {
     margin: 15px;
-    background-color: #F4F4F4;
+    background-color: #78C9BC;
+    border: none;
+}
+
+#services-page .nav li a {
+    cursor: pointer;
+    border: none;
+    color: #F2F2F2;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #6AB0A4;
+    margin-right: 10px;
     border-radius: 4px;
 }
 
-#services-page .nav li {
-    cursor: pointer;
+#services-page .nav li.active a {
+    background-color: #C74D00;
 }
 
-#services-page .filter-records {
-    width: 350px;
-}
-
-#services-page .filter-records .results {
+#services-page .results {
     overflow-y: auto;
     max-height: 650px;
     outline: none;
+    margin-bottom: 2em;
 }
 
 #services-page .service-row {
     padding: 10px 7px;
+    background-color: #6AB0A4;
+    border: none;
 }
 
 #services-page .service-row:hover:not(.selected-row) {
     cursor: pointer;
-    background-color: #F3F3F3;
+    background-color: #6AB0A4;
 }
 
 #services-page .selected-row {
-    background-color: #F4F4F4;
-    border-right: 5px solid #35B66F;
+    background-color: #C74D00;
 }
 
-#services-page .filter-records .results hr {
-    margin: 5px 0;
+#services-page .btn {
+    opacity: 1;
 }
 
 #services-page .details .ui-spinner {
@@ -399,17 +412,26 @@ body .form-horizontal .controls {
 #services-page .details input,
 #services-page .details select,
 #services-page .details textarea {
-    background-color: white;
+    background-color: #6AB0A4;
+    border: #62A398;
+    border-radius: 4px;
+    color: #F2F2F2;
     cursor: pointer;
 }
 
 #services-page #categories .category-row {
     padding: 10px 7px;
+    background-color: #6AB0A4;
+    border: none;
 }
 
 #services-page #categories .category-row:hover:not(.selected-row) {
-    background-color: #F3F3F3;
     cursor: pointer;
+    background-color: #6AB0A4;
+}
+
+#services-page #categories .selected-row {
+    background-color: #C74D00;
 }
 
 .details input:read-only,

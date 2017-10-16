@@ -21,40 +21,20 @@
     });
 </script>
 
-<div id="services-page" class="container-fluid">
+<div id="services-page" class="container">
     <ul class="nav nav-tabs">
         <li role="presentation" class="services-tab tab active"><a><?php echo $this->lang->line('services'); ?></a></li>
         <li role="presentation" class="categories-tab tab"><a><?php echo $this->lang->line('categories'); ?></a></li>
     </ul>
-
-    <?php
-        // --------------------------------------------------------------
-        //
-        // SERVICES TAB
-        //
-        // --------------------------------------------------------------
-    ?>
+    
+    <!-- Services tab -->
     <div id="services" class="tab-content">
-        <?php // FILTER SERVICES ?>
         <div class="row">
-            <div id="filter-services" class="filter-records column col-md-4">
-                <form class="input-append">
-                    <input class="key" type="text" />
-                    <div class="btn-group">
-                        <button class="filter btn btn-default btn-sm" type="submit" title="<?php echo $this->lang->line('filter'); ?>">
-                            <span class="glyphglyphicon glyphicon glyphglyphicon glyphicon-search"></span>
-                        </button>
-                        <button class="clear btn btn-default btn-sm" type="button" title="<?php echo $this->lang->line('clear'); ?>">
-                            <span class="glyphglyphicon glyphicon glyphglyphicon glyphicon-repeat"></span>
-                        </button>
-                    </div>
-                </form>
-
-                <h3><?php echo $this->lang->line('services'); ?></h3>
+            <div id="filter-services" class="column col-md-4">
                 <div class="results"></div>
             </div>
 
-            <div class="details column col-md-7">
+            <div class="details col-md-7">
                 <div class="btn-toolbar">
                     <div class="add-edit-delete-group btn-group">
                         <button id="add-service" class="btn btn-primary">
@@ -131,29 +111,10 @@
         </div>
     </div>
 
-    <?php
-        // --------------------------------------------------------------
-        //
-        // CATEGORIES TAB
-        //
-        // --------------------------------------------------------------
-    ?>
+    <!-- Categories tab -->
     <div id="categories" class="tab-content" style="display:none;">
         <div class="row">
-            <div id="filter-categories" class="filter-records column col-md-4">
-                <form class="input-append">
-                    <input class="key" type="text" />
-                    <div class="btn-group">
-                        <button class="filter btn btn-default btn-sm" type="submit" title="<?php echo $this->lang->line('filter'); ?>">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        <button class="clear btn btn-default btn-sm" type="button" title="<?php echo $this->lang->line('clear'); ?>">
-                            <span class="glyphicon glyphicon-repeat"></span>
-                        </button>
-                    </div>
-                </form>
-
-                <h3><?php echo $this->lang->line('categories'); ?></h3>
+            <div id="filter-categories" class="column col-md-4">
                 <div class="results"></div>
             </div>
 
