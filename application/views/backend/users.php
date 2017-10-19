@@ -9,9 +9,6 @@
 <script type="text/javascript"
         src="<?php echo $base_url; ?>/assets/js/working_plan.js"></script>
 
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/jeditable.js/1.7.3/jeditable.min.js"></script>
-
 <script type="text/javascript">
     var GlobalVariables = {
         'csrfToken'     : <?php echo json_encode($this->security->get_csrf_hash()); ?>,
@@ -20,7 +17,7 @@
         'admins'        : <?php echo json_encode($admins); ?>,
         'providers'     : <?php echo json_encode($providers); ?>,
         'services'      : <?php echo json_encode($services); ?>,
-        'workingPlan'   : $.parseJSON(<?php echo json_encode($working_plan); ?>),
+        'workingPlan'   : JSON.parse(<?php echo json_encode($working_plan); ?>),
         'user'          : {
             'id'        : <?php echo $user_id; ?>,
             'email'     : <?php echo '"' . $user_email . '"'; ?>,
@@ -34,47 +31,20 @@
     });
 </script>
 
-<div id="users-page" class="container-fluid">
-
-    <?php
-        // ---------------------------------------------------------------------
-        //
-        // Page Navigation
-        //
-        // ---------------------------------------------------------------------
-    ?>
+<div id="users-page" class="container">
     <ul class="nav nav-tabs">
         <li role="presentation" class="admins-tab tab active"><a><?php echo $this->lang->line('admins'); ?></a></li>
         <li role="presentation" class="providers-tab tab"><a><?php echo $this->lang->line('providers'); ?></a></li>
     </ul>
 
-    <?php
-        // ---------------------------------------------------------------------
-        //
-        // Admins Tab
-        //
-        // ---------------------------------------------------------------------
-    ?>
+    <!-- Admins tab -->
     <div id="admins" class="tab-content">
         <div class="row">
-            <div id="filter-admins" class="filter-records column col-md-4">
-                <form class="input-append">
-                    <input class="key" type="text" />
-                    <div class="btn-group">
-                        <button class="filter btn btn-default btn-sm" type="submit" title="<?php echo $this->lang->line('filter'); ?>">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        <button class="clear btn btn-default btn-sm" type="button" title="<?php echo $this->lang->line('clear'); ?>">
-                            <span class="glyphicon glyphicon-repeat"></span>
-                        </button>
-                    </div>
-                </form>
-
-                <h3><?php echo $this->lang->line('admins'); ?></h3>
+            <div id="filter-admins" class="col-md-4">
                 <div class="results"></div>
             </div>
 
-            <div class="details column col-md-7">
+            <div class="details col-md-7">
                 <div class="btn-toolbar">
                     <div class="add-edit-delete-group btn-group">
                         <button id="add-admin" class="btn btn-primary">
@@ -104,98 +74,75 @@
                 </div>
 
                 <h3><?php echo $this->lang->line('details'); ?></h3>
-
                 <div class="form-message alert" style="display:none;"></div>
 
-                <input type="hidden" id="admin-id" class="record-id" />
+                <input type="hidden" id="admin-id" />
 
-                <div class="">
-                    <div class="admin-details col-md-6">
-                        <div class="form-group">
-                            <label for="first-name"><?php echo $this->lang->line('first_name'); ?> *</label>
-                            <input type="text" id="admin-first-name" class="form-control required" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="admin-last-name"><?php echo $this->lang->line('last_name'); ?> *</label>
-                            <input type="text" id="admin-last-name" class="form-control required" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="admin-email"><?php echo $this->lang->line('email'); ?> *</label>
-                            <input type="text" id="admin-email" class="form-control required" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="admin-phone-number"><?php echo $this->lang->line('phone_number'); ?> *</label>
-                            <input type="text" id="admin-phone-number" class="form-control required" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="admin-mobile-number"><?php echo $this->lang->line('mobile_number'); ?></label>
-                            <input type="text" id="admin-mobile-number" class="form-control" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="admin-notes"><?php echo $this->lang->line('notes'); ?></label>
-                            <textarea id="admin-notes" class="form-control" rows="3"></textarea>
-                        </div>
-                    </div>
-                    <div class="admin-settings col-md-6">
-                        <div class="form-group">
-                            <label for="admin-username"><?php echo $this->lang->line('username'); ?> *</label>
-                            <input type="text" id="admin-username" class="form-control required" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="admin-password"><?php echo $this->lang->line('password'); ?> *</label>
-                            <input type="password" id="admin-password" class="form-control required"/>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="admin-password-confirm"><?php echo $this->lang->line('retype_password'); ?> *</label>
-                            <input type="password" id="admin-password-confirm" class="form-control required" />
-                        </div>
-
-                        <br>
-
-                        <button type="button" id="admin-notifications" class="btn btn-default" data-toggle="button">
-                            <span class="glyphicon glyphicon-envelope"></span>
-                            <span><?php echo $this->lang->line('receive_notifications'); ?></span>
-                        </button>
-                    </div>
+                <div class="form-group">
+                    <label for="first-name"><?php echo $this->lang->line('first_name'); ?> *</label>
+                    <input type="text" id="admin-first-name" class="form-control required" />
                 </div>
+
+                <div class="form-group">
+                    <label for="admin-last-name"><?php echo $this->lang->line('last_name'); ?> *</label>
+                    <input type="text" id="admin-last-name" class="form-control required" />
+                </div>
+
+                <div class="form-group">
+                    <label for="admin-email"><?php echo $this->lang->line('email'); ?> *</label>
+                    <input type="text" id="admin-email" class="form-control required" />
+                </div>
+
+                <div class="form-group">
+                    <label for="admin-phone-number"><?php echo $this->lang->line('phone_number'); ?> *</label>
+                    <input type="text" id="admin-phone-number" class="form-control required" />
+                </div>
+
+                <div class="form-group">
+                    <label for="admin-mobile-number"><?php echo $this->lang->line('mobile_number'); ?></label>
+                    <input type="text" id="admin-mobile-number" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="admin-notes"><?php echo $this->lang->line('notes'); ?></label>
+                    <textarea id="admin-notes" class="form-control" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="admin-username"><?php echo $this->lang->line('username'); ?> *</label>
+                    <input type="text" id="admin-username" class="form-control required" />
+                </div>
+
+                <div class="form-group">
+                    <label for="admin-password"><?php echo $this->lang->line('password'); ?> *</label>
+                    <input type="password" id="admin-password" class="form-control required"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="admin-password-confirm"><?php echo $this->lang->line('retype_password'); ?> *</label>
+                    <input type="password" id="admin-password-confirm" class="form-control required" />
+                </div>
+                <br />
+                <br />
+                <button type="button" id="admin-notifications" class="btn btn-default" data-toggle="button">
+                    <span class="glyphicon glyphicon-envelope"></span>
+                    <span><?php echo $this->lang->line('receive_notifications'); ?></span>
+                </button>
+                <em id="form-message" class="text-error">
+                    <?php echo $this->lang->line('fields_are_required'); ?>
+                </em>
             </div>
         </div>
     </div>
 
-    <?php
-        // ---------------------------------------------------------------------
-        //
-        // Providers Tab
-        //
-        // ---------------------------------------------------------------------
-    ?>
+    <!-- Providers tab -->
     <div id="providers" class="tab-content" style="display:none;">
         <div class="row">
-            <div id="filter-providers" class="filter-records column col-md-7">
-                <form class="input-append">
-                    <input class="key" type="text" />
-                    <div class="btn-group">
-                        <button class="filter btn btn-default btn-sm" type="submit" title="<?php echo $this->lang->line('filter'); ?>">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        <button class="clear btn btn-default btn-sm" type="button" title="<?php echo $this->lang->line('clear'); ?>">
-                            <span class="glyphicon glyphicon-repeat"></span>
-                        </button>
-                    </div>
-                </form>
-
-                <h3><?php echo $this->lang->line('providers'); ?></h3>
+            <div id="filter-providers" class="col-md-7">
                 <div class="results"></div>
             </div>
 
-            <div class="details column col-md-7">
+            <div class="details col-md-7">
                 <div class="pull-left">
                     <div class="add-edit-delete-group btn-group">
                         <button id="add-provider" class="btn btn-primary">
@@ -240,65 +187,63 @@
                     <input type="hidden" id="provider-id" class="record-id" />
 
                     <div>
-                        <div class="provider-details col-md-6">
-                            <div class="form-group">
-                                <label for="provider-first-name"><?php echo $this->lang->line('first_name'); ?> *</label>
-                                <input type="text" id="provider-first-name" class="form-control required" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="provider-last-name"><?php echo $this->lang->line('last_name'); ?> *</label>
-                                <input type="text" id="provider-last-name" class="form-control required" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="provider-email"><?php echo $this->lang->line('email'); ?> *</label>
-                                <input type="text" id="provider-email" class="form-control required" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="provider-phone-number"><?php echo $this->lang->line('phone_number'); ?> *</label>
-                                <input type="text" id="provider-phone-number" class="form-control required" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="provider-mobile-number"><?php echo $this->lang->line('mobile_number'); ?></label>
-                                <input type="text" id="provider-mobile-number" class="form-control" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="provider-notes"><?php echo $this->lang->line('notes'); ?></label>
-                                <textarea id="provider-notes" class="form-control" rows="3"></textarea>
-                            </div>
+                        <div class="form-group">
+                            <label for="provider-first-name"><?php echo $this->lang->line('first_name'); ?> *</label>
+                            <input type="text" id="provider-first-name" class="form-control required" />
                         </div>
-                        <div class="provider-settings col-md-6">
-                            <div class="form-group">
-                                <label for="provider-username"><?php echo $this->lang->line('username'); ?> *</label>
-                                <input type="text" id="provider-username" class="form-control required" />
-                            </div>
 
-                            <div class="form-group">
-                                <label for="provider-password"><?php echo $this->lang->line('password'); ?> *</label>
-                                <input type="password" id="provider-password" class="form-control required"/>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="provider-password-confirm"><?php echo $this->lang->line('retype_password'); ?> *</label>
-                                <input type="password" id="provider-password-confirm" class="form-control required" />
-                            </div>
-
-                            <br>
-
-                            <button type="button" id="provider-notifications" class="btn btn-default" data-toggle="button">
-                                <span class="glyphicon glyphicon-envelope"></span>
-                                <span><?php echo $this->lang->line('receive_notifications'); ?></span>
-                            </button>
-
-                            <br><br>
-
-                            <h4><?php echo $this->lang->line('services'); ?></h4>
-                            <div id="provider-services"></div>
+                        <div class="form-group">
+                            <label for="provider-last-name"><?php echo $this->lang->line('last_name'); ?> *</label>
+                            <input type="text" id="provider-last-name" class="form-control required" />
                         </div>
+
+                        <div class="form-group">
+                            <label for="provider-email"><?php echo $this->lang->line('email'); ?> *</label>
+                            <input type="text" id="provider-email" class="form-control required" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="provider-phone-number"><?php echo $this->lang->line('phone_number'); ?> *</label>
+                            <input type="text" id="provider-phone-number" class="form-control required" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="provider-mobile-number"><?php echo $this->lang->line('mobile_number'); ?></label>
+                            <input type="text" id="provider-mobile-number" class="form-control" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="provider-notes"><?php echo $this->lang->line('notes'); ?></label>
+                            <textarea id="provider-notes" class="form-control" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="provider-username"><?php echo $this->lang->line('username'); ?> *</label>
+                            <input type="text" id="provider-username" class="form-control required" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="provider-password"><?php echo $this->lang->line('password'); ?> *</label>
+                            <input type="password" id="provider-password" class="form-control required"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="provider-password-confirm"><?php echo $this->lang->line('retype_password'); ?> *</label>
+                            <input type="password" id="provider-password-confirm" class="form-control required" />
+                        </div>
+
+                        <br>
+
+                        <button type="button" id="provider-notifications" class="btn btn-default" data-toggle="button">
+                            <span class="glyphicon glyphicon-envelope"></span>
+                            <span><?php echo $this->lang->line('receive_notifications'); ?></span>
+                        </button>
+
+                        <br />
+                        <br />
+
+                        <h4><?php echo $this->lang->line('services'); ?></h4>
+                        <div id="provider-services"></div>
                     </div>
                 </div>
 
@@ -390,7 +335,7 @@
                         </tbody>
                     </table>
 
-                    <br>
+                    <br />
 
                     <h3><?php echo $this->lang->line('breaks');?></h3>
 

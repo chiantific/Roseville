@@ -39,7 +39,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js"
                 type="text/javascript">
         </script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jeditable.js/1.7.3/jeditable.min.js"
+                type="text/javascript">
+        </script>
         <script type="text/javascript">
             var availableLanguages = <?php echo json_encode($this->config->item('available_languages')); ?>;
             var EALang = <?php echo json_encode($this->lang->language); ?>;

@@ -30,7 +30,7 @@
     <!-- Services tab -->
     <div id="services" class="tab-content">
         <div class="row">
-            <div id="filter-services" class="column col-md-4">
+            <div id="filter-services" class="col-md-4">
                 <div class="results"></div>
             </div>
 
@@ -102,11 +102,11 @@
                     <label for="service-description"><?php echo $this->lang->line('description'); ?></label>
                     <textarea id="service-description" rows="4" class="form-control"></textarea>
                 </div>
-
-
-                <br/><br/>
+                <br/>
+                <br/>
                 <em id="form-message" class="text-error">
-                    <?php echo $this->lang->line('fields_are_required'); ?></em>
+                    <?php echo $this->lang->line('fields_are_required'); ?>
+                </em>
             </div>
         </div>
     </div>
@@ -114,7 +114,7 @@
     <!-- Categories tab -->
     <div id="categories" class="tab-content" style="display:none;">
         <div class="row">
-            <div id="filter-categories" class="column col-md-4">
+            <div id="filter-categories" class="col-md-4">
                 <div class="results"></div>
             </div>
 
