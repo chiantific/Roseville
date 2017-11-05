@@ -444,18 +444,10 @@ ProvidersHelper.prototype.filter = function(key, selectId, display) {
  * @returns {string} The html code that represents the record on the filter results list.
  */
 ProvidersHelper.prototype.getFilterHtml = function(provider) {
-    var name = provider.first_name + ' ' + provider.last_name;
-    var info = provider.email;
-    info = (provider.mobile_number != '' && provider.mobile_number != null)
-            ? info + ', ' + provider.mobile_number : info;
-    info = (provider.phone_number != '' && provider.phone_number != null)
-            ? info + ', ' + provider.phone_number : info;
-
     var html =
-            '<div class="provider-row" data-id="' + provider.id + '">' +
-                '<strong>' + name + '</strong><br>' +
-                info + '<br>' +
-            '</div><hr>';
+            '<button class="btn btn-primary provider-row item-row" data-id="' + provider.id + '">' +
+                '<strong>' + provider.first_name + '<br>' + provider.last_name + '</strong><br>' +
+            '</div>';
 
     return html;
 };

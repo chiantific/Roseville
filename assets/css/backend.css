@@ -94,6 +94,79 @@ body .jspTrack {
     background: #EBEBEB;
 }
 
+/* BACKEND ALL PAGES
+   -------------------------------------------------------------------- */
+.tab-content {
+    margin: 15px;
+}
+
+.nav.nav-tabs {
+    margin: 15px;
+    background-color: #78C9BC;
+    border: none;
+}
+
+.nav.nav-tabs li a,
+.nav.nav-tabs li a:hover {
+    cursor: pointer;
+    border: none;
+    color: #F2F2F2;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #6AB0A4;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.nav.nav-tabs li.active a {
+    background-color: #C74D00;
+    color: #F2F2F2;
+    cursor: pointer;
+}
+
+.results {
+    overflow-y: auto;
+    max-height: 650px;
+    outline: none;
+    margin-bottom: 2em;
+}
+
+.item-row {
+    padding: 10px 7px;
+    background-color: #6AB0A4;
+    border: none;
+    margin-right: 10px;
+}
+
+.item-row:hover:not(.selected-row) {
+    cursor: pointer;
+    background-color: #6AB0A4;
+}
+
+.btn.selected-row,
+.btn.selected-row:hover {
+    background-color: #C74D00;
+}
+
+.btn {
+    opacity: 1;
+}
+
+input.form-control {
+    padding: 6px 12px;
+}
+
+.details input:read-only,
+.details select:disabled,
+.details textarea:read-only {
+    opacity: 0.85;
+    box-shadow: none;
+}
+
+.details {
+    max-width:  450px;
+}
+
 /* BACKEND CALENDAR PAGE
    -------------------------------------------------------------------- */
 #calendar-page #calendar-toolbar {
@@ -249,45 +322,8 @@ body .form-horizontal .controls {
 
 /* BACKEND CUSTOMERS PAGE
    -------------------------------------------------------------------- */
-#customers-page h2 {
-    color: #525252;
-}
-
-#customers-page #filter-customers {
-    margin: 15px 0px 15px 15px;
-    width: 350px;
-}
-
-#customers-page .filter-records .results {
-    overflow-y: auto;
-    max-height: 650px;
-    outline: none;
-}
-
-#customers-page #filter-customers .results .customer-row {
-    padding: 10px 7px;
-}
-
-#customers-page #filter-customers .results .customer-row:hover:not(.selected-row) {
-    background-color: #F3F3F3;
-    cursor: pointer;
-}
-
-#customers-page #filter-customers .results hr {
-    margin: 5px 0;
-}
-
-#customers-page .details {
-    margin: 15px 0 15px 15px;
-    max-width: 710px;
-}
-
-#customers-page .details .btn-toolbar {
-    margin-top: 0px;
-}
-
-#customers-page .details div.span5 {
-    margin-left: 0;
+#customers-page {
+    color: #F2F2F2;
 }
 
 #customers-page #customer-appointments {
@@ -319,77 +355,16 @@ body .form-horizontal .controls {
     border-bottom: 4px solid #EEE;
 }
 
-#customers-page .details input,
 #customers-page .details textarea {
     background-color: white;
     cursor: default;
 }
 
-#customers-page .selected-row {
-    background-color: #F4F4F4;
-    border-right: 5px solid #35B66F;
-}
-
-
 /* BACKEND SERVICES PAGE
    -------------------------------------------------------------------- */
+
 #services-page {
     color: #F2F2F2;
-}
-
-#services-page h2 {
-    color: #525252;
-}
-
-#services-page .tab-content {
-    margin: 15px;
-}
-
-#services-page .nav {
-    margin: 15px;
-    background-color: #78C9BC;
-    border: none;
-}
-
-#services-page .nav li a {
-    cursor: pointer;
-    border: none;
-    color: #F2F2F2;
-    font-size: 18px;
-    font-weight: bold;
-    background-color: #6AB0A4;
-    margin-right: 10px;
-    border-radius: 4px;
-}
-
-#services-page .nav li.active a {
-    background-color: #C74D00;
-}
-
-#services-page .results {
-    overflow-y: auto;
-    max-height: 650px;
-    outline: none;
-    margin-bottom: 2em;
-}
-
-#services-page .service-row {
-    padding: 10px 7px;
-    background-color: #6AB0A4;
-    border: none;
-}
-
-#services-page .service-row:hover:not(.selected-row) {
-    cursor: pointer;
-    background-color: #6AB0A4;
-}
-
-#services-page .selected-row {
-    background-color: #C74D00;
-}
-
-#services-page .btn {
-    opacity: 1;
 }
 
 #services-page .details .ui-spinner {
@@ -434,21 +409,11 @@ body .form-horizontal .controls {
     background-color: #C74D00;
 }
 
-.details input:read-only,
-.details select:disabled,
-.details textarea:read-only {
-    opacity: 0.85;
-    box-shadow: none;
-}
-
-#services-page .details {
-    max-width:  450px;
-}
 
 /* BACKEND USERS PAGE
    -------------------------------------------------------------------- */
-#users-page h2 {
-    color: #525252;
+#users-page {
+    color: #F2F2F2;
 }
 
 #users-page .tab-content {
@@ -457,44 +422,60 @@ body .form-horizontal .controls {
 
 #users-page .nav {
     margin: 15px;
-    background-color: #F4F4F4;
+    background-color: #78C9BC;
+    border: none;
+}
+
+#users-page .nav li a {
+    cursor: pointer;
+    border: none;
+    color: #F2F2F2;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #6AB0A4;
+    margin-right: 10px;
     border-radius: 4px;
 }
 
-#users-page .nav li {
-    cursor: pointer;
-}
-
-#users-page .filter-records {
-    width: 380px;
+#users-page .nav li.active a {
+    backgorund-color: #C74D00;
 }
 
 #users-page .filter-records .results {
     overflow-y: auto;
     max-height: 650px;
     outline: none;
+    margin-bottom: 2em;
 }
 
 #users-page .provider-row,
 #users-page .admin-row {
     padding: 10px 7px;
+    background-color: #6AB0A4;
+    border: none;
 }
 
 #users-page .provider-row:hover:not(.selected-row),
 #users-page .admin-row:hover:not(.selected-row) {
     cursor: pointer;
-    background-color: #F3F3F3;
+    background-color: #6AB0A4;
 }
 
 #users-page .selected-row {
-    background-color: #F4F4F4;
-    border-right: 5px solid #35B66F;
+    background-color: #C74D00;
+}
+
+#users-page .btn {
+    opacity: 1;
 }
 
 #users-page .details input,
 #users-page .details select,
 #users-page .details textarea {
-    background-color: white;
+    background-color: #6AB0A4;
+    border: #62A398;
+    border-radius: 4px;
+    color: #F2F2F2;
     cursor: pointer;
 }
 

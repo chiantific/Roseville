@@ -416,12 +416,12 @@ CustomersHelper.prototype.getFilterHtml = function(customer) {
             ? info + ', ' + customer.phone_number : info;
 
     var html =
-            '<div class="customer-row" data-id="' + customer.id + '">' +
+            '<button class="btn btn-primary customer-row item-row" data-id="' + customer.id + '">' +
                 '<strong>' +
                     name +
                 '</strong><br>' +
                 info +
-            '</div><hr>';
+            '</button>';
 
     return html;
 };

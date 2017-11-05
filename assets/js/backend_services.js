@@ -437,11 +437,8 @@ ServicesHelper.prototype.filter = function(key, selectId, display) {
  */
 ServicesHelper.prototype.getFilterHtml = function(service) {
     var html =
-            '<button class="btn btn-primary service-row" type="button" data-id="' +
+            '<button class="btn btn-primary service-row item-row" type="button" data-id="' +
                 service.id + '">' + '<strong>' + service.name + '</strong><br>' +
-                service.duration + ' min - ' +
-                service.price_week + ' ' + service.currency + '<br>' +
-                service.price_week_end + ' ' + service.currency + '<br>' +
             '</button>';
 
     return html;
