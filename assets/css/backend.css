@@ -16,7 +16,9 @@
 
 /* BACKEND GENERAL ELEMENTS
    -------------------------------------------------------------------- */
-
+body {
+    padding-bottom: 3e;
+}
 #notification strong {
     margin-right: 15px;
 }
@@ -165,6 +167,12 @@ input.form-control {
 
 .details {
     max-width:  450px;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 /* BACKEND CALENDAR PAGE
