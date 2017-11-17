@@ -264,9 +264,7 @@
                     alt="<?php echo $this->lang->line('alt_chocolat'); ?>" class="img-thumbnail" width="100%" />
                         <h3><?php echo $this->lang->line('header_chocolate'); ?></h3>
                         <p><?php echo $this->lang->line('text_chocolate'); ?></p>
-                        <div class="grouped-buttons">
-                            <?php echo $this->lang->line('group_chocolate'); ?>
-                        </div>
+                        <p><?php echo $this->lang->line('group_chocolate'); ?></p>
                         <div class="grouped-buttons">
                             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
                                 <?php echo $this->lang->line('btn_more_info'); ?>
@@ -306,9 +304,7 @@
                              class="img-thumbnail" alt="<?php echo $this->lang->line('alt_grappe_bunch'); ?>" width="100%" />
                         <h3><?php echo $this->lang->line('header_ivv'); ?></h3>
                         <p><?php echo $this->lang->line('text_ivv'); ?></p>
-                        <div class="grouped-buttons">
-                            <?php echo $this->lang->line('group_ivv'); ?>
-                        </div>
+                        <p><?php echo $this->lang->line('group_ivv'); ?></p>
                         <div class="grouped-buttons">
                             <button type="button" class="btn btn-default" data-toggle="model" data-target="#modal_ivv">
                                 <?php echo $this->lang->line('btn_more_info'); ?>
@@ -416,12 +412,12 @@
                          class="img-thumbnail" alt="<?php echo $this->lang->line('alt_r_lounge'); ?>" width="100%" />
                             <h3><?php echo $this->lang->line('header_area_R'); ?></h3>
                             <p><?php echo $this->lang->line('text_area_R'); ?></p>
+                            <p><?php echo $this->lang->line('group_area'); ?></p>
                             <div class="grouped-buttons">
-                                <?php echo $this->lang->line('group-area'); ?>
+                                <a type="button" href="http://espace.roseville.ch" target="_blank" class="btn btn-default">
+                                    <?php echo $this->lang->line('btn_more_info'); ?>
+                                </a>
                             </div>
-                        <a type="button" href="http://espace.roseville.ch" target="_blank" class="btn btn-default bottom">
-                            <?php echo $this->lang->line('btn_more_info'); ?>
-                        </a>
                     </div>
                 </div>
             </div>

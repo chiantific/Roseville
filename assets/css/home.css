@@ -244,9 +244,6 @@ hr {
 #section3 .room-thumbnail{
     margin-top: 20px;
 }
-#section3 .grouped-buttons, .bottom {
-    margin-bottom: 1em;
-}
 @media only screen and (min-width: 768px) {
     #section3 .row {
         display: table;
@@ -258,7 +255,7 @@ hr {
         position: relative;
         padding-bottom: 50px;
     }
-    #section3 .grouped-buttons, .bottom {
+    #section3 .grouped-buttons {
         position: absolute;
         bottom: 0;
     }
