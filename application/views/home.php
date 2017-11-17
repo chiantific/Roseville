@@ -306,7 +306,7 @@
                         <p><?php echo $this->lang->line('text_ivv'); ?></p>
                         <p><?php echo $this->lang->line('group_ivv'); ?></p>
                         <div class="grouped-buttons">
-                            <button type="button" class="btn btn-default" data-toggle="model" data-target="#modal_ivv">
+                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal_ivv">
                                 <?php echo $this->lang->line('btn_more_info'); ?>
                             </button>
                             <!-- Modal -->
