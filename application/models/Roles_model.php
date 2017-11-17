@@ -51,6 +51,9 @@ class Roles_Model extends CI_Model {
 
         // Convert the numeric values to bool so that is easier to check whether a
         // user has the required privileges for a specific action.
+        if (empty($privileges)) {
+            return $privileges;
+        }
         foreach($privileges as &$value) {
             $privileges_number = $value;
 
