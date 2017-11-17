@@ -8,8 +8,10 @@ function main() {
         // load the map
         $('[aftersrc]').each(function() {
             var aftersrc = $(this).attr("aftersrc");
-            $(this).attr("src", aftersrc);
-            $(this).removeAttr("aftersrc");
+            var scriptElement = document.createElement('script');
+            scriptElement.type = 'text/javascript';
+            scriptElement.src = aftersrc;
+            document.head.appendChild(scriptElement);
         });
   	}) 
 

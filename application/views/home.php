@@ -897,9 +897,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax-min.js"
                 type="text/javascript">
         </script>
-        <script aftersrc="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js"
-                type="text/javascript">
-        </script>
         <script aftersrc="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOgXOBkD944XhomrMeeNRhD8pBbxroVeM&callback=initMap"
                 type="text/javascript">
         </script>
@@ -913,6 +910,9 @@
                 type="text/javascript">
         </script>
         <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/jqBootstrapValidation.js"
+                type="text/javascript">
+        </script>
+        <script aftersrc="<?php echo $this->config->item('base_url'); ?>/assets/js/gmaps.js"
                 type="text/javascript">
         </script>
         <script type="text/javascript">
