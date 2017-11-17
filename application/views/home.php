@@ -281,11 +281,10 @@
                                             </h4>
                                         </div>
                                         <div class="modal-body">
-                                        <p><?php echo $this->lang->line('text_intro_room_chocolate'); ?>
-                                        </p>
+                                            <p><?php echo $this->lang->line('text_intro_room_chocolate'); ?></p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">
+                                            <button class="btn btn-default btn-sm" data-dismiss="modal">
                                                 <?php echo $this->lang->line('close'); ?>
                                             </button>
                                         </div>
@@ -323,8 +322,8 @@
                                         <div class="modal-body">
                                             <p><?php echo $this->lang->line('text_intro_room_ivv'); ?></p>
                                         </div>
-                                        <div class="modal-foooter">
-                                            <button type="btn btn-default btn-sm" data-dismiss="modal">
+                                        <div class="modal-footer">
+                                            <button class="btn btn-default btn-sm" data-dismiss="modal">
                                                 <?php echo $this->lang->line('close'); ?>
                                             </button>
                                         </div>
