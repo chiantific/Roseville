@@ -867,7 +867,16 @@
         </div>
         <div id="footer">
             <div class="container">
-                <p>Copyright &copy; Roseville Escape</p>
+                <p>Copyright &copy;
+                    <a href="<?php echo $company_link; ?>">
+                        <?php echo $company_name; ?>
+                    </a>
+                    <?php if ($this->session->userdata('user_id')): ?>
+                    | <a href="<?php echo $this->config->item('base_url'); ?>/index.php/backend">
+                        <?php echo $this->lang->line('backend_section'); ?>
+                    </a>
+                    <?php endif; ?>
+                </p>
             </div>
         </div>
 

@@ -29,7 +29,22 @@ class Home extends CI_Controller {
             return;
         }
 
-        $view['base_url'] = $this->config->item('base_url');
+        $this->load->model('settings_model');
+
+        try {
+            $base_url     = $this->config->item('base_url');
+            $company_link = $this->settings_model->get_setting('company_link');
+            $company_name = $this->settings_model->get_setting('company_name');
+
+            $view = array(
+                'base_url'     => $base_url,
+                'company_link' => $company_link,
+                'company_name' => $company_name
+            );
+        } catch(Exception $exc) {
+            $view['exceptions'][] = $exc;
+        }
+
         $this->load->view('home', $view);
     }
 }
