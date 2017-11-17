@@ -154,12 +154,11 @@ body .ui-dialog .ui-dialog-titlebar-close {
 }
 
 body .ui-draggable .ui-dialog-titlebar {
-    background: #35B66F;
+    background: #78C9BC;
     color: #FFF;
     font-size: 1.5em;
     padding: 14px 10px;
     border: none;
-    border-bottom: 4px solid #1A865F;
     margin-bottom: 10px;
 }
 
