@@ -364,22 +364,34 @@
                                                 <!-- Wrapper for slides -->
                                                 <div class="carousel-inner">
                                                     <div class="item active">
-                                                        <img class="img-responsive center-block" src="<?php echo $this->config->item('base_url'); ?>/assets/img/entree.jpg" alt="entrée de la salle In Vino Veritas">
+                                                        <img class="img-responsive center-block"
+                                                             src="<?php echo $this->config->item('base_url'); ?>/assets/img/entree.jpg"
+                                                             alt="entrée de la salle In Vino Veritas">
                                                     </div>
                                                     <div class="item">
-                                                        <img class="img-responsive center-block" src="<?php echo $this->config->item('base_url'); ?>/assets/img/pompe.jpg" alt="pompe et arrosoirs">
+                                                        <img class="img-responsive center-block"
+                                                             src="<?php echo $this->config->item('base_url'); ?>/assets/img/pompe.jpg"
+                                                             alt="pompe et arrosoirs">
                                                     </div>
                                                     <div class="item">
-                                                        <img class="img-responsive center-block" src="<?php echo $this->config->item('base_url'); ?>/assets/img/shelf.jpg" alt="étagère">
+                                                        <img class="img-responsive center-block"
+                                                             src="<?php echo $this->config->item('base_url'); ?>/assets/img/shelf.jpg"
+                                                             alt="étagère">
                                                     </div>
                                                     <div class="item">
-                                                        <img class="img-responsive center-block" src="<?php echo $this->config->item('base_url'); ?>/assets/img/liter_register.jpg" alt="doseur">
+                                                        <img class="img-responsive center-block"
+                                                             src="<?php echo $this->config->item('base_url'); ?>/assets/img/liter_register.jpg"
+                                                             alt="doseur">
                                                     </div>
                                                     <div class="item">
-                                                        <img class="img-responsive center-block" src="<?php echo $this->config->item('base_url'); ?>/assets/img/tonneau.jpg" alt="tonneau">
+                                                        <img class="img-responsive center-block"
+                                                             src="<?php echo $this->config->item('base_url'); ?>/assets/img/tonneau.jpg"
+                                                             alt="tonneau">
                                                     </div>
                                                     <div class="item">
-                                                        <img class="img-responsive center-block" src="<?php echo $this->config->item('base_url'); ?>/assets/img/manivelle.jpg" alt="Manivelle">
+                                                        <img class="img-responsive center-block"
+                                                             src="<?php echo $this->config->item('base_url'); ?>/assets/img/manivelle.jpg"
+                                                             alt="Manivelle">
                                                     </div>
                                                 </div>
                                                 <!-- Left and right controls -->
