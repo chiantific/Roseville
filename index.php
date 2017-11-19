@@ -297,11 +297,13 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                         <img src="img/chocolat.jpg" alt="<?php echo $lang['alt_chocolat']; ?>" class="img-thumbnail" width="100%"/>
                         <h3><?php echo $lang['header_chocolate']; ?></h3>
                         <p><?php echo $lang['text_chocolate']; ?></p>
+                        <p><?php echo $lang['group_chocolate']; ?></p>
                         <div class="grouped-buttons">
+                        <!-- button to trigger chocolat more info modal  -->
                             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
                                 <?php echo $lang['btn_more_info']; ?>
                             </button>
-                            <!-- Modal -->
+                            <!-- chocolat more info modal -->
                             <div class="modal fade" id="myModal" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
@@ -324,11 +326,22 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                                     </div>
                                 </div>
                             </div> <!-- End modal -->
-                            <a href="https://www.youtube.com/watch?v=GyssJMtZRaM" rel="prettyPhoto">
-                                <button type="button" class="btn btn-default">
-                                    teaser
-                                </button>
-                            </a>
+                            <!-- button to trigger teaser -->
+                            <a href="#myYoutubeModal" class="btn btn-default" data-toggle="modal"><?php echo $lang['teaser']; ?></a>
+                            <!-- Modal HTML -->
+                            <div id="myYoutubeModal" class="modal fade">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times-circle" aria-hidden="true"></i>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <iframe id="teaserVideo" width="100%" height="350" src="https://www.youtube.com/embed/GyssJMtZRaM" frameborder="0" allowfullscreen></iframe>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-4 sub-section">
@@ -336,6 +349,7 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                             alt="<?php echo $lang['alt_grappe_bunch']; ?>" width="100%"/>
                         <h3><?php echo $lang['header_ivv']; ?></h3>
                         <p><?php echo $lang['text_ivv']; ?></p>
+                        <p><?php echo $lang['group_ivv']; ?></p>
                         <div class="grouped-buttons">
                             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal_ivv">
                                 <?php echo $lang['btn_more_info']; ?>
@@ -363,13 +377,66 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                                     </div>
                                 </div>
                             </div> <!-- End modal -->
+                            <!-- Button trigger modal peek inside -->
+                            <a href="#carouselModal" class="btn btn-default" data-toggle="modal"><?php echo $lang['peek_inside']; ?></a>
+                            <!-- Modal peek inside -->
+                            <div id="carouselModal" class="modal fade">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <div id="IVVcarousel" class="carousel slide" data-ride="carousel">
+                                            <!-- Indicators dot nav -->
+                                            <ol class="carousel-indicators">
+                                              <li data-target="#IVVcarousel" data-slide-to="0" class="active"></li>
+                                              <li data-target="#IVVcarousel" data-slide-to="1"></li>
+                                              <li data-target="#IVVcarousel" data-slide-to="2"></li>
+                                              <li data-target="#IVVcarousel" data-slide-to="3"></li>
+                                            </ol>
+                                            <!-- Wrapper for slides -->
+                                            <div class="carousel-inner" role="listbox">
+                                              <div class="item active">
+                                                <img src="img/pompe.jpg" alt="pompe et arrosoirs">
+                                              </div>
+                                              <div class="item">
+                                                <img src="img/shelf.jpg" alt="étagère">
+                                              </div>
+                                              <div class="item">
+                                                <img src="img/tonneau.jpg" alt="tonneau">
+                                              </div>
+                                              <div class="item">
+                                                <img src="img/manivelle.jpg" alt="Manivelle">
+                                              </div>
+                                            </div>
+                                            <!-- Left and right controls -->
+                                            <a class="left carousel-control" href="#IVVcarousel" role="button" data-slide="prev">
+                                              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                              <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="right carousel-control" href="#IVVcarousel" role="button" data-slide="next">
+                                              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                              <span class="sr-only">Next</span>
+                                            </a>
+                                          </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">
+                                                <?php echo $lang['close']; ?>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-4 sub-section">
                         <img class="img-thumbnail" src="img/R_de_fete.jpg"
                             alt="<?php echo $lang['alt_r_lounge']; ?>" width="100%"/>
-                            <h3><?php echo $lang['header_area_R']; ?></h3>
-                            <p><?php echo $lang['text_area_R']; ?></p>
+                        <h3><?php echo $lang['header_area_R']; ?></h3>
+                        <p><?php echo $lang['text_area_R']; ?></p>
+                        <p><?php echo $lang['group_area']; ?></p>
                         <a type="button" href="http://espace.roseville.ch" target="_blank" class="btn btn-default bottom">
                             <?php echo $lang['btn_more_info']; ?>
                         </a>
@@ -707,6 +774,11 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                         </p>
                         <h4><?php echo $lang['header_parking']; ?></h4>
                         <p><?php echo $lang['text_parking']; ?>
+                            <a class="page-scroll"
+                                href="http://www.vevey.ch/N1134/camping-de-la-pichette.html" 
+                                target="_blank">
+                                <?php echo $lang['pichette_campground']; ?>
+                            </a>
                         </p>   
                     </div>
                 </div>
@@ -736,7 +808,7 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                     <div class="col-md-4">
                         <div class="atelier_view">
                             <i class="fa fa-phone"></i>
-                            <p>078 638 80 79<br>
+                            <p>078 638 80 79<p>
                             <p>079 623 04 11</p>
                         </div>
                     </div>
@@ -829,7 +901,25 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
         <script type="text/javascript" src="js/contact_me.js"></script> 
         <script type="text/javascript" src="js/main.js"></script> 
         <script type="text/javascript" src="js/accordion.js"></script>
+        <script type="text/javascript" src="js/modalVideo.js"></script>
         <script type="text/javascript" aftersrc="js/gmaps.js"></script>
+        <script type="text/javascript">
+          $(document).ready(function(){
+            /* Get iframe src attribute value i.e. YouTube video url and store it in a variable */
+            var url = $("#teaserVideo").attr('src');
+
+            /* Assign empty url value to the iframe src attribute when modal hide, which stop the video playing */
+            $("#myYoutubeModal").on('hide.bs.modal', function(){
+                $("#teaserVideo").attr('src', '');
+            });
+
+            /* Assign the initially stored url back to the iframe src
+            attribute when modal is displayed again */
+            $("#myYoutubeModal").on('show.bs.modal', function(){
+                $("#teaserVideo").attr('src', url);
+            });
+          });
+        </script>
         <script type="text/javascript" aftersrc="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOgXOBkD944XhomrMeeNRhD8pBbxroVeM&callback=initMap"></script>
         <script type="text/javascript" aftersrc="js/piwik.js"></script>
         <noscript><p><img aftersrc="//roseville.ch/piwik/piwik.php?idsite=2" style="border:0;" alt="Piwik" /></p></noscript>
