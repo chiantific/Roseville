@@ -903,23 +903,6 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
         <script type="text/javascript" src="js/accordion.js"></script>
         <script type="text/javascript" src="js/modalVideo.js"></script>
         <script type="text/javascript" aftersrc="js/gmaps.js"></script>
-        <script type="text/javascript">
-          $(document).ready(function(){
-            /* Get iframe src attribute value i.e. YouTube video url and store it in a variable */
-            var url = $("#teaserVideo").attr('src');
-
-            /* Assign empty url value to the iframe src attribute when modal hide, which stop the video playing */
-            $("#myYoutubeModal").on('hide.bs.modal', function(){
-                $("#teaserVideo").attr('src', '');
-            });
-
-            /* Assign the initially stored url back to the iframe src
-            attribute when modal is displayed again */
-            $("#myYoutubeModal").on('show.bs.modal', function(){
-                $("#teaserVideo").attr('src', url);
-            });
-          });
-        </script>
         <script type="text/javascript" aftersrc="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOgXOBkD944XhomrMeeNRhD8pBbxroVeM&callback=initMap"></script>
         <script type="text/javascript" aftersrc="js/piwik.js"></script>
         <noscript><p><img aftersrc="//roseville.ch/piwik/piwik.php?idsite=2" style="border:0;" alt="Piwik" /></p></noscript>
