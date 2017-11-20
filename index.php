@@ -299,7 +299,7 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                         <p><?php echo $lang['text_chocolate']; ?></p>
                         <p><?php echo $lang['group_chocolate']; ?></p>
                         <div class="grouped-buttons">
-                        <!-- button to trigger chocolat more info modal  -->
+                            <!-- button to trigger chocolat more info modal  -->
                             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
                                 <?php echo $lang['btn_more_info']; ?>
                             </button>
