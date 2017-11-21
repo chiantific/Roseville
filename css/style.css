@@ -702,7 +702,7 @@ img.img-thumbnail.section4-img {
 #contact h2 {
     color: #f6f6f6;
 }
-#contact p, #contact a{
+#contact p, #contact a, #contact td {
     color: #e8e8e8;
 }
 #contact i.fa {
@@ -710,7 +710,7 @@ img.img-thumbnail.section4-img {
     color: #5D264F;
     margin-bottom: 20px;
 }
-#contact .atelier_view p {
+#contact .atelier_view p, #contact .atelier_view td {
     font-size: 1.2em;
 }
 #contact .atelier_view .fa {

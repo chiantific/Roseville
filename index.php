@@ -572,13 +572,52 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                             </div>
                             <div id="collapse3" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <p><?php echo $lang['monday'] . ': ' . $lang['hours_wks']; ?></p>
-                                    <p><?php echo $lang['tuesday'] . ': ' .$lang['hours_wks']; ?></p>
-                                    <p><?php echo $lang['wednesday'] . ': ' .$lang['hours_wks']; ?></p>
-                                    <p><?php echo $lang['thursday'] . ': ' .$lang['hours_wks']; ?></p>
-                                    <p><?php echo $lang['friday'] . ': ' .$lang['hours_wks']; ?></p>
-                                    <p><?php echo $lang['saturday'] . ': ' .$lang['hours_we']; ?></p>
-                                    <p><?php echo $lang['sunday'] . ': ' .$lang['hours_we']; ?></p>
+                                    <table class="table-condensed">
+                                    <tbody>
+                                      <tr>
+                                        <td class="text-left"><?php echo $lang['monday']; ?></td>
+                                        <td><?php echo $lang['start_time_wk']; ?></td>
+                                        <td>-</td>
+                                        <td><?php echo $lang['end_time_wk']; ?></td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-left"><?php echo $lang['tuesday']; ?></td>
+                                        <td><?php echo $lang['start_time_wk']; ?></td>
+                                        <td>-</td>
+                                        <td><?php echo $lang['end_time_wk']; ?></td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-left"><?php echo $lang['wednesday']; ?></td>
+                                        <td><?php echo $lang['start_time_wk']; ?></td>
+                                        <td>-</td>
+                                        <td><?php echo $lang['end_time_wk']; ?></td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-left"><?php echo $lang['thursday']; ?></td>
+                                        <td><?php echo $lang['start_time_wk']; ?></td>
+                                        <td>-</td>
+                                        <td><?php echo $lang['end_time_wk']; ?></td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-left"><?php echo $lang['friday']; ?></td>
+                                        <td><?php echo $lang['start_time_wk']; ?></td>
+                                        <td>-</td>
+                                        <td><?php echo $lang['end_time_wk']; ?></td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-left"><?php echo $lang['saturday']; ?></td>
+                                        <td><?php echo $lang['start_time_we']; ?></td>
+                                        <td>-</td>
+                                        <td><?php echo $lang['end_time_we']; ?></td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-left"><?php echo $lang['sunday']; ?></td>
+                                        <td><?php echo $lang['start_time_we']; ?></td>
+                                        <td>-</td>
+                                        <td><?php echo $lang['end_time_we']; ?></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
                                 </div>
                             </div>
                         </div>
@@ -816,13 +855,52 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                         <div class="atelier_view">
                             <i class="fa fa-clock-o"></i>
                             <div class="schedule">
-                                <p><?php echo $lang['monday'] . ': ' . $lang['hours_wks']; ?></p>
-                                <p><?php echo $lang['tuesday'] . ': ' .$lang['hours_wks']; ?></p>
-                                <p><?php echo $lang['wednesday'] . ': ' .$lang['hours_wks']; ?></p>
-                                <p><?php echo $lang['thursday'] . ': ' .$lang['hours_wks']; ?></p>
-                                <p><?php echo $lang['friday'] . ': ' .$lang['hours_wks']; ?></p>
-                                <p><?php echo $lang['saturday'] . ': ' .$lang['hours_we']; ?></p>
-                                <p><?php echo $lang['sunday'] . ': ' .$lang['hours_we']; ?></p>
+                                <table class="table-condensed">
+                                    <tbody>
+                                      <tr>
+                                        <td class="text-left"><?php echo $lang['monday']; ?></td>
+                                        <td><?php echo $lang['start_time_wk']; ?></td>
+                                        <td>-</td>
+                                        <td><?php echo $lang['end_time_wk']; ?></td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-left"><?php echo $lang['tuesday']; ?></td>
+                                        <td><?php echo $lang['start_time_wk']; ?></td>
+                                        <td>-</td>
+                                        <td><?php echo $lang['end_time_wk']; ?></td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-left"><?php echo $lang['wednesday']; ?></td>
+                                        <td><?php echo $lang['start_time_wk']; ?></td>
+                                        <td>-</td>
+                                        <td><?php echo $lang['end_time_wk']; ?></td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-left"><?php echo $lang['thursday']; ?></td>
+                                        <td><?php echo $lang['start_time_wk']; ?></td>
+                                        <td>-</td>
+                                        <td><?php echo $lang['end_time_wk']; ?></td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-left"><?php echo $lang['friday']; ?></td>
+                                        <td><?php echo $lang['start_time_wk']; ?></td>
+                                        <td>-</td>
+                                        <td><?php echo $lang['end_time_wk']; ?></td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-left"><?php echo $lang['saturday']; ?></td>
+                                        <td><?php echo $lang['start_time_we']; ?></td>
+                                        <td>-</td>
+                                        <td><?php echo $lang['end_time_we']; ?></td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-left"><?php echo $lang['sunday']; ?></td>
+                                        <td><?php echo $lang['start_time_we']; ?></td>
+                                        <td>-</td>
+                                        <td><?php echo $lang['end_time_we']; ?></td>
+                                      </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>  
