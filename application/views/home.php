@@ -909,9 +909,6 @@
         <script aftersrc="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOgXOBkD944XhomrMeeNRhD8pBbxroVeM&callback=initMap"
                 type="text/javascript">
         </script>
-        <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/contact_me.js"
-                type="text/javascript"> 
-        </script>
         <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/main.js"
                 type="text/javascript"> 
         </script>
@@ -940,6 +937,9 @@
                 GeneralFunctions.hidePreloader();
                 GeneralFunctions.autoToggleNavbar();
             });
+        </script>
+        <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/contact_me.js"
+                type="text/javascript"> 
         </script>
         <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/general_functions.js"
                 type="text/javascript">

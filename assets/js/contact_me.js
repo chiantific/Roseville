@@ -16,16 +16,22 @@ $(function() {
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
-            $.ajax({
-                url: "././mail/contact_me.php",
-                type: "POST",
-                data: {
-                    name: name,
-                    email: email,
-                    message: message
-                },
-                cache: false,
-                success: function() {
+
+            var postUrl = GlobalVariables.baseUrl + '/index.php/contact';
+            var postData = {
+                'csrfToken': GlobalVariables.csrfToken,
+                'name': name,
+                'email': email,
+                'message': message
+            };
+
+            $.post(postUrl, postData, function(response) {
+                /////////////////////////////////////////////////////////
+                console.log('Send contact message Response: ', response);
+                /////////////////////////////////////////////////////////
+
+                response = JSON.parse(response);
+                if (!response.exceptions) {
                     // Success message
                     $('#success').html("<div class='alert alert-success'>");
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
@@ -37,8 +43,7 @@ $(function() {
 
                     //clear all fields
                     $('#contactForm').trigger("reset");
-                },
-                error: function() {
+                } else {
                     // Fail message
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
@@ -47,7 +52,7 @@ $(function() {
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");
-                },
+                }
             })
         },
         filter: function() {

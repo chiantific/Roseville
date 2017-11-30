@@ -256,6 +256,44 @@ class Notifications {
 
         return TRUE;
     }
+
+    /**
+     * This method sends a notification to the company mail with the given message.
+     *
+     * @param string $name Name of the user who wrote the message.
+     * @param string $snd_email Email address of the user who wrote the message.
+     * @param string $message Message to be included in the notification.
+     */
+    public function send_contact_message($name, $snd_email, $message, $company_settings) {
+        $replace_array = array(
+            '$email_title' => $this->ci->lang->line('new_contact_message'),
+            '$message' => $message,
+            '$company_name' => $company_settings['company_name'],
+            '$company_email' => $company_settings['company_email'],
+            '$company_link' => $company_settings['company_link']
+        );
+
+        $email_html = file_get_contents(dirname(dirname(__FILE__))
+                    . '/views/emails/new_contact_message.php');
+        $email_html = $this->replace_template_variables($replace_array, $email_html);
+
+        // :: SETUP OBJECT AND SEND NOTIFICATION
+        $mail = new PHPMailer();
+        $mail->From = $company_settings['company_email'];
+        $mail->FromName = $company_settings['company_name'];
+        $mail->AddAddress($company_settings['company_email']);
+        $mail->IsHTML(true);
+        $mail->CharSet = 'UTF-8';
+        $mail->Subject = $this->ci->lang->line('new_contact_message');
+        $mail->Body = $email_html;
+
+        if (!$mail->Send()) {
+            throw new Exception('Email could not been sent. '
+                    . 'Mailer Error (Line ' . __LINE__ . '): ' . $mail->ErrorInfo);
+        }
+
+        return TRUE;
+    }
 }
 
 /* End of file notifications.php */

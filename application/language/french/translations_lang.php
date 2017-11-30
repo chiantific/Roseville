@@ -408,3 +408,4 @@ $lang['email'] = 'Email';
 $lang['message'] = 'Message';
 $lang['send'] = 'Envoyer';
 $lang['follow_us'] = 'Suivez-nous sur les réseaux sociaux';
+$lang['new_contact_message'] = 'Nouveau message depuis le formulaire de contact';
