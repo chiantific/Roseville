@@ -375,6 +375,7 @@ var FrontendBook = {
             return true;
         } catch(exc) {
             $('#form-message').text(exc);
+            $('#form-message').addClass('text-danger');
             return false;
         }
     },

@@ -233,7 +233,7 @@
                                         </label>
                                         <textarea id="notes" maxlength="500" class="form-control" rows="3"></textarea>
                                     </div>
-                                    <em id="form-message" class="text-danger">
+                                    <em id="form-message">
                                         <?php
                                             echo $this->lang->line('fields_are_required');
                                         ?>

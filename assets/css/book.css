@@ -253,11 +253,7 @@
     color: #F2F2F2;
 }
 
-#book-appointment-wizard #wizard-frame-3 #form-message {
-    color: #F2F2F2;
-}
-
-#book-appointment-wizard #wizard-frame-3 label {
+#book-appointment-wizard #wizard-frame-3 {
     color: #F2F2F2;
     font-size: 1.2em;
 }
