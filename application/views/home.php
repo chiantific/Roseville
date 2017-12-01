@@ -918,6 +918,9 @@
         <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/jqBootstrapValidation.js"
                 type="text/javascript">
         </script>
+        <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/fix_modal_navbar.js"
+                type="text/javascript">
+        </script>
         <script aftersrc="<?php echo $this->config->item('base_url'); ?>/assets/js/gmaps.js"
                 type="text/javascript">
         </script>
