@@ -266,6 +266,12 @@ body .ui-datepicker .ui-datepicker-next-hover {
     font-size: 13px;
     margin-top: 10px;
 }
+#footer a {
+    color: #999999
+}
+#footer a:hover {
+    color: #754747
+}
 
 
 /* JQUERY UI DATETIME PICKER ADDON
