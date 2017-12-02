@@ -185,7 +185,7 @@ class Booking extends CI_Controller {
             $view['exceptions'] = $exceptions;
         }
 
-        $this->load->view('appointments/message', $view);
+        $this->load->view('booking/message', $view);
     }
 
 	/**
@@ -215,10 +215,10 @@ class Booking extends CI_Controller {
             'currency'      => $service['currency'],
             'language'      => '',
             'successurl'    => $this->config->item('base_url')
-                . "/index.php/appointments/post_payment/"
+                . "/index.php/booking/post_payment/"
                 . $appointment_id,
             'failurl'       => $this->config->item('base_url')
-                . "/index.php/appointments/post_payment/"
+                . "/index.php/booking/post_payment/"
                 . $appointment_id,
             'shasign'       => "",
             'post_link' 	=> $this->config->item('post_link'),
@@ -263,7 +263,7 @@ class Booking extends CI_Controller {
         if($exceptions){
             $view['exceptions'] = $exceptions;
         }
-        $this->load->view('appointments/payment', $view);
+        $this->load->view('booking/payment', $view);
     }
 
 	/**
@@ -332,7 +332,7 @@ class Booking extends CI_Controller {
                 $customer_message_2 = $this->lang->line('please_hour');
                 $customer_message_3 = $this->lang->line('cant_wait');
                 $customer_link = $this->config->item('base_url')
-                    . '/index.php/appointments/index/'
+                    . '/index.php/booking/index/'
                     . $appointment['hash'];
 
                 $provider_title = $this->lang->line('appointment_added_to_your_plan');
@@ -356,7 +356,7 @@ class Booking extends CI_Controller {
             }
 
             //get the exceptions
-            $exceptions = $this->session->flashdata('appointments/book_success');
+            $exceptions = $this->session->flashdata('booking/book_success');
 
             // :: LOAD THE BOOK SUCCESS VIEW
             $view = array(
@@ -370,10 +370,10 @@ class Booking extends CI_Controller {
             if($exceptions){
                 $view['exceptions'] = $exceptions;
             }
-            $this->load->view('appointments/payment_success', $view);
+            $this->load->view('booking/payment_success', $view);
         } elseif ($sha_sign == $_GET['SHASIGN'] && $_GET['STATUS'] == 2) { // Refused
             //get the exceptions
-            $exceptions = $this->session->flashdata('appointments/book_success');
+            $exceptions = $this->session->flashdata('booking/book_success');
 
             // :: LOAD THE PAYMENT FAIL VIEW
             $view = array(
@@ -389,7 +389,7 @@ class Booking extends CI_Controller {
                 $view['exceptions'] = $exceptions;
             }
 
-            $this->load->view('appointments/payment_fail', $view);
+            $this->load->view('booking/payment_fail', $view);
         } elseif ($sha_sign == $_GET['SHASIGN'] && $_GET['STATUS'] == 1) { // Cancelled
             // delete appointment
             if (!$this->appointments_model->delete($appointment_id)) {
@@ -397,7 +397,7 @@ class Booking extends CI_Controller {
             }
 
             //get the exceptions
-            $exceptions = $this->session->flashdata('appointments/book_success');
+            $exceptions = $this->session->flashdata('booking/book_success');
 
             // :: LOAD THE PAYMENT FAIL VIEW
             $view = array(
@@ -413,10 +413,10 @@ class Booking extends CI_Controller {
                 $view['exceptions'] = $exceptions;
             }
 
-            $this->load->view('appointments/payment_cancel', $view);
+            $this->load->view('booking/payment_cancel', $view);
         } else { // Error
             //get the exceptions
-            $exceptions = $this->session->flashdata('appointments/book_success');
+            $exceptions = $this->session->flashdata('booking/book_success');
 
             // :: LOAD THE PAYMENT FAIL VIEW
             $view = array(
@@ -432,7 +432,7 @@ class Booking extends CI_Controller {
                 $view['exceptions'] = $exceptions;
             }
 
-            $this->load->view('appointments/payment_error', $view);
+            $this->load->view('booking/payment_error', $view);
         }
     }
 
