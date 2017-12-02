@@ -360,6 +360,10 @@
                 FrontendBook.initialize(true, GlobalVariables.manageMode);
                 GeneralFunctions.enableLanguageSelection($('#select-language'), "dropdown");
                 GeneralFunctions.hidePreloader();
+                /* Save form before load */
+                window.onbeforeunload = FrontendBook.saveFormToSession;
+                /* Load form after refresh */
+                window.onload = FrontendBook.loadFormFromSession;
             });
         </script>
         <script

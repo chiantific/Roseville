@@ -331,8 +331,14 @@ var FrontendBook = {
                             '<span class="available-hour">' + availableHour + '</span><br/>');
                 });
 
-                // Set the first available hour as the default selection.
-                $('.available-hour:eq(0)').addClass('selected-hour');
+                // Set the available hour as stored if available. Set first otherwise.
+                var select_hour = sessionStorage.getItem('select-hour');
+                if (select_hour !== null) {
+                    $('.available-hour:contains("' + select_hour + '"):first').addClass('selected-hour');
+                } else {
+                    $('.available-hour:eq(0)').addClass('selected-hour');
+                }
+                
 
                 FrontendBook.updateConfirmFrame();
 
@@ -638,5 +644,67 @@ var FrontendBook = {
             .always(function() {
                 $layer.remove();
             })
+    },
+
+    /**
+     * Save the form to sessionStorage.
+     *
+     * This method saves the values of the filled-in fields to sessionStorage. It can be bound
+     * to onbeforeunload event to keep these values when refreshing the page.
+     */
+    saveFormToSession: function() {
+        sessionStorage.setItem('select-provider', $('#select-provider').val());
+        sessionStorage.setItem('nb_participants', $('#nb_participants').val());
+        sessionStorage.setItem('language', $('#language').val());
+        sessionStorage.setItem('select-date', $('#select-date').val());
+        sessionStorage.setItem('select-hour', $('.selected-hour').text());
+        sessionStorage.setItem('first-name', $('#first-name').val());
+        sessionStorage.setItem('last-name', $('#last-name').val());
+        sessionStorage.setItem('email', $('#email').val());
+        sessionStorage.setItem('phone-number', $('#phone-number').val());
+        sessionStorage.setItem('notes', $('#notes').val());
+    },
+
+    /**
+     * Restore the form fro, sessionStorage.
+     *
+     * This method loads the values of sessionStorage and write them in the form. It can be
+     * bound th onload event to reload the values after refreshing the page.
+     */
+    loadFormFromSession: function() {
+        var select_provider = sessionStorage.getItem('select-provider');
+        if (select_provider !== null) $('#select-provider').val(select_provider);
+
+        var nb_participants = sessionStorage.getItem('nb_participants');
+        if (nb_participants !== null) $('#nb_participants').val(nb_participants);
+
+        var language = sessionStorage.getItem('language');
+        if (language !== null) $('#language').val(language);
+
+        var select_date = sessionStorage.getItem('select-date');
+        if (select_date !== null) {
+            $('#select-date').datepicker('setDate', select_date);
+            $('#select-service').trigger('change');
+        }
+
+//        $('.available-hour').removeClass('selected-hour');
+//        $('.available-hour:eq(1)').addClass('selected-hour');
+
+        var first_name = sessionStorage.getItem('first-name');
+        if (first_name !== null) $('#first-name').val(first_name);
+
+        var last_name = sessionStorage.getItem('last-name');
+        if (last_name !== null) $('#last-name').val(last_name);
+
+        var email = sessionStorage.getItem('email');
+        if (email !== null) $('#email').val(email);
+
+        var phone_number = sessionStorage.getItem('phone-number');
+        if (phone_number !== null) $('#phone-number').val(phone_number);
+
+        var notes = sessionStorage.getItem('notes');
+        if (notes !== null) $('#notes').val(notes);
+
+        FrontendBook.updateConfirmFrame();
     }
 };
