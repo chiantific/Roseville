@@ -313,19 +313,41 @@ var GeneralFunctions = {
     },
 
     /**
+     * Create a popover to allow the language selection. Should not be called directly.
+     * See enableLanguageSelection below.
+     *
+     * @param {object} $element Selected element for the language selection
+     */
+    createToggleLanguageSelection: function($element) {
+        text = '';
+        data_language = '';
+        $.each(availableLanguages, function() {
+            if (this != selectedLanguage) {
+                data_language = this;
+                text = EALang['switch_language'];
+            }
+        });
+        $element.text(text);
+        $element.attr('data-language', data_language);
+        $element.addClass('language');
+    },
+
+    /**
      * Enables the language selection functionality. Must be called on every page has a
      * language selection button. This method requires the global variable 'availableLanguages'
      * to be initialized before the execution.
      *
      * @param {object} $element Selected element button for the language selection.
-     * @param {string} $style "popover" or "dropdown", to select the menu style
+     * @param {string} $style "popover", "dropdown" or "toggle", to select the menu style
      */
-    enableLanguageSelection: function($element, style = "dropdown") {
+    enableLanguageSelection: function($element, style="dropdown") {
         // Select Language
         if (style == "popover") {
             this.createPopoverLanguageSelection($element);
-        } else {
+        } else if (style == "dropdown") {
             this.createDropdownLanguageSelection($element);
+        } else {
+            this.createToggleLanguageSelection($element);
         }
 
         $element.click(function() {
@@ -338,7 +360,7 @@ var GeneralFunctions = {
             $(this).toggleClass('active');
         });
 
-        $(document).on('click', 'li.language', function() {
+        $(document).on('click', '.language', function() {
         	// Change language with ajax call and refresh page.
         	var postUrl = GlobalVariables.baseUrl + '/index.php/backend_api/ajax_change_language';
         	var postData = {

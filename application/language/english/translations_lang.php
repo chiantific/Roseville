@@ -409,3 +409,4 @@ $lang['message'] = 'Message';
 $lang['send'] = 'Send';
 $lang['follow_us'] = 'Follow us on social media';
 $lang['new_contact_message'] = 'New message from the contact form';
+$lang['switch_language'] = 'FR';

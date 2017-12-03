@@ -134,9 +134,8 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="dropdown" id="select-language">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <?php echo ucfirst($this->config->item('language')); ?><b class="caret"></b>
+                        <li>
+                            <a href="#" id="select-language" class="language" >
                             </a>
                         </li>
                     </ul>
@@ -934,9 +933,10 @@
             
             var EALang = <?php echo json_encode($this->lang->language); ?>;
             var availableLanguages = <?php echo json_encode($this->config->item('available_languages')); ?>;
+            var selectedLanguage = <?php echo json_encode($this->config->item('language')); ?>;
 
             $(document).ready(function() {
-                GeneralFunctions.enableLanguageSelection($('#select-language'), "dropdown");
+                GeneralFunctions.enableLanguageSelection($('#select-language'), "toggle");
                 GeneralFunctions.hidePreloader();
                 GeneralFunctions.autoToggleNavbar();
             });
