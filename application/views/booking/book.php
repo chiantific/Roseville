@@ -60,9 +60,8 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown" id="select-language">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <?php echo ucfirst($this->config->item('language')); ?><b class="caret"></b>
+                        <li class="dropdown">
+                            <a href="#" id="select-language">
                             </a>
                         </li>
                     </ul>
@@ -355,10 +354,11 @@
 
             var EALang = <?php echo json_encode($this->lang->language); ?>;
             var availableLanguages = <?php echo json_encode($this->config->item('available_languages')); ?>;
+            var selectedLanguage = <?php echo json_encode($this->config->item('language')); ?>;
 
             $(document).ready(function() {
                 FrontendBook.initialize(true, GlobalVariables.manageMode);
-                GeneralFunctions.enableLanguageSelection($('#select-language'), "dropdown");
+                GeneralFunctions.enableLanguageSelection($('#select-language'), "toggle");
                 GeneralFunctions.hidePreloader();
                 /* Save form before load */
                 window.onbeforeunload = FrontendBook.saveFormToSession;
