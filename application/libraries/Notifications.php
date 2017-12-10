@@ -180,7 +180,6 @@ class Notifications {
             '$customer_name'        => $customer_data['first_name'] . ' ' . $customer_data['last_name'],
             '$customer_email'       => $customer_data['email'],
             '$customer_phone'       => $customer_data['phone_number'],
-            '$customer_address'     => $customer_data['address'],
             '$reason'               => $reason,
 
             // Translations
