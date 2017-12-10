@@ -142,7 +142,7 @@ class Backend_api extends CI_Controller {
 
         	// :: SAVE APPOINTMENT CHANGES TO DATABASE
             if (isset($_POST['appointment_data'])) {
-                $appointment = json_decode(stripcslashes($_POST['appointment_data']), true);
+                $appointment = json_decode($_POST['appointment_data'], true);
 
                 $REQUIRED_PRIV = (!isset($appointment['id']))
                         ? $this->privileges[PRIV_APPOINTMENTS]['add']
