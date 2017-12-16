@@ -924,10 +924,10 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                 <h4><a href="https://www.escapeworld.ch" target="_blank">Escape World</a></h4>
               </div>
               <div class="col-xs-6 col-sm-3 spacer">
-                <a href="https://www.escapeworld.ch" target="_blank">
+                <a href="https://www.escaperiviera.ch/" target="_blank">
                   <img class="img-thumbnail" src="img/escape-riviera.png" alt="escape riviera logo" width="70%"/>
                 </a>
-                <h4><a href="https://www.escapeworld.ch" target="_blank">Escape Riviera</a></h4>
+                <h4><a href="https://www.escaperiviera.ch/" target="_blank">Escape Riviera</a></h4>
               </div>
             </div>
           </div>
