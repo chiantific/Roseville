@@ -539,6 +539,9 @@ hr {
 #section5 ol li {
     list-style:decimal;
 }
+#section5 ol {
+  padding-left: 1em;
+}
 #section5 .pass-img {
   margin-bottom: 1em;
 }
@@ -695,7 +698,61 @@ img.img-thumbnail.section4-img {
     padding: 9px;
     color: #777;
 }
-
+/* Links Section */
+#links {
+    background: #f6f6f6;
+    min-height: 100%;
+}
+#links h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#links h4 a {
+  color: #555;
+}
+#links h4 a:hover {
+  color: #C74D00;
+}
+#links a.darken {
+    display: inline-block;
+    background: black;
+    padding: 0;
+	border-radius: 5px;
+    width: 60%;
+}
+#links a.darken img {
+    display: block;
+    -webkit-transition: all 0.5s linear;
+       -moz-transition: all 0.5s linear;
+        -ms-transition: all 0.5s linear;
+         -o-transition: all 0.5s linear;
+            transition: all 0.5s linear;
+}
+#links a.darken:hover img {
+    opacity: 0.7;
+}
+#links .spacer {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+#links .subjects {
+  margin-bottom: 20px;
+  color: #C74D00;
+}
+#links .spacer p {
+  text-align: justify;
+  margin-bottom: 20px;
+}
+#links .img-thumbnail {
+  background-color: transparent;
+}
+@media (max-width: 768px) {
+  #links .spacer {
+    padding-left: 50px;
+    padding-right: 50px;
+    }
+}
 /* Contact Section */
 #contact {
     background: #B0985C;

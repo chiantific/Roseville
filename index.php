@@ -171,6 +171,11 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                                         <?php echo $lang['contact_us']; ?>
                                     </a>
                                 </li>
+                                <li>
+                                    <a class="page-scroll" href="#links">
+                                        <?php echo $lang['links']; ?>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -474,7 +479,7 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                 </div>
             </div>
         </div>
-
+        
         <!-- Section tarifs -->
         <div id="price">
             <div class="container">
@@ -520,7 +525,7 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                 </div>
             </div>
         </div>
-
+        
         <!-- Section 5 -->
         <div id="section5">
             <div class="container">
@@ -829,6 +834,7 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                 </div>    
             </div>
         </div>
+        
         <!-- où nous trouver -->
         <div id="where">
             <div class="container">
@@ -866,7 +872,67 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                 </div>
             </div>
         </div>
+        
+        <!-- Section links -->
+        <div id="links">
+          <div class="container">
+            <div class="jumbotron">
+              <h2><?php echo $lang['header_links']; ?></h2>
+            </div>
+            <h3 class="subjects"><?php echo $lang['our_partners']; ?></h3>
+            <div class="row">
+                <div class="col-sm-4 spacer">
+                  <a href="http://co-n-co.ch/" target="_blank" class="darken">
+                    <img src="img/co-n-co.jpg" class="img-thumbnail" alt="Co&Co"/>
+                  </a>
+                  <h4><a href="http://co-n-co.ch/" target="_blank">Co&amp;Co</a></h4>
+                  <p><?php echo $lang['conco_text']; ?></p>
+                </div>
+                <div class="col-sm-4 spacer">
+                  <a href="https://corentin-m.com/" target="_blank" class="darken">
+                    <img class="img-thumbnail" src="img/corentin.jpg" alt="Corentin M"/>
+                  </a>
+                  <h4><a href="https://corentin-m.com/" target="_blank">Corentin M</a></h4>
+                  <p><?php echo $lang['corentin_text']; ?></p>
+                </div>
+                <div class="col-sm-4 spacer">
+                  <a href="http://espace.roseville.ch" target="_blank" class="darken">
+                  <img class="img-thumbnail" src="img/aire_de_fete_atmosphere.jpg" alt="Roseville location de salles"/>
+                  </a>
+                  <h4><a href="http://espace.roseville.ch/" target="_blank"><?php echo $lang['roseville_r']; ?></a></h4>
+                  <p><?php echo $lang['roseville_r_text']; ?></p>
+                </div>
+              </div>
+            <h3 class="subjects"><?php echo $lang['other_escapes']; ?></h3>  
+            <div class="row">
+              <div class="col-xs-6 col-sm-3 spacer">
+                <a href="http://www.l-ichu.ch/" target="_blank">
+                  <img src="img/ichu-escape-game.png" class="img-thumbnail" alt="ichu escape game logo" width="70%"/>
+                </a>
+                <h4><a href="http://www.l-ichu.ch/" target="_blank">Ichu</a></h4>
+              </div>
+              <div class="col-xs-6 col-sm-3 spacer">
+                <a href="http://www.hotel-enigma.ch/" target="_blank">
+                  <img class="img-thumbnail" src="img/hotel-enigma-escape-game.png" alt="hotel enigma escape game logo" width="70%"/>
+                </a>  
+                <h4><a href="http://www.hotel-enigma.ch/" target="_blank">Hotel Enigma</a></h4>
+              </div>
+              <div class="col-xs-6 col-sm-3 spacer">
+                <a href="https://www.escapeworld.ch" target="_blank">
+                  <img class="img-thumbnail" src="img/escapeworld.png" alt="escape world logo" width="70%"/>
+                </a>  
+                <h4><a href="https://www.escapeworld.ch" target="_blank">Escape World</a></h4>
+              </div>
+              <div class="col-xs-6 col-sm-3 spacer">
+                <a href="https://www.escapeworld.ch" target="_blank">
+                  <img class="img-thumbnail" src="img/escape-riviera.png" alt="escape riviera logo" width="70%"/>
+                </a>
+                <h4><a href="https://www.escapeworld.ch" target="_blank">Escape Riviera</a></h4>
+              </div>
+            </div>
+          </div>
         </div>
+        
         <!-- Contact Section -->
         <div id="contact">
             <div class="container">
