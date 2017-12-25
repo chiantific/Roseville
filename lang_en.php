@@ -127,6 +127,7 @@ $lang['question_reading_glasses'] = 'Do I need to bring my reading glasses ?';
 $lang['answer_reading_glasses'] = 'We advise you to bring reading glasses if you usually need them to read.';
 $lang['question_reservation_escapegamepass'] = 'How to book with the escapegamepass ?';
 $lang['alt_escapegamepass'] = 'escapegamepass card';
+$lang['answer_reservation_escapegamepass0'] = 'With the escapegamepass you get 30% off when booking the room "Chocolat" exclusively.';
 $lang['answer_reservation_escapegamepass1'] = 'Make sure your escapegamepass has been activated before booking a room at Roseville Escape. You can activate your pass on the ';
 $lang['escapegamepass'] = 'escapegamepass website.';
 $lang['answer_reservation_escapegamepass2'] = 'Contact us by phone, email, or through the online form stating your interest in booking with the escapegamepass. Indicate your preferred booking date and time (the available time slots can be viewed on our booking page).';

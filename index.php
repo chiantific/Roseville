@@ -802,7 +802,8 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                                        <img src="img/escapegamepass.jpg" alt="<?php echo $lang['alt_escapegamepass']; ?>" class="img-rounded center-block pass-img" width="60%"/>
                                     </div> 
                                     <div class="col-sm-pull-6 col-sm-6">
-                                      <ol>
+                                      <p><?php echo $lang['answer_reservation_escapegamepass0']; ?></p>
+                                       <ol>
                                         <li>
                                           <?php echo $lang['answer_reservation_escapegamepass1']; ?>
                                           <a class="page-scroll" href="https://www.escapegamepass.ch/validation-passeport/" target="_blank">
