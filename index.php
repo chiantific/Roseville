@@ -925,8 +925,20 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                 <h4><a href="https://www.escapeworld.ch" target="_blank">Escape World</a></h4>
               </div>
               <div class="col-xs-6 col-sm-3 spacer">
+                <a href="https://www.the-evasion.ch/" target="_blank">
+                  <img class="img-thumbnail" src="img/evasion.png" alt="evasion fribourg logo" width="70%"/>
+                </a>
+                <h4><a href="https://www.the-evasion.ch/" target="_blank">Evasion</a></h4>
+              </div>
+              <div class="col-xs-6 col-sm-3 spacer">
+                <a href="http://www.housetrap.ch/" target="_blank">
+                  <img class="img-thumbnail" src="img/housetrap.png" alt="housetrap logo" width="70%"/>
+                </a>
+                <h4><a href="http://www.housetrap.ch/" target="_blank">HouseTrap</a></h4>
+              </div>
+              <div class="col-xs-6 col-sm-3 spacer">
                 <a href="https://www.escaperiviera.ch/" target="_blank">
-                  <img class="img-thumbnail" src="img/escape-riviera.png" alt="escape riviera logo" width="70%"/>
+                  <img class="img-thumbnail" src="img/escape-riviera.png" alt="riviera escape logo" width="70%"/>
                 </a>
                 <h4><a href="https://www.escaperiviera.ch/" target="_blank">Escape Riviera</a></h4>
               </div>
