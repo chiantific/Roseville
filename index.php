@@ -587,7 +587,7 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                                       </tr>
                                       <tr>
                                         <td class="text-left"><?php echo $lang['tuesday']; ?></td>
-                                        <td><?php echo $lang['start_time_wk']; ?></td>
+                                        <td><?php echo $lang['start_time_4_30']; ?></td>
                                         <td>-</td>
                                         <td><?php echo $lang['end_time_wk']; ?></td>
                                       </tr>
@@ -599,7 +599,7 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                                       </tr>
                                       <tr>
                                         <td class="text-left"><?php echo $lang['thursday']; ?></td>
-                                        <td><?php echo $lang['start_time_wk']; ?></td>
+                                        <td><?php echo $lang['start_time_4_30']; ?></td>
                                         <td>-</td>
                                         <td><?php echo $lang['end_time_wk']; ?></td>
                                       </tr>
@@ -987,7 +987,7 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                                       </tr>
                                       <tr>
                                         <td class="text-left"><?php echo $lang['tuesday']; ?></td>
-                                        <td><?php echo $lang['start_time_wk']; ?></td>
+                                        <td><?php echo $lang['start_time_4_30']; ?></td>
                                         <td>-</td>
                                         <td><?php echo $lang['end_time_wk']; ?></td>
                                       </tr>
@@ -999,7 +999,7 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                                       </tr>
                                       <tr>
                                         <td class="text-left"><?php echo $lang['thursday']; ?></td>
-                                        <td><?php echo $lang['start_time_wk']; ?></td>
+                                        <td><?php echo $lang['start_time_4_30']; ?></td>
                                         <td>-</td>
                                         <td><?php echo $lang['end_time_wk']; ?></td>
                                       </tr>
