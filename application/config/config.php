@@ -233,6 +233,19 @@ $config['directory_trigger'] = 'd';
 
 /*
 |--------------------------------------------------------------------------
+| Enable GET Arrays
+|--------------------------------------------------------------------------
+|
+| By default, CodeIgniter does not allow to send parameters with a GET
+| request: example.com/who/what/where?param1=value
+|
+| This option has to be enables for the post-payment process.
+|
+ */
+$config['allow_get_array'] = TRUE;
+
+/*
+|--------------------------------------------------------------------------
 | Error Logging Threshold
 |--------------------------------------------------------------------------
 |
