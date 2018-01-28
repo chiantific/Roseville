@@ -320,7 +320,12 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                                             </h4>
                                         </div>
                                         <div class="modal-body">
-                                        <p><?php echo $lang['text_intro_room_chocolate']; ?>
+                                        <p>
+                                          <?php 
+                                            echo $lang['text_intro_room_chocolate_start'];
+                                            echo date('Y');
+                                            echo $lang['text_intro_room_chocolate_end']; 
+                                          ?>
                                         </p>
                                         </div>
                                         <div class="modal-footer">
