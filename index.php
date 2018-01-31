@@ -500,8 +500,7 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                     <div class="col-md-4 ">
                     <h3><?php echo $lang['prices']; ?></h3>
                         <i class="fa fa_big fa-shopping-cart" aria-hidden="true"></i>
-                        <p><?php echo $lang['cost_weekdays']; ?></p>
-                        <p><?php echo $lang['cost_weekend']; ?></p>
+                        <p><?php echo $lang['cost_session']; ?></p>
                         <p><?php echo $lang['cost_gift_card']; ?></>
                     </div>
                     <div class="col-md-4 ">
