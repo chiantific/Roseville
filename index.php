@@ -795,6 +795,28 @@ $booking_url = 'booking/?lang=' . $_SESSION["lang"];
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a class="collapsed"data-toggle="collapse" data-parent="#accordion" href="#collapse15">
+                                        <?php echo $lang['question_gift_card']; ?>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse15" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p><?php echo $lang['answer_gift_card0']; ?></p>
+                                    <p><?php echo $lang['answer_gift_card1']; ?>
+                                      <a class="page-scroll" href="#contact">
+                                        <?php echo $lang['contact_form']; ?>.
+                                      </a>
+                                    </p>
+                                    <p><?php echo $lang['answer_gift_card2']; ?></p>
+                                    <p><?php echo $lang['answer_gift_card3']; ?></p>
+                                    <p><?php echo $lang['answer_gift_card4']; ?></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="collapsed"data-toggle="collapse" data-parent="#accordion" href="#collapse15">
                                         <?php echo $lang['question_reservation_escapegamepass']; ?>
                                     </a>
                                 </h4>
