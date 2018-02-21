@@ -11,7 +11,7 @@
         <meta name="keywords"
               content="<?php echo $this->lang->line('meta_keywords_content'); ?>" />
 
-        <title><?php echo $this->lang->line('appointment_registered'); ?></title>
+        <title><?php echo $this->lang->line('appointment_booked'); ?></title>
 
         <!-- CSS -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
