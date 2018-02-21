@@ -121,7 +121,7 @@
 
                 $(document).ready(function() {
                     window.setTimeout(function() {
-                        document.paymentform.submit(); }, 200000);
+                        document.paymentform.submit(); }, 2000);
                 });
         </script>
         <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/general_functions.js"
