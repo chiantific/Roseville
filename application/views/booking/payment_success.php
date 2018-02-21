@@ -35,43 +35,6 @@
 
     </head>
     <body>
-        <div id="preloader".
-            <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/preloader.gif"
-                 alt="preloader animation" />
-        </div>
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header pull-left">
-                    <div class="navbar-brand">
-                        <a href="<?php echo $company_link; ?>">
-                            <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/logo_escape.png"
-                                 alt="logo" id="logo" />
-                        </a>
-                        <span><?php echo $this->lang->line('appointment_registered'); ?></span>
-                    </div>
-                </div>
-                <div class="pull-right align-center">
-                    <button type="button" class="navbar-toggle pull-left"
-                                          data-toggle="collapse"
-                                          data-target=".navbar-collapse">
-                        <span class="sr-only">
-                            <?php echo $this->lang->line('toggle_navigation'); ?>
-                        </span>
-                        <span>
-                            <i class="fa fa-bars"></i>
-                        </span>
-                    </button>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a href="#" id="select-language">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
         <div id="main" class="container">
             <div class="wrapper row">
                 <div id="success-frame" class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
@@ -108,22 +71,6 @@
                         ?>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div id="footer">
-            <div class="container">
-                <p>Copyright &copy;
-                    <a href="<?php echo $company_link; ?>">
-                        <?php echo $company_name; ?>
-                    </a>
-            <?php if ($this->session->userdata('user_id')): ?>
-                |
-                <a href="<?php echo $this->config->item('base_url'); ?>/index.php/backend">
-                    <?php echo $this->lang->line('backend_section'); ?>
-                </a>
-            <?php endif; ?>
-                </p>
             </div>
         </div>
 
