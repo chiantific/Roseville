@@ -22,6 +22,8 @@
               rel="stylesheet" type="text/css" />
         <link href="<?php echo $this->config->item('base_url'); ?>/assets/css/general.css"
               rel="stylesheet" type="text/css" />
+        <link href="<?php echo $this->config->item('base_url'); ?>/assets/css/book.css"
+              rel="stylesheet" type="text/css" />
 
         <!-- Favicon -->
         <!--[if IE]>
@@ -37,20 +39,7 @@
     <body>
         <div id="main" class="container">
             <div class="wrapper row">
-                <div id="success-frame" class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-
-    <?php
-    // Display exceptions (if any)
-    if (isset($exceptions)) {
-        echo '<div style="margin: 10px">';
-        echo '<h4>' . $this->lang->line('unexpected_issues') . '</h4>';
-        foreach($exception as $exception) {
-            echo exceptionToHtml($exception);
-        }
-        echo '</div>';
-    }
-    ?>
-
+                <div id="success-frame" class="frame-container col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
                     <div class="col-xs-12 col-sm-2">
                         <img id="success-icon" class="pull-right" src="<?php echo $this->config->item('base_url'); ?>/assets/img/success.png" />
                     </div>
