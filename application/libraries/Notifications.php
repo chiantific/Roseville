@@ -116,6 +116,7 @@ class Notifications {
             'Provider' => $this->ci->lang->line('provider'),
             'Date' => $this->ci->lang->line('date'),
             'Hour' => $this->ci->lang->line('hour'),
+            'language' => $this->ci->lang->line('language'),
             'Amount' => $this->ci->lang->line('paid_amount'),
             'Customer Details' => $this->ci->lang->line('customer_details_title'),
             'Name' => $this->ci->lang->line('name'),
