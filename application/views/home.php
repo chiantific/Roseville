@@ -897,7 +897,7 @@
                 type="text/javascript">
         </script>
 	<!-- Load custom prettyPhoto because of bug #156 -->
-        <script src="<?php echo $this-config->item('base_url'); ?>/assets/js/jquery.prettyPhoto.min.js"
+        <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/jquery.prettyPhoto.min.js"
                 type="text/javascript">
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js"
