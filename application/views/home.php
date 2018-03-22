@@ -896,7 +896,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.6/SmoothScroll.min.js"
                 type="text/javascript">
         </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prettyPhoto/3.1.6/js/jquery.prettyPhoto.min.js"
+	<!-- Load custom prettyPhoto because of bug #156 -->
+        <script src="<?php echo $this-config->item('base_url'); ?>/assets/js/jquery.prettyPhoto.min.js"
                 type="text/javascript">
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js"
