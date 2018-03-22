@@ -95,7 +95,7 @@ class Notifications {
             '$appointment_provider'     => $provider_data['last_name'],
             '$appointment_date'         => date('d/m/Y', strtotime($appointment_data['start_datetime'])),
             '$appointment_hour'         => date('H:i', strtotime($appointment_data['start_datetime'])),
-            '$appointment_language'     => $this->lang->line('languages')[$appointment_data['language']-1],
+            '$appointment_language'     => $this->ci->lang->line('languages')[$appointment_data['language']-1],
             '$paid_amount'              => $price,
             '$appointment_link'         => $appointment_link,
 
