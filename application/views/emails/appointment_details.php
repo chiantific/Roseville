@@ -40,6 +40,10 @@ img#facebook { width: 30px; }
                     <td style="padding: 3px;">$appointment_hour</td>
                 </tr>
                 <tr>
+                    <td class="label" style="padding: 3px;font-weight: bold;">Language</td>
+                    <td style="padding: 3px;">$appointment_language</td>
+                </tr>
+                <tr>
                     <td class="label" style="padding: 3px; font-weight: bold;">Amount</td>
                     <td style="padding: 3px;">$paid_amount</td>
                 </tr>
