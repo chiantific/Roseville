@@ -289,7 +289,6 @@ $lang['about'] = 'À propos';
 $lang['faq'] = 'FAQ';
 $lang['location'] = 'Situation';
 $lang['contact_us'] = 'Contact';
-$lang['other_language'] = 'EN';
 $lang['contact_us_verb'] = 'nous contacter';
 $lang['welcome_to'] = 'Bienvenue à ';
 $lang['brand'] = $lang['main_title'];
