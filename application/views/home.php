@@ -59,9 +59,6 @@
                     <button type="button" class="navbar-toggle pull-left"
                                           data-toggle="collapse"
                                           data-target=".navbar-collapse">
-                        <span class="sr-only">
-                            <?php echo $this->lang->line('toggle_navigation'); ?>
-                        </span>
                         <span>
                             <i class="fa fa-bars"></i>
                         </span>
