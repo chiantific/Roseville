@@ -427,6 +427,9 @@ hr {
 #section6 .panel-default>.panel-heading+.panel-collapse>.panel-body  {
     border-top-color: #62a398;
 }
+#section6 ol {
+    padding-left: 1em;
+}
 #section6 ol li {
     list-style:decimal;
 }
@@ -565,39 +568,84 @@ ol.type li a:hover {
 
 /* Section 8 */
 #section8 {
+    background: #f6f6f6;
+    min-height: 100%;
+}
+#section8 h3 {
+    margin-bottom: 20px;
+    color: #C74D00;
+}
+#section8 h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #555;
+}
+#section8 a:hover h4 {
+    color: #C74D00;
+}
+#section8 .darken {
+    width: 60%;
+    border-radius: 5px;
+    background: black;
+    display: inline-block;
+}
+#section8 .darken > img {
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -ms-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+#section8 .darken:hover img {
+    opacity: 0.7;
+}
+#section8 .row > div {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+#section8 .row > div p {
+    text-align: justify;
+}
+#section8 .img-thumbnail {
+    background-color: transparent;
+}
+
+/* Section 9 */
+#section9 {
     background: #B0985C;
     min-height: 100%;
 }
-#section8 .jumbotron {
+#section9 .jumbotron {
     background: #bca262;
     margin-bottom: 50px;
 }
-#section8 h2 {
+#section9 h2 {
     color: #f6f6f6;
 }
-#section8 p, #section8 a, #section8 td {
+#section9 p, #section9 a, #section9 td {
     color: #e8e8e8;
 }
-#section8 i.fa {
+#section9 i.fa {
     font-size: 80px;
     color: #5D264F;
     margin-bottom: 20px;
 }
-#section8 .atelier_view p {
+#section9 .atelier_view p {
     font-size: 1.2em;
 }
-#section8 .atelier_view .fa {
+#section9 .atelier_view .fa {
     display: block;
 }
-#section8 .schedule {
+#section9 .schedule {
     text-align: left;
     display: inline-block;
 }
-#section8 h3 {
+#section9 h3 {
     margin-top: 40px;
     color: #f6f6f6;
 }
-#section8 .btn-default {
+#section9 .btn-default {
     background: #5D264F;
     border: 0;
     border-radius: 4px;
@@ -606,11 +654,11 @@ ol.type li a:hover {
     margin-top: 15px;
     font-size: 15px;
 }
-#section8 .btn-default:hover, #section8 .btn-default:focus {
+#section9 .btn-default:hover, #section9 .btn-default:focus {
     color: #f6f6f6;
     background: #a13e1a;
 }
-#section8 .contact-item {
+#section9 .contact-item {
     padding: 10px;
     margin: 10px;
     height: 100px;
@@ -618,11 +666,11 @@ ol.type li a:hover {
 }
 
 
-#section8 form {
+#section9 form {
     padding: 30px 0;
 }
 
-#section8 .text-danger {
+#section9 .text-danger {
     color: #5D264F;
     text-align: left;
 }
@@ -632,7 +680,7 @@ label {
     font-family: 'Open Sans', sans-serif;
     float: left;
 }
-#section8 .form-control {
+#section9 .form-control {
     display: block;
     width: 100%;
     padding: 6px 12px;
@@ -649,13 +697,13 @@ label {
     -o-transition: none;
     transition: none;
 }
-#section8 .form-control:focus {
+#section9 .form-control:focus {
     border-color: inherit;
     outline: 0;
     -webkit-box-shadow: transparent;
     box-shadow: transparent;
 }
-#section8 .btn-default {
+#section9 .btn-default {
     background: #5D264F;
     border: 0;
     border-radius: 4px;
@@ -665,7 +713,7 @@ label {
     margin-left: 0;
     font-size: 15px;
 }
-#section8 .btn-default:hover, #section8 .btn-default:focus {
+#section9 .btn-default:hover, #section9 .btn-default:focus {
     color: #f6f6f6;
     background: #a13e1a;
 }
@@ -679,18 +727,18 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
     outline: none;
     outline-offset: none;
 }
-#section8 .social {
+#section9 .social {
     text-align: center;
 }
 
-#section8 .social i.fa {
+#section9 .social i.fa {
     font-size: 40px;
     padding-top: 8px;
     color: #5D264F;
     border-radius: 4px;
     transition: all 0.3s;
 }
-#section8 .social i.fa:hover {
+#section9 .social i.fa:hover {
     color: #a13e1a;
 }
 #mapid {

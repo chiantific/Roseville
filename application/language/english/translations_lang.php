@@ -34,6 +34,7 @@ $lang['our_pricing'] = 'Pricing';
 $lang['about'] = 'About';
 $lang['faq'] = 'FAQ';
 $lang['location'] = 'Location';
+$lang['links'] = 'Links';
 
 // Intro
 $lang['welcome_to'] = 'Welcome to';
@@ -161,7 +162,6 @@ $lang['answer_reservation_escapegamepass3'] = 'Show your escapegamepass when you
 $lang['answer_reservation_escapegamepass4'] = 'After the game session, make sure we record your game time (and possible number of hint used) for the championship.';
 $lang['answer_reservation_escapegamepass5'] = 'For more information on how to use the escapegamepass and the conditions of participation, please go to the ';
 
-
 // Section 7
 $lang['where_to_find_us'] = 'Where to find us';
 $lang['header_address'] = 'Address';
@@ -180,6 +180,27 @@ $lang['form_message'] = 'Message';
 $lang['form_send'] = 'Send';
 $lang['follow_us'] = 'Follow us on social media';
 
+// Section 8
+$lang['header_links'] = 'Links';
+$lang['our_partners'] = 'Our partners';
+$lang['alt_co_n_co'] = 'Co&amp;Co';
+$lang['header_co_n_co'] = 'Co&amp;Co';
+$lang['text_co_n_co'] = 'All types of atmosphere and decoration, ephemeral or long lasting, for professional event and individuals.';
+$lang['alt_corentin'] = 'Corentin M';
+$lang['header_corentin'] = 'Corentin M';
+$lang['text_corentin'] = 'Decoration and mural painting.';
+$lang['alt_roseville_r'] = 'Roseville rooms renting';
+$lang['header_roseville_r'] = 'The "R" lounge for your parties.';
+$lang['text_roseville_r'] = 'Rent a welcoming and out of ordinary space for your professional or private events.';
+$lang['other_escapes'] = 'Other escape games in french-speaking Switzerland - our recommendations.';
+$lang['alt_ichu'] = 'ichu escape game logo';
+$lang['header_ichu'] = 'Ichu';
+$lang['alt_hotel_enigma'] = 'hotel enigma escape game logo';
+$lang['header_hotel_enigma'] = 'Hotel Enigma';
+$lang['alt_escapeworld'] = 'escape world logo';
+$lang['header_escapeworld'] = 'Escape World';
+$lang['alt_riviera'] = 'escape riviera logo';
+$lang['header_riviera'] = 'Escape Riviera';
 
 //// Contact
 $lang['new_contact_message'] = 'New message from the contact form';

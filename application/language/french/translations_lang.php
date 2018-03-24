@@ -34,6 +34,7 @@ $lang['our_pricing'] = 'Nos tarifs';
 $lang['about'] = 'À propos';
 $lang['faq'] = 'FAQ';
 $lang['location'] = 'Situation';
+$lang['links'] = 'Liens';
 
 // Intro
 $lang['welcome_to'] = 'Bienvenue à ';
@@ -162,7 +163,6 @@ $lang['answer_reservation_escapegamepass3'] = 'Présentez spontanément l’esca
 $lang['answer_reservation_escapegamepass4'] = 'Une fois l’escape game terminé, assurez-vous que le temps de la session, et éventuellement le nombre d\'indice utilisé, ont été enregistré pour le championnat.';
 $lang['answer_reservation_escapegamepass5'] = 'Pour plus d\'information sur comment utiliser l\'escapegamepass et les conditions d\'utilisation, visitez le site ';
 
-
 // Section 7
 $lang['where_to_find_us'] = 'Où nous trouver ?';
 $lang['header_address'] = 'Adresse';
@@ -180,6 +180,28 @@ $lang['form_email'] = 'Email';
 $lang['form_message'] = 'Message';
 $lang['form_send'] = 'Envoyer';
 $lang['follow_us'] = 'Suivez-nous sur les réseaux sociaux';
+
+// Section 8
+$lang['header_links'] = 'Liens';
+$lang['our_partners'] = 'Nos partenaires';
+$lang['alt_co_n_co'] = 'Co&amp;Co';
+$lang['header_co_n_co'] = 'Co&amp;Co';
+$lang['text_co_n_co'] = 'Création d\'atmosphère et décoration, éphémère ou de longue durée, pour des événements professionals et les particuliers.';
+$lang['alt_corentin'] = 'Corentin M';
+$lang['header_corentin'] = 'Corentin M';
+$lang['text_corentin'] = 'Décoration et peintures murales';
+$lang['alt_roseville_r'] = 'Roseville location de salles';
+$lang['header_roseville_r'] = 'Roseville "R" de fête';
+$lang['text_roseville_r'] = 'Louez un espace convivial et insolite pour vos événements professionels ou privés.';
+$lang['other_escapes'] = 'Autres escape games en Suisse romande - nos recommendations';
+$lang['alt_ichu'] = 'ichu escape game logo';
+$lang['header_ichu'] = 'Ichu';
+$lang['alt_hotel_enigma'] = 'hotel enigma escape game logo';
+$lang['header_hotel_enigma'] = 'Hotel Enigma';
+$lang['alt_escapeworld'] = 'escape world logo';
+$lang['header_escapeworld'] = 'Escape World';
+$lang['alt_riviera'] = 'escape riviera logo';
+$lang['header_riviera'] = 'Escape Riviera';
 
 //// Contact
 $lang['new_contact_message'] = 'Nouveau message depuis le formulaire de contact';
