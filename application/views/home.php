@@ -763,7 +763,7 @@
                         <p><?php echo $this->lang->line('text_parking'); ?>
                             <a href="http://www.vevey.ch/N1134/camping-de-la-pichette.html"
                                target="_blank">
-                                <?php echo $lang['pichette_campground']; ?>
+                                <?php echo $this->lang->line('pichette_campground'); ?>
                             </a>
                         </p>
                     </div>
