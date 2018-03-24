@@ -156,6 +156,7 @@ $lang['question_reading_glasses'] = 'Lunettes de vue';
 $lang['answer_reading_glasses'] = 'Si vous utilisez habituellement des lunettes pour lire nous vous conseillons de les prendre avec vous.';
 $lang['question_reservation_escapegamepass'] = 'Comment utiliser et réserver avec l\'escapegamepass à Roseville Escape ?';
 $lang['alt_escapegamepass'] = 'carte d\'escapegamepass';
+$lang['answer_reservation_escapegamepass0'] = 'Avec l\'escapegamepass, 30% de réduction vous sont accordés sur le prix de la salle "Chocolat" uniquement.';
 $lang['answer_reservation_escapegamepass1'] = 'Assurez-vous que votre pass est actif en allant sur le site ';
 $lang['escapegamepass_site'] = 'd\'escapegamepass.';
 $lang['answer_reservation_escapegamepass2'] = 'Contactez-nous via le formulaire de contact, par email ou par téléphone en annonçant que vous avez le pass et indiquez vos préférences pour la réservation (les horaires disponibles peuvent être consultées sur notre page de réservation).';

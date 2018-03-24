@@ -126,6 +126,11 @@
                                 </li>
                                 <li>
                                     <a class="page-scroll" href="#section8">
+                                        <?php echo $this->lang->line('links'); ?>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="page-scroll" href="#section9">
                                         <?php echo $this->lang->line('contact_us'); ?>
                                     </a>
                                 </li>
@@ -764,6 +769,7 @@
                                                  class="img-rounded center-block pass-img" width="60%" />
                                         </div>
                                         <div class="col-sm-pull-6 col-sm-6">
+                                            <p><?php echo $this->lang->line('answer_reservation_escapegamepass0'); ?></p>
                                             <ol>
                                                 <li>
                                                     <?php echo $this->lang->line('answer_reservation_escapegamepass1'); ?>
@@ -840,6 +846,81 @@
 
         <!-- Section 8 -->
         <div id="section8">
+            <div class="container">
+                <div class="jumbotron">
+                    <h2><?php echo $this->lang->line('header_links'); ?></h2>
+                </div>  
+                <!-- Partners -->
+                <h3><?php echo $this->lang->line('our_partners'); ?></h3>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <a href="http://co-n-co.ch/" target="_blank">
+                            <div class="darken">
+                                <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/co-n-co.jpg"
+                                     alt="<?php echo $this->lang->line('alt_co_n_co'); ?>" class="img-thumbnail" />
+                            </div>
+                            <h4><?php echo $this->lang->line('header_co_n_co'); ?></h4>
+                        </a>
+                        <p><?php echo $this->lang->line('text_co_n_co'); ?></p>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="https://corentin-m.com/" target="_blank">
+                            <div class="darken">
+                                <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/corentin.jpg"
+                                     alt="<?php echo $this->lang->line('alt_corentin'); ?>" class="img-thumbnail" />
+                            </div>
+                            <h4><?php echo $this->lang->line('header_corentin'); ?></h4>
+                        </a>
+                        <p><?php echo $this->lang->line('text_corentin'); ?></p>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="https://espace.roseville.ch/" target="_blank">
+                            <div class="darken">
+                                <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/aire_de_fete_atmosphere.jpg"
+                                     alt="<?php echo $this->lang->line('alt_roseville_r'); ?>" class="img-thumbnail" />
+                            </div>
+                            <h4><?php echo $this->lang->line('header_roseville_r'); ?></h4>
+                        </a>
+                        <p><?php echo $this->lang->line('text_roseville_r'); ?></p>
+                    </div>
+                </div>
+                <!-- Escape -->
+                <h3><?php echo $this->lang->line('other_escapes'); ?></h3>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3">
+                        <a href="http://www.l-ichu.ch/" target="_blank">
+                            <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/ichu-escape-game.png"
+                                 alt="<?php echo $this->lang->line('alt_ichu'); ?>" class="img-thumbnail darken" />
+                            <h4><?php echo $this->lang->line('header_ichu'); ?></h4>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <a href="http://www>hotel-enigma.ch/" target="_blank">
+                            <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/hotel-enigma-escape-game.png"
+                                 alt="<?php echo $this->lang->line('alt_hotel_enigma'); ?>" class="img-thumbnaail darken" />
+                            <h4><?php echo $this->lang->line('header_hotel_enigma'); ?></h4>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <a href="https://www.esapeworld.ch" target="_blank">
+                            <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/escapeworld.png"
+                                 alt="<?php echo $this->lang->line('alt_escapeworld'); ?>" class="img-thumbnail darken" />
+                            <h4><?php echo $this->lang->line('header_escapeworld'); ?></h4>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <a href="https://www.escaperiviera.ch/" target="_blank">
+                            <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/escape-riviera.png"
+                                 alt=<?php echo $this->lang->line('alt_riviera'); ?> class="img-thumbnail darken" />
+                            <h4><?php echo $this->lang->line('header_riviera'); ?></h4>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 9 -->
+        <div id="section9">
             <div class="container">
                 <div class="jumbotron">
                 <h2><?php echo $this->lang->line('contact_us'); ?></h2>
@@ -956,6 +1037,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- Footer -->
         <div id="footer">
             <div class="container">
                 <p>Copyright &copy;
