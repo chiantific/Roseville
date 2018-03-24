@@ -324,7 +324,7 @@ var GeneralFunctions = {
         $.each(availableLanguages, function() {
             if (this != selectedLanguage) {
                 data_language = this;
-                text = EALang['switch_language'];
+                text = EALang['other_language'];
             }
         });
         $element.text(text);

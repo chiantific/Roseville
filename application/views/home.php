@@ -98,12 +98,12 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="page-scroll" href="#gcard">
+                                    <a class="page-scroll" href="#section4">
                                         <?php echo $this->lang->line('gift_certificate'); ?>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="page-scroll" href="#price">
+                                    <a class="page-scroll" href="#section5">
                                         <?php echo $this->lang->line('our_pricing'); ?>
                                     </a>
                                 </li>
@@ -115,17 +115,17 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a class="page-scroll" href="#section5">
+                                    <a class="page-scroll" href="#section6">
                                         <?php echo $this->lang->line('faq'); ?>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="page-scroll" href="#where">
+                                    <a class="page-scroll" href="#section7">
                                         <?php echo $this->lang->line('location'); ?>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="page-scroll" href="#contact">
+                                    <a class="page-scroll" href="#section8">
                                         <?php echo $this->lang->line('contact_us'); ?>
                                     </a>
                                 </li>
@@ -208,7 +208,7 @@
         <div id="section2">
             <div class="container">
                 <div class="jumbotron">
-                    <h3><?php echo $this->lang->line('what_public'); ?></h3>
+                    <h3><?php echo $this->lang->line('header_what_public'); ?></h3>
                     <p><?php echo $this->lang->line('text_what_public'); ?></p>
                 </div>
                 <div class="space"></div>
@@ -242,7 +242,7 @@
         <div id="section3">
             <div class="container">
                 <div class="jumbotron">
-                    <h2><?php echo $this->lang->line('our_rooms'); ?></h2>
+                    <h2><?php echo $this->lang->line('header_our_rooms'); ?></h2>
                     <p><?php echo $this->lang->line('text_our_rooms'); ?></p>
                     <div class="text-center">
                         <a href="<?php echo $this->config->item('base_url') ?>/index.php/booking"
@@ -250,7 +250,7 @@
                             <?php echo $this->lang->line('bookings'); ?>
                         </a>
                         <a href="#contact" class="btn btn-default page-scroll">
-                            <?php echo $this->lang->line('btn_contact_us'); ?>
+                            <?php echo $this->lang->line('contact_us'); ?>
                         </a>
                     </div>
                 </div>
@@ -263,7 +263,7 @@
                         <p><?php echo $this->lang->line('group_chocolate'); ?></p>
                         <div class="grouped-buttons">
                             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
-                                <?php echo $this->lang->line('btn_more_info'); ?>
+                                <?php echo $this->lang->line('more_info'); ?>
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="myModal" role="dialog">
@@ -289,7 +289,7 @@
                             </div> <!-- End modal -->
                             <a href="https://www.youtube.com/watch?v=GyssJMtZRaM" rel="prettyPhoto">
                                 <button type="button" class="btn btn-default">
-                                    teaser
+                                    <?php echo $this->lang->line('teaser'); ?>
                                 </button>
                             </a>
                         </div>
@@ -302,7 +302,7 @@
                         <p><?php echo $this->lang->line('group_ivv'); ?></p>
                         <div class="grouped-buttons">
                             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal_ivv">
-                                <?php echo $this->lang->line('btn_more_info'); ?>
+                                <?php echo $this->lang->line('more_info'); ?>
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="modal_ivv" role="dialog">
@@ -357,44 +357,45 @@
                                                     <div class="item active">
                                                         <img class="img-responsive center-block"
                                                              src="<?php echo $this->config->item('base_url'); ?>/assets/img/entree.jpg"
-                                                             alt="entrée de la salle In Vino Veritas">
+                                                             alt="<?php echo $this->lang->line('alt_ivv_entrace'); ?>">
                                                     </div>
                                                     <div class="item">
                                                         <img class="img-responsive center-block"
                                                              src="<?php echo $this->config->item('base_url'); ?>/assets/img/pompe.jpg"
-                                                             alt="pompe et arrosoirs">
+                                                             alt="<?php echo $this->lang->line('alt_pump_can'); ?>">
                                                     </div>
                                                     <div class="item">
                                                         <img class="img-responsive center-block"
                                                              src="<?php echo $this->config->item('base_url'); ?>/assets/img/shelf.jpg"
-                                                             alt="étagère">
+                                                             alt="<?php echo $this->lang->line('alt_shelf'); ?>">
                                                     </div>
                                                     <div class="item">
                                                         <img class="img-responsive center-block"
                                                              src="<?php echo $this->config->item('base_url'); ?>/assets/img/liter_register.jpg"
-                                                             alt="doseur">
+                                                             alt="<?php echo $this->lang->line('alt_liter_register'); ?>">
                                                     </div>
                                                     <div class="item">
                                                         <img class="img-responsive center-block"
                                                              src="<?php echo $this->config->item('base_url'); ?>/assets/img/tonneau.jpg"
-                                                             alt="tonneau">
+                                                             alt="<?php echo $this->lang->line('alt_barrel'); ?>">
                                                     </div>
                                                     <div class="item">
                                                         <img class="img-responsive center-block"
                                                              src="<?php echo $this->config->item('base_url'); ?>/assets/img/manivelle.jpg"
-                                                             alt="Manivelle">
+                                                             alt="<?php echo $this->lang->line('alt_crank'); ?>">
                                                     </div>
                                                 </div>
                                                 <!-- Left and right controls -->
                                                 <a class="left carousel-control" href="#IVVcarousel" data-slide="prev">
                                                     <span class="glyphicon glyphicon-chevron-left"></span>
-                                                    <span class="sr-only">Previous</span>
+                                                    <span class="sr-only"><?php echo $this->lang->line('previous'); ?></span>
                                                 </a>
                                                 <a class="right carousel-control" href="#IVVcarousel" data-slide="next">
                                                     <span class="glyphicon glyphicon-chevron-right"></span>
-                                                    <span class="sr-only">Next</span>
+                                                    <span class="sr-only"><?php echo $this->lang->line('next'); ?></span>
                                                 </a>
-                                            </div> <!-- Carousel -->
+                                            </div>
+                                            <!-- End carousel -->
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">
@@ -403,30 +404,31 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> <!-- End modal -->
+                            </div>
+                            <!-- End modal -->
                         </div>
                     </div>
                     <div class="col-sm-4 sub-section">
-                    <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/R_de_fete.jpg"
-                         class="img-thumbnail" alt="<?php echo $this->lang->line('alt_r_lounge'); ?>" width="100%" />
-                            <h3><?php echo $this->lang->line('header_area_R'); ?></h3>
-                            <p><?php echo $this->lang->line('text_area_R'); ?></p>
-                            <p><?php echo $this->lang->line('group_area'); ?></p>
-                            <div class="grouped-buttons">
-                                <a type="button" href="http://espace.roseville.ch" target="_blank" class="btn btn-default">
-                                    <?php echo $this->lang->line('btn_more_info'); ?>
-                                </a>
-                            </div>
+                        <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/R_de_fete.jpg"
+                             class="img-thumbnail" alt="<?php echo $this->lang->line('alt_r_lounge'); ?>" width="100%" />
+                        <h3><?php echo $this->lang->line('header_area_R'); ?></h3>
+                        <p><?php echo $this->lang->line('text_area_R'); ?></p>
+                        <p><?php echo $this->lang->line('group_area'); ?></p>
+                        <div class="grouped-buttons">
+                            <a type="button" href="http://espace.roseville.ch" target="_blank" class="btn btn-default">
+                                <?php echo $this->lang->line('more_info'); ?>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Section bon cadeau -->
-        <div id="gcard">
+        <!-- Section 4 -->
+        <div id="section4">
             <div class="container">
                 <div class="section-title text-center center">
-                <h2><?php echo $this->lang->line('gift_certificate'); ?></h2>
+                <h2><?php echo $this->lang->line('header_gift_certificate'); ?></h2>
                 </div>
                 <div id="row">
                     <div class="col-sm-6 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-1 sub-section">
@@ -447,17 +449,18 @@
                     </div>
                     <div class="col-sm-6 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2 carton">
                         <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/bon_cadeau.jpg"
-                             alt="bon cadeau" class="img-responsive img-rounded" height="450px" width="300px" />
+                             alt="<?php echo $this->lang->line('alt_gift_card'); ?>"
+                             class="img-responsive img-rounded" height="450px" width="300px" />
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Section tarifs -->
-        <div id="price">
+        <!-- Section 5 -->
+        <div id="section5">
             <div class="container">
                 <div class="jumbotron">
-                <h2><?php echo $this->lang->line('our_pricing'); ?></h2>
+                <h2><?php echo $this->lang->line('prices'); ?></h2>
                 </div>
                 <div class="row">
                     <div class="col-md-4 ">
@@ -496,15 +499,15 @@
                             <?php echo $this->lang->line('book_now'); ?>
                         </a>
                         <a href="#contact" class="btn btn-default page-scroll">
-                            <?php echo $this->lang->line('btn_contact_us'); ?>
+                            <?php echo $this->lang->line('contact_us'); ?>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Section 5 -->
-        <div id="section5">
+        <!-- Section 6 -->
+        <div id="section6">
             <div class="container">
                 <div class="section-title text-center">
                 <h2><?php echo $this->lang->line('frequently_asked_questions'); ?></h2>
@@ -707,7 +710,7 @@
                                     <a class="page-scroll" href="#contact">
                                         <?php echo $this->lang->line('contact_us_verb'); ?>
                                     </a>
-                                    <?php echo $this->lang->line('by_email_or_by_phone'); ?>
+                                    <?php echo $this->lang->line('or_by_phone'); ?>
                                 </div>
                             </div>
                         </div>
@@ -729,8 +732,9 @@
                 </div>    
             </div>
         </div>
-        <!-- où nous trouver -->
-        <div id="where">
+
+        <!-- Section 7 -->
+        <div id="section7">
             <div class="container">
                 <div class="jumbotron">
                 <h2><?php echo $this->lang->line('where_to_find_us'); ?></h2>
@@ -761,8 +765,9 @@
                 </div>
             </div>
         </div>
-        <!-- Contact Section -->
-        <div id="contact">
+
+        <!-- Section 8 -->
+        <div id="section8">
             <div class="container">
                 <div class="jumbotron">
                 <h2><?php echo $this->lang->line('contact_us'); ?></h2>
@@ -784,8 +789,7 @@
                     <div class="col-md-4">
                         <div class="atelier_view">
                             <i class="fa fa-phone"></i>
-                            <p>078 638 80 79<br>
-                            <p>079 623 04 11</p>
+                            <p><?php echo $this->lang->line('phone_numbers'); ?></p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -811,7 +815,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="text" id="name" class="form-control" 
-                                            placeholder="<?php echo $this->lang->line('name'); ?>"
+                                            placeholder="<?php echo $this->lang->line('form_name'); ?>"
                                             required="required">
                                         <p class="help-block text-danger"></p>
                                     </div>
@@ -819,7 +823,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="email" id="email" class="form-control"
-                                            placeholder="<?php echo $this->lang->line('email'); ?>"
+                                            placeholder="<?php echo $this->lang->line('form_email'); ?>"
                                             required="required">
                                         <p class="help-block text-danger"></p>
                                     </div>
@@ -829,13 +833,13 @@
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <textarea name="message" id="message" class="form-control" rows="4"
-                                            placeholder="<?php echo $this->lang->line('message'); ?>"
+                                            placeholder="<?php echo $this->lang->line('form_message'); ?>"
                                             required="required"></textarea>
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     <div id="success"></div>
                                     <button type="submit" class="btn btn-default">
-                                        <?php echo $this->lang->line('send'); ?>
+                                        <?php echo $this->lang->line('form_send'); ?>
                                     </button>
                                 </div>
                             </div>

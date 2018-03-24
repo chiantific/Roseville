@@ -278,27 +278,27 @@ hr {
     width: auto;
 }
 
-/* Section gcard */
-#gcard {
+/* Section 4 */
+#section4 {
     background: #B0985C;
     text-align: center
     color: #ddd;
     min-height: 100%;
 }
-#gcard h2 {
+#section4 h2 {
     color: #f6f6f6;
 }
-#gcard i.fa {
+#section4 i.fa {
     font-size: 80px;
     color: #5d2a65;
 }
-#gcard .carton img {
+#section4 .carton img {
     margin: 0 auto;
 }
 .carton {
     padding: 40px;
 }
-#gcard .img-rounded {
+#section4 .img-rounded {
     border-radius: 12px;
     -webkit-box-shadow: 6px 5px 10px -1px rgba(69,68,69,1);
     -moz-box-shadow: 6px 5px 10px -1px rgba(69,68,69,1);
@@ -306,124 +306,125 @@ hr {
 }
 
 
-#gcard .sub-section h4 {
+#section4 .sub-section h4 {
     color: #e8e8e8;
     font-size: 1.2em;
     margin-bottom: 20px;
     margin-top: 20px;
     text-align: justify;
 }
-#gcard .sub-section p {
+#section4 .sub-section p {
     color: #e8e8e8;
     font-size: 1.1em;
 }
-#gcard .sub-section p a {
+#section4 .sub-section p a {
     color: #8d4099;
 }
 
-#gcard .sub-section p a:hover, #gcard .sub-section p a:focus {
+#section4 .sub-section p a:hover, #section4 .sub-section p a:focus {
     color: #5d2a65;
     font-weight: 600;
 }
-/* price */
-#price{
+
+/* Section 5 */
+#section5{
     background-color: #C1D6D2;
     min-height: 100%;
 }
 
-#price .jumbotron {
+#section5 .jumbotron {
     background-image: url(../img/money.jpg);
     background-size: 100%;
     background-color: rgba(178,209,203,0.5)
     margin-bottom: 50px;
 }
-#price i.fa_big {
+#section5 i.fa_big {
     font-size: 6em;
     color: #15595F;
     margin: 20px 0;
 }
-#price img.fc {
+#section5 img.fc {
     height: 6em;
     margin: 20px 0;
 }
-#price img.ic {
+#section5 img.ic {
     height: 2em;
     margin-right: 20px;
 }
 
 
-#price li {
+#section5 li {
     display: inline-block;
     text-align: left;
 }
-#price .btn-default {
+#section5 .btn-default {
     display: inline-block;
     margin: 30px 0;
     margin-right: 20px;
     background-color: #5D264F;
 }
-#price .btn-default:hover, #contact .btn-default:focus {
+#section5 .btn-default:hover, #section5 .btn-default:focus {
     color: #CCCCCC;
     background: #753064;
 }
-#price ul{
+#section5 ul{
     text-align: left;
     padding-left: 0;
 }
-#price h3 {
+#section5 h3 {
     margin-top: 20px;
 }
-#price h2 {
+#section5 h2 {
     color: #5D264F;
 }
 
-/* Section 5 */
-#section5 {
+/* Section 6 */
+#section6 {
     background: #78C9BC;
     color: #ddd;
     min-height: 100%;
 }
-#section5 h2 {
+#section6 h2 {
     color: #f6f6f6;
 }
-#section5 h4{
+#section6 h4{
     color:    #f2f2f2;
 }
-#section5 a{
+#section6 a{
     color:    #548C83;
 }
-#section5 a:hover, #section5 a:focus {
+#section6 a:hover, #section6 a:focus {
     color:    #C74D00;
 }
-#section5 .panel-title > a
+#section6 .panel-title > a
 {
     color: #f2f2f2;
 }
 .panel-title > a.focus:before {
     content: "\2796";
 }
-#section5 .panel-title a:before {
+#section6 .panel-title a:before {
     content: "\2796";
     margin-right: 5px;    max-width: 40 px;
 }
-#section5 .panel-title a.collapsed:before {
+#section6 .panel-title a.collapsed:before {
     content: "\2795";
     margin-right: 5px;    max-width: 40 px;
 }
-#section5 .panel-default {
+#section6 .panel-default {
     margin-bottom: 20px;
 }
-#section5 .panel-default > .panel-heading  {
+#section6 .panel-default > .panel-heading  {
     background-color: #6ab0a4;
 }
-#section5 .panel-default {
+#section6 .panel-default {
     border-color:  #62a398;
 }
-#section5 .panel-body {
+#section6 .panel-body {
     background-color: #71bdb0;
     color: #f2f2f2;
 }
-#section5 .panel-default>.panel-heading+.panel-collapse>.panel-body  {
+#section6 .panel-default>.panel-heading+.panel-collapse>.panel-body  {
     border-top-color: #62a398;
 }
 
@@ -555,66 +556,42 @@ ol.type li a:hover {
     padding: 5px;
     color: #F4D03F;
 }
-/* Section 4 */
-#section4 {
-    padding: 140px 0;
-    background: #e6e6e6;
-    min-height: 100%;
-}
-#section4 .section4-text {
-    margin-left: 10px;
-}
-img.img-thumbnail.section4-img {
-    width: 200px;
-    height: 200px;
-    border: 0;
-    border-radius: 0;
-    background-color: #f6f6f6;
-}
-#team .thumbnail {
-    background: transparent;
-    border: 0;
-}
-#team .thumbnail .caption {
-    padding: 9px;
-    color: #777;
-}
 
-/* Contact Section */
-#contact {
+/* Section 8 */
+#section8 {
     background: #B0985C;
     min-height: 100%;
 }
-#contact .jumbotron{
+#section8 .jumbotron{
     background: #bca262;
     margin-bottom: 50px;
 }
-#contact h2 {
+#section8 h2 {
     color: #f6f6f6;
 }
-#contact p, #contact a{
+#section8 p, #section8 a{
     color: #e8e8e8;
 }
-#contact i.fa {
+#section8 i.fa {
     font-size: 80px;
     color: #5D264F;
     margin-bottom: 20px;
 }
-#contact .atelier_view p {
+#section8 .atelier_view p {
     font-size: 1.2em;
 }
-#contact .atelier_view .fa {
+#section8 .atelier_view .fa {
     display: block;
 }
-#contact .schedule {
+#section8 .schedule {
     text-align: left;
     display: inline-block;
 }
-#contact h3 {
+#section8 h3 {
     margin-top: 40px;
     color: #f6f6f6;
 }
-#contact .btn-default {
+#section8 .btn-default {
     background: #5D264F;
     border: 0;
     border-radius: 4px;
@@ -623,11 +600,11 @@ img.img-thumbnail.section4-img {
     margin-top: 15px;
     font-size: 15px;
 }
-#contact .btn-default:hover, #contact .btn-default:focus {
+#section8 .btn-default:hover, #section8 .btn-default:focus {
     color: #f6f6f6;
     background: #a13e1a;
 }
-#contact .contact-item {
+#section8 .contact-item {
     padding: 10px;
     margin: 10px;
     height: 100px;
@@ -635,11 +612,11 @@ img.img-thumbnail.section4-img {
 }
 
 
-#contact form {
+#section8 form {
     padding: 30px 0;
 }
 
-#contact .text-danger {
+#section8 .text-danger {
     color: #5D264F;
     text-align: left;
 }
@@ -649,7 +626,7 @@ label {
     font-family: 'Open Sans', sans-serif;
     float: left;
 }
-#contact .form-control {
+#section8 .form-control {
     display: block;
     width: 100%;
     padding: 6px 12px;
@@ -666,13 +643,13 @@ label {
     -o-transition: none;
     transition: none;
 }
-#contact .form-control:focus {
+#section8 .form-control:focus {
     border-color: inherit;
     outline: 0;
     -webkit-box-shadow: transparent;
     box-shadow: transparent;
 }
-#contact .btn-default {
+#section8 .btn-default {
     background: #5D264F;
     border: 0;
     border-radius: 4px;
@@ -682,7 +659,7 @@ label {
     margin-left: 0;
     font-size: 15px;
 }
-#contact .btn-default:hover, #contact .btn-default:focus {
+#section8 .btn-default:hover, #section8 .btn-default:focus {
     color: #f6f6f6;
     background: #a13e1a;
 }
@@ -696,18 +673,18 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
     outline: none;
     outline-offset: none;
 }
-#contact .social {
+#section8 .social {
     text-align: center;
 }
 
-#contact .social i.fa {
+#section8 .social i.fa {
     font-size: 40px;
     padding-top: 8px;
     color: #5D264F;
     border-radius: 4px;
     transition: all 0.3s;
 }
-#contact .social i.fa:hover {
+#section8 .social i.fa:hover {
     color: #a13e1a;
 }
 #mapid {
@@ -730,50 +707,6 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 #accordion, #accordion h4{
     text-align: justify;
 }
-/* --accordion with javascript and css
-#section5 button.accordion {
-background: #71bdb0;
-color: #fff;
-cursor: pointer;
-padding: 10px;
-width: 100%;
-border: none;
-text-align: left;
-outline: none;
-font-size: 15px;
-transition: 0.4s;
-}
-#section5 button.accordion.active, #section5 button.accordion:hover {
-background-color: #6ab0a4;
-}
-#section5 button.accordion:before {
-content: '\02795';
-font-size: 13px;
-color: #fff;
-float: left;
-margin-right: 5px;    max-width: 40 px;
-}
-#section5 button.accordion.active:before {
-content: "\2796";
-}
-#section5 div.panel {
-color: #fff;
-text-align: left;
-padding: 10px 30px 0px;
-background-color: #7fd4c6;
-max-height: 0;
-overflow: hidden;
-transition: 0.6s ease-in-out;
-opacity: 0;
-}
-#section5 div.panel.show {
-    opacity: 1;
-    max-height: 500px;
-}
-#section5 .clearfix {
-    overflow:    auto;
-} */
-
     /* directions */
 .markerWindow h4 {
     color: #a6a6a6;
@@ -785,17 +718,19 @@ opacity: 0;
 .atelier_view img {
     width: 90%;
 }
-#where  p a {
+
+/* Section 7 */
+#section7  p a {
     color: #C74D00;
 }
-#where  p a:hover, #where  p a:focus {
+#section7  p a:hover, #section7  p a:focus {
     color: #15595F;
 }
-#where {
+#section7 {
     background-color: #C1D6D2;
     padding-bottom: 50px;
 }
-#where .jumbotron {
+#section7 .jumbotron {
     background-color: #B2D1CB;
 }
 
