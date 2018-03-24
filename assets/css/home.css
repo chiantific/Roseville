@@ -427,6 +427,12 @@ hr {
 #section6 .panel-default>.panel-heading+.panel-collapse>.panel-body  {
     border-top-color: #62a398;
 }
+#section6 ol li {
+    list-style:decimal;
+}
+#section6 .pass-img {
+    margin-bottom: 1em;
+}
 
 /* Gallery Section */
 #works {

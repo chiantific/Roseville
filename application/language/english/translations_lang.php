@@ -152,6 +152,15 @@ $lang['answer_showing_up_without_reservation'] = 'No, prior booking at least two
 $lang['or_by_phone'] = 'or by phone to set a date and time.';
 $lang['question_reading_glasses'] = 'Do I need to bring my reading glasses ?';
 $lang['answer_reading_glasses'] = 'We advise you to bring reading glasses if you usually need them to read.';
+$lang['question_reservation_escapegamepass'] = 'How to book with the escapegamepass ?';
+$lang['alt_escapegamepass'] = 'escapegamepass card';
+$lang['answer_reservation_escapegamepass1'] = 'Make sure your escapegamepass has been activated before booking a room at Roseville Escape. You can activate your pass on the ';
+$lang['escapegamepass_site'] = 'escapegamepass website.';
+$lang['answer_reservation_escapegamepass2'] = 'Contact us by phone, email, or through the online form stating your interest in booking with the escapegamepass. Indicate your preferred booking date and time (the available time slots can be viewed on our booking page).';
+$lang['answer_reservation_escapegamepass3'] = 'Show your escapegamepass when you arrive at Roseville Escape to validate your reservation and participate in the championship.';
+$lang['answer_reservation_escapegamepass4'] = 'After the game session, make sure we record your game time (and possible number of hint used) for the championship.';
+$lang['answer_reservation_escapegamepass5'] = 'For more information on how to use the escapegamepass and the conditions of participation, please go to the ';
+
 
 // Section 7
 $lang['where_to_find_us'] = 'Where to find us';
