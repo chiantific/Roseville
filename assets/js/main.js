@@ -60,7 +60,7 @@ function main() {
 	
 
   // jQuery Parallax
-  function initParallax() {
+/*  function initParallax() {
     $('#intro').parallax("100%", 0.3);
     $('#section2').parallax("100%", 0.3);
     $('#aboutimg').parallax("100%", 0.3);	
@@ -68,7 +68,7 @@ function main() {
 
   }
   initParallax();
-
+*/
   	// Pretty Photo
 	$("a[rel^='prettyPhoto']").prettyPhoto({
 		social_tools: false,
