@@ -557,13 +557,32 @@
                             </div>
                             <div id="collapse3" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <p><?php echo $this->lang->line('monday') . ': ' . $this->lang->line('hours_wks'); ?></p>
-                                    <p><?php echo $this->lang->line('tuesday') . ': ' .$this->lang->line('hours_wks'); ?></p>
-                                    <p><?php echo $this->lang->line('wednesday') . ': ' .$this->lang->line('hours_wks'); ?></p>
-                                    <p><?php echo $this->lang->line('thursday') . ': ' .$this->lang->line('hours_wks'); ?></p>
-                                    <p><?php echo $this->lang->line('friday') . ': ' .$this->lang->line('hours_wks'); ?></p>
-                                    <p><?php echo $this->lang->line('saturday') . ': ' .$this->lang->line('hours_we'); ?></p>
-                                    <p><?php echo $this->lang->line('sunday') . ': ' .$this->lang->line('hours_we'); ?></p>
+                                    <table class="table-condensed">
+                                        <tbody>
+                                            <?php
+                                                $week_days = array("monday", "tuesday", "wednesday", "thursday", "friday");
+                                                $week_end_days = array("saturday", "sunday");
+                                                foreach ($week_days as $day) {
+                                            ?>
+                                            <tr>
+                                                <td class="text-left"><?php echo $this->lang->line($day); ?></td>
+                                                <td><?php echo $this->lang->line('start_time_week'); ?></td>
+                                                <td>-</td>
+                                                <td><?php echo $this->lang->line('end_time_week'); ?></td>
+                                            </tr>
+                                            <?php }
+
+                                                foreach ($week_end_days as $day) {
+                                            ?>
+                                            <tr>
+                                                <td class="text-left"><?php echo $this->lang->line($day); ?></td>
+                                                <td><?php echo $this->lang->line('start_time_week_end'); ?></td>
+                                                <td>-</td>
+                                                <td><?php echo $this->lang->line('end_time_week_end'); ?></td>
+                                            </tr>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -801,13 +820,32 @@
                         <div class="atelier_view">
                             <i class="fa fa-clock-o"></i>
                             <div class="schedule">
-                                <p><?php echo $this->lang->line('monday') . ': ' . $this->lang->line('hours_wks'); ?></p>
-                                <p><?php echo $this->lang->line('tuesday') . ': ' .$this->lang->line('hours_wks'); ?></p>
-                                <p><?php echo $this->lang->line('wednesday') . ': ' .$this->lang->line('hours_wks'); ?></p>
-                                <p><?php echo $this->lang->line('thursday') . ': ' .$this->lang->line('hours_wks'); ?></p>
-                                <p><?php echo $this->lang->line('friday') . ': ' .$this->lang->line('hours_wks'); ?></p>
-                                <p><?php echo $this->lang->line('saturday') . ': ' .$this->lang->line('hours_we'); ?></p>
-                                <p><?php echo $this->lang->line('sunday') . ': ' .$this->lang->line('hours_we'); ?></p>
+                                <table class="table-condensed">
+                                    <tbody>
+                                        <?php
+                                            $week_days = array("monday", "tuesday", "wednesday", "thursday", "friday");
+                                            $week_end_days = array("saturday", "sunday");
+                                            foreach ($week_days as $day) {
+                                        ?>
+                                        <tr>
+                                            <td class="text-left"><?php echo $this->lang->line($day); ?></td>
+                                            <td><?php echo $this->lang->line('start_time_week'); ?></td>
+                                            <td>-</td>
+                                            <td><?php echo $this->lang->line('end_time_week'); ?></td>
+                                        </tr>
+                                        <?php }
+
+                                            foreach ($week_end_days as $day) {
+                                        ?>
+                                        <tr>
+                                            <td class="text-left"><?php echo $this->lang->line($day); ?></td>
+                                            <td><?php echo $this->lang->line('start_time_week_end'); ?></td>
+                                            <td>-</td>
+                                            <td><?php echo $this->lang->line('end_time_week_end'); ?></td>
+                                        </tr>
+                                        <?php } ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>  

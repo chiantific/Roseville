@@ -562,14 +562,14 @@ ol.type li a:hover {
     background: #B0985C;
     min-height: 100%;
 }
-#section8 .jumbotron{
+#section8 .jumbotron {
     background: #bca262;
     margin-bottom: 50px;
 }
 #section8 h2 {
     color: #f6f6f6;
 }
-#section8 p, #section8 a{
+#section8 p, #section8 a, #section8 td {
     color: #e8e8e8;
 }
 #section8 i.fa {
@@ -720,10 +720,10 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 }
 
 /* Section 7 */
-#section7  p a {
+#section7 p a {
     color: #C74D00;
 }
-#section7  p a:hover, #section7  p a:focus {
+#section7 p a:hover, #section7 p a:focus {
     color: #15595F;
 }
 #section7 {
