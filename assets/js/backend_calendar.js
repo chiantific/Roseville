@@ -1944,7 +1944,7 @@ var BackendCalendar = {
 
             // :: CHECK NUMBER OF PARTICIPANTS
             var nb_participants = $('#nb_participants').val();
-            if (nb_participants < 1 || nb_participants > 5) {
+            if (nb_participants < 1 || nb_participants > 6) {
                 $dialog.find('#nb_participants').parents('.form-group').addClass('has-error');
                 throw EALang['invalid_nb_participants'];
             }
