@@ -760,7 +760,12 @@
                             </a>
                         </p>
                         <h4><?php echo $this->lang->line('header_parking'); ?></h4>
-                        <p><?php echo $this->lang->line('text_parking'); ?></p>   
+                        <p><?php echo $this->lang->line('text_parking'); ?>
+                            <a href="http://www.vevey.ch/N1134/camping-de-la-pichette.html"
+                               target="_blank">
+                                <?php echo $lang['pichette_campground']; ?>
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>

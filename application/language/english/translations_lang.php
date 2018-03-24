@@ -43,7 +43,7 @@ $lang['enter'] = 'Enter';
 
 // Section 1
 $lang['header_adventure_heros'] = 'The adventure in which you are the heroes';
-$lang['text_adventure_heros'] = 'Roseville Escape Room is an unforgettable life-sized adventure game in an unusual immersive setting. Each room is themed and has a unique storyline that engages the participants through their environment. Players in groups from 2 to 6 are locked into a room and have 60 minutes to find a way to escape. Use teamwork along with the room elements to find clues. Combine them to solve a series of puzzles and discover your way out.';
+$lang['text_adventure_heros'] = 'Roseville Escape Room is an unforgettable life-sized adventure game in an unusual immersive setting. Each room is themed and has a unique storyline that engages the participants through their environment. Players in groups from 2 to 5 or 6 (depending on the room) are locked into a room and have 60 minutes to find a way to escape. Use teamwork along with the room elements to find clues. Combine them to solve a series of puzzles and discover your way out.';
 $lang['alt_lock_to_illustrate_the_game'] = 'Lock to illustrate the game';
 $lang['header_game_univers'] = 'The game\'s universe';
 $lang['text_game_univers'] = 'Dive into a thrilling life-size adventure within stunning fantasy inspired settings.';
@@ -95,7 +95,7 @@ $lang['group_area'] = 'For events with up to 40 persons';
 
 //Section 4
 $lang['header_gift_certificate'] = 'Gift certificate';
-$lang['sub_header_gift_card'] = 'Gift card for a game at Roseville Escape, valid for a group of 2 to 6 persons, price CHF 140.';
+$lang['sub_header_gift_card'] = 'Gift card for a game at Roseville Escape, valid for a group of 2 to 5 or 6 persons (depending on the room), price CHF 140.';
 $lang['how_to_order_gift_card'] = 'A gift card for a Roseville Escape game is an original and appreciated gift. We provide nicely designed vouchers for you to give loved ones for any occasion. To order please contact us using the ';
 $lang['contact_form'] = 'contact page';
 $lang['payment_gift_card'] = 'Detailed information about the payment will be provided immediately by email. Subsequently, the gift card will be deliverered by post (snail) mail upon confirmation of the payment.';
@@ -108,10 +108,10 @@ $lang['alt_gift_card'] = 'Gift card';
 // Section 5
 $lang['prices'] = 'Pricing';
 $lang['header_what_you_get'] = 'What you get';
-$lang['text_what_you_get'] = 'You book for an entire game session for a group from 2 to 6. We are limiting the size of groups to 6 persons to make sure you will have the optimum experience at Roseville Escape Room.';
-$lang['cost_weekdays'] = 'The cost is CHF 120 for our games on Wednesday and Thursday.';
+$lang['text_what_you_get'] = 'You book for an entire game session for a group from 2 to 5 or 6 depending on the room. We are limiting the size of groups to 6 persons to make sure you will have the optimum experience at Roseville Escape Room.';
+$lang['cost_weekdays'] = 'The cost is CHF 120 for our games on Monday, Tuesday, Wednesday and Thursday.';
 $lang['cost_weekend'] = 'The cost is CHF 140 for our play sessions on Friday, Saturday, Sunday and on public holidays.';
-$lang['cost_gift_card'] = 'A gift certificate is CHF 140 valid on any day for a group from 2 to 6 participants.';
+$lang['cost_gift_card'] = 'A gift certificate is CHF 140 valid on any day for a group from 2 to 5 or 6 participants depending on the room.';
 $lang['header_payment_methods'] = 'Payment methods';
 $lang['text_payment_methods'] = 'Credit cards, PostFinance, bank transfer or in cash (if you are willing to stop by at Roseville to book in person).';
 
@@ -124,15 +124,15 @@ $lang['answer_how_difficult'] = 'The difficulty level of our escape room is cons
 $lang['question_how_to_pay'] =  'How do I pay ?';
 $lang['answer_how_to_pay'] =  'Payment is made at the time of reservation on the internet, by (credit) card: Postcard, Visa, and Mastercard. Paying by bank transfer is also possible. In addition, you can visit Roseville in person to reserve and pay by cash. Please contact us in advance to ensure our presence on site.';
 $lang['question_opening_hours'] =  'Opening hours';
-$lang['hours_wks'] = '12pm-10:30pm';
-$lang['hours_we'] = '10:30am-10:30pm';
+$lang['hours_wks'] = '12pm-10:45pm';
+$lang['hours_we'] = '10:30am-10:45pm';
 $lang['question_where_location'] = 'Where are we located ?';
 $lang['answer_where_location'] = 'Roseville Escape Room is located on route de Lavaux 44, 1802 Corseaux. It is only 2 minutes away from Vevey going towards Lausanne. See ';
 $lang['map'] = 'map';
 $lang['question_cost'] = 'How much does it cost ?';
 $lang['answer_cost'] = 'CHF 120 for Wednesday and Thursday sessions, CHF 140 for sessions on Friday, Saturday, Sunday and public holidays.';
 $lang['question_group_size'] = 'Group size';
-$lang['answer_group_size'] = 'For the best experience, we limit the number of participants to 6 per group.';
+$lang['answer_group_size'] = 'For the best experience, we limit the number of group participants to 6 for the room "Chocolat" and to 5 for "In Vino Veritas".';
 $lang['question_skills'] = 'What are the required skills and knowledge ?';
 $lang['answer_skills'] = 'Apart from a desire to have a good time, no special skills are required. All the information you will need will be provided ... or hidden for you to find!';
 $lang['question_cancellation'] = 'Can I cancel a reservation ?';
@@ -160,7 +160,8 @@ $lang['header_public_transport'] = 'Public transport';
 $lang['text_public_transport'] = 'Roseville Escape is connected to Vevey train station by buses (route number 221) from VMCV. The closest bus stop "Gonelles" is only 100 m away. The schedule can be viewed ';
 $lang['VMCV_site'] = 'on the VMCV website.';
 $lang['header_parking'] = 'Parking';
-$lang['text_parking'] = 'There are just a couple of parking spaces in front of the entrance. Otherwise, when you drive from Vevey, we would appreciate if you could park on the grass along the sidewalk just before reaching number 44. Coming from Lausanne or Chexbres, the easiest is to park your car on the public spaces in the vicinity of the Pichette campground.';
+$lang['text_parking'] = 'There are just a couple of parking spaces in front of the entrance. Otherwise, when you drive from Vevey, we would appreciate if you could park on the grass along the sidewalk just before reaching number 44. Coming from Lausanne or Chexbres, the easiest is to park your car on the public spaces in the vicinity of ';
+$lang['pichette_campground'] = 'the Pichette campground.';
 $lang['leave_us_a_message'] = 'Leave us a message';
 $lang['form_name'] = 'Name';
 $lang['form_email'] = 'Email';
