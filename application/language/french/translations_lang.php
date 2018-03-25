@@ -80,7 +80,7 @@ $lang['header_ivv'] = '"In Vino Veritas"';
 $lang['text_ivv'] = 'Polar à consonance biodynamique.  Suite à une altération du cours de l\'Histoire, le Lavaux est une terre aride sur laquelle seuls quelques champignons poussent laborieusement. Mais que sont devenues les vignes de Lavaux ? Vous devez remonter dans le temps pour investiguer et rétablir les conditions qui ont fait le succès du vignoble d\'antan.';
 $lang['group_ivv'] = 'Pour groupes de 2 à 5 personnes';
 $lang['header_intro_room_ivv'] = 'Introduction pour la salle "In Vino Veritas"';
-$lang['text_intro_room_ivv'] = 'Un historien possède des évidences qui indiquent que sur les terrasses du Lavaux poussaient jadis des vignes magnifiques qui produisaient des vins de très bonne qualité. Ce paysage était semble-t-il classé au patrimoine mondial de l\'UNESCO. Tous les quarts de siècle, une fête des vignerons de renommée international y était même célébrée.<br>
+$lang['text_intro_room_ivv'] = 'Un historien possède des évidences qui indiquent que sur les terrasses du Lavaux poussaient jadis des vignes magnifiques qui produisaient des vins de très bonne qualité. Ce paysage était semble-t-il classé au patrimoine mondial de l\'UNESCO. Tous les quarts de siècle, une fête des vignerons de renommée internationale y était même célébrée.<br>
 Les aventuriers se retrouvent dans la tourmente de la Guerre des Papes au XIVème siècle. A cette époque, l’antipape d\'Avignon Clément VII, fils du Comte de Genève, règne sur des terres qui incluent le village de Châteauneuf-du-Pape. Dans cette région, des vignobles prolifiques sont une importante source de revenu pour la prospère papauté d\'Avignon.<br>
 Après l\'échec de la croisade contre les barbares à la fin du XIVème siècle, le pape de Rome Boniface IX perd en popularité face à Clément VII. Jaloux, il décide d\'affaiblir Clément VII en inoculant un champignon qui contamine la vigne. En une saison le vignoble de Châteauneuf-du-Pape est ravagé. Secoué par ce coup sournois Clément VII réagit en s\'intéressant à des terres situées au bord du lac Léman, sa région d\'origine. Au XIIème siècle, le Saint Empereur romain et Comte de Bourgogne, Fréderic 1er « Barberousse » de Hohenstaufen, offrait à l\'Evêque de Lausanne des terres à flanc de coteaux au bord du lac sur lesquels des moines y firent construire des terrasses et cultivèrent du raisin. En fin XIVème siècle ces vignes se portent à merveille. Dans un coup d\'audace, Clément VII convainc les moines du Lavaux de déplacer leurs ceps à Châteauneuf-du-Pape, laissant derrière des terrasses désertiques. Le coup de folie de Clément VII fonctionne. La région de Châteauneuf-du-Pape est à nouveau prospère mais le Lavaux devient ce paysage aride et austère.';
 $lang['peek_inside'] = 'Guigner';
@@ -115,7 +115,7 @@ $lang['cost_weekdays'] = 'CHF 120 pour les sessions du mercredi et du jeudi.';
 $lang['cost_weekend'] = 'CHF 140 pour celles du vendredi, samedi, dimanche et jours fériés.';
 $lang['cost_gift_card'] = 'CHF 140 pour un bon cadeau.';
 $lang['header_payment_methods'] = 'Moyens de paiements';
-$lang['text_payment_methods'] = 'Cartes de crédit, PostFinance, virement bancaire ou en espèces (si vous passez nous voir à Roseville pour faire la réservation).';
+$lang['text_payment_methods'] = 'Cartes de crédit, PostFinance, virement bancaire ou, sur place, en espèces uniquement.';
 
 // Section 6
 $lang['frequently_asked_questions'] = 'La foire aux questions';
@@ -126,10 +126,10 @@ $lang['answer_how_difficult'] = 'Le niveau de difficulté de notre salle est con
 $lang['question_how_to_pay'] = 'Type de paiement';
 $lang['answer_how_to_pay'] = 'Le paiement se fait au moment de la réservation sur internet par carte bancaire: Postcard, Visa, Mastercard. La possibilité d\'effectuer un virement bancaire est également proposée. Vous pouvez aussi passer nous voir à Roseville pour une réservation en personne et un paiement en espèce. Prière de nous contacter pour s\'assurer de notre présence sur place.';
 $lang['question_opening_hours'] = 'Nos horaires';
-$lang['start_time_week'] = '12h00';
-$lang['end_time_week'] = '22h45';
-$lang['start_time_week_end'] = '10h30';
-$lang['end_time_week_end'] = '22h45';
+$lang['10:30'] = '10h30';
+$lang['12:00'] = '12h00';
+$lang['16:30'] = '16h30';
+$lang['22:45'] = '22h45';
 $lang['question_where_location'] = 'Où nous trouver ?';
 $lang['answer_where_location'] = 'Nous sommes situés à la route de Lavaux 44, 1802 Corseaux à 2 minutes de Vevey en direction de Lausanne. Voir ';
 $lang['map'] = 'plan';
@@ -201,6 +201,10 @@ $lang['alt_hotel_enigma'] = 'hotel enigma escape game logo';
 $lang['header_hotel_enigma'] = 'Hotel Enigma';
 $lang['alt_escapeworld'] = 'escape world logo';
 $lang['header_escapeworld'] = 'Escape World';
+$lang['alt_evasion'] = 'evasion fribourg logo';
+$lang['header_evasion'] = 'Evasion';
+$lang['alt_housetrap'] = 'housetrap logo';
+$lang['header_housetrap'] = 'HouseTrap';
 $lang['alt_riviera'] = 'escape riviera logo';
 $lang['header_riviera'] = 'Escape Riviera';
 

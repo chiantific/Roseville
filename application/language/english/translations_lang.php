@@ -114,7 +114,7 @@ $lang['cost_weekdays'] = 'The cost is CHF 120 for our games on Monday, Tuesday, 
 $lang['cost_weekend'] = 'The cost is CHF 140 for our play sessions on Friday, Saturday, Sunday and on public holidays.';
 $lang['cost_gift_card'] = 'A gift certificate is CHF 140 valid on any day for a group from 2 to 5 or 6 participants depending on the room.';
 $lang['header_payment_methods'] = 'Payment methods';
-$lang['text_payment_methods'] = 'Credit cards, PostFinance, bank transfer or in cash (if you are willing to stop by at Roseville to book in person).';
+$lang['text_payment_methods'] = 'Credit cards, PostFinance, bank transfer or, on site, in cash only.';
 
 // Section 6
 $lang['frequently_asked_questions'] = 'Frequently asked questions';
@@ -125,10 +125,10 @@ $lang['answer_how_difficult'] = 'The difficulty level of our escape room is cons
 $lang['question_how_to_pay'] =  'How do I pay ?';
 $lang['answer_how_to_pay'] =  'Payment is made at the time of reservation on the internet, by (credit) card: Postcard, Visa, and Mastercard. Paying by bank transfer is also possible. In addition, you can visit Roseville in person to reserve and pay by cash. Please contact us in advance to ensure our presence on site.';
 $lang['question_opening_hours'] =  'Opening hours';
-$lang['start_time_week'] = '12PM';
-$lang['end_time_week'] = '10:45PM';
-$lang['start_time_week_end'] = '10:30AM';
-$lang['end_time_week_end'] = '10:45PM';
+$lang['10:30'] = '10:30AM';
+$lang['12:00'] = '12PM';
+$lang['16:30'] = '4:30PM';
+$lang['22:45'] = '10:45PM';
 $lang['question_where_location'] = 'Where are we located ?';
 $lang['answer_where_location'] = 'Roseville Escape Room is located on route de Lavaux 44, 1802 Corseaux. It is only 2 minutes away from Vevey going towards Lausanne. See ';
 $lang['map'] = 'map';
@@ -200,7 +200,11 @@ $lang['alt_hotel_enigma'] = 'hotel enigma escape game logo';
 $lang['header_hotel_enigma'] = 'Hotel Enigma';
 $lang['alt_escapeworld'] = 'escape world logo';
 $lang['header_escapeworld'] = 'Escape World';
-$lang['alt_riviera'] = 'escape riviera logo';
+$lang['alt_evasion'] = 'evasion fribourg logo';
+$lang['header_evasion'] = 'Evasion';
+$lang['alt_housetrap'] = 'housetrap logo';
+$lang['header_housetrap'] = 'HouseTrap';
+$lang['alt_riviera'] = 'riviera escape logo';
 $lang['header_riviera'] = 'Escape Riviera';
 
 //// Contact

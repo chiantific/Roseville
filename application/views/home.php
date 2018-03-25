@@ -565,25 +565,21 @@
                                     <table class="table-condensed">
                                         <tbody>
                                             <?php
-                                                $week_days = array("monday", "tuesday", "wednesday", "thursday", "friday");
-                                                $week_end_days = array("saturday", "sunday");
-                                                foreach ($week_days as $day) {
+                                                $schedule = array(
+                                                    "monday" => array('12:00', '22:45'),
+                                                    "tuesday" => array('16:30', '22:45'),
+                                                    "wednesday" => array('12:00', '22:45'),
+                                                    "thursday" => array('16:30', '22:45'),
+                                                    "friday" => array('12:00', '22:45'),
+                                                    "saturday" => array('10:30', '22:45'),
+                                                    "sunday" => array('10:30', '22:45'));
+                                                foreach ($schedule as $day => $time) {
                                             ?>
                                             <tr>
                                                 <td class="text-left"><?php echo $this->lang->line($day); ?></td>
-                                                <td><?php echo $this->lang->line('start_time_week'); ?></td>
+                                                <td><?php echo $this->lang->line($time[0]); ?></td>
                                                 <td>-</td>
-                                                <td><?php echo $this->lang->line('end_time_week'); ?></td>
-                                            </tr>
-                                            <?php }
-
-                                                foreach ($week_end_days as $day) {
-                                            ?>
-                                            <tr>
-                                                <td class="text-left"><?php echo $this->lang->line($day); ?></td>
-                                                <td><?php echo $this->lang->line('start_time_week_end'); ?></td>
-                                                <td>-</td>
-                                                <td><?php echo $this->lang->line('end_time_week_end'); ?></td>
+                                                <td><?php echo $this->lang->line($time[1]); ?></td>
                                             </tr>
                                             <?php } ?>
                                         </tbody>
@@ -966,25 +962,13 @@
                                 <table class="table-condensed">
                                     <tbody>
                                         <?php
-                                            $week_days = array("monday", "tuesday", "wednesday", "thursday", "friday");
-                                            $week_end_days = array("saturday", "sunday");
-                                            foreach ($week_days as $day) {
+                                            foreach ($schedule as $day => $time) {
                                         ?>
                                         <tr>
                                             <td class="text-left"><?php echo $this->lang->line($day); ?></td>
-                                            <td><?php echo $this->lang->line('start_time_week'); ?></td>
+                                            <td><?php echo $this->lang->line($time[0]); ?></td>
                                             <td>-</td>
-                                            <td><?php echo $this->lang->line('end_time_week'); ?></td>
-                                        </tr>
-                                        <?php }
-
-                                            foreach ($week_end_days as $day) {
-                                        ?>
-                                        <tr>
-                                            <td class="text-left"><?php echo $this->lang->line($day); ?></td>
-                                            <td><?php echo $this->lang->line('start_time_week_end'); ?></td>
-                                            <td>-</td>
-                                            <td><?php echo $this->lang->line('end_time_week_end'); ?></td>
+                                            <td><?php echo $this->lang->line($time[1]); ?></td>
                                         </tr>
                                         <?php } ?>
                                     </tbody>
