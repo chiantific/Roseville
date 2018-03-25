@@ -482,8 +482,7 @@
                     <div class="col-md-4 ">
                     <h3><?php echo $this->lang->line('prices'); ?></h3>
                         <i class="fa fa_big fa-shopping-cart" aria-hidden="true"></i>
-                        <p><?php echo $this->lang->line('cost_weekdays'); ?></p>
-                        <p><?php echo $this->lang->line('cost_weekend'); ?></p>
+                        <p><?php echo $this->lang->line('cost_session'); ?></p>
                         <p><?php echo $this->lang->line('cost_gift_card'); ?></>
                     </div>
                     <div class="col-md-4 ">
