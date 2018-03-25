@@ -128,7 +128,7 @@ class Backend_api extends CI_Controller {
 
             // :: SAVE CUSTOMER CHANGES TO DATABASE
             if (isset($_POST['customer_data'])) {
-                $customer = json_decode(stripcslashes($_POST['customer_data']), true);
+                $customer = json_decode($_POST['customer_data'], true);
 
                 $REQUIRED_PRIV = (!isset($customer['id']))
                         ? $this->privileges[PRIV_CUSTOMERS]['add']
