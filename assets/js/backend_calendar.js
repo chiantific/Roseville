@@ -1540,6 +1540,9 @@ var BackendCalendar = {
                         + '<br>' +
                     '<strong>' + EALang['is_paid'] + '</strong> '
                         + EALang['paid_status'][event.data['is_paid']]
+                        + '<br>' +
+                    '<strong>' + EALang['notes'] + '</strong> '
+                        + event.data['notes']
                         + '<hr>' +
                     '<center>' +
                         '<button class="edit-popover btn btn-primary ' + displayEdit + '">' + EALang['edit'] + '</button>' +
