@@ -890,28 +890,42 @@
                     <div class="col-xs-6 col-sm-3">
                         <a href="http://www.l-ichu.ch/" target="_blank">
                             <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/ichu-escape-game.png"
-                                 alt="<?php echo $this->lang->line('alt_ichu'); ?>" class="img-thumbnail darken" />
+                                 alt="<?php echo $this->lang->line('alt_ichu'); ?>" class="img-thumbnail" />
                             <h4><?php echo $this->lang->line('header_ichu'); ?></h4>
                         </a>
                     </div>
                     <div class="col-xs-6 col-sm-3">
                         <a href="http://www>hotel-enigma.ch/" target="_blank">
                             <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/hotel-enigma-escape-game.png"
-                                 alt="<?php echo $this->lang->line('alt_hotel_enigma'); ?>" class="img-thumbnaail darken" />
+                                 alt="<?php echo $this->lang->line('alt_hotel_enigma'); ?>" class="img-thumbnail" />
                             <h4><?php echo $this->lang->line('header_hotel_enigma'); ?></h4>
                         </a>
                     </div>
                     <div class="col-xs-6 col-sm-3">
                         <a href="https://www.esapeworld.ch" target="_blank">
                             <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/escapeworld.png"
-                                 alt="<?php echo $this->lang->line('alt_escapeworld'); ?>" class="img-thumbnail darken" />
+                                 alt="<?php echo $this->lang->line('alt_escapeworld'); ?>" class="img-thumbnail" />
                             <h4><?php echo $this->lang->line('header_escapeworld'); ?></h4>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <a href="https://www.the-evasion.ch/" target="_blank">
+                            <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/evasion.png"
+                                 alt="<?php echo $this->lang->line('alt_evasion'); ?>" class="img-thumbnail" />
+                            <h4><?php echo $this->lang->line('header_evasion'); ?></h4>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <a href="http://www.housetrap.ch/" target="_blank">
+                            <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/housetrap.png"
+                                 alt="<?php echo $this->lang->line('alt_housetrap'); ?>" class="img-thumbnail" />
+                            <h4><?php echo $this->lang->line('header_housetrap'); ?></h4>
                         </a>
                     </div>
                     <div class="col-xs-6 col-sm-3">
                         <a href="https://www.escaperiviera.ch/" target="_blank">
                             <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/escape-riviera.png"
-                                 alt=<?php echo $this->lang->line('alt_riviera'); ?> class="img-thumbnail darken" />
+                                 alt="<?php echo $this->lang->line('alt_riviera'); ?>" class="img-thumbnail" />
                             <h4><?php echo $this->lang->line('header_riviera'); ?></h4>
                         </a>
                     </div>
