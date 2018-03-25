@@ -282,7 +282,13 @@
                                             </h4>
                                         </div>
                                         <div class="modal-body">
-                                            <p><?php echo $this->lang->line('text_intro_room_chocolate'); ?></p>
+                                            <p>
+                                                <?php
+                                                    echo $this->lang->line('text_intro_room_chocolate_start');
+                                                    echo date('Y');
+                                                    echo $this->lang->line('text_intro_room_chocolate_end');
+                                                ?>
+                                            </p>
                                         </div>
                                         <div class="modal-footer">
                                             <button class="btn btn-default btn-sm" data-dismiss="modal">
