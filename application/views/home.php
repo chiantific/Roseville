@@ -896,14 +896,14 @@
                         </a>
                     </div>
                     <div class="col-xs-6 col-sm-3">
-                        <a href="http://www>hotel-enigma.ch/" target="_blank">
+                        <a href="http://www.hotel-enigma.ch/" target="_blank">
                             <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/hotel-enigma-escape-game.png"
                                  alt="<?php echo $this->lang->line('alt_hotel_enigma'); ?>" class="img-thumbnail" />
                             <h4><?php echo $this->lang->line('header_hotel_enigma'); ?></h4>
                         </a>
                     </div>
                     <div class="col-xs-6 col-sm-3">
-                        <a href="https://www.esapeworld.ch" target="_blank">
+                        <a href="https://www.escapeworld.ch" target="_blank">
                             <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/escapeworld.png"
                                  alt="<?php echo $this->lang->line('alt_escapeworld'); ?>" class="img-thumbnail" />
                             <h4><?php echo $this->lang->line('header_escapeworld'); ?></h4>
