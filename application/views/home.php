@@ -603,7 +603,7 @@
                             <div id="collapse4" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <?php echo $this->lang->line('answer_where_location'); ?>
-                                    <a class="page-scroll" href="#where">
+                                    <a class="page-scroll" href="#section7">
                                         <?php echo $this->lang->line('map'); ?>.
                                     </a>
                                 </div>
