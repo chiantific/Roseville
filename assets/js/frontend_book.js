@@ -100,7 +100,9 @@ var FrontendBook = {
          * date - time periods must be updated.
          */
         $('#select-provider').change(function() {
-            FrontendBook.getAvailableHours(Date.today().toString('dd-MM-yyyy'));
+            today = Date.today();
+            FrontendBook.getAvailableDates(today.getFullYear(), today.getMonth()+1);
+            FrontendBook.getAvailableHours(today.toString('dd-MM-yyyy'));
             FrontendBook.updateConfirmFrame();
         });
 
