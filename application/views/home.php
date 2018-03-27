@@ -254,7 +254,7 @@
                            class="btn btn-default">
                             <?php echo $this->lang->line('bookings'); ?>
                         </a>
-                        <a href="#contact" class="btn btn-default page-scroll">
+                        <a href="#section9" class="btn btn-default page-scroll">
                             <?php echo $this->lang->line('contact_us'); ?>
                         </a>
                     </div>
@@ -446,13 +446,13 @@
                         <i class="fa fa-gift"></i>
                         <h4><?php echo $this->lang->line('sub_header_gift_card'); ?></h4>
                         <p><?php echo $this->lang->line('how_to_order_gift_card'); ?>
-                            <a class="page-scroll" href="#contact">
+                            <a class="page-scroll" href="#section9">
                                 <?php echo $this->lang->line('contact_form'); ?>.
                             </a>
                         </p>
                         <p><?php echo $this->lang->line('payment_gift_card'); ?></p>
                         <p><?php echo $this->lang->line('how_to_use_gift_card'); ?>
-                            <a class="page-scroll" href="#contact">
+                            <a class="page-scroll" href="#section9">
                                 <?php echo $this->lang->line('contact_us_verb'); ?>
                             </a>
                             <?php echo $this->lang->line('send_mail_indicating_date_time'); ?></p>
@@ -508,7 +508,7 @@
                            class="btn btn-default page-scroll">
                             <?php echo $this->lang->line('book_now'); ?>
                         </a>
-                        <a href="#contact" class="btn btn-default page-scroll">
+                        <a href="#section9" class="btn btn-default page-scroll">
                             <?php echo $this->lang->line('contact_us'); ?>
                         </a>
                     </div>
@@ -522,7 +522,7 @@
                 <div class="section-title text-center">
                 <h2><?php echo $this->lang->line('frequently_asked_questions'); ?></h2>
                 <h4><?php echo $this->lang->line('dont_hesitate'); ?>
-                    <a class="page-scroll" href="#contact">
+                    <a class="page-scroll" href="#section9">
                         <?php echo $this->lang->line('contact_us_verb'); ?>
                     </a>
                     <?php echo $this->lang->line('no_answer_to_question'); ?></h4>
@@ -732,7 +732,7 @@
                             <div id="collapse13" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <?php echo $this->lang->line('answer_showing_up_without_reservation'); ?>
-                                    <a class="page-scroll" href="#contact">
+                                    <a class="page-scroll" href="#section9">
                                         <?php echo $this->lang->line('contact_us_verb'); ?>
                                     </a>
                                     <?php echo $this->lang->line('or_by_phone'); ?>
