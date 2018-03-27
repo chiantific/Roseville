@@ -17,8 +17,6 @@
               rel="stylesheet" type="text/css" />
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
               rel="stylesheet" type="text/css" />
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/prettyPhoto/3.1.6/css/prettyPhoto.min.css"
-              rel="stylesheet" type="text/css" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.css"
               rel="stylesheet" type="text/css" />
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300'
@@ -298,11 +296,25 @@
                                     </div>
                                 </div>
                             </div> <!-- End modal -->
-                            <a href="https://www.youtube.com/watch?v=GyssJMtZRaM" rel="prettyPhoto">
-                                <button type="button" class="btn btn-default">
-                                    <?php echo $this->lang->line('teaser'); ?>
-                                </button>
+                            <!-- Button to trigger teaser -->
+                            <a href="#myYoutubeModal" class="btn btn-default" data-toggle="modal">
+                                <?php echo $this->lang->line('teaser'); ?>
                             </a>
+                            <!-- Modal -->
+                            <div id="myYoutubeModal" class="modal fade">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <iframe id="teaserVideo" width="100%" height="350" vid_src="https://www.youtube.com/embed/GyssJMtZRaM"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-4 sub-section">
@@ -1074,9 +1086,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.6/SmoothScroll.min.js"
                 type="text/javascript">
         </script>
-	<!-- Load custom prettyPhoto because of bug #156 -->
-        <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/jquery.prettyPhoto.min.js"
-                type="text/javascript">
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js"
                 type="text/javascript">
@@ -1093,10 +1102,10 @@
         <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/accordion.js"
                 type="text/javascript">
         </script>
-        <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/jqBootstrapValidation.js"
+        <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/fix_modal_navbar.js"
                 type="text/javascript">
         </script>
-        <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/fix_modal_navbar.js"
+        <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/jqBootstrapValidation.js"
                 type="text/javascript">
         </script>
         <script aftersrc="<?php echo $this->config->item('base_url'); ?>/assets/js/gmaps.js"
@@ -1122,6 +1131,9 @@
         </script>
         <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/contact_me.js"
                 type="text/javascript"> 
+        </script>
+        <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/modalVideo.js"
+                type="text/javascript">
         </script>
         <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/general_functions.js"
                 type="text/javascript">
