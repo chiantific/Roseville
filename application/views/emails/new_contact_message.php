@@ -13,6 +13,8 @@
 
         <div id="content" style="padding: 10px 15px;">
             <h2>$email_title</h2>
+            <p>Name: $sender_name</p>
+            <p>Email: $sender_email</p>
             <p>$email_message</p>
         </div>
 
