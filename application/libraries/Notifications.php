@@ -268,6 +268,8 @@ class Notifications {
     public function send_contact_message($name, $snd_email, $message, $company_settings) {
         $replace_array = array(
             '$email_title' => $this->ci->lang->line('new_contact_message'),
+            '$sender_name' => $name,
+            '$sender_email' => $snd_email,
             '$email_message' => $message,
             '$company_name' => $company_settings['company_name'],
             '$company_email' => $company_settings['company_email'],
