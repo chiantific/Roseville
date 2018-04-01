@@ -1033,18 +1033,18 @@
                         </form>
                         <div class="row social">
                             <h3><?php echo $this->lang->line('follow_us'); ?></h3>
-                            <div class="col-md-3">
+                            <div class="col-xs-3">
                                 <a href="https://www.facebook.com/rosevilleescape/" target="_blank">
                                     <i class="fa fa-facebook"></i>
                                 </a>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-xs-3">
                                 <a href="https://www.twitter.com/RosevilleEscape" target="_blank"><i class="fa fa-twitter"></i></a>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-xs-3">
                                 <a href="https://www.instagram.com/roseville_escape/" target="_blank"><i class="fa fa-instagram"></i></a>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-xs-3">
                                 <a href="https://www.youtube.com/channel/UCNq0gAc1oAZnBeBmyZQBaMw" target="_blank"><i class="fa fa-youtube-square"></i></a>
                             </div>
                         </div>
