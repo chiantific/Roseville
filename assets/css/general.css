@@ -57,7 +57,7 @@ ul, ol {
 .navbar-inverse {
     text-transform: uppercase;
 }
-.navbar-inverse .navbar-brand {
+.navbar-inverse .navbar-brand a {
     color: #eee;
 }
 .navbar-inverse .navbar-brand span:hover {

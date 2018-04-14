@@ -49,8 +49,8 @@
                         <a href="<?php echo $company_link; ?>">
                             <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/logo_escape.png"
                                  alt="logo" id="logo" class="logo_small" />
+                            <span><?php echo $company_name; ?></span>
                         </a>
-                        <span><?php echo $company_name; ?></span>
                     </div>
                 </div>
                 <div class="pull-right align-center">
