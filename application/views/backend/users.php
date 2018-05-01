@@ -138,7 +138,7 @@
     <!-- Providers tab -->
     <div id="providers" class="tab-content" style="display:none;">
         <div class="row">
-            <div id="filter-providers" class="col-md-7">
+            <div id="filter-providers" class="col-md-4">
                 <div class="results"></div>
             </div>
 
