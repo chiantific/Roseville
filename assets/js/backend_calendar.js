@@ -1814,6 +1814,10 @@ var BackendCalendar = {
         $dialog.find('input, textarea').val('');
         $dialog.find('.modal-message').fadeOut();
 
+        // :: SET TICK BOXES TO DEFAULT VALUES
+        $dialog.find('#is_paid').prop('checked', false);
+        $dialog.find('#is_confirmed').prop('checked', true);
+
         // :: PREPARE SERVICE AND PROVIDER LISTBOXES
         $dialog.find('#select-service').val(
                 $dialog.find('#select-service').eq(0).attr('value'));
