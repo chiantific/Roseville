@@ -192,9 +192,16 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="language" class="control-label col-sm-3" ><?php echo $this->lang->line('is_paid'); ?></label>
+                                <label for="is_paid" class="control-label col-sm-3" ><?php echo $this->lang->line('is_paid'); ?></label>
                                 <div class="col-sm-7">
                                     <input type="checkbox" id="is_paid" class="form-control"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="is_confirmed" class="control-label col-sm-3" ><?php echo $this->lang->line('is_confirmed'); ?></label>
+                                <div class="col-sm-7">
+                                    <input type="checkbox" id="is_confirmed" class="form-control"/>
                                 </div>
                             </div>
 
