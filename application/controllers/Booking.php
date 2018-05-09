@@ -318,8 +318,9 @@ class Booking extends CI_Controller {
         if($sha_sign == $_GET['SHASIGN'] && ($_GET['STATUS'] == 9 || $_GET['STATUS'] == 91))
         {
             // Accepted or in progress
-            // Register the appointment as paid
+            // Register the appointment as paid and confirmed
             $appointment['is_paid'] = true;
+            $appointment['is_confirmed'] = true;
             $this->appointments_model->add($appointment);
 
             // :: SEND NOTIFICATION EMAILS TO BOTH CUSTOMER AND PROVIDER
@@ -337,13 +338,13 @@ class Booking extends CI_Controller {
 
                 $provider_title = $this->lang->line('appointment_added_to_your_plan');
                 $provider_message = $this->lang->line('appointment_link_description');
-                $provider_link = $this->config->item('base_url') 
+                $provider_link = $this->config->item('base_url')
                     . '/index.php/backend/index/'
                     . $appointment['hash'];
 
                 $this->notifications->send_appointment_details($appointment, $provider,
                         $service, $customer,$company_settings, $customer_title,
-                        $customer_title_message, $customer_message, $customer_message_2, 
+                        $customer_title_message, $customer_message, $customer_message_2,
                         $customer_message_3, $customer_link, $customer['email']);
 
                 $this->notifications->send_appointment_details($appointment, $provider,
@@ -537,8 +538,9 @@ class Booking extends CI_Controller {
             }
 
             $appointment = $_POST['post_data']['appointment'];
-            // Initially, is_paid must be 0.
-            $appointment['is_paid'] = 0;
+            // Initially, is_paid and is_confirmed must be false.
+            $appointment['is_paid'] = false;
+            $appointment['is_confirmed'] = false;
             $customer = $_POST['post_data']['customer'];
 
             if ($this->customers_model->exists($customer)) {

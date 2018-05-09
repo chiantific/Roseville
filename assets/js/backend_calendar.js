@@ -175,6 +175,7 @@ var BackendCalendar = {
             $dialog.find('#nb_participants').val(appointment['nb_participants']);
             $dialog.find('#language').val(appointment['language']);
             $dialog.find('#is_paid').prop("checked", (parseInt(appointment['is_paid'])));
+            $dialog.find('#is_confirmed').prop("checked", (parseInt(appointment['is_confirmed'])));
 
             // Set the start and end datetime of the appointment.
             var startDatetime = Date.parseExact(appointment['start_datetime'],
@@ -308,6 +309,7 @@ var BackendCalendar = {
                 $dialog.find('#nb_participants').val(appointment['nb_participants']);
                 $dialog.find('#language').val(appointment['language']);
                 $dialog.find('#is_paid').prop("checked", (parseInt(appointment['is_paid'])));
+                $dialog.find('#is_confirmed').prop("checked", (parseInt(appointment['is_confirmed'])));
 
                 // Set the start and end datetime of the appointment.
                 var startDatetime = Date.parseExact(appointment['start_datetime'],
@@ -472,6 +474,7 @@ var BackendCalendar = {
                     .datepicker('getDate').toString('yyyy-MM-dd HH:mm:ss');
 
             var is_paid =  $dialog.find('#is_paid').prop("checked") ? 1 : 0;
+            var is_confirmed = $dialog.find('#is_confirmed').prop("checked") ? 1 : 0;
 
             var appointment = {
                 'id_services': $dialog.find('#select-service').val(),
@@ -479,6 +482,7 @@ var BackendCalendar = {
                 'nb_participants': $dialog.find('#nb_participants').val(),
                 'language' : $dialog.find('#language').val(),
                 'is_paid' : is_paid,
+                'is_confirmed' : is_confirmed,
                 'start_datetime': startDatetime,
                 'end_datetime': endDatetime,
                 'notes': $dialog.find('#appointment-notes').val(),
@@ -991,7 +995,11 @@ var BackendCalendar = {
                     'data': appointment // Store appointment data for later use.
                 };
                 if (appointment.is_paid == 0) {
-                    event['color'] = '#ED5959';
+                    if (appointment.is_confirmed == 0) {
+                        event['color'] = '#D06767';
+                    } else {
+                        event['color'] = '#D09767';
+                    }
                 }
 
                 calendarEvents.push(event);
@@ -1539,10 +1547,14 @@ var BackendCalendar = {
                         + EALang['languages'][event.data['language']-1]
                         + '<br>' +
                     '<strong>' + EALang['is_paid'] + '</strong> '
-                        + EALang['paid_status'][event.data['is_paid']]
+                        + EALang['no_yes'][event.data['is_paid']]
+                        + '<br>' +
+                    '<strong>' + EALang['is_confirmed'] + '</strong> '
+                        + EALang['no_yes'][event.data['is_confirmed']]
                         + '<br>' +
                     '<strong>' + EALang['notes'] + '</strong> '
-                        + event.data['notes']
+                + event.data[
+                    'notes']
                         + '<hr>' +
                     '<center>' +
                         '<button class="edit-popover btn btn-primary ' + displayEdit + '">' + EALang['edit'] + '</button>' +
@@ -1801,6 +1813,10 @@ var BackendCalendar = {
         // :: EMPTY FORM FIELDS
         $dialog.find('input, textarea').val('');
         $dialog.find('.modal-message').fadeOut();
+
+        // :: SET TICK BOXES TO DEFAULT VALUES
+        $dialog.find('#is_paid').prop('checked', false);
+        $dialog.find('#is_confirmed').prop('checked', true);
 
         // :: PREPARE SERVICE AND PROVIDER LISTBOXES
         $dialog.find('#select-service').val(
