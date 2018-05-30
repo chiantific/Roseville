@@ -16,6 +16,8 @@ $lang['sunday'] = 'Dimanche';
 $lang['other_language'] = 'EN';
 $lang['phone_numbers'] = '078 638 80 79 (Whitney)<br/>
 079 623 04 11 (Francine)';
+$lang['street_address'] = 'route de Lavaux 44<br/>
+1802 Corseaux';
 
 //// Home page
 // meta
