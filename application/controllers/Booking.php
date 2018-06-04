@@ -315,8 +315,25 @@ class Booking extends CI_Controller {
 
         $sha_sign = strtoupper(sha1($string_to_sha));
 
-        if($sha_sign == $_GET['SHASIGN'] && ($_GET['STATUS'] == 9 || $_GET['STATUS'] == 91))
-        {
+        //if payement is already paid, stop here.
+        if ($appointment['is_paid']) {
+            //get the exceptions
+            $exceptions = $this->session->flashdata('booking/book_success');
+
+            // :: LOAD THE BOOK SUCCESS VIEW
+            $view = array(
+                'appointment_id'    => $appointment_id,
+                'appointment_data'  => $appointment,
+                'provider_data'     => $provider,
+                'service_data'      => $service,
+                'company_name'      => $company_name,
+                'company_link'      => $company_link,
+            );
+            if($exceptions){
+                $view['exceptions'] = $exceptions;
+            }
+            $this->load->view('booking/payment_success', $view);
+        } elseif ($sha_sign == $_GET['SHASIGN'] && ($_GET['STATUS'] == 9 || $_GET['STATUS'] == 91)) {
             // Accepted or in progress
             // Register the appointment as paid and confirmed
             $appointment['is_paid'] = true;

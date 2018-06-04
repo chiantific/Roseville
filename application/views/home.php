@@ -953,7 +953,7 @@
                 <h2><?php echo $this->lang->line('contact_us'); ?></h2>
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="atelier_view">
                             <i class="fa fa-envelope-o"></i>
                             <p>
@@ -966,13 +966,19 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
+                        <div class="atelier_view">
+                            <i class="fa fa-map-signs" aria-hidden="true"></i>
+                            <p><?php echo $this->lang->line('street_address'); ?></p>
+                        </div>
+                    </div>    
+                    <div class="col-md-6">
                         <div class="atelier_view">
                             <i class="fa fa-phone"></i>
                             <p><?php echo $this->lang->line('phone_numbers'); ?></p>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="atelier_view">
                             <i class="fa fa-clock-o"></i>
                             <div class="schedule">

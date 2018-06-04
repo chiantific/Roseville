@@ -1,23 +1,12 @@
-/* ----------------------------------------------------------------------------
- * Easy!Appointments - Open Source Web Scheduler
- *
- * @package     EasyAppointments
- * @author      A.Tselegidis <alextselegidis@gmail.com>
- * @copyright   Copyright (c) 2013 - 2016, Alex Tselegidis
- * @license     http://opensource.org/licenses/GPL-3.0 - GPLv3
- * @link        http://easyappointments.org
- * @since       v1.0.0
- * ---------------------------------------------------------------------------- */
-
 /**
- * BACKEND CSS FILE FOR EASY!APPOINTMENTS
+ * BACKEND CSS FILE
  */
 
 
 /* BACKEND GENERAL ELEMENTS
    -------------------------------------------------------------------- */
 body {
-    padding-bottom: 3e;
+    padding-bottom: 3em;
 }
 #notification strong {
     margin-right: 15px;
@@ -446,7 +435,7 @@ body .form-horizontal .controls {
 }
 
 #users-page .nav li.active a {
-    backgorund-color: #C74D00;
+    background-color: #C74D00;
 }
 
 #users-page .filter-records .results {

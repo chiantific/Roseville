@@ -1,14 +1,3 @@
-/* ----------------------------------------------------------------------------
- * Easy!Appointments - Open Source Web Scheduler
- *
- * @package     EasyAppointments
- * @author      A.Tselegidis <alextselegidis@gmail.com>
- * @copyright   Copyright (c) 2013 - 2016, Alex Tselegidis
- * @license     http://opensource.org/licenses/GPL-3.0 - GPLv3
- * @link        http://easyappointments.org
- * @since       v1.0.0
- * ---------------------------------------------------------------------------- */
-
 /**
  * This namespace contains functions that are used by the backend calendar page.
  *
@@ -947,7 +936,7 @@ var BackendCalendar = {
      */
     getCalendarHeight: function () {
         var result = window.innerHeight - $('#footer').height() - $('#header').height()
-                - $('#calendar-toolbar').height() - 50; // 80 for fine tuning
+                - $('#calendar-toolbar').height() - 105; // 80 for fine tuning
         return (result > 500) ? result : 500; // Minimum height is 500px
     },
 
