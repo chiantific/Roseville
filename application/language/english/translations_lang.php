@@ -14,8 +14,7 @@ $lang['friday'] = 'Friday';
 $lang['saturday'] = 'Saturday';
 $lang['sunday'] = 'Sunday';
 $lang['other_language'] = 'FR';
-$lang['phone_numbers'] = '078 638 80 79 (Whitney)<br/>
-079 623 04 11 (Francine)';
+$lang['phone_numbers'] = '079 623 04 11';
 $lang['street_address'] = 'route de Lavaux 44<br/>
 1802 Corseaux';
 
@@ -255,7 +254,7 @@ $lang['payment_fail'] = 'Your payment has not been registered.';
 $lang['payment_error'] = 'An error has been encountered during the payment process.';
 $lang['payment_cancel'] = 'The booking process has been interrupted';
 $lang['no_booking'] = 'Your booking request has not been taken into account';
-$lang['retry_or_contact'] = 'Please try again with another payment method or contact us at <a href="mailto:info@roseville.ch">info@roseville.ch</a> or by phone at + 41 78 638 80 79 or + 41 79 623 04 11.';
+$lang['retry_or_contact'] = 'Please try again with another payment method or contact us at <a href="mailto:info@roseville.ch">info@roseville.ch</a> or by phone at +41 79 623 04 11.';
 $lang['contact_error'] = 'Please contact us at <a href="mailto:info@roseville.ch">info@roseville.ch</a> to inform us about the situation. We will be able to verify the payment status and send you a confirmation.';
 $lang['back_to_payment'] = 'Back to payment methods';
 $lang['back_to_booking'] = 'Back to booking';
