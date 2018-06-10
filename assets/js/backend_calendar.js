@@ -165,6 +165,7 @@ var BackendCalendar = {
             $dialog.find('#language').val(appointment['language']);
             $dialog.find('#is_paid').prop("checked", (parseInt(appointment['is_paid'])));
             $dialog.find('#is_confirmed').prop("checked", (parseInt(appointment['is_confirmed'])));
+            $dialog.find('#appointment-id-disp').text(appointment['id'])
 
             // Set the start and end datetime of the appointment.
             var startDatetime = Date.parseExact(appointment['start_datetime'],
@@ -299,6 +300,7 @@ var BackendCalendar = {
                 $dialog.find('#language').val(appointment['language']);
                 $dialog.find('#is_paid').prop("checked", (parseInt(appointment['is_paid'])));
                 $dialog.find('#is_confirmed').prop("checked", (parseInt(appointment['is_confirmed'])));
+                $dialog.find('#appointment-id-disp').text(appointment['id'])
 
                 // Set the start and end datetime of the appointment.
                 var startDatetime = Date.parseExact(appointment['start_datetime'],

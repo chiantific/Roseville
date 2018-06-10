@@ -211,6 +211,14 @@
                                     <textarea id="appointment-notes" class="form-control" rows="3"></textarea>
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                                <label for="appointment-id-disp" class="control-label col-sm-3" ><?php echo $this->lang->line('id'); ?></label>
+                                <div class="col-sm-7">
+                                    <p id="appointment-id-disp" class="form-control"></p>
+                                </div>
+                            </div>
+
                         </fieldset>
 
                         <fieldset class="container">

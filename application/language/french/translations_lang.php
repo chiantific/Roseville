@@ -275,6 +275,7 @@ $lang['is_paid'] = 'Payé';
 $lang['is_confirmed'] = 'Confirmé';
 $lang['start'] = 'Début';
 $lang['end'] = 'Fin';
+$lang['id'] = 'ID';
 $lang['name'] = 'Nom';
 $lang['phone'] = 'Téléphone';
 $lang['appointment_link_title'] = 'Lien du rendez-vous';

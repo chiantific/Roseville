@@ -274,6 +274,7 @@ $lang['provider'] = 'Room';
 $lang['customer'] = 'Customer';
 $lang['is_paid'] = 'Paid';
 $lang['is_confirmed'] = 'Confirmed';
+$lang['id'] = 'ID';
 $lang['start'] = 'Start';
 $lang['end'] = 'End';
 $lang['name'] = 'Name';
