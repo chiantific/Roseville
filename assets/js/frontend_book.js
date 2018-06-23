@@ -100,9 +100,14 @@ var FrontendBook = {
          * date - time periods must be updated.
          */
         $('#select-service').change(function() {
-            today = Date.today();
+            today = Date.today()
             FrontendBook.getAvailableDates(today.getFullYear(), today.getMonth()+1);
-            FrontendBook.getAvailableHours(today.toString('dd-MM-yyyy'));
+
+            var selectedDate = $('#select-date').datepicker('getDate');
+            if (selectedDate !== null) {
+                selectedDate = selectedDate.toString('dd-MM-yyyy');
+            }
+            FrontendBook.getAvailableHours(selectedDate);
             FrontendBook.updateConfirmFrame();
         });
 
