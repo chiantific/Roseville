@@ -46,10 +46,10 @@ class Backend_api extends CI_Controller {
      * [AJAX] Get the registered appointments for the given date period and record.
      *
      * This method returns the database appointments and unavailable periods for the
-     * user selected date period and record type (provider or service).
+     * user selected date period and record type (provider, service or category).
      *
      * @param numeric $_POST['record_id'] Selected record id.
-     * @param string $_POST['filter_type'] Could be either FILTER_TYPE_PROVIDER or FILTER_TYPE_SERVICE.
+     * @param string $_POST['filter_type'] Could be either FILTER_TYPE_PROVIDER, FILTER_TYPE_SERVICE or FILTER_TYPE_CATEGORY.
      * @param string $_POST['start_date'] The user selected start date.
      * @param string $_POST['end_date'] The user selected end date.
      */
@@ -69,21 +69,40 @@ class Backend_api extends CI_Controller {
             $this->load->model('services_model');
             $this->load->model('customers_model');
 
-            if ($_POST['filter_type'] == FILTER_TYPE_PROVIDER) {
-                $where_id = 'id_users_provider';
+            if ($_POST['filter_type'] == FILTER_TYPE_CATEGORY) {
+                // Write code to provide response['appointments']
+                $services = $this->services_model->get_batch(
+                    array(
+                        'id_service_categories' => $_POST['record_id']
+                    )
+                );
+                $ids_services = array();
+                foreach($services as $service) {
+                    $ids_services[] = $service['id'];
+                }
+
+                $where_in_clause = array(
+                    'id_services' => $ids_services
+                );
+
+                $response['appointments'] = $this->appointments_model->get_batch_in($where_in_clause);
             } else {
-                $where_id = 'id_services';
+                if ($_POST['filter_type'] == FILTER_TYPE_PROVIDER) {
+                    $where_id = 'id_users_provider';
+                } else { // FILTER_TYPE_SERVICE
+                    $where_id = 'id_services';
+                }
+
+                // Get appointments
+                $where_clause = array(
+                    $where_id => $_POST['record_id'],
+                    //'start_datetime >=' => $_POST['start_date'],
+                    //'end_datetime <=' => $_POST['end_date'],
+                    'is_unavailable' => FALSE
+                );
+
+                $response['appointments'] = $this->appointments_model->get_batch($where_clause);
             }
-
-            // Get appointments
-            $where_clause = array(
-                $where_id => $_POST['record_id'],
-                //'start_datetime >=' => $_POST['start_date'],
-                //'end_datetime <=' => $_POST['end_date'],
-                'is_unavailable' => FALSE
-            );
-
-            $response['appointments'] = $this->appointments_model->get_batch($where_clause);
 
             foreach($response['appointments'] as &$appointment) {
                 $appointment['provider'] = $this->providers_model->get_row($appointment['id_users_provider']);

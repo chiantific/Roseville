@@ -51,6 +51,7 @@ class Backend extends CI_Controller {
         $view['company_link'] = $this->settings_model->get_setting('company_link');
         $view['available_providers'] = $this->providers_model->get_available_providers();
         $view['available_services'] = $this->services_model->get_available_services();
+        $view['available_categories'] = $this->services_model->get_all_categories();
         $view['customers'] = $this->customers_model->get_batch();
         $this->set_user_data($view);
 

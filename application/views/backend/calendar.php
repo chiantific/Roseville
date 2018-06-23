@@ -6,6 +6,7 @@
         'csrfToken'             : <?php echo json_encode($this->security->get_csrf_hash()); ?>,
         'availableProviders'    : <?php echo json_encode($available_providers); ?>,
         'availableServices'     : <?php echo json_encode($available_services); ?>,
+        'availableCategories'   : <?php echo json_encode($available_categories); ?>,
         'baseUrl'               : <?php echo '"' . $base_url . '"'; ?>,
         'bookAdvanceTimeout'    : <?php echo $book_advance_timeout; ?>,
         'dateFormat'            : <?php echo json_encode($date_format); ?>,

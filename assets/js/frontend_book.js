@@ -335,7 +335,6 @@ var FrontendBook = {
             $('.required').each(function() {
                 if ($(this).val() == '') {
                     $(this).parents('.form-group').addClass('has-error');
-                    // $(this).css('border', '2px solid red');
                     missingRequiredField = true;
                 }
             });
@@ -346,7 +345,6 @@ var FrontendBook = {
             // Validate email address.
             if (!GeneralFunctions.validateEmail($('#email').val())) {
                 $('#email').parents('.form-group').addClass('has-error');
-                // $('#email').css('border', '2px solid red');
                 throw EALang['invalid_email'];
             }
 
@@ -360,7 +358,7 @@ var FrontendBook = {
 
     /**
      * Every time this function is executed, it updates the confirmation
-     * page with the latest customer settigns and input for the appointment
+     * page with the latest customer settings and input for the appointment
      * booking.
      */
     updateConfirmFrame: function() {
