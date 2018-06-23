@@ -469,10 +469,12 @@ class Booking extends CI_Controller {
     public function ajax_get_available_dates() {
         $date = strtotime($_POST['date']);
         $available_dates = [];
+        $provider_id = $_POST['provider_id'];
 
         for($i = 1; $i <= date('t', $date); $i++)
         {
             $_POST['selected_date'] = date($i . '-' . date('m-Y', $date));
+            $_POST['provider_id'] = $provider_id;
             ob_start();
             $this->ajax_get_available_hours();
             $available_hours = ob_get_clean();
