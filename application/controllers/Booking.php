@@ -520,7 +520,7 @@ class Booking extends CI_Controller {
 				}
 			}
 
-			$empty_periods = $this->get_provider_available_time_periods($_POST['provider_id'],
+			$empty_periods = $this->get_available_time_periods($_POST['provider_id'], $_POST['service_id'],
 					$_POST['selected_date'], []);
 
             $available_hours = $this->calculate_available_hours($empty_periods,
@@ -619,9 +619,10 @@ class Booking extends CI_Controller {
 			return TRUE; // The selected provider is always available.
 		}
 
-		$available_periods = $this->get_provider_available_time_periods(
-				$appointment['id_users_provider'], date('Y-m-d', strtotime($appointment['start_datetime'])),
-				$exclude_appointments);
+        $available_periods = $this->get_available_time_periods(
+            $appointment['id_users_provider'], $appointment['id_services'],
+            date('Y-m-d', strtotime($appointment['start_datetime'])),
+            $exclude_appointments);
 
 		$is_still_available = FALSE;
 
@@ -645,34 +646,38 @@ class Booking extends CI_Controller {
 		return $is_still_available;
 	}
 
-	/**
-	 * Get an array containing the free time periods (start - end) of a selected date.
-	 *
-	 * This method is very important because there are many cases where the system needs to
-	 * know when a provider is avaible for an appointment. This method will return an array
-	 * that belongs to the selected date and contains values that have the start and the end
-	 * time of an available time period.
-	 *
-	 * @param numeric $provider_id The provider's record id.
-	 * @param string $selected_date The date to be checked (MySQL formatted string).
-	 * @param array $exclude_appointments This array contains the ids of the appointments that
-	 * will not be taken into consideration when the available time periods are calculated.
-	 *
-	 * @return array Returns an array with the available time periods of the provider.
-	 */
-	private function get_provider_available_time_periods($provider_id, $selected_date,
+    /**
+     * Get an array containing the free time periods (start - end) of a selected date.
+     *
+     * This method is very important because there are many cases where the system needs to
+     * know when a provider and a service are available for an appointment. This method will
+     * return an array that belongs to the selected date and contains values that have the
+     * start and the end time of an available time period.
+     *
+     * @param numeric $provider_id The provider's record id.
+     * @param numeric $service_id The service's record id.
+     * @param string $selected_date The date to be checked (MySQL formatted string).
+     * @param array $exclude_appointments This array contains the ids of the appointments that
+     * will not be taken into consideration when the available time periods are calculated.
+     *
+     * @return array Returns an array with the available time periods of the provider.
+     */
+	private function get_available_time_periods($provider_id, $service_id, $selected_date,
 			$exclude_appointments = array()) {
 		$this->load->model('appointments_model');
 	    $this->load->model('providers_model');
+        $this->load->model('services_model');
 
-	    // Get the provider's working plan and reserved appointments.
+	    // Get the provider's working plan.
 	    $working_plan = json_decode($this->providers_model->get_setting('working_plan', $provider_id), TRUE);
 
+        // Get all reserved apopintments for this service or this provider.
 	    $where_clause = array(
-	        'id_users_provider' => $provider_id
+	        'id_users_provider' => $provider_id,
+            'id_services' => $service_id
 	    );
 
-	    $reserved_appointments = $this->appointments_model->get_batch($where_clause);
+	    $reserved_appointments = $this->appointments_model->get_batch_or($where_clause);
 
 	    // Sometimes it might be necessary to not take into account some appointment records
 	    // in order to display what the providers' available time periods would be without them.
@@ -815,7 +820,7 @@ class Booking extends CI_Controller {
 		foreach($available_providers as $provider) {
 			foreach($provider['services'] as $provider_service_id) {
 				if ($provider_service_id == $service_id) { // Check if the provider is available for the requested date.
-					$empty_periods = $this->get_provider_available_time_periods($provider['id'], $selected_date);
+					$empty_periods = $this->get_available_time_periods($provider['id'], $service['id'], $selected_date);
 					$available_hours = $this->calculate_available_hours($empty_periods, $selected_date, $service['duration']);
 					if (count($available_hours) > $max_hours_count) {
 						$provider_id = $provider['id'];
@@ -829,14 +834,14 @@ class Booking extends CI_Controller {
 	}
 
 	/**
-	 * Calculate the avaialble appointment hours.
+	 * Calculate the available appointment hours.
 	 *
 	 * Calculate the available appointment hours for the given date. The empty spaces
 	 * are broken down to 15 min and if the service fit in each quarter then a new
 	 * available hour is added to the "$available_hours" array.
 	 *
 	 * @param array $empty_periods Contains the empty periods as generated by the
-	 * "get_provider_available_time_periods" method.
+	 * "get_available_time_periods" method.
 	 * @param string $selected_date The selected date to be search (format )
 	 * @param numeric $service_duration The service duration is required for the hour calculation.
 	 *

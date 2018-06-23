@@ -312,6 +312,23 @@ class Appointments_Model extends CI_Model {
     }
 
     /**
+     * Get all, or specific records from appointment's table, using OR.
+     *
+     * @example $this->Model->get_batch_or('id = ' . $id, 'name = ' . $name);
+     *
+     * @param string $where_clause (OPTIONAL) The WHERE clause of
+     * the query to be executed. DO NOT INCLUDE 'WHERE' KEYWORD.
+     * @return array Returns the rows from the database.
+     */
+    public function get_batch_or($where_clause = '') {
+        if ($where_clause != '') {
+            $this->db->or_where($where_clause);
+        }
+
+        return $this->db->get('ea_appointments')->result_array();
+    }
+
+    /**
      * Get all, or specific records from appointment's table, using WHERE IN.
      *
      * @example $this->Model->get_batch_in('id = ' . $recordIds);
