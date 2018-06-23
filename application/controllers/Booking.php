@@ -543,8 +543,6 @@ class Booking extends CI_Controller {
      */
     public function ajax_register_appointment() {
         try {
-            $post_data = $_POST['post_data']; // alias
-
 			$this->load->model('appointments_model');
             $this->load->model('providers_model');
             $this->load->model('services_model');

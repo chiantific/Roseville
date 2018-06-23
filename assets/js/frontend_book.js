@@ -579,6 +579,7 @@ var FrontendBook = {
      */
     registerAppointment: function() {
         var formData = jQuery.parseJSON($('input[name="post_data"]').val());
+        formData['appointment']['id_users_provider'] = 'any-provider';
 
         var postData = {
             'csrfToken': GlobalVariables.csrfToken,
