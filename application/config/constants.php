@@ -97,6 +97,7 @@ defined('DB_SLUG_PROVIDER')		OR define('DB_SLUG_PROVIDER', 'provider');
 defined('DB_SLUG_ADMIN')		OR define('DB_SLUG_ADMIN', 'admin');
 defined('FILTER_TYPE_PROVIDER')	OR define('FILTER_TYPE_PROVIDER', 'provider');
 defined('FILTER_TYPE_SERVICE')	OR define('FILTER_TYPE_SERVICE', 'service');
+defined('FILTER_TYPE_CATEGORY') OR define('FILTER_TYPE_CATEGORY', 'category');
 defined('AJAX_SUCCESS')	    	OR define('AJAX_SUCCESS', 'SUCCESS');
 defined('AJAX_FAILURE') 		OR define('AJAX_FAILURE', 'FAILURE');
 defined('SETTINGS_SYSTEM')		OR define('SETTINGS_SYSTEM', 'SETTINGS_SYSTEM');

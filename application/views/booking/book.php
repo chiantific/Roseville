@@ -88,14 +88,6 @@
                     <div id="wizard-frame-1" class="wizard-frame">
                         <div class="frame-container">
                             <div class="frame-content">
-                                <select id="select-service" style="display:none;">
-    <?php
-    foreach($available_services as $service) {
-        echo '<option value="' . $service['id'] . '">'
-            . $service['name'] . '</option>';
-    }
-    ?>
-                                </select>
                                 <div class="form-group row">
                                     <h3 class="frame-title">
                                         <?php
@@ -103,12 +95,19 @@
                                         ?>
                                     </h3>
                                     <div class="form-group">
-                                        <label for="select-provider" class="control-label">
+                                        <label for="select-service" class="control-label">
                                             <?php
                                                 echo $this->lang->line('select_room');
                                             ?>
                                         </label>
-                                        <select id="select-provider" class="form-control"></select>
+                                        <select id="select-service" class="form-control">
+<?php
+foreach($available_services as $service) {
+    echo '<option value="' . $service['id'] . '">'
+       . $service['name'] . '</option>';
+}
+?>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="nb_participants" class="control-label">

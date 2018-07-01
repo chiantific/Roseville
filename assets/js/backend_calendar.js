@@ -7,6 +7,7 @@ var BackendCalendar = {
     // :: CONSTANTS
     FILTER_TYPE_PROVIDER: 'provider',
     FILTER_TYPE_SERVICE: 'service',
+    FILTER_TYPE_CATEGORY: 'category',
 
     // :: VALIABLES
     lastFocusedEventData: undefined, // Contain event data for later use.
@@ -114,12 +115,8 @@ var BackendCalendar = {
         if (GlobalVariables.availableProviders.length > 0) {
             var optgroupHtml = '<optgroup label="' + EALang['providers'] + '" type="providers-group">';
             $.each(GlobalVariables.availableProviders, function(index, provider) {
-                var hasGoogleSync = (provider['settings']['google_sync'] === '1')
-                        ? 'true' : 'false';
-
                 optgroupHtml += '<option value="' + provider['id'] + '" '
-                        + 'type="' + BackendCalendar.FILTER_TYPE_PROVIDER + '" '
-                        + 'google-sync="' + hasGoogleSync + '">'
+                        + 'type="' + BackendCalendar.FILTER_TYPE_PROVIDER + '">'
                         + provider['first_name'] + ' ' + provider['last_name']
                         + '</option>';
             });
@@ -133,6 +130,17 @@ var BackendCalendar = {
                 optgroupHtml += '<option value="' + service['id'] + '" ' +
                         'type="' + BackendCalendar.FILTER_TYPE_SERVICE + '">' +
                         service['name'] + '</option>';
+            });
+            optgroupHtml += '</optgroup>';
+            $('#select-filter-item').append(optgroupHtml);
+        }
+
+        if (GlobalVariables.availableCategories.length > 0) {
+            optgroupHtml = '<optgroup label="' + EALang['categories'] + '" type="categories-group">';
+            $.each(GlobalVariables.availableCategories, function(index, category) {
+                optgroupHtml += '<option value="' + category['id'] + '" ' +
+                        'type="' + BackendCalendar.FILTER_TYPE_CATEGORY + '">' +
+                        category['name'] + '</option>';
             });
             optgroupHtml += '</optgroup>';
             $('#select-filter-item').append(optgroupHtml);
@@ -236,23 +244,16 @@ var BackendCalendar = {
             // If current value is service, then the sync buttons must be disabled.
             if ($('#select-filter-item option:selected').attr('type')
                     === BackendCalendar.FILTER_TYPE_SERVICE) {
-                $('#google-sync, #enable-sync, #insert-appointment, #insert-unavailable')
-                		.prop('disabled', true);
+                $('#insert-appointment, #insert-unavailable')
+                    .prop('disabled', true);
+            // Same for category
+            } else if ($('#select-filter-item option:selected').attr('type')
+                       === BackendCalendar.FILTER_TYPE_CATEGORY) {
+                $('#insert-appointment, #insert-unavailable')
+                    .prop('disabled', true)
             } else {
-
-            	$('#google-sync, #enable-sync, #insert-appointment, #insert-unavailable')
+            	$('#insert-appointment, #insert-unavailable')
             			.prop('disabled', false);
-                // If the user has already the sync enabled then apply the proper
-                // style changes.
-                if ($('#select-filter-item option:selected').attr('google-sync') === 'true') {
-                    $('#enable-sync').addClass('btn-danger enabled');
-                    $('#enable-sync span:eq(1)').text(EALang['disable_sync']);
-                    $('#google-sync').prop('disabled', false);
-                } else {
-                    $('#enable-sync').removeClass('btn-danger enabled');
-                    $('#enable-sync span:eq(1)').text(EALang['enable_sync']);
-                    $('#google-sync').prop('disabled', true);
-                }
             }
         });
 

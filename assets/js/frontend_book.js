@@ -40,7 +40,7 @@ var FrontendBook = {
         });
 
         var today = new Date();
-        $('#select-provider').ready( function() {
+        $('#select-service').ready( function() {
             FrontendBook.getAvailableDates(today.getFullYear(), today.getMonth()+1);
         });
 
@@ -94,45 +94,21 @@ var FrontendBook = {
      */
     bindEventHandlers: function() {
         /**
-         * Event: Selected Provider "Changed"
-         *
-         * Whenever the provider changes the available appointment
-         * date - time periods must be updated.
-         */
-        $('#select-provider').change(function() {
-            today = Date.today();
-            FrontendBook.getAvailableDates(today.getFullYear(), today.getMonth()+1);
-            FrontendBook.getAvailableHours(today.toString('dd-MM-yyyy'));
-            FrontendBook.updateConfirmFrame();
-        });
-
-        /**
          * Event: Selected Service "Changed"
          *
-         * When the user clicks on a service, its available providers should
-         * become visible.
+         * Whenever the service changes the available appointment
+         * date - time periods must be updated.
          */
         $('#select-service').change(function() {
-            var currServiceId = $('#select-service').val();
-            $('#select-provider').empty();
+            today = Date.today()
+            FrontendBook.getAvailableDates(today.getFullYear(), today.getMonth()+1);
 
-            $.each(GlobalVariables.availableProviders, function(indexProvider, provider) {
-                $.each(provider['services'], function(indexService, serviceId) {
-                    // If the current provider is able to provide the selected service,
-                    // add him to the listbox.
-                    if (serviceId == currServiceId) {
-                        var optionHtml = '<option value="' + provider['id'] + '">'
-                                + provider['last_name']
-                                + '</option>';
-                        $('#select-provider').append(optionHtml);
-                    }
-                });
-            });
-
-
-            FrontendBook.getAvailableHours($('#select-date').val());
+            var selectedDate = $('#select-date').datepicker('getDate');
+            if (selectedDate !== null) {
+                selectedDate = selectedDate.toString('dd-MM-yyyy');
+            }
+            FrontendBook.getAvailableHours(selectedDate);
             FrontendBook.updateConfirmFrame();
-            FrontendBook.updateServiceDescription($('#select-service').val(), $('#service-description'));
         });
 
         /**
@@ -143,9 +119,9 @@ var FrontendBook = {
          * be perfomed, depending the current wizard step.
          */
         $('.button-next').click(function() {
-            // If we are on the first step and there is not provider selected do not continue
+            // If we are on the first step and there is not service selected do not continue
             // with the next step.
-            if ($(this).attr('data-step_index') === '1' && $('#select-provider').val() == null) {
+            if ($(this).attr('data-step_index') === '1' && $('#select-service').val() == null) {
                 return;
             }
 
@@ -240,7 +216,7 @@ var FrontendBook = {
 
     /**
      * This function makes an ajax call and returns the available
-     * dates for the selected service, provider and month.
+     * dates for the selected service and month.
      * The result is pushed in FrontendBook.freeDates
      *
      * @param {int} year
@@ -263,7 +239,7 @@ var FrontendBook = {
         var postData = {
             'csrfToken': GlobalVariables.csrfToken,
             'service_id': $('#select-service').val(),
-            'provider_id': $('#select-provider').val(),
+            'provider_id': 'any-provider',
             'date': date,
             'service_duration': selServiceDuration,
             'appointment_id': undefined,
@@ -276,8 +252,7 @@ var FrontendBook = {
 
             if (!GeneralFunctions.handleAjaxExceptions(response)) return;
 
-            // The response contains the available dates for the selected provider and
-            // service.
+            // The response contains the available dates for the selected service.
             FrontendBook.freeDates = response;
             $("#select-date").datepicker("refresh");
 
@@ -286,7 +261,7 @@ var FrontendBook = {
 
     /**
      * This function makes an ajax call and returns the available
-     * hours for the selected service, provider and date.
+     * hours for the selected service and date.
      *
      * @param {string} selDate The selected date of which the available
      * hours we need to receive.
@@ -309,7 +284,7 @@ var FrontendBook = {
         var postData = {
             'csrfToken': GlobalVariables.csrfToken,
             'service_id': $('#select-service').val(),
-            'provider_id': $('#select-provider').val(),
+            'provider_id': 'any-provider',
             'selected_date': selDate,
             'service_duration': selServiceDuration,
             'appointment_id': undefined,
@@ -322,7 +297,7 @@ var FrontendBook = {
 
             if (!GeneralFunctions.handleAjaxExceptions(response)) return;
 
-            // The response contains the available hours for the selected provider and
+            // The response contains the available hours for the selected
             // service. Fill the available hours div with response data.
             if (response.length > 0) {
                 var currColumn = 1;
@@ -340,7 +315,7 @@ var FrontendBook = {
                 } else {
                     $('.available-hour:eq(0)').addClass('selected-hour');
                 }
-                
+
 
                 FrontendBook.updateConfirmFrame();
 
@@ -365,7 +340,6 @@ var FrontendBook = {
             $('.required').each(function() {
                 if ($(this).val() == '') {
                     $(this).parents('.form-group').addClass('has-error');
-                    // $(this).css('border', '2px solid red');
                     missingRequiredField = true;
                 }
             });
@@ -376,7 +350,6 @@ var FrontendBook = {
             // Validate email address.
             if (!GeneralFunctions.validateEmail($('#email').val())) {
                 $('#email').parents('.form-group').addClass('has-error');
-                // $('#email').css('border', '2px solid red');
                 throw EALang['invalid_email'];
             }
 
@@ -390,7 +363,7 @@ var FrontendBook = {
 
     /**
      * Every time this function is executed, it updates the confirmation
-     * page with the latest customer settigns and input for the appointment
+     * page with the latest customer settings and input for the appointment
      * booking.
      */
     updateConfirmFrame: function() {
@@ -420,7 +393,7 @@ var FrontendBook = {
         var html =
             '<tr>'
                 + '<td class="first">' + EALang['room'] + '</td>'
-                + '<td class="first">' + $('#select-provider option:selected').text() + '</td>'
+                + '<td class="first">' + $('#select-service option:selected').text() + '</td>'
             + '</tr><tr>'
                 + '<td>' + EALang['date'] + '</td>'
                 + '<td>' + selectedDate + ' ' +  $('.selected-hour').text() + '</td>'
@@ -472,7 +445,6 @@ var FrontendBook = {
             'end_datetime': FrontendBook.calcEndDatetime(),
             'notes': $('#notes').val(),
             'is_unavailable': false,
-            'id_users_provider': $('#select-provider').val(),
             'id_services': $('#select-service').val(),
             'nb_participants': $('#nb_participants').val(),
             'language': $('#language').val()
@@ -519,15 +491,14 @@ var FrontendBook = {
      * that the user can start making changes on an existing record.
      *
      * @param {object} appointment Selected appointment's data.
-     * @param {object} provider Selected provider's data.
+     * @param {object} service Selected service's data.
      * @param {object} customer Selected customer's data.
      * @returns {bool} Returns the operation result.
      */
-    applyAppointmentData: function(appointment, provider, customer) {
+    applyAppointmentData: function(appointment, service, customer) {
         try {
-            // Select Service & Provider
+            // Select Service
             $('#select-service').val(appointment['id_services']).trigger('change');
-            $('#select-provider').val(appointment['id_users_provider']);
 
             // Set Appointment Date
             $('#select-date').datepicker('setDate',
@@ -608,6 +579,7 @@ var FrontendBook = {
      */
     registerAppointment: function() {
         var formData = jQuery.parseJSON($('input[name="post_data"]').val());
+        formData['appointment']['id_users_provider'] = 'any-provider';
 
         var postData = {
             'csrfToken': GlobalVariables.csrfToken,
@@ -655,7 +627,7 @@ var FrontendBook = {
      * to onbeforeunload event to keep these values when refreshing the page.
      */
     saveFormToSession: function() {
-        sessionStorage.setItem('select-provider', $('#select-provider').val());
+        sessionStorage.setItem('select-service', $('#select-service').val());
         sessionStorage.setItem('nb_participants', $('#nb_participants').val());
         sessionStorage.setItem('language', $('#language').val());
         sessionStorage.setItem('select-date', $('#select-date').val());
@@ -668,14 +640,14 @@ var FrontendBook = {
     },
 
     /**
-     * Restore the form fro, sessionStorage.
+     * Restore the form from sessionStorage.
      *
      * This method loads the values of sessionStorage and write them in the form. It can be
      * bound th onload event to reload the values after refreshing the page.
      */
     loadFormFromSession: function() {
-        var select_provider = sessionStorage.getItem('select-provider');
-        if (select_provider !== null) $('#select-provider').val(select_provider);
+        var select_service = sessionStorage.getItem('select-service');
+        if (select_service !== null) $('#select-service').val(select_service);
 
         var nb_participants = sessionStorage.getItem('nb_participants');
         if (nb_participants !== null) $('#nb_participants').val(nb_participants);
@@ -688,9 +660,6 @@ var FrontendBook = {
             $('#select-date').datepicker('setDate', select_date);
             $('#select-service').trigger('change');
         }
-
-//        $('.available-hour').removeClass('selected-hour');
-//        $('.available-hour:eq(1)').addClass('selected-hour');
 
         var first_name = sessionStorage.getItem('first-name');
         if (first_name !== null) $('#first-name').val(first_name);

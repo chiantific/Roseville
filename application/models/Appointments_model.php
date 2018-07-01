@@ -27,7 +27,7 @@ class Appointments_Model extends CI_Model {
     /**
      * Add an appointment record to the database.
      *
-     * This method adds a new appointment to the database. If the 
+     * This method adds a new appointment to the database. If the
      * appointment doesn't exists it is going to be inserted, otherwise
      * the record is going to be updated.
      *
@@ -307,6 +307,42 @@ class Appointments_Model extends CI_Model {
         if ($where_clause != '') {
             $this->db->where($where_clause);
         }
+
+        return $this->db->get('ea_appointments')->result_array();
+    }
+
+    /**
+     * Get all, or specific records from appointment's table, using OR.
+     *
+     * @example $this->Model->get_batch_or('id = ' . $id, 'name = ' . $name);
+     *
+     * @param string $where_clause (OPTIONAL) The WHERE clause of
+     * the query to be executed. DO NOT INCLUDE 'WHERE' KEYWORD.
+     * @return array Returns the rows from the database.
+     */
+    public function get_batch_or($where_clause = '') {
+        if ($where_clause != '') {
+            $this->db->or_where($where_clause);
+        }
+
+        return $this->db->get('ea_appointments')->result_array();
+    }
+
+    /**
+     * Get all, or specific records from appointment's table, using WHERE IN.
+     *
+     * @example $this->Model->get_batch_in('id = ' . $recordIds);
+     *
+     * @param string $where_in_clause (OPTIONAL) The WHERE clause of
+     * the query to be executed. DO NOT INCLUDE 'WHERE' KEYWORD.
+     * @return array Returns the rows from the database.
+     */
+    // TODO: Remove the filter on is_unavailable.
+    public function get_batch_in($where_in_clause = '') {
+        if ($where_in_clause != '') {
+            $this->db->where_in($where_in_clause);
+        }
+        $this->db->where(array('is_unavailable' => False));
 
         return $this->db->get('ea_appointments')->result_array();
     }
