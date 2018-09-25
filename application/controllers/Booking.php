@@ -45,9 +45,8 @@ class Booking extends CI_Controller {
     /**
      * Default callback method of the application.
      *
-     * This method creates the appointment book wizard. If an appointment hash
-     * is provided then it means that the customer followed the appointment
-     * manage link that was send with the book success email.
+     * This method creates the appointment book wizard. It includes the planyo
+     * widget.
      *
      */
     public function index() {
@@ -56,50 +55,31 @@ class Booking extends CI_Controller {
             return;
         }
 
-        $this->load->model('appointments_model');
-        $this->load->model('providers_model');
-        $this->load->model('services_model');
-        $this->load->model('customers_model');
         $this->load->model('settings_model');
 
         try {
-            $available_services  = $this->services_model->get_available_services();
-            $available_providers = $this->providers_model->get_available_providers();
             $company_name        = $this->settings_model->get_setting('company_name');
             $company_link        = $this->settings_model->get_setting('company_link');
-            $date_format         = $this->settings_model->get_setting('date_format');
 
-			// Remove the data that are not needed inside the $available_providers array.
-			foreach ($available_providers as $index=>$provider) {
-				$stripped_data = array(
-					'id' => $provider['id'],
-					'first_name' => $provider['first_name'],
-					'last_name' => $provider['last_name'],
-					'services' => $provider['services']
-				);
-				$available_providers[$index] = $stripped_data;
-			}
-
-            $appointment = array();
-            $provider = array();
-            $customer = array();
+            if ($this->config->item('language') === "french") {
+                $short_lang = "FR";
+            } elseif ($this->config->item('language') === "english") {
+                $short_lang = "EN";
+            } else {
+                $short_lang = "AUTO";
+            }
 
             // Load the book appointment view.
             $view = array (
-                'available_services'    => $available_services,
-                'available_providers'   => $available_providers,
                 'company_name'          => $company_name,
                 'company_link'          => $company_link,
-				'date_format'           => $date_format,
-                'appointment_data'      => $appointment,
-                'provider_data'         => $provider,
-                'customer_data'         => $customer
+                'short_lang'            => $short_lang,
             );
         } catch(Exception $exc) {
             $view['exceptions'][] = $exc;
         }
 
-        $this->load->view('booking/book', $view);
+        $this->load->view('book', $view);
     }
 
     /**
