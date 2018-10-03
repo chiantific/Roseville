@@ -1,2 +1,0 @@
-toute modifs : application/
-models : application/models
