@@ -112,6 +112,7 @@ var BackendCalendar = {
         });
 
         // Fill the select listboxes of the page.
+        // Wrong ID here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         if (GlobalVariables.availableProviders.length > 0) {
             var optgroupHtml = '<optgroup label="' + EALang['providers'] + '" type="providers-group">';
             $.each(GlobalVariables.availableProviders, function(index, provider) {
