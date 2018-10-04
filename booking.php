@@ -88,17 +88,8 @@ include($lang_file_path);
                     </div>
                 </div>
                 <div class="pull-right align-center">
-                    <button type="button" class="navbar-toggle pull-left"
-                                          data-toggle="collapse"
-                                          data-target=".navbar-collapse">
-                        <span>
-                            <i class="fa fa-bars"></i>
-                        </span>
-                    </button>
-                </div>
-                <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
+                        <li>
                             <a class="language"
                                 <?php
                                 switch ($_SESSION['lang']) {
