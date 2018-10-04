@@ -183,8 +183,8 @@ include($lang_file_path);
                 type="text/javascript">
         </script>
         <script type="text/javascript">
-         var availableLanguages = <?php echo json_encode($this->config->item('available_languages')); ?>;
-         var selectedLanguage = <?php echo json_encode($this->config->item('language')); ?>;
+         var availableLanguages = <?php echo json_encode($available_lang); ?>;
+         var selectedLanguage = <?php echo json_encode($_SESSION['lang']); ?>;
         </script>
     </body>
 </html>
