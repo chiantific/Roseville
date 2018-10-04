@@ -1,51 +1,90 @@
+<?php
+/* Config */
+$default_lang = 'fr';
+
+/* End config */
+
+session_start();
+$available_lang = array(
+    'fr',
+    'en',
+);
+
+/* Change language selection if given as GET parameter. */
+if (!empty($_GET["lang"])) {
+    switch (strtolower($_GET["lang"])) {
+    case "en":
+        $_SESSION['lang'] = 'en';
+        break;
+    case "fr":
+        $_SESSION['lang'] = 'fr';
+        break;
+    default:
+        $_SESSION['lang'] = $default_lang;
+        break;
+    }
+}
+
+/* Now, lang should be set by the session of GET selection. */
+/* If lang is still not set, use default. */
+if (empty($_SESSION['lang'])) {
+    $_SESSION['lang'] = $default_lang;
+}
+
+/* Populate translations with adequate lang file. */
+$lang_file_path = "lang_" . $_SESSION['lang'] . ".php";
+include($lang_file_path);
+/* Now, $lang is available.
+ * Use $lang['main_title'] to access the corresponding line. */
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- meta -->
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#35A768">
-        <title><?php echo $this->lang->line('booking_title'); ?></title>
+        <meta name="description"
+              content="<?php echo $lang['meta_description_content']; ?>"/>
+        <meta name="keywords"
+              content="<?php echo $lang['meta_keywords_content']; ?>" />
+        <title><?php echo $lang['booking_title']; ?></title>
 
+        <!-- CSS -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
               rel="stylesheet" type="text/css" />
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
               rel="stylesheet" type="text/css" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
               rel="stylesheet" type="text/css" />
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/basic/jquery.qtip.min.css"
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300'
+              rel='stylesheet' type='text/css' />
+        <link href="/static/css/general.css"
               rel="stylesheet" type="text/css" />
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-touchspin/3.1.2/jquery.bootstrap-touchspin.min.css"
-              rel="stylesheet" type="text/css" />
-        <!--[if IE]>
-            <link href="<?php echo $this->config->item('base_url'); ?>/assets/img/favicon.ico"
-                  rel="shortcut icon">
-        <![endif]-->
-        <link href="<?php echo $this->config->item('base_url'); ?>/assets/img/favicon.ico"
-              rel="icon" type="image/x-icon" />
-        <link href="<?php echo $this->config->item('base_url'); ?>/assets/img/apple-touch-icon.png"
-              rel="apple-touch-icon" />
-        <link href="<?php echo $this->config->item('base_url'); ?>/assets/css/general.css"
-              rel="stylesheet" type="text/css" />
-        <link href="<?php echo $this->config->item('base_url'); ?>/assets/css/book.css"
+        <link href="/static/css/book.css"
               rel="stylesheet" type="text/css" />
         <link href='https://www.planyo.com/schemes/?calendar=38662&detect_mobile=auto&sel=scheme_css'
               rel="stylesheet" type='text/css' />
+
+        <!-- favicon -->
+        <!--[if IE]>
+            <link href="/static/img/favicon.ico" rel="shortcut icon">
+        <![endif]-->
+        <link href="/static/img/favicon.ico" rel="icon" type="image/x-icon" />
+        <link href="/static/img/apple-touch-icon.png" rel="apple-touch-icon" />
     </head>
     <body>
-        <div id="preloader">
-            <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/preloader.gif"
-                 alt="preloader animation" />
-        </div>
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header pull-left">
                     <div class="navbar-brand">
-                        <a href="<?php echo $company_link; ?>">
-                            <img src="<?php echo $this->config->item('base_url'); ?>/assets/img/logo_escape.png"
+                        <a href="/">
+                            <img src="/static/img/logo_escape.png"
                                  alt="logo" id="logo" />
                         </a>
-                        <span><?php echo $this->lang->line('booking_title'); ?></span>
+                        <span><?php echo $lang['booking_title']; ?></span>
                     </div>
                 </div>
                 <div class="pull-right align-center">
@@ -53,7 +92,7 @@
                                           data-toggle="collapse"
                                           data-target=".navbar-collapse">
                         <span class="sr-only">
-                            <?php echo $this->lang->line('toggle_navigation'); ?>
+                            <?php echo $lang['toggle_navigation']; ?>
                         </span>
                         <span>
                             <i class="fa fa-bars"></i>
@@ -63,7 +102,21 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a href="#" id="select-language">
+                            <a class="language"
+                                <?php
+                                switch ($_SESSION['lang']) {
+                                    case "en":
+                                        echo 'href=/booking.php?lang=fr';
+                                        break;
+                                    case "fr":
+                                        echo 'href=/booking.php?lang=en';
+                                        break;
+                                    default:
+                                        echo 'href=/booking.php?lang=en';
+                                        break;
+                                }
+                                ?>>
+                                <?php echo $lang['other_language']; ?>
                             </a>
                         </li>
                     </ul>
@@ -74,46 +127,38 @@
             <div class="wrapper row">
                 <div id="book-appointment-wizard" class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 
-    <?php
-    // Display exceptions (if any)
-    if (isset($exceptions)) {
-        echo '<div style="margin: 10px">';
-        echo '<h4>' . $this->lang->line('unexpected_issues') . '</h4>';
-        foreach($exceptions as $exception) {
-            echo exceptionToHtml($exception);
-        }
-        echo '</div>';
-    }
-    ?>
+                    <?php
+                    global $planyo_site_id, $planyo_files_location, $planyo_language,
+                    $planyo_always_use_ajax, $planyo_sort_fields, $planyo_resource_id,
+                    $planyo_js_library_used, $planyo_include_js_library,
+                    $planyo_default_mode, $planyo_extra_search_fields, $planyo_resource_ordering, $planyo_attribs;
 
-    <!-- Select room -->
-
-
-
-
-<div id='planyo_content' class='planyo'><img src='https://www.planyo.com/images/hourglass.gif' align='middle' /></div>
-
-<noscript><a href='http://www.planyo.com/about-calendar.php?calendar=38662'>Make a reservation</a><br/><br/>
-    <a href='http://www.planyo.com/'>Reservation system powered by Planyo</a></noscript>
-
-
-
-
+                    $planyo_site_id = '38662';
+                    $planyo_files_location_real = 'planyo-files';
+                    $planyo_files_location = '/planyo-files';
+                    $planyo_language=$_SESSION['lang'];
+                    $planyo_always_use_ajax = true;
+                    $planyo_sort_fields='';
+                    $planyo_resource_ordering='name';
+                    $planyo_extra_search_fields='';
+                    $planyo_default_mode='reserve';
+                    $planyo_resource_id = null;
+                    $planyo_include_js_library=false;
+                    $planyo_attribs='resource_id=126186&mode=reserve';
+                    require_once($planyo_files_location_real.'/planyo-plugin-impl.php');
+                    echo "<div id='planyo_plugin_code' class='planyo'>";
+                    planyo_setup();
+                    echo "</div>";
+                    ?>
                 </div>
             </div>
         </div>
         <div id="footer">
             <div class="container">
                 <p>Copyright &copy;
-                    <a href="<?php echo $company_link; ?>">
-                        <?php echo $company_name; ?>
+                    <a href="/">
+                        Roseville
                     </a>
-            <?php if ($this->session->userdata('user_id')): ?>
-                |
-                <a href="<?php echo $this->config->item('base_url'); ?>/index.php/backend">
-                    <?php echo $this->lang->line('backend_section'); ?>
-                </a>
-            <?php endif; ?>
                 </p>
             </div>
         </div>
@@ -131,72 +176,15 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
                 type="text/javascript">
         </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js"
+        <script src="/static/js/main.js"
                 type="text/javascript">
         </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"
-                type="text/javascript">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-touchspin/3.1.2/jquery.bootstrap-touchspin.min.js"
-                type="text/javascript">
-        </script>
-        <script
-            type="text/javascript"
-            src="<?php echo $this->config->item('base_url'); ?>/assets/js/frontend_book.js">
-        </script>
-        <script src="<?php echo $this->config->item('base_url'); ?>/assets/js/main.js"
+        <script src="/static/js/general_functions.js"
                 type="text/javascript">
         </script>
         <script type="text/javascript">
-            var GlobalVariables = {
-                baseUrl             : <?php echo '"' . $this->config->item('base_url') . '"'; ?>,
-                csrfToken           : <?php echo json_encode($this->security->get_csrf_hash()); ?>
-            };
-
-            var EALang = <?php echo json_encode($this->lang->language); ?>;
-            var availableLanguages = <?php echo json_encode($this->config->item('available_languages')); ?>;
-            var selectedLanguage = <?php echo json_encode($this->config->item('language')); ?>;
-
-            $(document).ready(function() {
-                FrontendBook.initialize(true, GlobalVariables.manageMode);
-                GeneralFunctions.enableLanguageSelection($('#select-language'), "toggle");
-                GeneralFunctions.hidePreloader();
-                /* Save form before load */
-                window.onbeforeunload = FrontendBook.saveFormToSession;
-                /* Load form after refresh */
-                window.onload = FrontendBook.loadFormFromSession;
-            });
+         var availableLanguages = <?php echo json_encode($this->config->item('available_languages')); ?>;
+         var selectedLanguage = <?php echo json_encode($this->config->item('language')); ?>;
         </script>
-        <script
-            type="text/javascript"
-            src="<?php echo $this->config->item('base_url'); ?>/assets/js/general_functions.js"></script>
-        <script type="text/javascript">
-         // Planyo settings
-         var planyo_site_id='38662';
-         var planyo_default_mode='reserve';
-         var planyo_include_js_library=false;
-         var planyo_language = <?php echo json_encode($short_lang); ?>; // you can optionally change the language here, e.g. 'FR' or 'ES' or pass the language in the 'lang' parameter.
-         var ulap_script="jsonp";
-         var planyo_use_https=("https:" == document.location.protocol);
-         var planyo_files_location=(planyo_use_https ? "https" : "http") + '://www.planyo.com/Plugins/PlanyoFiles';
-         var empty_mode=false; // should be always set to false
-        </script>
-
-        <script type="text/javascript">
-         function get_param (name) {
-             name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-             var regexS = "[\\?&]"+name+"=([^&#]*)";
-             var regex = new RegExp (regexS);
-             var results = regex.exec (window.location.href);
-             if (results == null) return null;
-             else  return results[1];
-         }
-         if (get_param('mode'))planyo_embed_mode = get_param('mode');
-         function get_full_planyo_file_path(name) {
-             if(planyo_files_location.length==0||planyo_files_location.lastIndexOf('/')==planyo_files_location.length-1)return planyo_files_location+name;
-             else return planyo_files_location+'/'+name;
-         }
-        </script>
-        <script src='https://www.planyo.com/Plugins/PlanyoFiles/booking-utils.js' type='text/javascript'></script>
     </body>
 </html>

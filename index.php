@@ -1105,7 +1105,7 @@ include($lang_file_path);
         <div id="footer">
             <div class="container">
                 <p>Copyright &copy;
-                    <a href="https://escape.roseville.ch">
+                    <a href="/">
                         Roseville
                     </a>
                 </p>
@@ -1128,7 +1128,6 @@ include($lang_file_path);
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.6/SmoothScroll.min.js"
                 type="text/javascript">
-        </script>
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js"
                 type="text/javascript">
@@ -1158,10 +1157,10 @@ include($lang_file_path);
          var availableLanguages = <?php echo json_encode($available_lang); ?>;
          var selectedLanguage = <?php echo json_encode($_SESSION['lang']); ?>;
 
-            $(document).ready(function() {
-                GeneralFunctions.hidePreloader();
-                GeneralFunctions.autoToggleNavbar();
-            });
+         $(document).ready(function() {
+             GeneralFunctions.hidePreloader();
+             GeneralFunctions.autoToggleNavbar();
+         });
         </script>
         <script src="/static/js/contact_me.js"
                 type="text/javascript">
