@@ -39,7 +39,6 @@ include($lang_file_path);
 ?>
 
 <!DOCTYPE html>
-<html>
     <head>
         <!-- meta -->
         <meta charset="utf-8" />
@@ -175,4 +174,3 @@ include($lang_file_path);
          var selectedLanguage = <?php echo json_encode($_SESSION['lang']); ?>;
         </script>
     </body>
-</html>
