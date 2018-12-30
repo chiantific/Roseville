@@ -97,7 +97,7 @@ $lang['group_area'] = 'Pour des événements avec groupes jusqu\'à 40 personnes
 
 // Section 4
 $lang['header_gift_certificate'] = 'Bon cadeau';
-$lang['sub_header_gift_card'] = 'Bon cadeau pour un jeu d\'évasion à Roseville Escape de 2 à 5 ou 6 personnes, en fonction du choix de la salle, d\'une valeur de CHF 140.';
+$lang['sub_header_gift_card'] = 'Bon cadeau pour un jeu d\'évasion à Roseville Escape de 2 à 5 ou 6 personnes, en fonction du choix de la salle, d\'une valeur de CHF 150.';
 $lang['how_to_order_gift_card'] = 'Pour commander un bon cadeau veuillez nous contacter via le';
 $lang['contact_form'] = 'formulaire de contact';
 $lang['payment_gift_card'] = 'Les informations pour le paiement vous seront envoyées immédiatement par courriel puis le bon cadeau vous parviendra par la poste après confirmation du paiement.';
@@ -111,8 +111,8 @@ $lang['alt_gift_card'] = 'Gift card';
 $lang['prices'] = 'Tarifs';
 $lang['header_what_you_get'] = 'Formule';
 $lang['text_what_you_get'] = 'Vous réservez pour une session de 2 à 5 ou 6 participants en fonction de la salle choisie. Nous limitons la taille des groupes à 6 personnes pour que vous puissiez vous sentir à l\'aise et profiter un maximum de votre expérience.';
-$lang['cost_session'] = 'Prix unique de CHF 140 pour une session de jeu indifféremment du choix de la salle et de la taille du groupe.';
-$lang['cost_gift_card'] = 'CHF 140 pour un bon cadeau.';
+$lang['cost_session'] = 'Prix unique de CHF 150 pour une session de jeu indifféremment du choix de la salle et de la taille du groupe.';
+$lang['cost_gift_card'] = 'CHF 150 pour un bon cadeau.';
 $lang['header_payment_methods'] = 'Moyens de paiements';
 $lang['text_payment_methods'] = 'Cartes de crédit, PostFinance, virement bancaire ou, sur place, en espèces uniquement.';
 
@@ -133,7 +133,7 @@ $lang['question_where_location'] = 'Où nous trouver?';
 $lang['answer_where_location'] = 'Nous sommes situés à la route de Lavaux 44, 1802 Corseaux à 2 minutes de Vevey en direction de Lausanne. Voir ';
 $lang['map'] = 'plan';
 $lang['question_cost'] = 'Le prix';
-$lang['answer_cost'] = 'CHF 140 pour une session de jeu indifféremment du choix de la salle et de la taille du groupe, du lundi au dimanche.';
+$lang['answer_cost'] = 'CHF 150 pour une session de jeu indifféremment du choix de la salle et de la taille du groupe, du lundi au dimanche.';
 $lang['question_group_size'] = 'Nombre de personnes par groupe';
 $lang['answer_group_size'] = 'Pour une expérience optimale nous limitons le nombre de personnes par groupe à 6 pour la salle "Chocolat" et à 5 pour "In Vino Veritas".';
 $lang['question_skills'] = 'Compétences et connaissances nécessaires';

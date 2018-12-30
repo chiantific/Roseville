@@ -97,7 +97,7 @@ $lang['group_area'] = 'For events with up to 40 persons';
 
 //Section 4
 $lang['header_gift_certificate'] = 'Gift certificate';
-$lang['sub_header_gift_card'] = 'Gift card for a game at Roseville Escape, valid for a group of 2 to 5 or 6 persons (depending on the room), price CHF 140.';
+$lang['sub_header_gift_card'] = 'Gift card for a game at Roseville Escape, valid for a group of 2 to 5 or 6 persons (depending on the room), price CHF 150.';
 $lang['how_to_order_gift_card'] = 'A gift card for a Roseville Escape game is an original and appreciated gift. We provide nicely designed vouchers for you to give loved ones for any occasion. To order please contact us using the ';
 $lang['contact_form'] = 'contact page';
 $lang['payment_gift_card'] = 'Detailed information about the payment will be provided immediately by email. Subsequently, the gift card will be deliverered by post (snail) mail upon confirmation of the payment.';
@@ -111,8 +111,8 @@ $lang['alt_gift_card'] = 'Gift card';
 $lang['prices'] = 'Pricing';
 $lang['header_what_you_get'] = 'What you get';
 $lang['text_what_you_get'] = 'You book for an entire game session for a group from 2 to 5 or 6 depending on the room. We are limiting the size of groups to 6 persons to make sure you will have the optimum experience at Roseville Escape Room.';
-$lang['cost_session'] = 'The cost is CHF 140 per game session regardless the room you choose and the group size.';
-$lang['cost_gift_card'] = 'A gift certificate is CHF 140 valid on any day for a group from 2 to 5 or 6 participants depending on the room.';
+$lang['cost_session'] = 'The cost is CHF 150 per game session regardless the room you choose and the group size.';
+$lang['cost_gift_card'] = 'A gift certificate is CHF 150 valid on any day for a group from 2 to 5 or 6 participants depending on the room.';
 $lang['header_payment_methods'] = 'Payment methods';
 $lang['text_payment_methods'] = 'Credit cards, PostFinance, bank transfer or, on site, in cash only.';
 
@@ -133,7 +133,7 @@ $lang['question_where_location'] = 'Where are we located?';
 $lang['answer_where_location'] = 'Roseville Escape Room is located on route de Lavaux 44, 1802 Corseaux. It is only 2 minutes away from Vevey going towards Lausanne. See ';
 $lang['map'] = 'map';
 $lang['question_cost'] = 'How much does it cost?';
-$lang['answer_cost'] = 'CHF 140 per game session regardless the room you choose and the group size, seven days a week.';
+$lang['answer_cost'] = 'CHF 150 per game session regardless the room you choose and the group size, seven days a week.';
 $lang['question_group_size'] = 'Group size';
 $lang['answer_group_size'] = 'For the best experience, we limit the number of group participants to 6 for the room "Chocolat" and to 5 for "In Vino Veritas".';
 $lang['question_skills'] = 'What are the required skills and knowledge?';
