@@ -807,55 +807,6 @@ include($lang_file_path);
                                 </div>
                             </div>
                         </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse15">
-                                        <?php echo $lang['question_reservation_escapegamepass']; ?>
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapse15" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-sm-push-6 col-sm-6">
-                                            <img src="/static/img/escapegamepass.jpg"
-                                                 alt="<?php echo $lang['alt_escapegamepass']; ?>"
-                                                 class="img-rounded center-block pass-img" width="60%" />
-                                        </div>
-                                        <div class="col-sm-pull-6 col-sm-6">
-                                            <p><?php echo $lang['answer_reservation_escapegamepass0']; ?></p>
-                                            <ol>
-                                                <li>
-                                                    <?php echo $lang['answer_reservation_escapegamepass1']; ?>
-                                                    <a href="https://www.escapegamepass.ch/validation-passeport/"
-                                                       target="_blank">
-                                                        <?php echo $lang['escapegamepass_site']; ?>
-                                                    </a>
-                                                </li>
-                                                <?php $answers = array(
-                                                    'answer_reservation_escapegamepass2',
-                                                    'answer_reservation_escapegamepass3',
-                                                    'answer_reservation_escapegamepass4');
-
-                                                    foreach ($answers as $answer) { ?>
-                                                <li>
-                                                    <?php echo $lang[$answer]; ?>
-                                                </li>
-                                                <?php } ?>
-                                                <li>
-                                                    <?php echo $lang['answer_reservation_escapegamepass5']; ?>
-                                                    <a href="https://www.escapegamepass.ch/validation-passeport/"
-                                                       target="_blank">
-                                                        <?php echo $lang['escapegamepass_site']; ?>
-                                                    </a>
-                                                </li>
-                                            </ol>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
