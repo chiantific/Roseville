@@ -625,11 +625,11 @@ include($lang_file_path);
                                         <tbody>
                                             <?php
                                                 $schedule = array(
-                                                    "monday" => array('12:00', '22:45'),
-                                                    "tuesday" => array('16:30', '22:45'),
-                                                    "wednesday" => array('12:00', '22:45'),
-                                                    "thursday" => array('16:30', '22:45'),
-                                                    "friday" => array('12:00', '22:45'),
+                                                    "monday" => array('10:30', '22:45'),
+                                                    "tuesday" => array('10:30', '22:45'),
+                                                    "wednesday" => array('10:30', '22:45'),
+                                                    "thursday" => array('10:30', '22:45'),
+                                                    "friday" => array('10:30', '22:45'),
                                                     "saturday" => array('10:30', '22:45'),
                                                     "sunday" => array('10:30', '22:45'));
                                                 foreach ($schedule as $day => $time) {
