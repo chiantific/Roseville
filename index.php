@@ -893,6 +893,20 @@ include($lang_file_path);
                 <!-- Escape -->
                 <h3><?php echo $lang['other_escapes']; ?></h3>
                 <div class="row">
+                   <div class="col-xs-6 col-sm-3">
+                        <a href="http://www.klugle.com/" target="_blank">
+                            <img src="/static/img/kluge.png"
+                                 alt="<?php echo $lang['alt_kluge']; ?>" class="img-thumbnail" />
+                            <h4><?php echo $lang['header_kluge']; ?></h4>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <a href="http://www.enigm.ch/" target="_blank">
+                            <img src="/static/img/enigm.png"
+                                 alt="<?php echo $lang['alt_enigm']; ?>" class="img-thumbnail" />
+                            <h4><?php echo $lang['header_enigm']; ?></h4>
+                        </a>
+                    </div>
                     <div class="col-xs-6 col-sm-3">
                         <a href="http://www.l-ichu.ch/" target="_blank">
                             <img src="/static/img/ichu-escape-game.png"
