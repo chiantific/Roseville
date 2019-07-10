@@ -17,7 +17,7 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
 
-            var postUrl = GlobalVariables.baseUrl + '/index.php/contact';
+            var postUrl = '/contact_me.php';
             var postData = {
                 'csrfToken': GlobalVariables.csrfToken,
                 'name': name,
