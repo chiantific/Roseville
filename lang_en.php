@@ -430,7 +430,6 @@ $lang['page_not_found_message'] = 'Unfortunately the page you requested does not
 $lang['error'] = 'Error';
 $lang['no_privileges'] = 'No Privileges';
 $lang['no_privileges_message'] = 'You do not have the required privileges to view this page. Please navigate to a different section.';
-$lang['backend_calendar'] = 'Backend Calendar';
 $lang['start_date_time'] = 'Start Date / Time';
 $lang['end_date_time'] = 'End Date / Time';
 $lang['licensed_under'] = 'Licensed Under';

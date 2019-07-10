@@ -428,7 +428,6 @@ $lang['page_not_found_message'] = 'Malheureusement la page demandée n\'existe p
 $lang['error'] = 'Erreur';
 $lang['no_privileges'] = 'Aucun privilèges';
 $lang['no_privileges_message'] = 'Vous n\'avez pas les privilèges demandés pour voir cet page. S\'il vous plaît naviguer vers une section différente.';
-$lang['backend_calendar'] = 'Back office Calendrier';
 $lang['start_date_time'] = 'Début date / temps';
 $lang['end_date_time'] = 'Fin date / temps';
 $lang['licensed_under'] = 'Licencier sous';
