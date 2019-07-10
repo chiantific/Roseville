@@ -19,7 +19,6 @@ $(function() {
 
             var postUrl = '/contact_me.php';
             var postData = {
-                'csrfToken': GlobalVariables.csrfToken,
                 'name': name,
                 'email': email,
                 'message': message
