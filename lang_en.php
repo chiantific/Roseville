@@ -45,7 +45,7 @@ $lang['enter'] = 'Enter';
 
 // Section 1
 $lang['header_adventure_heros'] = 'The adventure in which you are the heroes';
-$lang['text_adventure_heros'] = 'Roseville Escape Room is an unforgettable life-sized adventure game in an unusual immersive setting. Each room is themed and has a unique storyline that engages the participants through their environment. Players in groups from 2 to 5 or 6 (depending on the room) are locked into a room and have 60 minutes to find a way to escape. Use teamwork along with the room elements to find clues. Combine them to solve a series of puzzles and discover your way out.';
+$lang['text_adventure_heros'] = 'Roseville Escape Room is an unforgettable life-sized adventure game in an unusual immersive setting. Each room is themed and has a unique storyline that engages the participants through their environment. Players in groups from 2 to 6 are locked into a room and have 60 minutes to find a way to escape. Use teamwork along with the room elements to find clues. Combine them to solve a series of puzzles and discover your way out.';
 $lang['alt_lock_to_illustrate_the_game'] = 'Lock to illustrate the game';
 $lang['header_game_univers'] = 'The game\'s universe';
 $lang['text_game_univers'] = 'Dive into a thrilling life-size adventure within stunning fantasy inspired settings.';
@@ -80,7 +80,7 @@ $lang['teaser'] = 'Teaser';
 $lang['alt_grappe_bunch'] = 'bunch of grapes';
 $lang['header_ivv'] = '"In Vino Veritas"';
 $lang['text_ivv'] = 'Detective action with a biodynamic mood. After an important historical change, Lavaux has become an arid land on which only a few mushrooms grow with difficulty. What became of the Lavaux vines? You must go back in time to investigate and restore the conditions that made the vineyards so successful years before.';
-$lang['group_ivv'] = 'For groups from 2 to 5 persons';
+$lang['group_ivv'] = 'For groups from 2 to 6 persons';
 $lang['header_intro_room_ivv'] = 'Introduction for the room "In Vino Veritas"';
 $lang['text_intro_room_ivv'] = '&laquo; Lavaux, a beautiful place? Nonsense! Everybody knows it is a deserted place! No way on earth can there be wine! &raquo; <br> <br>Dive into the world of Roseville, a world slightly different from ours. Here in Lavaux, everything is dry as dust and desolate. So naturally, when a historian told us the region was magnificent, that people used to come from afar to see it, and that good wine was produced there, we decided to look into it. You will therefore immediately leave for an adventure through an unusual world to find out what happened, bring back what was stolen, and save Lavaux. Are you up to the task? No knowledge of oenology required.';
 $lang['peek_inside'] = 'Peek inside';
@@ -97,7 +97,7 @@ $lang['group_area'] = 'For events with up to 40 persons';
 
 //Section 4
 $lang['header_gift_certificate'] = 'Gift certificate';
-$lang['sub_header_gift_card'] = 'Gift card for a game at Roseville Escape, valid for a group of 2 to 5 or 6 persons (depending on the room), price CHF 150.';
+$lang['sub_header_gift_card'] = 'Gift card for a game at Roseville Escape, valid for a group of 2 to 6 persons in either room, price CHF 150.';
 $lang['how_to_order_gift_card'] = 'A gift card for a Roseville Escape game is an original and appreciated gift. We provide nicely designed vouchers for you to give loved ones for any occasion. To order please contact us using the ';
 $lang['contact_form'] = 'contact page';
 $lang['payment_gift_card'] = 'Detailed information about the payment will be provided immediately by email. Subsequently, the gift card will be deliverered by post (snail) mail upon confirmation of the payment.';
@@ -110,11 +110,11 @@ $lang['alt_gift_card'] = 'Gift card';
 // Section 5
 $lang['prices'] = 'Pricing';
 $lang['header_what_you_get'] = 'What you get';
-$lang['text_what_you_get'] = 'You book for an entire game session for a group from 2 to 5 or 6 depending on the room. We are limiting the size of groups to 6 persons to make sure you will have the optimum experience at Roseville Escape Room.';
+$lang['text_what_you_get'] = 'You book for an entire game session for a group from 2 to 6 in either room. We are limiting the size of groups to 6 persons to make sure you will have the optimum experience at Roseville Escape Room.';
 $lang['cost_session'] = 'The cost is CHF 150 per game session regardless the room you choose and the group size.';
-$lang['cost_gift_card'] = 'A gift certificate is CHF 150 valid on any day for a group from 2 to 5 or 6 participants depending on the room.';
+$lang['cost_gift_card'] = 'A gift certificate is CHF 150 valid on any day for a group from 2 to 6 participants in either room.';
 $lang['header_payment_methods'] = 'Payment methods';
-$lang['text_payment_methods'] = 'Credit cards, PostFinance, bank transfer or, on site, in cash only.';
+$lang['text_payment_methods'] = 'Credit cards, PostFinance, bank transfer or, on site, in cash or with TWINT.';
 
 // Section 6
 $lang['frequently_asked_questions'] = 'Frequently asked questions';
@@ -123,7 +123,7 @@ $lang['no_answer_to_question'] = ' if you do not find an answer to your question
 $lang['question_how_difficult'] = 'How difficult is the game?';
 $lang['answer_how_difficult'] = 'The difficulty level of our escape room is considered medium to difficult. A “light” version is offered for beginners. In order to maintain optimal interest throughout the game, our coach can send clues onto a control screen when players get stuck on a problem. For experienced and competitive teams this option can be removed. We adapt to all levels so that everyone has fun.';
 $lang['question_how_to_pay'] =  'How do I pay?';
-$lang['answer_how_to_pay'] =  'Payment is made at the time of reservation on the internet, by (credit) card: Postcard, Visa, and Mastercard. Paying by bank transfer is also possible. In addition, you can visit Roseville in person to reserve and pay by cash. Please contact us in advance to ensure our presence on site.';
+$lang['answer_how_to_pay'] =  'Payment is made at the time of reservation on the internet, by (credit) card: Postcard, Visa, and Mastercard. Paying by bank transfer is also possible. In addition, you can visit Roseville in person to reserve and pay by cash or TWINT. Please contact us in advance to ensure our presence on site.';
 $lang['question_opening_hours'] =  'Opening hours';
 $lang['10:30'] = '10:30 a.m.';
 $lang['12:00'] = '12 p.m.';
@@ -135,7 +135,7 @@ $lang['map'] = 'map';
 $lang['question_cost'] = 'How much does it cost?';
 $lang['answer_cost'] = 'CHF 150 per game session regardless the room you choose and the group size, seven days a week.';
 $lang['question_group_size'] = 'Group size';
-$lang['answer_group_size'] = 'For the best experience, we limit the number of group participants to 6 for the room "Chocolat" and to 5 for "In Vino Veritas".';
+$lang['answer_group_size'] = 'For the best experience, we limit the number of group participants to 6 in both rooms "Chocolat" and "In Vino Veritas".';
 $lang['question_skills'] = 'What are the required skills and knowledge?';
 $lang['answer_skills'] = 'Apart from a desire to have a good time, no special skills are required. All the information you will need will be provided ... or hidden for you to find!';
 $lang['question_cancellation'] = 'Can I cancel a reservation?';
