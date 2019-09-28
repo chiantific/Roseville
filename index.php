@@ -365,7 +365,7 @@ include($lang_file_path);
                         </div>
                     </div>
                     <div class="col-sm-4 sub-section">
-                        <img src="/static/img/raisin.jpg"
+                        <img src="/static/img/la_serre.jpg"
                              class="img-thumbnail" alt="<?php echo $lang['alt_grappe_bunch']; ?>" width="100%" />
                         <h3><?php echo $lang['header_ivv']; ?></h3>
                         <p><?php echo $lang['text_ivv']; ?></p>
