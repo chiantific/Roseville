@@ -889,7 +889,7 @@ include($lang_file_path);
                         </a>
                         <p><?php echo $lang['text_roseville_r']; ?></p>
                     </div>
-                    
+
                     <div class="col-sm-4">
                         <a href="https://labyrinthe-sonore.com/" target="_blank">
                             <div class="darken">
@@ -900,7 +900,7 @@ include($lang_file_path);
                         </a>
                         <p><?php echo $lang['text_labyrinthe_sonore']; ?></p>
                     </div>
-                    
+
                 </div>
                 <!-- Escape -->
                 <h3><?php echo $lang['other_escapes']; ?></h3>
