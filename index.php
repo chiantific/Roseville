@@ -61,9 +61,9 @@ include($lang_file_path);
               rel="stylesheet" type="text/css" />
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300'
               rel='stylesheet' type='text/css' />
-        <link href="static/css/general.css"
+        <link href="/static/css/general.css"
               rel="stylesheet" type="text/css" />
-        <link href="static/css/home.css"
+        <link href="/static/css/home.css"
               rel="stylesheet" type="text/css" />
 
         <!-- favicon -->
@@ -892,7 +892,7 @@ include($lang_file_path);
                     <div class="col-sm-4">
                         <a href="http://labyrinthe-sonore.com/" target="_blank">
                             <div class="darken">
-                                <img src="/static/img/Logo_labyrinthe_sonore.jpg"
+                                <img src="/static/img/logo_labyrinthe_sonore.jpg"
                                      alt="<?php echo $lang['alt_labyrinthe_sonore']; ?>" class="img-thumbnail" />
                             </div>
                             <h4><?php echo $lang['header_labyrinthe_sonore']; ?></h4>
