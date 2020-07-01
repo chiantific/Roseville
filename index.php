@@ -175,13 +175,13 @@ include($lang_file_path);
                                 <?php
                                 switch ($_SESSION['lang']) {
                                     case "en":
-                                        echo 'href=/index.php?lang=fr';
+                                        echo 'href="/index.php?lang=fr"';
                                         break;
                                     case "fr":
-                                        echo 'href=/index.php?lang=en';
+                                        echo 'href="/index.php?lang=en"';
                                         break;
                                     default:
-                                        echo 'href=/index.php?lang=en';
+                                        echo 'href="/index.php?lang=en"';
                                         break;
                                 }
                                 ?>>
