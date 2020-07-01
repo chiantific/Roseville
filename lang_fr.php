@@ -82,11 +82,7 @@ $lang['text_intro_room_chocolate_end'] = ', un bug à échelle planétaire a dé
 $lang['teaser'] = 'Extrait';
 $lang['alt_grappe_bunch'] = 'porte de serre';
 $lang['header_ivv'] = '"La Serre"';
-<<<<<<< HEAD
-$lang['text_ivv'] = '"In Vino Veritas" modifié. Suite à une altération du cours de l\'Histoire, Lavaux n\'est qu\'une terre aride sur laquelle seuls quelques champignons poussent laborieusement. Mais que sont devenues les vignes de Lavaux? Vous devez remonter dans le temps pour investiguer et rétablir les conditions qui ont fait le succès du vignoble d\'antan. ';
-=======
 $lang['text_ivv'] = '"In Vino Veritas" modifié. Suite à une altération du cours de l\'Histoire, Lavaux n\'est qu\'une terre aride sur laquelle seuls quelques champignons poussent laborieusement. Mais que sont devenues les vignes de Lavaux? Vous devez remonter dans le temps pour investiguer et rétablir les conditions qui ont fait le succès du vignoble d\'antan.';
->>>>>>> 848d80e8b8d218c9badc28b0f3a776d8a6b65b6e
 $lang['group_ivv'] = 'Pour groupes de 2 à 6 personnes';
 $lang['header_intro_room_ivv'] = 'Introduction pour la salle "La Serre"';
 $lang['text_intro_room_ivv'] = 'Avec des nouveaux mécanismes, des bruitages et des voix off, la salle "In Vino Veritas" s\'améliore et devient "La Serre". <br> <br> &laquo; Lavaux, une belle région? Mais quelle fantaisie! Tout le monde sait bien que rien n\'y pousse! Alors y produire du vin, mon oeil! &raquo; <br> <br>Plongez dans le monde de Roseville, un univers pas tout à fait conventionnel. Ici, Lavaux n\'est qu\'une terre aride et désolée. Suite au récit d\'un historien qui nous a expliqué que la région était magnifique, que des gens venaient de loin pour la visiter, et qu\'on y cultivait du raisin d\'excellente qualité, nous avons décidé d\'enquêter. Vous partez donc immédiatement dans une aventure au travers d\'un monde insolite pour découvrir ce qui s\'y est passé, ramener ce qui a été volé, et sauver Lavaux. Etes-vous à la hauteur?';
