@@ -184,7 +184,7 @@ include($lang_file_path);
                                         echo 'href="/index.php?lang=en"';
                                         break;
                                 }
-                                ?>
+                                ?>>
                                 <?php echo $lang['other_language']; ?>
                             </a>
                         </li>
@@ -884,7 +884,7 @@ include($lang_file_path);
                 </div>
             </div>
         </div>
-        
+
         <!-- Section 8 -->
         <div id="section8">
             <div class="container">
