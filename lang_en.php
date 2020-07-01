@@ -42,6 +42,9 @@ $lang['welcome_to'] = 'Welcome to';
 $lang['brand'] = 'Roseville Escape Room';
 $lang['intro_text'] = 'Find the clues, solve the puzzles, beat the clock. Will you escape in time?';
 $lang['enter'] = 'Enter';
+$lang['text1_qoqa'] = 'Take advantage of the QoQa action!';
+$lang['text2_qoqa'] = '-20% for you and +10% for Roseville Escape';
+
 
 // Section 1
 $lang['header_adventure_heros'] = 'The adventure in which you are the heroes';
@@ -193,9 +196,10 @@ $lang['text_corentin'] = 'Decoration and mural painting.';
 $lang['alt_roseville_r'] = 'Roseville rooms renting';
 $lang['header_roseville_r'] = 'The "R" lounge for your parties.';
 $lang['text_roseville_r'] = 'Rent a welcoming and out of ordinary space for your professional or private events.';
+
 $lang['alt_labyrinthe_sonore'] = 'Labyrinthe Sonore logo';
 $lang['header_labyrinthe_sonore'] = 'Labyrinthe Sonore';
-$lang['text_labyrinthe_sonore'] = 'Execute your customized soundtracks (music and sound effects) to perfect your themes';
+$lang['text_labyrinthe_sonore'] = 'Execute your customized soundtracks (music and sound effects) to perfect your themes.';
 $lang['other_escapes'] = 'Other escape games in french-speaking Switzerland - our recommendations.';
 $lang['alt_kluge'] = 'kluge escape game logo';
 $lang['header_kluge'] = 'Kluge';

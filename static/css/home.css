@@ -99,6 +99,15 @@ hr {
     margin-top: 40px;
     color: rgba(255,255,255,0.9);
 }
+#intro .modal-content {
+    background-color: #6ab0a4;
+}
+#intro .modal-title {
+    color: #f6f6f6;
+}
+#intro .modal-header, #intro .modal-footer {
+    border: none;
+}
 .offset-left {
     position:relative;
     left:-50px;
