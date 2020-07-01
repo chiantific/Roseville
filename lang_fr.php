@@ -42,6 +42,8 @@ $lang['welcome_to'] = 'Bienvenue à ';
 $lang['brand'] = 'Roseville Escape Room';
 $lang['intro_text'] = 'Trouverez-vous la sortie?';
 $lang['enter'] = 'Entrée';
+$lang['text1_qoqa'] = 'Profitez de l’action QoQa !';
+$lang['text2_qoqa'] = '-20% pour vous et +10% pour Roseville Escape';
 
 // Section 1
 $lang['header_adventure_heros'] = 'L\'aventure dont vous êtes les héros';

@@ -203,6 +203,41 @@ include($lang_file_path);
                     </div>
                 </div>
                 <div class="row">
+
+<!-- Temp popup -->
+                            <div class="modal fade" id="qoqa" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                <?php
+                                                    echo $lang['text1_qoqa'];
+                                                ?>
+                                            </p>
+                                            <p>
+                                                <a target="_blank" href="https://welqome.qoqa.ch/fr/offers/28200">
+                                                    https://welqome.qoqa.ch/fr/offers/28200
+                                                </a>
+                                            </p>
+                                            <p>
+                                                <?php
+                                                    echo $lang['text2_qoqa'];
+                                                ?>
+                                            </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-default btn-sm" data-dismiss="modal">
+                                                <?php echo $lang['close']; ?>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+<!-- End temp popup -->
+
                     <div class="col-md-10 col-md-offset-1 col-xs-12">
                         <h1><?php echo $lang['welcome_to']; ?>
 			    <span class="brand-heading">
@@ -1137,6 +1172,7 @@ include($lang_file_path);
          $(document).ready(function() {
              GeneralFunctions.hidePreloader();
              GeneralFunctions.autoToggleNavbar();
+             $('#qoqa').modal('show');
          });
         </script>
         <script src="/static/js/contact_me.js"
