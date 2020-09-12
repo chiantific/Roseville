@@ -44,7 +44,7 @@ $lang['intro_text'] = 'Find the clues, solve the puzzles, beat the clock. Will y
 $lang['enter'] = 'Enter';
 $lang['text1_qoqa'] = 'Take advantage of the QoQa action!';
 $lang['text2_qoqa'] = '-20% for you and +10% for Roseville Escape';
-
+$lang['text3_qoqa'] = 'Quick! This action ends on the 22nd of September.';
 
 // Section 1
 $lang['header_adventure_heros'] = 'The adventure in which you are the heroes';

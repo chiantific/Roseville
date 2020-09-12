@@ -45,6 +45,7 @@ $lang['intro_text'] = 'Trouverez-vous la sortie?';
 $lang['enter'] = 'Entrée';
 $lang['text1_qoqa'] = 'Profitez de l’action QoQa !';
 $lang['text2_qoqa'] = '-20% pour vous et +10% pour Roseville Escape';
+$lang['text3_qoqa'] = 'Faites vite ! L\'achat de ces bons ne peut se faire que jusqu\'au 22 septembre 2020.';
 
 // Section 1
 $lang['header_adventure_heros'] = 'L\'aventure dont vous êtes les héros';

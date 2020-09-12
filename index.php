@@ -227,6 +227,11 @@ include($lang_file_path);
                                                     echo $lang['text2_qoqa'];
                                                 ?>
                                             </p>
+                                            <p>
+                                                <?php
+                                                    echo $lang['text3_qoqa'];
+                                                ?>
+                                            </p>
                                         </div>
                                         <div class="modal-footer">
                                             <button class="btn btn-default btn-sm" data-dismiss="modal">
