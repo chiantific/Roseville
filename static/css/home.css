@@ -99,11 +99,39 @@ hr {
     margin-top: 40px;
     color: rgba(255,255,255,0.9);
 }
+#intro .modal-content {
+    background-color: #6ab0a4;
+}
+#intro .modal-content a {
+    color: white;
+}
+#intro .modal-content a:hover {
+    color: #C74D00;
+}
+#intro .modal-title {
+    color: #f6f6f6;
+}
+#intro .modal-content {
+    background-image: url("../img/xmas-decoration.png");
+    background-repeat: no-repeat;
+    background-position: -50px -55px;
+    position: absolute;
+}
+#intro .big_gift {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+}
+#intro .btn-default {
+    padding: 6px 12px;
+    font-size: 14px;
+    margin-left: 0;
+    margin-right: 15px;
+}
 .offset-left {
     position:relative;
     left:-50px;
 }
-
 .btn-default {
     color: #f6f6f6;
     background: #C74D00;

@@ -43,6 +43,13 @@ $lang['welcome_to'] = 'Bienvenue à ';
 $lang['brand'] = 'Roseville Escape Room';
 $lang['intro_text'] = 'Trouverez-vous la sortie?';
 $lang['enter'] = 'Entrée';
+$lang['header_xmas_popup'] = 'Offrez un bon cadeau pour Noël';
+$lang['xmas_popup1'] = 'Noël approche ! Quoi de mieux qu\'un ';
+$lang['xmas_popup_gift'] = 'Bon Cadeau';
+$lang['xmas_popup11'] = ' pour un jeu à Roseville ?';
+$lang['xmas_popup2'] = 'Commandez-le en écrivant à ';
+$lang['xmas_popup22'] = ' ou en composant le 079 623 04 11';
+$lang['xmas_popup3'] = 'Belle fin d\'année. On se réjouit de vous revoir à la réouverture de nos salles';
 
 // Section 1
 $lang['header_adventure_heros'] = 'L\'aventure dont vous êtes les héros';

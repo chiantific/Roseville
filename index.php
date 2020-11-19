@@ -203,12 +203,71 @@ include($lang_file_path);
                     </div>
                 </div>
                 <div class="row">
+                    
+<!-- Temp popup -->
+                    <div class="modal fade" id="xmas" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">
+                                        <?php echo $lang['header_xmas_popup']; 
+                                        ?>
+                                    </h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        <?php 
+                                            echo $lang['xmas_popup1'];
+                                        ?>
+                                        <span class="big_gift">
+                                            <?php 
+                                                echo $lang['xmas_popup_gift'];
+                                            ?>
+                                        </span>
+                                        <?php 
+                                            echo $lang['xmas_popup11'];
+                                        ?>
+                                    </p>
+                                    <p>
+                                        <?php
+                                            echo $lang['xmas_popup2'];
+                                        ?>
+                                        <script type="text/javascript">
+                                            var username = "info";
+                                            var hostname = "roseville.ch";
+                                            var linktext = username + "@" + hostname ;
+                                            document.write("<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a>");
+                                        </script>
+                                        <?php
+                                            echo $lang['xmas_popup22'];
+                                        ?>
+                                    </p>
+                                    <p>
+                                        <?php
+                                            echo $lang['xmas_popup3'];
+                                        ?>
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default btn-sm" data-dismiss="modal">
+                                                <?php echo $lang['close']; ?>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!-- End temp popup -->
+                    
                     <div class="col-md-10 col-md-offset-1 col-xs-12">
-                        <h1><?php echo $lang['welcome_to']; ?>
-			                    <span class="brand-heading">
+                        <h1>
+                            <?php
+                                echo $lang['welcome_to']; 
+                            ?>
+			                 <span class="brand-heading">
 				                    <?php echo $lang['brand']; ?>
-			                    </span>
-			                  </h1>
+			                 </span>
+                        </h1>
                         <p class="intro-text">
                             <?php echo $lang['intro_text']; ?>
                         </p>
@@ -1136,6 +1195,7 @@ include($lang_file_path);
          $(document).ready(function() {
              GeneralFunctions.hidePreloader();
              GeneralFunctions.autoToggleNavbar();
+              $('#xmas').modal('show');
          });
         </script>
         <script src="/static/js/contact_me.js"

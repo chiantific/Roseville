@@ -35,6 +35,7 @@ $lang['our_pricing'] = 'Pricing';
 $lang['about'] = 'About';
 $lang['faq'] = 'FAQ';
 $lang['location'] = 'Location';
+$lang['recommendations'] = 'On en parle';
 $lang['links'] = 'Links';
 
 // Intro
@@ -42,6 +43,10 @@ $lang['welcome_to'] = 'Welcome to';
 $lang['brand'] = 'Roseville Escape Room';
 $lang['intro_text'] = 'Find the clues, solve the puzzles, beat the clock. Will you escape in time?';
 $lang['enter'] = 'Enter';
+$lang['header_xmas_popup'] = 'Gift idea for Christmas';
+$lang['xmas_popup1'] = 'X-mas is approaching ! No better idea than a gift card for a session at Roseville Escape  ?';
+$lang['xmas_popup2'] = 'Order by writing at info@roseville.ch or calling 079 623 04 11';
+$lang['xmas_popup3'] = 'We wish you a merry christmas and we look forward to welcoming you when we will be able to re-open our rooms'; 
 
 // Section 1
 $lang['header_adventure_heros'] = 'The adventure in which you are the heroes';
