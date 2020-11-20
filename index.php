@@ -1171,7 +1171,7 @@ include($lang_file_path);
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax-min.js"
                 type="text/javascript">
         </script>
-        <script aftersrc="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt-ktwwF_T-zli0zQgryU3mwZulAPwXfU&callback=initMap" type="text/javascript">
+        <script aftersrc="https://maps.googleapis.com/maps/api/js?key=GOOGLE_API_KEY&callback=initMap" type="text/javascript">
         </script>
         <script src="/static/js/main.js"
                 type="text/javascript">
