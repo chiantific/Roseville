@@ -112,13 +112,13 @@ hr {
     color: #f6f6f6;
 }
 #intro .modal-content {
-    background-image: url("../img/xmas-decoration.png");
+    background-image: url("../img/xmas-#decoration.png");
     background-repeat: no-repeat;
     background-position: -50px -55px;
     position: absolute;
 }
 #intro .big_gift {
-    color: red;
+    color: #C74D00;
     font-size: 18px;
     font-weight: bold;
 }
