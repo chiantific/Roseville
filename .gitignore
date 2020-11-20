@@ -2,3 +2,5 @@ _notes/
 application/logs/*
 config_prod.php
 config.php
+assets/
+config.js
