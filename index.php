@@ -248,6 +248,7 @@ include($lang_file_path);
                                             echo $lang['xmas_popup3'];
                                         ?>
                                     </p>
+                                    <img src="static/img/xmas-decoration.png" alt="x-mas decoration">
                                 </div>
                                 <div class="modal-footer">
                                     <button class="btn btn-default btn-sm" data-dismiss="modal">
