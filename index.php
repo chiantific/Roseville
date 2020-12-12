@@ -242,10 +242,20 @@ include($lang_file_path);
                                         <?php
                                             echo $lang['xmas_popup22'];
                                         ?>
+                                        <a href="https://welqome.qoqa.ch/fr/offers/28200"><?php echo $lang['xmas_popup23']; ?>
+                                        </a>
+                                        <?php
+                                            echo $lang['xmas_popup24'];
+                                        ?>
                                     </p>
                                     <p>
                                         <?php
                                             echo $lang['xmas_popup3'];
+                                        ?>
+                                    </p>
+                                    <p>
+                                        <?php
+                                            echo $lang['xmas_popup4'];
                                         ?>
                                     </p>
                                     <img src="static/img/xmas-decoration.png" alt="x-mas decoration">
@@ -1171,7 +1181,7 @@ include($lang_file_path);
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax-min.js"
                 type="text/javascript">
         </script>
-        <script aftersrc="https://maps.googleapis.com/maps/api/js?key=GOOGLE_API_KEY&callback=initMap" type="text/javascript">
+        <script aftersrc="https://maps.googleapis.com/maps/api/js?key=GOOGLE_KEY&callback=initMap" type="text/javascript">
         </script>
         <script src="/static/js/main.js"
                 type="text/javascript">

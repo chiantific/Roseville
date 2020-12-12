@@ -48,8 +48,11 @@ $lang['xmas_popup1'] = 'Noël approche ! Quoi de mieux qu\'un ';
 $lang['xmas_popup_gift'] = 'Bon Cadeau';
 $lang['xmas_popup11'] = ' pour un jeu à Roseville ?';
 $lang['xmas_popup2'] = 'Commandez-le en écrivant à ';
-$lang['xmas_popup22'] = ' ou en composant le 079 623 04 11';
-$lang['xmas_popup3'] = 'Belle fin d\'année. On se réjouit de vous revoir à la réouverture de nos salles';
+$lang['xmas_popup22'] = ' ou en composant le 079 623 04 11 et profitez de ';
+$lang['xmas_popup23'] = 'l\'action welQome.ch';
+$lang['xmas_popup24'] = '(-20% pour vous et +10% pour nous).';
+$lang['xmas_popup3'] = 'Nos salles sont malheureusement fermées à cause du COVID-19. Nous attendons le feu vert des instances cantonales pour une réouverture prochaine. Nous nous réjouissons de vous revoir.';
+$lang['xmas_popup4'] = 'Belle fin d\'année.'; 
 
 // Section 1
 $lang['header_adventure_heros'] = 'L\'aventure dont vous êtes les héros';
@@ -64,7 +67,7 @@ $lang['text_the_clock_is_ticking'] = 'Travaillez en équipe pour mener à bien v
 
 // Section 2
 $lang['header_what_public'] = 'Quel public';
-$lang['text_what_public'] = 'Roseville Escape Game s\'adresse à un public de plus de 14 ans. Nos énigmes ne comportent aucun élément physique ou effrayant. Le scénario a été conçu pour satisfaire l\'intérêt des novices comme celui des initiés de jeu d\'évasion.';
+$lang['text_what_public'] = 'Roseville Escape Game convient à tout public. Nos énigmes ne comportent aucun élément physique ou effrayant. Le scénario a été conçu pour satisfaire l\'intérêt des novices comme celui des initiés de jeu d\'évasion.';
 $lang['header_family_and_friends'] = 'Groupe d\'amis et famille';
 $lang['text_family_and_friends'] = 'Une activité qui sort de l’ordinaire à faire en famille ou entre amis.';
 $lang['header_colleagues'] = 'Collègues';
@@ -143,7 +146,7 @@ $lang['map'] = 'plan';
 $lang['question_cost'] = 'Le prix';
 $lang['answer_cost'] = 'CHF 150 pour une session de jeu indifféremment du choix de la salle et de la taille du groupe, du lundi au dimanche.';
 $lang['question_group_size'] = 'Nombre de personnes par groupe';
-$lang['answer_group_size'] = 'Pour une expérience optimale nous limitons le nombre de personnes par groupe à 6 pour les salles "Chocolat" et "La Serre".';
+$lang['answer_group_size'] = 'Nos salles conviennent pour des groupes de 2 à 6 personnes. La taille idéale recommandée du groupe pour effectuer nos salles est de 4 personnes. Pour une expérience optimale nous limitons le nombre de personnes par groupe à 6.';
 $lang['question_skills'] = 'Compétences et connaissances nécessaires';
 $lang['answer_skills'] = 'A part une envie de passer un bon moment, aucune compétence particulière n\'est nécessaire. Toutes les informations dont vous aurez besoin seront fournies ... ou cachées ... à vous de les découvrir.';
 $lang['question_cancellation'] = 'Est-ce que je peux annuler une réservation?';
@@ -151,7 +154,7 @@ $lang['answer_cancellation'] = 'Non, malheureusement pas. Vous pouvez néanmoins
 $lang['question_time_in_roseville'] = 'Combien de temps faut-il prévoir à Roseville?';
 $lang['answer_time_in_roseville'] = 'Il faut compter environ 90 minutes, un quart d\'heure pour les explications, 60 minutes pour le jeu et un quart d\'heure supplémentaire pour le débriefing. Vous pourrez également vous relaxer et vous désaltérer avant ou après le jeu dans notre salle d\'accueil au décor enchanteur.';
 $lang['question_minimum_age'] = 'Age minimum';
-$lang['answer_minimum_age'] = 'L\'âge minimum pour participer à notre jeu est de 14 ans. Nous acceptons cependant les enfants plus jeunes s\'ils sont accompagnés par deux adultes. Nous déconseillons le jeu au moins de 9 ans. Les enfants ne s’amuseraient pas, les parents encore moins ... ';
+$lang['answer_minimum_age'] = 'L\'âge minimum pour participer en autonomie à nos jeux est de 13 ans. Nous acceptons cependant les enfants plus jeunes s\'ils sont accompagnés par au moins un adulte. Nous déconseillons le jeu en dessous de 9 ans. Les enfants ne s’amuseraient pas vraiment, et les parents non plus ... ';
 $lang['question_accessibility'] = 'Accessibilité';
 $lang['answer_accessibility'] = 'Malheureusement, pour l\'instant nous ne pouvons pas assurer l\'accès aux personnes en fauteuil roulant. Nous cherchons une solution.';
 $lang['question_health_safety'] = 'Sécurité et santé';

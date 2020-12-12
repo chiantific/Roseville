@@ -44,9 +44,15 @@ $lang['brand'] = 'Roseville Escape Room';
 $lang['intro_text'] = 'Find the clues, solve the puzzles, beat the clock. Will you escape in time?';
 $lang['enter'] = 'Enter';
 $lang['header_xmas_popup'] = 'Gift idea for Christmas';
-$lang['xmas_popup1'] = 'X-mas is approaching ! No better idea than a gift card for a session at Roseville Escape  ?';
-$lang['xmas_popup2'] = 'Order by writing at info@roseville.ch or calling 079 623 04 11';
-$lang['xmas_popup3'] = 'We wish you a merry christmas and we look forward to welcoming you when we will be able to re-open our rooms'; 
+$lang['xmas_popup1'] = 'Christmas is approaching fast ! No better idea than a ';
+$lang['xmas_popup_gift'] = 'Gift Card';
+$lang['xmas_popup11'] = ' for a session at Roseville Escape  ?';
+$lang['xmas_popup2'] = 'Order by writing at '; 
+$lang['xmas_popup22'] = ' or by calling 079 623 04 11. Take advantage of the ';
+$lang['xmas_popup23'] = 'welQome.ch offer';
+$lang['xmas_popup24'] = '(-20% for you and +10% for us).';
+$lang['xmas_popup3'] = 'Our rooms are unfortunately closed due to the pandemic. We are waiting for the green light from the authorities to reopen.'; 
+$lang['xmas_popup4'] = 'We wish you a merry Christmas and we look forward to welcoming you soon. '; 
 
 // Section 1
 $lang['header_adventure_heros'] = 'The adventure in which you are the heroes';
@@ -61,7 +67,7 @@ $lang['text_the_clock_is_ticking'] = 'Work as a team to succeed in your mission.
 
 // Section 2
 $lang['header_what_public'] = 'Who can play';
-$lang['text_what_public'] = 'The Roseville escape game is aimed at an audience of over 14 years old. Our enigmas contain no physical or frightening elements. The scenarios are designed to satisfy the interest of novices, as well as experienced escape gamers.';
+$lang['text_what_public'] = 'The Roseville escape game is suitable for all audiences. Our enigmas contain no physical or frightening elements. The scenarios are designed to satisfy the interest of novices, as well as experienced escape gamers.';
 $lang['header_family_and_friends'] = 'Family and friends';
 $lang['text_family_and_friends'] = 'Are you looking for a memorable and stimulating activity to share with friends or family members? Working as a team to solve the mysteries at Roseville Escape will have your group talking for years to come.';
 $lang['header_colleagues'] = 'Colleagues';
@@ -140,7 +146,7 @@ $lang['map'] = 'map';
 $lang['question_cost'] = 'How much does it cost?';
 $lang['answer_cost'] = 'CHF 150 per game session regardless the room you choose and the group size, seven days a week.';
 $lang['question_group_size'] = 'Group size';
-$lang['answer_group_size'] = 'For the best experience, we limit the number of group participants to 6 in both rooms "Chocolat" and "The Greenhouse".';
+$lang['answer_group_size'] = 'Our rooms are suitable for groups from 2 to 6 persons. The ideal group size recommandation to confortably succeed in our rooms is 4. For the best experience, we limit the number of group participants to 6.';
 $lang['question_skills'] = 'What are the required skills and knowledge?';
 $lang['answer_skills'] = 'Apart from a desire to have a good time, no special skills are required. All the information you will need will be provided ... or hidden for you to find!';
 $lang['question_cancellation'] = 'Can I cancel a reservation?';
@@ -148,7 +154,7 @@ $lang['answer_cancellation'] = 'No, sorry. However, you may contact us a minimum
 $lang['question_time_in_roseville'] = 'How long should we plan to be in Roseville?';
 $lang['answer_time_in_roseville'] = 'You should count on one and a half hour. There are 15 minutes of explanations, 1 hour for the game and an extra 15 minutes for the debriefing. You can also relax and have a drink before or after the game in our unusually decorated reception area.';
 $lang['question_minimum_age'] = 'Minimum age?';
-$lang['answer_minimum_age'] = 'The minimum age for participation in our game is 14 years old. We accept younger children if they are accompanied by adults. The game is not suitable for children under 9. They would not have fun, so neither would the parents…!';
+$lang['answer_minimum_age'] = 'The minimum age for participation in our game without grown-up is 13 years old. We accept younger children if they are accompanied by at least one adult. The game is not suitable for children under 9. They would not have much fun, so neither would the parents…!';
 $lang['question_accessibility'] = 'Accessibility';
 $lang['answer_accessibility'] = 'Unfortunately, we cannot provide wheelchair access at the moment. We are looking for a solution. ';
 $lang['question_health_safety'] = 'Health and safety';
