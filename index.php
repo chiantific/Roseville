@@ -959,6 +959,8 @@ include($lang_file_path);
                         </a>
                         <p><?php echo $lang['text_roseville_r']; ?></p>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-sm-4">
                         <a href="https://labyrinthe-sonore.com/" target="_blank">
                             <div class="darken">
@@ -969,7 +971,16 @@ include($lang_file_path);
                         </a>
                         <p><?php echo $lang['text_labyrinthe_sonore']; ?></p>
                     </div>
-
+                    <div class="col-sm-4">
+                        <a href="https://torpille.ch/" target="_blank">
+                            <div class="darken">
+                                <img src="/static/img/logo-torpille.rouge-txt-final-noir4-texte-white.jpg"
+                                     alt="<?php echo $lang['alt_torpille']; ?>" class="img-thumbnail" />
+                            </div>
+                            <h4><?php echo $lang['header_torpille']; ?></h4>
+                        </a>
+                        <p><?php echo $lang['text_torpille']; ?></p>
+                    </div>
               </div>
                 <!-- Escape -->
                 <h3><?php echo $lang['other_escapes']; ?></h3>

@@ -204,10 +204,12 @@ $lang['text_corentin'] = 'Decoration and mural painting.';
 $lang['alt_roseville_r'] = 'Roseville rooms renting';
 $lang['header_roseville_r'] = 'The "R" lounge for your parties.';
 $lang['text_roseville_r'] = 'Rent a welcoming and out of ordinary space for your professional or private events.';
-
 $lang['alt_labyrinthe_sonore'] = 'Labyrinthe Sonore logo';
 $lang['header_labyrinthe_sonore'] = 'Labyrinthe Sonore';
 $lang['text_labyrinthe_sonore'] = 'Execute your customized soundtracks (music and sound effects) to perfect your themes.';
+$lang['alt_torpille'] = 'La Torpille logo';
+$lang['header_torpille'] = 'La Torpille';
+$lang['text_torpille'] = 'What to do in Western Switzerland ? Find leisure attractions on La Torpille website.';
 $lang['other_escapes'] = 'Other escape games in french-speaking Switzerland - our recommendations.';
 $lang['alt_kluge'] = 'kluge escape game logo';
 $lang['header_kluge'] = 'Kluge';
