@@ -57,7 +57,7 @@ $lang['text_the_clock_is_ticking'] = 'Travaillez en équipe pour mener à bien v
 
 // Section 2
 $lang['header_what_public'] = 'Quel public';
-$lang['text_what_public'] = 'Roseville Escape Game s\'adresse à un public de plus de 14 ans. Nos énigmes ne comportent aucun élément physique ou effrayant. Le scénario a été conçu pour satisfaire l\'intérêt des novices comme celui des initiés de jeu d\'évasion.';
+$lang['text_what_public'] = 'Roseville Escape Game convient à tout public. Nos énigmes ne comportent aucun élément physique ou effrayant. Le scénario a été conçu pour satisfaire l\'intérêt des novices comme celui des initiés de jeu d\'évasion.';
 $lang['header_family_and_friends'] = 'Groupe d\'amis et famille';
 $lang['text_family_and_friends'] = 'Une activité qui sort de l’ordinaire à faire en famille ou entre amis.';
 $lang['header_colleagues'] = 'Collègues';
@@ -136,7 +136,7 @@ $lang['map'] = 'plan';
 $lang['question_cost'] = 'Le prix';
 $lang['answer_cost'] = 'CHF 150 pour une session de jeu indifféremment du choix de la salle et de la taille du groupe, du lundi au dimanche.';
 $lang['question_group_size'] = 'Nombre de personnes par groupe';
-$lang['answer_group_size'] = 'Pour une expérience optimale nous limitons le nombre de personnes par groupe à 6 pour les salles "Chocolat" et "La Serre".';
+$lang['answer_group_size'] = 'Nos salles conviennent pour des groupes de 2 à 6 personnes. La taille idéale recommandée du groupe pour effectuer nos salles est de 4 personnes. Pour une expérience optimale nous limitons le nombre de personnes par groupe à 6.';
 $lang['question_skills'] = 'Compétences et connaissances nécessaires';
 $lang['answer_skills'] = 'A part une envie de passer un bon moment, aucune compétence particulière n\'est nécessaire. Toutes les informations dont vous aurez besoin seront fournies ... ou cachées ... à vous de les découvrir.';
 $lang['question_cancellation'] = 'Est-ce que je peux annuler une réservation?';
@@ -197,6 +197,9 @@ $lang['text_roseville_r'] = 'Louez un espace convivial et insolite pour vos év�
 $lang['alt_labyrinthe_sonore'] = 'logo de Labyrinthe Sonore';
 $lang['header_labyrinthe_sonore'] = 'Labyrinthe Sonore';
 $lang['text_labyrinthe_sonore'] = 'Réalise vos paysages sonores (musiques ou bruitages) sur mesure.';
+$lang['alt_torpille'] = 'logo du site la torpille';
+$lang['header_torpille'] = 'La Torpille';
+$lang['text_torpille'] = 'Que faire en Suisse Romande ? Cherchez une activité sur le site de la Torpille.';
 $lang['other_escapes'] = 'Autres escape games en Suisse romande - nos recommandations';
 $lang['alt_kluge'] = 'kluge escape game logo';
 $lang['header_kluge'] = 'Kluge';
