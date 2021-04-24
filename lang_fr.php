@@ -39,6 +39,9 @@ $lang['recommendations'] = 'On en parle';
 $lang['links'] = 'Liens';
 
 // Intro
+$lang['popup_header'] = 'Nous sommes ouverts !';
+$lang['popup_ligne1'] = 'Roseville Escape est heureux de vous accueillir à nouveau';
+$lang['popup_ligne2'] = 'Ne tardez pas à reserver une de nos salles "Chocolat" ou "La Serre"';
 $lang['welcome_to'] = 'Bienvenue à ';
 $lang['brand'] = 'Roseville Escape Room';
 $lang['intro_text'] = 'Trouverez-vous la sortie?';

@@ -99,11 +99,33 @@ hr {
     margin-top: 40px;
     color: rgba(255,255,255,0.9);
 }
+#intro .modal-content {
+    background-color: #6ab0a4;
+}
+#intro .modal-title {
+    color: #f6f6f6;
+}
+#intro .btn-popup {
+    background: darkgrey;
+    color: #e8e8e8;
+    padding: 6px 10px;
+    margin: 0;
+    font-size: 14px;
+}
+#intro .btn-popup:hover, :focus, :active {
+    background: #808080;
+    color: #DCDCDC;
+}
+#intro h4.modal-title {
+    font-size: 22px;
+}
+.modal-body p {
+    font-size: 16px;
+}
 .offset-left {
     position:relative;
     left:-50px;
 }
-
 .btn-default {
     color: #f6f6f6;
     background: #C74D00;

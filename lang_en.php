@@ -38,6 +38,9 @@ $lang['location'] = 'Location';
 $lang['links'] = 'Links';
 
 // Intro
+$lang['popup_header'] = 'We are open!';
+$lang['popup_ligne1'] = 'Roseville Escape is happy to welcome you again';
+$lang['popup_ligne2'] = 'Do not wait to book one of our rooms "Chocolat" or "The Greenhouse"';
 $lang['welcome_to'] = 'Welcome to';
 $lang['brand'] = 'Roseville Escape Room';
 $lang['intro_text'] = 'Find the clues, solve the puzzles, beat the clock. Will you escape in time?';
